@@ -28,7 +28,7 @@ You must have completed either [Microsoft Certified: Azure Administrator Associa
 
 ## Take the exam
 
-### Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions
+[Exam AZ-400: Designing and Implementing Microsoft DevOps Solutions](https://docs.microsoft.com/en-us/learn/certifications/exams/az-400)
 
 The content of this exam was updated on June 15, 2020. Please download the skills measured document below to see what changed.
 
