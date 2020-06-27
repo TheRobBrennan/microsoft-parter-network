@@ -14,6 +14,11 @@ Upon completion of this module, you'll be able to:
 
 - Evaluate Azure services for integration and process automation scenarios
 
+Prerequisites:
+
+- Familiarity with Azure
+- Basic knowledge of REST and APIs
+
 ## Create serverless logic with Azure Functions
 
 [Create serverless logic with Azure Functions](https://docs.microsoft.com/en-us/learn/modules/create-serverless-logic-with-azure-functions/) (~36 mins)
@@ -77,6 +82,11 @@ By the end of this module, you will be able to use the Azure Functions Core Tool
 - Run and test functions locally
 - Publish functions to Azure
 
+Prerequisites:
+
+- Beginner-level Azure Functions development experience
+- Familiarity with basic command line usage
+
 ## Develop, test, and deploy an Azure Function with Visual Studio
 
 [Develop, test, and deploy an Azure Function with Visual Studio](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/) (~43 mins)
@@ -90,6 +100,11 @@ In this module, you will:
 - Deploy an Azure Functions directly from Visual Studio to Azure
 - Manage Azure Function code
 
+Prerequisites:
+
+- Basic knowledge of Azure Functions
+- Experience developing solutions in Visual Studio or a similar integrated development environment
+
 ## Monitor GitHub events by using a webhook with Azure Functions
 
 [Monitor GitHub events by using a webhook with Azure Functions](https://docs.microsoft.com/en-us/learn/modules/monitor-github-events-with-a-function-triggered-by-a-webhook/) (~53 mins)
@@ -101,6 +116,11 @@ In this module, you will:
 - Trigger your function with a webhook
 - Analyze the message from the webhook
 - Secure webhook payloads with a secret
+
+Prerequisites:
+
+- Beginner-level knowledge of Azure Functions
+- A GitHub account
 
 ## Enable automatic updates in a web application using Azure Functions and SignalR Service
 
@@ -115,6 +135,11 @@ In this module, you will:
 - Host a static website in an Azure Storage account
 - Modify a Vue.js and JavaScript web application to use SignalR
 
+Prerequisites:
+
+- Knowledge of JavaScript
+- Familiarity with Azure Functions, Azure Cosmos DB and Visual Studio Code
+
 ## Expose multiple Azure Function apps as a consistent API by using Azure API Management
 
 [Expose multiple Azure Function apps as a consistent API by using Azure API Management](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/) (~41 mins)
@@ -126,3 +151,7 @@ In this module, you will:
 - Identify the value of Azure API Management in a serverless application
 - Import an Azure Functions app as an API in Azure API Management
 - Import multiple Azure Functions apps as a single API in Azure API Management
+
+Prerequisites:
+
+- Basic knowledge of Azure API Management and Azure Functions
