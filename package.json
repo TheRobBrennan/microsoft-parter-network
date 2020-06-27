@@ -1,0 +1,16 @@
+{
+  "name": "microsoft-parter-network",
+  "version": "0.0.0",
+  "description": "Just a place to collect my notes, thoughts, and organize my studies as I work toward achieving competencies",
+  "keywords": [],
+  "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheRobBrennan/microsoft-parter-network.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheRobBrennan/microsoft-parter-network/issues"
+  },
+  "homepage": "https://github.com/TheRobBrennan/microsoft-parter-network#readme"
+}
