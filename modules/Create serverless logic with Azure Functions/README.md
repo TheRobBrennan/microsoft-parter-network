@@ -28,6 +28,6 @@ When you create a function app, it must be linked to a storage account. You can 
 
 ![https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/86a4106e1cba4ad3d69a95162251beee/Screen_Shot_2020-05-22_at_14.44.00_PM.png](https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/86a4106e1cba4ad3d69a95162251beee/Screen_Shot_2020-05-22_at_14.44.00_PM.png)
 
-![https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/82a7db0b3c648941a0f1ff7e04564525/Screen_Shot_2020-05-22_at_14.58.10_PM.png]
+![https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/82a7db0b3c648941a0f1ff7e04564525/Screen_Shot_2020-05-22_at_14.58.10_PM.png](https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/82a7db0b3c648941a0f1ff7e04564525/Screen_Shot_2020-05-22_at_14.58.10_PM.png)
 
 ![https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/abad89d235fdda61c7ab08b8f4733ae0/Screen_Shot_2020-05-22_at_14.59.45_PM.png](https://trello-attachments.s3.amazonaws.com/5c4f25b1c779d01647ad94d6/5ec840a711352b2a7b2e5100/abad89d235fdda61c7ab08b8f4733ae0/Screen_Shot_2020-05-22_at_14.59.45_PM.png)
