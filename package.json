@@ -4,6 +4,9 @@
   "description": "Just a place to collect my notes, thoughts, and organize my studies as I work toward achieving competencies",
   "keywords": [],
   "author": "Rob Brennan <rob@therobbrennan.com> (therobbrennan.com)",
+  "scripts": {
+    "start": "open https://docs.google.com/spreadsheets/d/1fuzV-TgWockfh0dnVfUMzIyQQj6X-QpVaDQY84Ay6Ug/edit#gid=0"
+  },
   "license": "ISC",
   "repository": {
     "type": "git",
