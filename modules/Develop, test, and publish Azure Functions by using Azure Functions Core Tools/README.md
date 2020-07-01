@@ -108,6 +108,55 @@ To start the functions host locally, run `func start` from a functions project f
 
 ## Exercise - Create a function locally by using the Core Tools
 
+The Core Tools give you a way to get started developing functions locally by creating the files and folders you need and letting you run your functions on your own computer.
+
+You've decided to start your work with Azure Functions by locally developing a function that computes simple interest. Eventually you'll work your way up to more complex functions that work together and call other services and databases, but using the Core Tools to build a function that performs a basic loan calculation is a good start. You also want to try calling your function on your own computer before publishing it to Azure.
+
+In this exercise, we'll create and run our first function from the Cloud Shell command line using the Core Tools.
+
+### Create a local Azure Functions project
+
+In this exercise, we'll use the in-browser Cloud Shell to develop our function. The Cloud Shell system has the Core Tools and Azure CLI preinstalled, as well as an editor we'll use to write code. Make sure to activate the sandbox above before proceeding.
+
+```sh
+Requesting a Cloud Shell.Succeeded.
+Connecting terminal...
+
+Welcome to Azure Cloud Shell
+
+Type "az" to use Azure CLI
+Type "help" to learn about Cloud Shell
+
+# In the Cloud Shell pane on the right, create a new directory called loan-wizard and cd into it:
+rob@Azure:~$ mkdir ~/loan-wizard
+rob@Azure:~$ cd ~/loan-wizard
+rob@Azure:~/loan-wizard$ func init
+Select a number for worker runtime:
+1. dotnet
+2. node
+3. python
+4. powershell
+Choose option: 2
+node
+Select a number for language:
+1. javascript
+2. typescript
+Choose option: 1
+javascript
+Writing package.json
+Writing .gitignore
+Writing host.json
+Writing local.settings.json
+Writing /home/rob/loan-wizard/.vscode/extensions.json
+rob@Azure:~/loan-wizard$
+```
+
+### Create an HTTP-triggered function
+
+### Implement the simple-interest function
+
+### Run the function locally
+
 ## Publish a function to Azure by using the Core Tools
 
 ## Exercise - Publish a function to Azure by using the Core Tools
