@@ -191,6 +191,43 @@ The wizard has created a new folder in our functions project called `simple-inte
 
 ### Implement the simple-interest function
 
+The function implementation that the Core Tools created for us in `index.js` looks for an input called `name` in the query string or the body of the inbound HTTP request and returns the string `Hello {name}`. This is a good illustration of how to use an HTTP trigger, but we want to replace it with our simple interest implementation.
+
+```sh
+# Open the Cloud Shell editor
+rob@Azure:~/loan-wizard$ code .
+
+# In the code editor's Files pane, expand the simple-interest folder and select index.js to open it in the editor.
+```
+
+Replace the full contents of `index.js` with the following code:
+
+```js
+module.exports = async function (context, req) {
+  // Try to grab principal, rate and term from the query string and
+  // parse them as numbers
+  const principal = parseFloat(req.query.principal)
+  const rate = parseFloat(req.query.rate)
+  const term = parseFloat(req.query.term)
+
+  if ([principal, rate, term].some(isNaN)) {
+    // If any empty or non-numeric values, return a 400 response with an
+    // error message
+    context.res = {
+      status: 400,
+      body: "Please supply principal, rate and term in the query string",
+    }
+  } else {
+    // Otherwise set the response body to the product of the three values
+    context.res = { body: principal * rate * term }
+  }
+}
+```
+
+This implementation looks for parameters named `principal`, `rate` and `term` in the query string of the HTTP request and returns the result of the simple interest calculation.
+
+Save the file with `Ctrl+S` and close the editor with `Ctrl+Q`
+
 ### Run the function locally
 
 ## Publish a function to Azure by using the Core Tools
