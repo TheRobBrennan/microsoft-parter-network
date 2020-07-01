@@ -60,7 +60,7 @@ In this module, you will:
 
 ## Create a long-running serverless workflow with Durable Functions
 
-[Create a long-running serverless workflow with Durable Functions](https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/) )~46 mins)
+[Create a long-running serverless workflow with Durable Functions](https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/) (~46 mins)
 
 Learn how to orchestrate a long-running workflow as a set of activities using Durable Functions.
 
