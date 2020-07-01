@@ -230,6 +230,224 @@ Save the file with `Ctrl+S` and close the editor with `Ctrl+Q`
 
 ### Run the function locally
 
+To run our new function locally and try it out, we'll use `func start` to start the functions runtime.
+
+Run `func start` to start the local functions host. As with `func new`, your shell should still be in the `loan-wizard` directory:
+
+```sh
+rob@Azure:~/loan-wizard$ func start
+
+                  %%%%%%
+                 %%%%%%
+            @   %%%%%%    @
+          @@   %%%%%%      @@
+       @@@    %%%%%%%%%%%    @@@
+     @@      %%%%%%%%%%        @@
+       @@         %%%%       @@
+         @@      %%%       @@
+           @@    %%      @@
+                %%
+                %
+
+Azure Functions Core Tools (2.7.2184 Commit hash: 5afacc827c2848e4debc23bb96604f1ffce09cc7)
+Function Runtime Version: 2.0.12961.0
+[7/1/20 11:43:23 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:java
+[7/1/20 11:43:23 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:powershell
+[7/1/20 11:43:23 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:python
+[7/1/20 11:43:23 PM] Building host: startup suppressed: 'False', configuration suppressed: 'False', startup operation id: '4a1efafe-f210-46cc-bef6-fcbfa79286d1'
+[7/1/20 11:43:24 PM] Reading host configuration file '/home/rob/loan-wizard/host.json'
+[7/1/20 11:43:24 PM] Host configuration file read:
+[7/1/20 11:43:24 PM] {
+[7/1/20 11:43:24 PM]   "version": "2.0",
+[7/1/20 11:43:24 PM]   "extensionBundle": {
+[7/1/20 11:43:24 PM]     "id": "Microsoft.Azure.Functions.ExtensionBundle",
+[7/1/20 11:43:24 PM]     "version": "[1.*, 2.0.0)"
+[7/1/20 11:43:24 PM]   }
+[7/1/20 11:43:24 PM] }
+[7/1/20 11:43:24 PM] Reading functions metadata
+[7/1/20 11:43:24 PM] 1 functions found
+[7/1/20 11:43:24 PM] Looking for extension bundle Microsoft.Azure.Functions.ExtensionBundle at /tmp/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle
+[7/1/20 11:43:24 PM] Found a matching extension bundle at /tmp/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/1.3.0
+[7/1/20 11:43:24 PM] Fetching information on versions of extension bundle Microsoft.Azure.Functions.ExtensionBundle available on https://functionscdn.azureedge.net/public/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/index.json
+[7/1/20 11:43:24 PM] Skipping bundle download since it already exists at path /tmp/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/1.3.0
+[7/1/20 11:43:24 PM] Loading Extention bundle from /tmp/Functions/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle/1.3.0
+[7/1/20 11:43:24 PM] Initializing Warmup Extension.
+[7/1/20 11:43:24 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:java
+[7/1/20 11:43:24 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:powershell
+[7/1/20 11:43:24 PM] FUNCTIONS_WORKER_RUNTIME set to node. Skipping WorkerConfig for language:python
+[7/1/20 11:43:24 PM] Initializing Host. OperationId: '4a1efafe-f210-46cc-bef6-fcbfa79286d1'.
+[7/1/20 11:43:24 PM] Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=4a1efafe-f210-46cc-bef6-fcbfa79286d1
+[7/1/20 11:43:25 PM] LoggerFilterOptions
+[7/1/20 11:43:25 PM] {
+[7/1/20 11:43:25 PM]   "MinLevel": "None",
+[7/1/20 11:43:25 PM]   "Rules": [
+[7/1/20 11:43:25 PM]     {
+[7/1/20 11:43:25 PM]       "ProviderName": null,
+[7/1/20 11:43:25 PM]       "CategoryName": null,
+[7/1/20 11:43:25 PM]       "LogLevel": null,
+[7/1/20 11:43:25 PM]       "Filter": "<AddFilter>b__0"
+[7/1/20 11:43:25 PM]     },
+[7/1/20 11:43:25 PM]     {
+[7/1/20 11:43:25 PM]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[7/1/20 11:43:25 PM]       "CategoryName": null,
+[7/1/20 11:43:25 PM]       "LogLevel": "None",
+[7/1/20 11:43:25 PM]       "Filter": null
+[7/1/20 11:43:25 PM]     },
+[7/1/20 11:43:25 PM]     {
+[7/1/20 11:43:25 PM]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+[7/1/20 11:43:25 PM]       "CategoryName": null,
+[7/1/20 11:43:25 PM]       "LogLevel": null,
+[7/1/20 11:43:25 PM]       "Filter": "<AddFilter>b__0"
+[7/1/20 11:43:25 PM]     }
+[7/1/20 11:43:25 PM]   ]
+[7/1/20 11:43:25 PM] }
+[7/1/20 11:43:25 PM] FunctionResultAggregatorOptions
+[7/1/20 11:43:25 PM] {
+[7/1/20 11:43:25 PM]   "BatchSize": 1000,
+[7/1/20 11:43:25 PM]   "FlushTimeout": "00:00:30",
+[7/1/20 11:43:25 PM]   "IsEnabled": true
+[7/1/20 11:43:25 PM] }
+[7/1/20 11:43:25 PM] SingletonOptions
+[7/1/20 11:43:25 PM] {
+[7/1/20 11:43:25 PM]   "LockPeriod": "00:00:15",
+[7/1/20 11:43:25 PM]   "ListenerLockPeriod": "00:00:15",
+[7/1/20 11:43:25 PM]   "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+[7/1/20 11:43:25 PM]   "LockAcquisitionPollingInterval": "00:00:05",
+[7/1/20 11:43:25 PM]   "ListenerLockRecoveryPollingInterval": "00:01:00"
+[7/1/20 11:43:25 PM] }
+[7/1/20 11:43:25 PM] HttpOptions
+[7/1/20 11:43:25 PM] {
+[7/1/20 11:43:25 PM]   "DynamicThrottlesEnabled": false,
+[7/1/20 11:43:25 PM]   "MaxConcurrentRequests": -1,
+[7/1/20 11:43:25 PM]   "MaxOutstandingRequests": -1,
+[7/1/20 11:43:25 PM]   "RoutePrefix": "api"
+[7/1/20 11:43:25 PM] }
+[7/1/20 11:43:25 PM] Starting JobHost
+[7/1/20 11:43:25 PM] Starting Host (HostId=cca59e848468f9c594bfqkh9q-254542, InstanceId=cee4f6e3-129e-4414-821c-f35885f0cc47, Version=2.0.12961.0, ProcessId=200, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+[7/1/20 11:43:25 PM] Loading functions metadata
+[7/1/20 11:43:25 PM] 1 functions loaded
+[7/1/20 11:43:25 PM] Starting worker process:node  "/usr/lib/azure-functions-core-tools/workers/node/dist/src/nodejsWorker.js" --host 127.0.0.1 --port 42977 --workerId b3869e21-90fb-466f-b549-189ffdc8b272 --requestId ab96fd03-ace3-4f4c-85df-1d79ad8f5746 --grpcMaxMessageLength 134217728
+[7/1/20 11:43:25 PM] node process with Id=229 started
+[7/1/20 11:43:25 PM] Generating 1 job function(s)
+[7/1/20 11:43:25 PM] Found the following functions:
+[7/1/20 11:43:25 PM] Host.Functions.simple-interest
+[7/1/20 11:43:25 PM]
+[7/1/20 11:43:25 PM] Initializing function HTTP routes
+[7/1/20 11:43:25 PM] Mapped function route 'api/simple-interest' [get,post] to 'simple-interest'
+[7/1/20 11:43:25 PM]
+[7/1/20 11:43:25 PM] Host initialized (361ms)
+[7/1/20 11:43:25 PM] Host started (370ms)
+[7/1/20 11:43:25 PM] Job host started
+Hosting environment: Production
+Content root path: /home/rob/loan-wizard
+Now listening on: http://0.0.0.0:7071
+Application started. Press Ctrl+C to shut down.
+
+Http Functions:
+
+        simple-interest: [GET,POST] http://localhost:7071/api/simple-interest
+
+[7/1/20 11:43:25 PM] Worker b3869e21-90fb-466f-b549-189ffdc8b272 connecting on 127.0.0.1:42977
+[7/1/20 11:43:30 PM] Host lock lease acquired by instance ID '000000000000000000000000E6D5841E'.
+
+```
+
+At the end of the output, you'll see a message that the simple-interest function is available at the URL http://localhost:7071/api/simple-interest. If you see an error message, use `Ctrl+C`to stop the host and make sure that the contents of your index.js file are the same as the sample above.
+
+This localhost URL is not published to the web, it's only reachable from tools running in the Cloud Shell. We're going to use a command-line tool, `curl`, to interact with our function. To do that, we need to restart the Functions host as a background process so we can use the command line while it's running.
+
+If you were using the Core Tools from your own computer, you probably wouldn't need to do this. You could use `curl` from a second terminal window, and the output produced by the Core Tools would be displayed in real time in the first window. In the Cloud Shell, we are limited to a single terminal, so this technique is necessary for this tutorial.
+
+Press `Ctrl+C` to stop the Functions host.
+
+Run the following command to start the Functions host silently in the background:
+
+```sh
+rob@Azure:~/loan-wizard$ func start &> ~/output.txt &
+[1] 273
+```
+
+You can ignore the output of this command. The Functions host is now running exactly as before, but its output is being sent to the file ~/output.txt, and we can continue to use the command line while it's running.
+
+Run this command to send an HTTP GET request to our locally-running function:
+
+```sh
+rob@Azure:~/loan-wizard$ curl "http://localhost:7071/api/simple-interest" -w "\n"
+Please supply principal, rate and term in the query string
+```
+
+Invoke the function again, this time with values for the all of the query string parameters:
+
+```sh
+rob@Azure:~/loan-wizard$ curl "http://localhost:7071/api/simple-interest?principal=5000&rate=.035&term=36" -w "\n"
+6300
+```
+
+This time, the output we receive is `6300`. Our function is working as expected!
+
+Stop the background functions host with the `pkill` utility:
+
+```sh
+rob@Azure:~/loan-wizard$ pkill func
+rob@Azure:~/loan-wizard$
+[1]+  Done                    func start &> ~/output.txt
+```
+
+Press `Enter` a second time to see the confirmation that the host has stopped: [1]+ Done func start &> ~/output.txt.
+
+View the host's log output in the code editor:
+
+```sh
+rob@Azure:~/loan-wizard$ code ~/output.txt
+```
+
+The top 90 lines or so of the file will be the same as when you ran `func start` the first time. After that, you'll see a set of log entries for each time you called the function with `curl`, each one looking like this:
+
+```sh
+[7/1/20 11:47:21 PM] Executing HTTP request: {
+[7/1/20 11:47:21 PM]   "requestId": "3fb38284-d9a7-457c-8c91-9f95014edb15",
+[7/1/20 11:47:21 PM]   "method": "GET",
+[7/1/20 11:47:21 PM]   "uri": "/api/simple-interest"
+[7/1/20 11:47:21 PM] }
+[7/1/20 11:47:22 PM] Executing 'Functions.simple-interest' (Reason='This function was programmatically called via the host APIs.', Id=70265762-28b7-433a-8967-94fcb3246062)
+[7/1/20 11:47:22 PM] Executed 'Functions.simple-interest' (Succeeded, Id=70265762-28b7-433a-8967-94fcb3246062)
+[7/1/20 11:47:22 PM] Executed HTTP request: {
+[7/1/20 11:47:22 PM]   "requestId": "3fb38284-d9a7-457c-8c91-9f95014edb15",
+[7/1/20 11:47:22 PM]   "method": "GET",
+[7/1/20 11:47:22 PM]   "uri": "/api/simple-interest",
+[7/1/20 11:47:22 PM]   "identities": [
+[7/1/20 11:47:22 PM]     {
+[7/1/20 11:47:22 PM]       "type": "WebJobsAuthLevel",
+[7/1/20 11:47:22 PM]       "level": "Admin"
+[7/1/20 11:47:22 PM]     }
+[7/1/20 11:47:22 PM]   ],
+[7/1/20 11:47:22 PM]   "status": 400,
+[7/1/20 11:47:22 PM]   "duration": 1135
+[7/1/20 11:47:22 PM] }
+[7/1/20 11:47:52 PM] Executing HTTP request: {
+[7/1/20 11:47:52 PM]   "requestId": "76f88a72-9d8e-4205-aac1-516ddf8147e6",
+[7/1/20 11:47:52 PM]   "method": "GET",
+[7/1/20 11:47:52 PM]   "uri": "/api/simple-interest"
+[7/1/20 11:47:52 PM] }
+[7/1/20 11:47:52 PM] Executing 'Functions.simple-interest' (Reason='This function was programmatically called via the host APIs.', Id=f2a73182-3afb-46a6-ab6e-7188d68158f0)
+[7/1/20 11:47:52 PM] Executed 'Functions.simple-interest' (Succeeded, Id=f2a73182-3afb-46a6-ab6e-7188d68158f0)
+[7/1/20 11:47:52 PM] Executed HTTP request: {
+[7/1/20 11:47:52 PM]   "requestId": "76f88a72-9d8e-4205-aac1-516ddf8147e6",
+[7/1/20 11:47:52 PM]   "method": "GET",
+[7/1/20 11:47:52 PM]   "uri": "/api/simple-interest",
+[7/1/20 11:47:52 PM]   "identities": [
+[7/1/20 11:47:52 PM]     {
+[7/1/20 11:47:52 PM]       "type": "WebJobsAuthLevel",
+[7/1/20 11:47:52 PM]       "level": "Admin"
+[7/1/20 11:47:52 PM]     }
+[7/1/20 11:47:52 PM]   ],
+[7/1/20 11:47:52 PM]   "status": 200,
+[7/1/20 11:47:52 PM]   "duration": 24
+[7/1/20 11:47:52 PM] }
+```
+
+Close the editor with `Ctrl+Q`
+
 ## Publish a function to Azure by using the Core Tools
 
 ## Exercise - Publish a function to Azure by using the Core Tools
