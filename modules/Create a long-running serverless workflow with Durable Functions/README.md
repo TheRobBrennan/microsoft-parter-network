@@ -105,3 +105,123 @@ The following table shows how the workflow steps can be mapped to the function t
 
 The `Orchestration` function will manage a rule in the workflow that starts the escalation activity if the approval activity doesn't return within a specified time.
 Now that we understand what's needed for our workflow, let's write it in code in the next unit!
+
+## Exercise - Create a workflow using Durable Functions
+
+[https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/4-exercise-create-a-workflow-using-durable-functions](https://docs.microsoft.com/en-us/learn/modules/create-long-running-serverless-workflow-with-durable-functions/4-exercise-create-a-workflow-using-durable-functions)
+
+### Create a Function App
+
+![assets/durable%20functions/cfa01.png](assets/durable%20functions/cfa01.png)
+![assets/durable%20functions/cfa02.png](assets/durable%20functions/cfa02.png)
+![assets/durable%20functions/cfa03.png](assets/durable%20functions/cfa03.png)
+![assets/durable%20functions/cfa04.png](assets/durable%20functions/cfa04.png)
+
+### Install the durable-functions npm package
+
+Key piece - navigate to the App Service Editor for your function app and install durable functions - `npm install durable-functions` - an install that took over two and a half minutes in the sandbox environment.
+
+![assets/durable%20functions/dfi01.png](assets/durable%20functions/dfi01.png)
+![assets/durable%20functions/dfi02.png](assets/durable%20functions/dfi02.png)
+![assets/durable%20functions/dfi03.png](assets/durable%20functions/dfi03.png)
+![assets/durable%20functions/dfi04.png](assets/durable%20functions/dfi04.png)
+![assets/durable%20functions/dfi05.png](assets/durable%20functions/dfi05.png)
+
+### Create the client function for submitting a design proposal
+
+![assets/durable%20functions/client-func-01.png](assets/durable%20functions/client-func-01.png)
+![assets/durable%20functions/client-func-02.png](assets/durable%20functions/client-func-02.png)
+![assets/durable%20functions/client-func-03.png](assets/durable%20functions/client-func-03.png)
+![assets/durable%20functions/client-func-04.png](assets/durable%20functions/client-func-04.png)
+![assets/durable%20functions/client-func-05.png](assets/durable%20functions/client-func-05.png)
+
+### Create the orchestrator function
+
+![assets/durable%20functions/orch-func-01.png](assets/durable%20functions/orch-func-01.png)
+![assets/durable%20functions/orch-func-02.png](assets/durable%20functions/orch-func-02.png)
+
+```js
+/* OrchFunction - index.js
+ * This function is not intended to be invoked directly. Instead it will be
+ * triggered by an HTTP starter function.
+ *
+ * Before running this sample, please:
+ * - create a Durable activity function (default name is "Hello")
+ * - create a Durable HTTP starter function
+ * - run 'npm install durable-functions' from the wwwroot folder of your
+ *    function app in Kudu
+ */
+
+const df = require("durable-functions")
+
+module.exports = df.orchestrator(function* (context) {
+  const outputs = []
+
+  /*
+   * We will call the approval activity with a reject and an approved to simulate both
+   */
+
+  outputs.push(yield context.df.callActivity("Approval", "Approved"))
+  outputs.push(yield context.df.callActivity("Approval", "Rejected"))
+
+  /*
+    This code calls an Activity function named Approval, which you'll create shortly. The code in the orchestrator function invokes the Approval function twice. The first time simulates accepting the proposal, and the second time tests the proposal rejection logic.
+
+    The value returned by each call is combined together, and passed back to the client function. In a production environment, your orchestration function would call a series of activity functions that make the accept/reject decision, and return the result of these activities.
+    */
+
+  return outputs
+})
+```
+
+### Create the activity function
+
+![assets/durable%20functions/act-func-01.png](assets/durable%20functions/act-func-01.png)
+![assets/durable%20functions/act-func-02.png](assets/durable%20functions/act-func-02.png)
+
+### Enable Azure Functions version 2 compatibility mode
+
+![assets/durable%20functions/v2-compat-mode-01.png](assets/durable%20functions/act-func-01.png)
+
+### Verify that the durable functions workflow starts
+
+![assets/durable%20functions/verify-httpstart-workflow-01.png](assets/durable%20functions/verify-httpstart-workflow-01.png)
+
+A sample URL for the `HttpStart` function will look something like `rbdurablefunctions.azurewebsites.net/api/orchestrators/{functionName}?code=216M1fyOGkZj7xyfk2KzkmiBjoZKFqJRavRkt2vdYw1ORw0YHOVd/A==`
+
+Replace the `{functionName}` placeholder with `OrchFunction`:
+
+`rbdurablefunctions.azurewebsites.net/api/orchestrators/OrchFunction?code=216M1fyOGkZj7xyfk2KzkmiBjoZKFqJRavRkt2vdYw1ORw0YHOVd/A==`
+
+Browsing to this URL will give you a set of URI endpoints that you can use to monitor and manage the execution:
+
+```json
+{
+  "id": "6fde8d235ab947bb817c035c1fc3b0da",
+  "statusQueryGetUri": "http://rbdurablefunctions.azurewebsites.net/runtime/webhooks/durabletask/instances/6fde8d235ab947bb817c035c1fc3b0da?taskHub=DurableFunctionsHub&connection=Storage&code=w/NFoZoRsvGwCSo6L/2G2lHa6PX7KYyqDgsa6sE1gpR2TnBlDD2zOg==",
+  "sendEventPostUri": "http://rbdurablefunctions.azurewebsites.net/runtime/webhooks/durabletask/instances/6fde8d235ab947bb817c035c1fc3b0da/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code=w/NFoZoRsvGwCSo6L/2G2lHa6PX7KYyqDgsa6sE1gpR2TnBlDD2zOg==",
+  "terminatePostUri": "http://rbdurablefunctions.azurewebsites.net/runtime/webhooks/durabletask/instances/6fde8d235ab947bb817c035c1fc3b0da/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=w/NFoZoRsvGwCSo6L/2G2lHa6PX7KYyqDgsa6sE1gpR2TnBlDD2zOg==",
+  "rewindPostUri": "http://rbdurablefunctions.azurewebsites.net/runtime/webhooks/durabletask/instances/6fde8d235ab947bb817c035c1fc3b0da/rewind?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=w/NFoZoRsvGwCSo6L/2G2lHa6PX7KYyqDgsa6sE1gpR2TnBlDD2zOg==",
+  "purgeHistoryDeleteUri": "http://rbdurablefunctions.azurewebsites.net/runtime/webhooks/durabletask/instances/6fde8d235ab947bb817c035c1fc3b0da?taskHub=DurableFunctionsHub&connection=Storage&code=w/NFoZoRsvGwCSo6L/2G2lHa6PX7KYyqDgsa6sE1gpR2TnBlDD2zOg=="
+}
+```
+
+Copy the `statusQueryGetUri` value, and use the web browser to navigate to this URL. You should see a response message that resembles the following example:
+
+```json
+{
+  "name": "OrchFunction",
+  "instanceId": "6fde8d235ab947bb817c035c1fc3b0da",
+  "runtimeStatus": "Completed",
+  "input": null,
+  "customStatus": null,
+  "output": [
+    "Your project design proposal has been -  Approved!",
+    "Your project design proposal has been -  Rejected!"
+  ],
+  "createdTime": "2020-07-01T18:55:59Z",
+  "lastUpdatedTime": "2020-07-01T18:56:01Z"
+}
+```
+
+Recall that the orchestration function runs the activity function twice. The first time, the activity function indicates that the project proposal has been accepted. The second time, the proposal is rejected. The messages from both function calls are combined by the orchestration function and returned to the client function.
