@@ -153,6 +153,42 @@ rob@Azure:~/loan-wizard$
 
 ### Create an HTTP-triggered function
 
+Let's create our function!
+
+```sh
+# In the Cloud Shell pane, run func new to start the function creation wizard
+#   Note that we're running func new from inside the loan-wizard project folder we just created, which is important.
+rob@Azure:~/loan-wizard$ func new
+Select a number for template:
+1. Azure Blob Storage trigger
+2. Azure Cosmos DB trigger
+3. Durable Functions activity
+4. Durable Functions HTTP starter
+5. Durable Functions orchestrator
+6. Azure Event Grid trigger
+7. Azure Event Hub trigger
+8. HTTP trigger
+9. IoT Hub (Event Hub)
+10. Azure Queue Storage trigger
+11. SendGrid
+12. Azure Service Bus Queue trigger
+13. Azure Service Bus Topic trigger
+14. SignalR negotiate HTTP trigger
+15. Timer trigger
+Choose option: 8
+HTTP trigger
+Function name: [HttpTrigger] simple-interest
+Writing /home/rob/loan-wizard/simple-interest/index.js
+Writing /home/rob/loan-wizard/simple-interest/function.json
+The function "simple-interest" was created successfully from the "HTTP trigger" template.
+rob@Azure:~/loan-wizard$
+
+# Open the Cloud Shell editor
+rob@Azure:~/loan-wizard$ code .
+```
+
+The wizard has created a new folder in our functions project called `simple-interest` and generated default `index.js` and `function.json` files in it. If you like, take a moment now to explore the project files in the editor.
+
 ### Implement the simple-interest function
 
 ### Run the function locally
