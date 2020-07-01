@@ -1,0 +1,94 @@
+I would like to aggressively pursue studying for [Exam AZ-204: Developing Solutions for Microsoft Azure](https://docs.microsoft.com/en-us/learn/certifications/exams/az-204).
+
+# Important dates
+
+There are several dates I would like to keep in mind:
+
+- ALL IN: Complete review of materials by EOD Sunday, July 12th
+- AGGRESSIVE: Complete review of materials by EOD Sunday, July 19th
+- DRIVE IT HOME: Complete review of materials by EOD Sunday, July 26th
+- Time must be allowed to take a peek at practice exams/questions and to schedule the actual exam
+
+# Outline of my learning path for Exam AZ-204
+
+Based on the estimated time for review offered by Microsoft, let's see what I have left:
+
+## Wednesday, July 1st, 2020
+
+- [Create serverless applications](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) - Estimated 4 hours 18 mins remaining out of original estimated 8 hours 11 mins to complete
+- [Connect your services together](https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/) - Estimated 3 hours 31 mins to complete
+
+## Thursday, July 2nd, 2020
+
+- [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 4 hours 10 mins to complete
+- [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) - Estimated 3 hours 50 mins to complete
+
+## Friday, July 3rd, 2020 (HOLIDAY)
+
+- [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
+- [Manage resources in Azure](https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/) - Estimated 5 hours 02 mins to complete
+
+## Saturday, July 4th, 2020 [WEEKEND]
+
+- [Deploy a website to Azure with Azure App Service](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/) - Estimated 4 hours 37 mins to complete
+- [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
+
+## Sunday, July 5th, 2020 [WEEKEND]
+
+- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 5 hours 28 mins to complete
+- [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
+
+## Monday, July 6th, 2020
+
+- [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
+- ~~[Introduction to machine learning with Python and Azure Notebooks](https://docs.microsoft.com/en-us/learn/paths/intro-to-ml-with-python/) - Estimated 2 hours 11 mins to complete~~
+
+## Tuesday, July 7th, 2020
+
+## Wednesday, July 8th, 2020
+
+## Thursday, July 9th, 2020
+
+## Friday, July 10th, 2020
+
+## Saturday, July 11th, 2020 [WEEKEND]
+
+## Sunday, July 12th, 2020 [WEEKEND]
+
+## Monday, July 13th, 2020
+
+## Tuesday, July 14th, 2020
+
+## Wednesday, July 15th, 2020
+
+## Thursday, July 16th, 2020
+
+## Friday, July 17th, 2020
+
+## Saturday, July 18th, 2020 [WEEKEND]
+
+## Sunday, July 19th, 2020 [WEEKEND]
+
+## Monday, July 20th, 2020
+
+## Tuesday, July 21st, 2020
+
+## Wednesday, July 22nd, 2020
+
+## Thursday, July 23rd, 2020
+
+## Friday, July 24th, 2020 [VACATION]
+
+## Saturday, July 25th, 2020 [WEEKEND]
+
+## Sunday, July 26th, 2020 [WEEKEND]
+
+## Monday, July 27th, 2020 [VACATION]
+
+## Tuesday, July 28th, 2020
+
+## Wednesday, July 29th, 2020
+
+## Thursday, July 30th, 2020
+
+## Friday, July 31st, 2020 [VACATION]
