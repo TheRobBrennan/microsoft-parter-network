@@ -523,6 +523,42 @@ In **local.settings.json**, update the variable `AzureSignalRConnectionString` w
 
 ### Manage client connections
 
+The web client uses the SignalR client SDK to establish a connection to the server. The SDK retrieves the connection via a function named **negotiate** (by convention) to connect to the service.
+
+Be sure to have your Azure Function app - `serverless-demo` - with the `start` folder open and your **local.settings.json** defined as described above.
+
+Open the Visual Studio Code command palette by pressing F1.
+
+Search for and select the Azure Functions: Create Function command and create an anonymouse function named `negotiate`
+
+Refresh the Explorer window in Visual Studio Code to see the updates. A folder named negotiate is now available in your function app.
+
+Open negotiate/function.json and add the following SignalR binding definition to the bindings array:
+
+```json
+{
+  "type": "signalRConnectionInfo",
+  "name": "connectionInfo",
+  "hubName": "stocks",
+  "direction": "in",
+  "connectionStringSetting": "AzureSignalRConnectionString"
+}
+```
+
+This configuration allows the function to return the connection information to the server, which is used to identify connected clients.
+
+Next, open negotiate/index.js and replace the existing function code with the following code:
+
+```js
+module.exports = async function (context, req, connectionInfo) {
+  context.res.body = connectionInfo
+}
+```
+
+As the function is called, the SignalR connection is returned as the response to the function.
+
+Now that the function to return the SignalR connection info is implemented, you can create a function responsible for pushing changes to the client.
+
 ### Detect and broadcast database changes
 
 ### Update the web application
