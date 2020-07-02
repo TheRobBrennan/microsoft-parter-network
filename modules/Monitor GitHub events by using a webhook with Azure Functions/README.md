@@ -261,6 +261,24 @@ This information is passed as the body of an HTTP POST request. We'll need to up
 
 ### Parsing information from the Gollum event
 
+Recall that the webhook runs when a specific event occurs. The webhook then sends a request to the URL on which your Azure Functions code is set up to listen, using the URL for your function. The payload is passed to the Azure Function. Your function can parse the request body to extract the fields from the payload and take the appropriate actions.
+
+The following example retrieves the repository name from the payload. The event type is available in the x-github-event request header. This data is output in the function response:
+
+```js
+if (req.body.repository.name) {
+  context.res = {
+    body:
+      "Repository is: " +
+      req.body.repository.name +
+      ", Event Type is: " +
+      req.headers["x-github-event"],
+  }
+}
+```
+
+In the next exercise, we'll update our function code to be able to handle incoming Gollum event correctly.
+
 ## Exercise - Trigger an Azure Function with a GitHub event
 
 ## Secure Webhook payloads with a secret
