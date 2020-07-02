@@ -20,7 +20,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 5 - Create a long-running serverless workflow with Durable Functions (~46 min)
   - [ x ] Module 6 - Develop, test, and publish Azure Functions by using Azure Functions Core Tools (~20 mins)
   - [ x ] Module 7 - Develop, test, and deploy an Azure Function with Visual Studio (~43 mins)
-  - [] Module 8 - Monitor GitHub events by using a webhook with Azure Functions (~53 min)
+  - [ x ] Module 8 - Monitor GitHub events by using a webhook with Azure Functions (~53 min)
   - [] Module 9 - Enable automatic updates in a web application using Azure Functions and SignalR Service (~55 min)
   - [] Module 10 - Expose multiple Azure Function apps as a consistent API by using Azure API Management (~41 min)
 
