@@ -321,6 +321,38 @@ az functionapp deployment source config-zip \
 
 ## Exercise - Publish a simple Azure Function
 
+The **Publish** wizard in the Azure Functions template provides the most straightforward way to deploy Azure Functions, especially for testing purposes.
+
+In the luxury watch online website scenario, you decide to use Visual Studio to deploy your functions to an Azure Functions App in the cloud. First, you'll create an Azure Function App, and you'll use the **Publish** wizard in Visual Studio to deploy your functions.
+
+In this exercise, you'll see how to use the Azure portal to create an Azure Functions App. Then, you'll deploy the **WatchInfo** function. Finally, you'll test the function to verify that it has been deployed correctly.
+
+### Create an Azure Functions App using the Azure portal
+
+1. Sign into the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com) using the same account you activated the sandbox with.
+2. From the Azure portal menu, select **Create a resource**.
+3. Select **Compute**, and then select **Function App**
+4. In the Function App window, specify the following settings:
+
+| Property       | Value                                                                      |
+| -------------- | -------------------------------------------------------------------------- |
+| Name           | rbwatchfunctions                                                           |
+| Subscription   | Concierge Subscription                                                     |
+| Resource Group | Use the existing resource group learn-c28fcc89-f560-44a5-8d27-244be69814b3 |
+| OS             | Windows                                                                    |
+| Hosting Plan   | Consumption                                                                |
+| Location       | Accept the default location                                                |
+| Runtime Stack  | .NET                                                                       |
+| Storage        | Create new, accept the default name                                        |
+
+The function app must have a unique name. I will use `rbwatchfunctions` wherever I need to substitute a value <your-function-app-name> in this exercise.
+
+5. Click **Create**, and wait while the function app is created before continuing.
+
+### Deploy the WatchInfo function to the Azure Functions App
+
+### Verify the functions have been deployed
+
 ## Exercise - Unit test an Azure Function
 
 ## Summary
