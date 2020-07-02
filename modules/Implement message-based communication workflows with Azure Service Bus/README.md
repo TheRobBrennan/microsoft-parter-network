@@ -181,6 +181,16 @@ Click `Create` to create the Service Bus namespace.
 
 ## Create a Service Bus queue
 
+Now that you have a namespace, you can create a queue for messages about individual sales.
+
+Find the `Service Bus` namespace you just created.
+
+In the top left of the namespace pane, click `+ Queue`.
+
+In the `Create queue` pane, in the `Name` text box, type `salesmessages`, and then click `Create`. Azure creates the queue in your namespace.
+
+![https://docs.microsoft.com/en-us/learn/modules/implement-message-workflows-with-service-bus/media/3-create-queue.png](https://docs.microsoft.com/en-us/learn/modules/implement-message-workflows-with-service-bus/media/3-create-queue.png)
+
 ## Create a Service Bus topic and subscriptions
 
 # Write code that uses Service Bus queues
