@@ -322,6 +322,26 @@ Select Save.
 
 ### Trigger your Azure Function with a Gollum event
 
+Return to your GitHub account.
+
+Select the repository you are using for this module.
+
+Select the Settings tab.
+
+Select Webhooks in the navigation panel.
+
+Select the Edit button next to your webhook.
+
+Scroll down to the Recent Deliveries section.
+
+Select the latest delivery entry by clicking the ellipsis button (...).
+
+Select Redeliver.
+
+In the message box that appears, select Yes, redeliver this payload. This action simulates you changing your Wiki page again.
+
+Select the Response tab. You'll see how the webhook, has triggered your function, which then parsed the information and sent back a response similar to the following text:
+
 ## Secure Webhook payloads with a secret
 
 ## Exercise - Secure webhook payloads with a secret
