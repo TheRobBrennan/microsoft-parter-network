@@ -284,7 +284,26 @@ await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 
 # Exercise - Write code that uses Service Bus queues
 
+You've chosen to use a Service Bus queue to exchange messages about individual sales between the mobile app that your sales personnel use and the web service, hosted in Azure, that will store details about each sale in an Azure SQL Database instance.
+
+You've already implemented the necessary objects in your Azure subscription. Now, you want to write code that sends messages to that queue and retrieves messages.
+
 ## Clone and open the starter application
+
+In this unit, you'll build two console applications. The first application places messages into a Service Bus queue and the second retrieves them. The applications are part of a single .NET Core solution.
+
+Start by cloning the solution: run the following commands in the Cloud Shell:
+
+```sh
+cd ~
+git clone https://github.com/MicrosoftDocs/mslearn-connect-services-together.git
+```
+
+Next, change directories into the starter folder and open the Cloud Shell editor:
+
+```sh
+
+```
 
 ## Configure a connection string to a Service Bus namespace
 
