@@ -133,6 +133,18 @@ The server and client code is relatively straightforward but, as we'll see, this
 
 ### Supporting CORS
 
+In the `local.settings.json` file, the `Host` section includes the following settings:
+
+```json
+"Host" : {
+    "LocalHttpPort": 7071,
+    "CORS": "http://localhost:8080",
+    "CORSCredentials": true
+  }
+```
+
+This configuration allows a web application running at _localhost:8080_ to make requests to the function app running at _localhost:7071_. The property `CORSCredentials` tells function app to accept credential cookies from the request.
+
 ### Analysis of current solution
 
 ## Exercise - Analyze the limitations of a polling-based web app
