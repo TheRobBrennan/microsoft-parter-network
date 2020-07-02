@@ -637,6 +637,181 @@ The value of the target property is used on the client when listening for specif
 
 ### Update the web application
 
+Open public/index.html and paste the following code in place of the current DIV with the ID of app:
+
+```html
+<div id="app" class="container">
+  <h1 class="title">Stocks</h1>
+  <div id="stocks">
+    <div v-for="stock in stocks" class="stock">
+      <transition name="fade" mode="out-in">
+        <div class="list-item" :key="stock.price">
+          <div class="lead">{{ stock.symbol }}: ${{ stock.price }}</div>
+          <div class="change">
+            Change:
+            <span
+              :class="{ 'is-up': stock.changeDirection === '+', 'is-down': stock.changeDirection === '-' }"
+            >
+              {{ stock.changeDirection }}{{ stock.change }}
+            </span>
+          </div>
+        </div>
+      </transition>
+    </div>
+  </div>
+</div>
+```
+
+This markup adds a transition element, which allows Vue.js to run a subtle animation as stock data changes. When a stock is updated, the tile fades out and quickly back in to view. This way if the page is full of stock data, users can easily see which stocks have changed.
+
+Next, add the following script block just above the reference to _index.html.js_
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@aspnet/signalr@1.1.0/dist/browser/signalr.js"></script>
+```
+
+This script adds a reference to the SignalR SDK.
+
+Now open `public/index.html.js` and replace the file with the following code:
+
+```js
+const LOCAL_BASE_URL = "http://localhost:7071"
+const REMOTE_BASE_URL = "<FUNCTION_APP_ENDPOINT>"
+
+const getAPIBaseUrl = () => {
+  const isLocal = /localhost/.test(window.location.href)
+  return isLocal ? LOCAL_BASE_URL : REMOTE_BASE_URL
+}
+
+const app = new Vue({
+  el: "#app",
+  data() {
+    return {
+      stocks: [],
+    }
+  },
+  methods: {
+    async getStocks() {
+      try {
+        const apiUrl = `${getAPIBaseUrl()}/api/getStocks`
+        const response = await axios.get(apiUrl)
+        app.stocks = response.data
+      } catch (ex) {
+        console.error(ex)
+      }
+    },
+  },
+  created() {
+    this.getStocks()
+  },
+})
+
+const connect = () => {
+  const connection = new signalR.HubConnectionBuilder()
+    .withUrl(`${getAPIBaseUrl()}/api`)
+    .build()
+
+  connection.onclose(() => {
+    console.log("SignalR connection disconnected")
+    setTimeout(() => connect(), 2000)
+  })
+
+  connection.on("updated", (updatedStock) => {
+    const index = app.stocks.findIndex((s) => s.id === updatedStock.id)
+    app.stocks.splice(index, 1, updatedStock)
+  })
+
+  connection.start().then(() => {
+    console.log("SignalR connection established")
+  })
+}
+
+connect()
+```
+
+The changes you just made accomplished two goals: removed all polling logic from the client and added handlers to listen for messages coming from the server.
+
+A new helper function is introduced which makes it easy for the application to work in local and deployed contexts:
+
+```js
+const LOCAL_BASE_URL = "http://localhost:7071"
+const REMOTE_BASE_URL = "<FUNCTION_APP_ENDPOINT>"
+
+const getAPIBaseUrl = () => {
+  const isLocal = /localhost/.test(window.location.href)
+  return isLocal ? LOCAL_BASE_URL : REMOTE_BASE_URL
+}
+```
+
+The `getAPIBaseUrl` function returns the appropriate URL depending on whether the app is running locally or deployed to Azure. The placeholder <REMOTE_BASE_URL> is replaced by the storage account endpoint in a coming exercise when you deploy this application to the cloud.
+
+The Vue.js-related code is streamlined now that changes are pushed to the client. Consider this segment of the code you pasted in to the script file:
+
+```js
+const app = new Vue({
+  el: "#app",
+  data() {
+    return {
+      stocks: [],
+    }
+  },
+  methods: {
+    async getStocks() {
+      try {
+        const apiUrl = `${getAPIBaseUrl()}/api/getStocks`
+        const response = await axios.get(apiUrl)
+        app.stocks = response.data
+      } catch (ex) {
+        console.error(ex)
+      }
+    },
+  },
+  created() {
+    this.getStocks()
+  },
+})
+```
+
+The same stocks array is used here as in the previous implementation, but all the polling code is removed and the logic for getStocks remains unchanged. The getStocks function is still called as the component is created.
+
+Next, consider this segment of the client code:
+
+```js
+const connect = () => {
+  const connection = new signalR.HubConnectionBuilder()
+    .withUrl(`${getAPIBaseUrl()}/api`)
+    .build()
+
+  connection.onclose(() => {
+    console.log("SignalR connection disconnected")
+    setTimeout(() => connect(), 2000)
+  })
+
+  connection.on("updated", (updatedStock) => {
+    const index = app.stocks.findIndex((s) => s.id === updatedStock.id)
+    app.stocks.splice(index, 1, updatedStock)
+  })
+
+  connection.start().then(() => {
+    console.log("SignalR connection established")
+  })
+}
+
+connect()
+```
+
+When the page loads, the `connect` function is called. In the body of the `connect` function, the first action is to use the SignalR SDK to create a connection by calling `HubConnectionBuilder`. The result is a SignalR connection to the server.
+
+To gracefully recover after the server has timed out, the `onclose` handler reestablishes a connection two seconds after the connection has closed by calling `connect` again.
+
+As the client receives messages from the server, it listens for messages via the `on('updated',...` syntax. Once an update is received, the following actions take place:
+
+- The changed stock is located in the array.
+- The old version is removed.
+- The new version is inserted at the same index position in the array.
+
+Manipulating the array this way allows Vue to detect changes in the data and trigger animation effects to notify users of changes.
+
 ### Run the application
 
 ### Observe automatic updates
