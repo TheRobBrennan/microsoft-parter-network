@@ -20,12 +20,13 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 5 - Create a long-running serverless workflow with Durable Functions (~46 min)
   - [ x ] Module 6 - Develop, test, and publish Azure Functions by using Azure Functions Core Tools (~20 mins)
   - [ x ] Module 7 - Develop, test, and deploy an Azure Function with Visual Studio (~43 mins)
-  - [] Module 8 - Monitor GitHub events by using a webhook with Azure Functions (~53 min)
-  - [] Module 9 - Enable automatic updates in a web application using Azure Functions and SignalR Service (~55 min)
-  - [] Module 10 - Expose multiple Azure Function apps as a consistent API by using Azure API Management (~41 min)
+  - [ x ] Module 8 - Monitor GitHub events by using a webhook with Azure Functions (~53 min)
+  - [ x ] Module 9 - Enable automatic updates in a web application using Azure Functions and SignalR Service (~55 min)
 
 ## Thursday, July 2nd, 2020
 
+- [Create serverless applications](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) - Estimated 0 hours 41 mins remaining
+  - [] Module 10 - Expose multiple Azure Function apps as a consistent API by using Azure API Management (~41 min)
 - [Connect your services together](https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/) - Estimated 3 hours 31 mins to complete
   - [] Module 1 - Choose a messaging model in Azure to loosely connect your services (~45 mins)
   - [] Module 2 - Implement message-based communication workflows with Azure Service Bus (~54 mins)
