@@ -466,3 +466,13 @@ This time, you'll see that the response code is 401, indicating that the request
 Select the Response tab, and verify that the message "Signatures don't match" appears as the body of the response.
 
 ## Summary
+
+In this module, you learned about the benefits of webhooks. You created a function in Azure Functions triggered by a webhook. You saw how to set up a webhook for a GitHub repository and how to trigger your function with a GitHub event. Finally, you learned how to protect your function using a secret.
+
+### Learn more
+
+- [GitHub Webhooks](https://developer.github.com/webhooks/)
+- [Gollum event](https://developer.github.com/v3/activity/events/types/#gollumevent)
+- [Azure Functions HTTP triggers and bindings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook)
+- [Securing your webhooks](https://developer.github.com/webhooks/securing/)
+- [HTTP and webhooks](https://docs.microsoft.com/en-us/sandbox/functions-recipes/http-and-webhooks)
