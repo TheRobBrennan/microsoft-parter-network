@@ -364,4 +364,14 @@ When your function receives a request, you need to compute the hash using your s
 
 ## Exercise - Secure webhook payloads with a secret
 
+In this exercise, you'll protect your webhook payload with a secret, and learn how to validate payloads from GitHub inside an Azure Function.
+
+### Get Key for your Azure Function
+
+### Update the webhook secret
+
+### Test the webhook and the Azure Function
+
+### Test an invalid signature
+
 ## Summary
