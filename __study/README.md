@@ -53,7 +53,6 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 ## Monday, July 6th, 2020
 
 - [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
-- ~~[Introduction to machine learning with Python and Azure Notebooks](https://docs.microsoft.com/en-us/learn/paths/intro-to-ml-with-python/) - Estimated 2 hours 11 mins to complete~~
 
 ## Tuesday, July 7th, 2020
 
