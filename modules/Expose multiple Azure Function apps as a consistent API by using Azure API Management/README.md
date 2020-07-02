@@ -85,6 +85,36 @@ The `setup.sh` script creates the two function apps in the sandbox resource grou
 
 ### Test the product details function
 
+Now, let's test the ProductDetails function, to see how it behaves before we add it to API Management:
+
+Sign into the [Azure portal](https://portal.azure.com/learn.docs.microsoft.com) using the same account with which you activated the sandbox.
+
+On the Azure portal menu or from the Home page, select All resources.
+
+Choose the App Service whose name begins with **ProductFunction**. The Function Apps UI for this app opens in the portal.
+
+Select Functions in the menu, then select **ProductDetails**.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-select-function.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-select-function.png)
+
+Select **Code + Test**, then select **Test**, as highlighted in the following screenshot:
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-code-test-product-details-function.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-code-test-product-details-function.png)
+
+In the HTTP method drop-down list, select GET, and then select Add parameter.
+
+In the name textbox, type `id` and in the value textbox, type `3`.
+
+Select Run and examine the results in the Output box, then select Close.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-test-output.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-test-output.png)
+
+The output pane displays the details of a product in JSON format. You can also test the function with IDs 1 and 2 for different products.
+
+At the top of the page, select `Get function URL`. Notice that the URL is the name of the function within the azurewebsites.net domain. Make a note of this URL for later comparison.
+
+You can use this URL to test the function in your browser. Append the query string `&id=1` to request a product.
+
 ### Expose our function app as an API using Azure API Management
 
 ### Test the OnlineStore products endpoint
