@@ -163,6 +163,33 @@ Now that you're more familiar with the starting point of the application, it's t
 
 ## Exercise - Analyze the limitations of a polling-based web app
 
+### Prerequisites
+
+Before you begin, make sure you have the following software installed on your machine:
+
+- [Node.js](https://nodejs.org/download/)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) (min. version 2.6.666)
+  - For macOS, you can use Homebrew and install v3 of Azure Functions Core Tools
+
+```sh
+$ brew tap azure/functions
+$ brew install azure-functions-core-tools@3
+```
+
+- [Azure Functions extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions)
+- [Azure Storage extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurestorage)
+
+### Download sample app code
+
+### Create a Storage account
+
+### Create an Azure Cosmos DB account
+
+### Update local settings
+
+### Run the application
+
 ## Enable automatic updates in a web application using SignalR Service
 
 ## Exercise – Enable automatic updates in a web application using SignalR Service
