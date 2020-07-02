@@ -38,6 +38,63 @@ In this module, you will:
 
 ## Analyze the limitations of a polling-based web app
 
+The application’s current architecture reports stock information by fetching changes from the server based on a timer. This design is often called a polling-based design.
+
+Before we analyze any limitations, let's review the current architecture. The server is responsible for storing stock information and the client renders data in the browser.
+
+We'll set up the current solution on your local machine in the next unit.
+
+### Server
+
+The stock price information is stored on the server in an Azure Cosmos DB database. When triggered by an HTTP request, the function uses bindings to return content from the database.
+
+The function named `getStocks` is responsible for reading the stock information from the database.
+
+As mentioned, the connection to the Azure Cosmos DB database is achieved by using an input binding. This binding is configured in the `function.json` file, as shown in the following snippet.
+
+```json
+{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "authLevel": "anonymous",
+      "direction": "in",
+      "name": "req",
+      "methods": ["get"]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "stocks",
+      "ConnectionStringSetting": "AzureCosmosDBConnectionString",
+      "databaseName": "stocksdb",
+      "collectionName": "stocks"
+    }
+  ]
+}
+```
+
+For a detailed explanation of what these properties mean in our bindings, please refer to [https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/2-analyze-limitations-of-polling-in-a-web-app](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/2-analyze-limitations-of-polling-in-a-web-app)
+
+With these bindings, GET requests to `getStocks` make data available through the `stocks` parameter. As you can see in the following code snippet, the function code to retrieve stock information is trivial thanks to the power of Azure Functions bindings.
+
+```js
+module.exports = async function (context, req, stocks) {
+  context.res.body = stocks
+}
+```
+
+### Client
+
+### Supporting CORS
+
+### Analysis of current solution
+
 ## Exercise - Analyze the limitations of a polling-based web app
 
 ## Enable automatic updates in a web application using SignalR Service
