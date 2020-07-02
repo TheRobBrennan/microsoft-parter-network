@@ -191,6 +191,57 @@ namespace WatchPortalFunction
 
 ### Create the WatchInfo Azure Function
 
+1. In the **Solution Explorer** window, right-click the **WatchPortalFunction** project, click **Add**, and then click **New Azure Function**.
+2. In the **Name** box, type **WatchInfo**. In the window, click **Http trigger**. Under Access rights, click **Anonymous**, and then click OK.
+3. Visual Studio creates a new Azure Function and adds it to the Azure Function app. This function has the same boilerplate code as `Function1`, except that the class is named `WatchInfo`, and the Run method is annotated with the [FunctionName("WatchInfo")] attribute.
+4. Delete the code from the body of the Run function apart from the first statement that writes to the trace log. The method should look like this:
+
+```csharp
+namespace WatchPortalFunction
+{
+    public static class WatchInfo
+    {
+        [FunctionName("WatchInfo")]
+        public static async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("C# HTTP trigger function processed a request.");
+        }
+    }
+}
+```
+
+5. Add the following code to the body of the method, after the statement that writes to the trace log. This code reads the `model` parameter from the query string from the URL of the HTTP request. The code then retrieves the details for this model of watch; in this example, the function simply returns some dummy data. Finally, the function returns a response that contains these details. If the initial request doesn't include a query string with the `model` parameter, the function returns an error message.
+
+```csharp
+namespace WatchPortalFunction
+{
+    public static class WatchInfo
+    {
+        [FunctionName("WatchInfo")]
+        public static async Task<IActionResult> Run(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            ILogger log)
+        {
+            log.LogInformation("C# HTTP trigger function processed a request.");
+            // Retrieve the model id from the query string
+            string model = req.Query["model"];
+
+            // If the user specified a model id, find the details of the model of watch
+            if (model != null)
+            {
+                // Use dummy data for this example
+                dynamic watchinfo = new { Manufacturer = "Abc", CaseType = "Solid", Bezel = "Titanium", Dial = "Roman", CaseFinish = "Silver", Jewels = 15 };
+
+                return (ActionResult)new OkObjectResult($"Watch Details: {watchinfo.Manufacturer}, {watchinfo.CaseType}, {watchinfo.Bezel}, {watchinfo.Dial}, {watchinfo.CaseFinish}, {watchinfo.Jewels}");
+            }
+            return new BadRequestObjectResult("Please provide a watch model in the query string");
+        }
+    }
+}
+```
+
 ### Test the Azure Function locally
 
 ## Publish a simple Azure Function
