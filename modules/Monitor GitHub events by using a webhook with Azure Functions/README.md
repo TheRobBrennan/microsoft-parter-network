@@ -141,6 +141,24 @@ To listen for updates to the wiki for the repository, select the _Wiki_ checkbox
 
 ## Exercise - Set up a webhook for a GitHub repository
 
+In this exercise, you'll set up a webhook for a GitHub repository. You'll learn how to listen for specific events, in this case the Gollum event, and how to make your webhook callback to your function when the event is triggered.
+
+### Setup
+
+Using your web browser, sign in to your [GitHub account](https://www.github.com/)
+
+Create a new public repository by clicking the New button and give it a meaningful name such as **WebhookWiki**.
+
+Select the Wiki tab.
+
+Select Create the first page.
+
+Add some text, and then select Save Page.
+
+### Add a webhook for the Gollum Event
+
+### Test the webhook
+
 ## Trigger an Azure Function with a GitHub event
 
 ## Exercise - Trigger an Azure Function with a GitHub event
