@@ -413,6 +413,34 @@ In `local.settings.json`, update the variables `AzureWebJobsStorage`, `AzureCosm
 
 ### Run the application
 
+In the Visual Studio Code terminal window, run the following command to install dependencies and set up the database:
+
+```sh
+# Make sure you are in the start folder of the serverless-demo directory
+$ npm install
+```
+
+Press F5 to start debugging the function app. The function app startup is shown in a terminal window.
+
+To run the web application on your machine, open a second integrated terminal instance and run the following command to start the web app:
+
+```sh
+$ npm start
+```
+
+The script automatically opens the browser and navigates to http://localhost:8080. If the browser fails to open automatically, you can navigate to http://localhost:8080 manually.
+
+Return to Visual Studio Code, open a third terminal instance, and enter the following command to update the stock prices. Immediately return to the browser and observe that the values for stock ABC change within a few seconds.
+
+```sh
+$ npm run update-data
+```
+
+When you're done, stop the running processes.
+
+- To stop the web server, click the kill process (trash can icon) on the terminal window that is running the web server.
+- To stop the functions app, click the Stop button or press Shift + F5.
+
 ## Enable automatic updates in a web application using SignalR Service
 
 ## Exercise – Enable automatic updates in a web application using SignalR Service
