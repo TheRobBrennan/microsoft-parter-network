@@ -437,6 +437,16 @@ At the bottom of the page, select Update webhook.
 
 ### Test the webhook and the Azure Function
 
+On the webhooks page, scroll down to the Recent Deliveries section.
+
+Select the latest delivery entry by clicking the ellipsis (...) button.
+
+Click Redeliver, and then select Yes, redeliver this payload.
+
+This action simulates you changing your Wiki page again.
+
+In the header, you'll see the `x-hub-signature`. You'll also see that the response code is 200, indicating that the request was processed successfully.
+
 ### Test an invalid signature
 
 ## Summary
