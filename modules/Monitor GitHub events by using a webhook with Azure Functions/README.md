@@ -368,6 +368,57 @@ In this exercise, you'll protect your webhook payload with a secret, and learn h
 
 ### Get Key for your Azure Function
 
+In the Azure portal, return to your function app that you created from the first exercise in the module.
+
+Expand Functions.
+
+Select the function that you created.
+
+In your function's index.js JavaScript file, add a reference to the crypto-js library at the start of the file, above the module.exports statement:
+
+In the side menu, select Manage.
+
+In the Function Keys section, select Click to show next to the default key.
+
+Under Actions, select Copy and save this key. You will paste it where `<default key>` appears. Your new Azure Function should look like:
+
+```js
+var Crypto = require("crypto")
+
+module.exports = async function (context, req) {
+  context.log("JavaScript HTTP trigger function processed a request.")
+
+  var hmac = Crypto.createHmac("sha1", "<default key>")
+  var signature = hmac.update(JSON.stringify(req.body)).digest("hex")
+  var shaSignature = `sha1=${signature}`
+  var gitHubSignature = req.headers["x-hub-signature"]
+
+  if (!shaSignature.localeCompare(gitHubSignature)) {
+    if (req.body.pages[0].title) {
+      context.res = {
+        body:
+          "Page is " +
+          req.body.pages[0].title +
+          ", Action is " +
+          req.body.pages[0].action +
+          ", Event Type is " +
+          req.headers["x-github-event"],
+      }
+    } else {
+      context.res = {
+        status: 400,
+        body: "Invalid payload for Wiki event",
+      }
+    }
+  } else {
+    context.res = {
+      status: 401,
+      body: "Signatures don't match",
+    }
+  }
+}
+```
+
 ### Update the webhook secret
 
 ### Test the webhook and the Azure Function
