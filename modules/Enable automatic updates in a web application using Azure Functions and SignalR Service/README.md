@@ -529,7 +529,7 @@ Be sure to have your Azure Function app - `serverless-demo` - with the `start` f
 
 Open the Visual Studio Code command palette by pressing F1.
 
-Search for and select the Azure Functions: Create Function command and create an anonymouse function named `negotiate`
+Search for and select the `Azure Functions: Create Function` command and create an anonymouse function named `negotiate`
 
 Refresh the Explorer window in Visual Studio Code to see the updates. A folder named negotiate is now available in your function app.
 
@@ -560,6 +560,80 @@ As the function is called, the SignalR connection is returned as the response to
 Now that the function to return the SignalR connection info is implemented, you can create a function responsible for pushing changes to the client.
 
 ### Detect and broadcast database changes
+
+First, you need to create a new function that listens for changes in the database. This function uses an Azure Cosmos DB trigger that connects to the change feed of the database.
+
+Be sure to have your Azure Function app - `serverless-demo` - with the `start` folder open and your **local.settings.json** defined as described above.
+
+Open the Visual Studio Code command palette by pressing F1.
+
+Search for and select the `Azure Functions: Create Function` command.
+
+When prompted, provide the following information:
+
+| Name                                         | Value                         |
+| -------------------------------------------- | ----------------------------- |
+| Template                                     | Azure Cosmos DB Trigger       |
+| Name                                         | stocksChanged                 |
+| App setting for your Azure Cosmos DB account | AzureCosmosDBConnectionString |
+| Database name                                | stocksdb                      |
+| Collection name                              | stocks                        |
+| Collection name for leases                   | leases                        |
+| Create lease collection if not exists        | true                          |
+
+Now a folder named stocksChanged is created and contains the files for the new function.
+
+Open `stocksChanged/function.json` in Visual Studio Code
+
+Append the property `"feedPollDelay": 500` to the existing trigger binding definition. This setting tells Azure Cosmos DB how long to wait before checking for changes in the database. The application you're building is built around a push-based architecture. However behind the scenes, Azure Cosmos DB is continually monitoring the change feed to detect changes. The feedPollDelay refers to how the internals of Azure Cosmos DB recognize changes, not how your web application exposes changes to the data.
+
+The Azure Cosmos DB binding for your function should now look like the following code.
+
+```json
+{
+  "type": "cosmosDBTrigger",
+  "name": "documents",
+  "direction": "in",
+  "leaseCollectionName": "leases",
+  "connectionStringSetting": "AzureCosmosDBConnectionString",
+  "databaseName": "stocksdb",
+  "collectionName": "stocks",
+  "createLeaseCollectionIfNotExists": "true",
+  "feedPollDelay": 500
+}
+```
+
+Next, append the following SignalR output binding definition to the bindings array.
+
+```json
+{
+  "type": "signalR",
+  "name": "signalRMessages",
+  "connectionString": "AzureSignalRConnectionString",
+  "hubName": "stocks",
+  "direction": "out"
+}
+```
+
+This binding allows the function to broadcast changes to clients.
+
+Update the `stocksChanged/index.js` file to reflect the following code. The beauty of all the configuration is that the function code is simple.
+
+```js
+module.exports = async function (context, documents) {
+  const updates = documents.map((stock) => ({
+    target: "updated",
+    arguments: [stock],
+  }))
+
+  context.bindings.signalRMessages = updates
+  context.done()
+}
+```
+
+An array of changes is prepared by creating an object formatted to be read by SignalR. Every updated stock is provided to the `arguments` array along with a target property set to updated.
+
+The value of the target property is used on the client when listening for specific messages broadcast by SignalR.
 
 ### Update the web application
 
