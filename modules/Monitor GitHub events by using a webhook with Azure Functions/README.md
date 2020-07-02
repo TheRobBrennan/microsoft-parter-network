@@ -48,6 +48,20 @@ Bindings are optional and a function might have one or multiple input and/or out
 
 ## Exercise - Create an Azure function triggered by a webhook
 
+In this first exercise, you'll create your code to parse the GitHub wiki event messages in Azure Functions. You'll configure your function to run when a webhook message is received.
+
+### Create a Function App
+
+Sign into the Azure Portal and create a Function App named `rbtriggerapp` with the following settings as defined [here](https://docs.microsoft.com/en-us/learn/modules/monitor-github-events-with-a-function-triggered-by-a-webhook/3-exercise-create-function-triggered-by-webhook):
+
+Runtime Stack Node.js
+Version 12
+Region West US 2
+
+### Create a webhook triggered function
+
+### Test triggering your function
+
 ## Set up a webhook for a GitHub repository
 
 ## Exercise - Set up a webhook for a GitHub repository
