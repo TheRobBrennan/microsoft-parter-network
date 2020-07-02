@@ -241,6 +241,20 @@ In the API URL suffix textbox, type orders, and then select Create.
 
 ### Test the OnlineStore orders endpoint in the portal
 
+Now that we've added OrderDetails to our API let's test it, by using the API Management tools in the Azure portal:
+
+On the Azure portal menu or from the Home page, select All resources and then select your Azure API Management service instance.
+
+Under API Management, select APIs and then select the OrderFunction API.
+
+In the list of operations, select GET OrderDetails and then select the Test tab.
+
+Under Query parameters, select Add parameter.
+In the name textbox, enter name.
+In the value textbox, enter Chiba, and then select Send.
+
+In the HTTP response, notice that the details of an order have been returned in JSON format. Also notice the HTTP request was sent to a destination within the azure-api.net domain. This location is different to the azurewebsites.net domain where the original function app is hosted.
+
 ### Test our combined API
 
 ## Summary
