@@ -367,6 +367,50 @@ NOTE: This will take many minutes to spin up. During this particular run, it too
 
 ### Update local settings
 
+For the app to run, you need to add the connection settings for your cloud services to the local settings file:
+
+```sh
+STORAGE_CONNECTION_STRING=$(az storage account show-connection-string \
+--name $(az storage account list \
+  --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+  --query [0].name -o tsv) \
+--resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+--query "connectionString" -o tsv)
+
+COSMOSDB_ACCOUNT_NAME=$(az cosmosdb list \
+    --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+    --query [0].name -o tsv)
+
+COSMOSDB_CONNECTION_STRING=$(az cosmosdb list-connection-strings  \
+  --name $COSMOSDB_ACCOUNT_NAME \
+  --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+  --query "connectionStrings[?description=='Primary SQL Connection String'].connectionString" -o tsv)
+
+COSMOSDB_MASTER_KEY=$(az cosmosdb list-keys \
+--name $COSMOSDB_ACCOUNT_NAME \
+--resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+--query primaryMasterKey -o tsv)
+
+printf "\n\nReplace <STORAGE_CONNECTION_STRING> with:\n$STORAGE_CONNECTION_STRING\n\nReplace <COSMOSDB_CONNECTION_STRING> with:\n$COSMOSDB_CONNECTION_STRING\n\nReplace <COSMOSDB_MASTER_KEY> with:\n$COSMOSDB_MASTER_KEY\n\n"
+```
+
+In my case, this generated the following output:
+
+```sh
+Replace <STORAGE_CONNECTION_STRING> with:
+DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=cloudshell1435347499;AccountKey=SfyilGApt+9oc3qbzZPfAcza9KWl3eDwuGCPqLzZ2ACIW43SRt0OvseL6cMB/1cnwW4VPS1vqN3PnyzS9CPX2w==
+
+Replace <COSMOSDB_CONNECTION_STRING> with:
+AccountEndpoint=https://msl-sigr-cosmos-13d13a2f2d.documents.azure.com:443/;AccountKey=fI7Di0EY6juGLp47NyB6FamiP5BFhrXs6Eoz8Iey9ZaCuspwUYlnhDSa77c97jFKvxJV4xVxxkgiKihhsJ4Mag==;
+
+Replace <COSMOSDB_MASTER_KEY> with:
+fI7Di0EY6juGLp47NyB6FamiP5BFhrXs6Eoz8Iey9ZaCuspwUYlnhDSa77c97jFKvxJV4xVxxkgiKihhsJ4Mag==
+```
+
+Navigate to where you cloned the application and open the start folder in Visual Studio Code. Open `local.settings.json` in the editor so you can update the file.
+
+In `local.settings.json`, update the variables `AzureWebJobsStorage`, `AzureCosmosDBConnectionString`, and `AzureCosmosDBMasterKey` with the values listed in the Cloud Shell and save the file. The `local.settings.json` file should only exist on your local computer.
+
 ### Run the application
 
 ## Enable automatic updates in a web application using SignalR Service
