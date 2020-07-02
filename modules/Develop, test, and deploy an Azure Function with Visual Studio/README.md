@@ -43,6 +43,39 @@ You install the Azure Functions tools from the Extensions and Updates command in
 
 ### Create an Azure Functions app
 
+When you've installed the extension, you create an Azure Functions app using the Azure Functions template. You'll find this template in the Cloud folder under Visual C# in the New Project dialog.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/media/2-create-project.png](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/media/2-create-project.png)
+
+An Azure Function app hosts one or more Azure Functions. It provides the environment and runtime for the functions.
+
+An Azure Function is triggered by an event rather than being called directly from an application. You specify the type of event that will trigger the functions in your function app. The events available include:
+
+- **Blob trigger**. This type of function runs when a file is uploaded or modified in Azure Blob storage.
+- **Event Hub Trigger**. An Event Hubs trigger runs the function when an Event Hub receives a message.
+- **Azure Cosmos DB Trigger**. This trigger runs when a document is added to, or modified in, an Azure Cosmos DB database. You can use this trigger to integrate Azure Cosmos DB with other services. For example, if a document representing a customer's order is added to a database, you could use a trigger to send a copy of the order to a queue for processing.
+- **Http Trigger**. An HTTP trigger runs the function when an HTTP request occurs in a web app. You can also use this trigger to respond to webhooks. A webhook is a callback that occurs when an item hosted by a website is modified. For example, you can create an Azure Function that is fired by a webhook from a GitHub repository when an item in the repository changes.
+- **Queue Trigger**. This trigger fires the function when a new item is added to an Azure Storage Queue.
+- **Service Bus Queue Trigger**. Use this trigger to run the function when a new item is added to an Azure Service Bus Queue.
+- **Service Bus Topic Trigger**. This trigger runs the function in response to a new message arriving on a Service Bus Topic.
+- **Timer Trigger**. Use this event to run the Azure Function at regular intervale, following a schedule that you define.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/media/2-function-triggers.png](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/media/2-function-triggers.png)
+
+Azure currently provides two versions of the runtime environment required to run Azure Functions. **Version 1 (v1) uses the .NET Framework 4.7, whereas version 2 (v2) runs using .NET Core 2**. Using v2 triggers gives you the ability to develop and host the trigger in different environments. Version 1 triggers can only be created using Windows.
+
+**Use v2 triggers where ever possible.**
+
+An Azure Function app stores management information, code, and logs in Azure Storage. Create a Storage Account to hold this data. The storage account must support Azure Blob, Queue, Files, and Table storage; use a general Azure Storage account for this purpose. You specify which storage account to use for the function using the dialog box shown above.
+
+An Azure Function can perform privileges or sensitive operations. An Azure Function triggered by an HTTP request could be exposed publicly. You might need to limit the ability to run this function to selected groups of users. You protect an Azure Function by specifying the access rights required to trigger the function. An Azure Function triggered by an HTTP request supports three levels of access rights:
+
+- Anonymous. No authentication is required, and any user can trigger the function.
+- Function. The HTTP request must provide a key that enables the Azure Function runtime to authorize the request. You create this key separately, and you can maintain it using the Azure portal.
+- Admin. This is similar to Function inasmuch as the user must specify a key with the HTTP request that triggers the function. The difference is that the key is an admin key. This key can be used to access any function in the function app. As with a function key, you create this key separately.
+
+If you're creating a function triggered by events other than HTTP requests, you're required to provide a connection string and other details necessary for the function app to access the resource triggering the event. For example, if you're writing a function triggered by a Blob storage event, you must specify the connection string for the corresponding Blob storage account.
+
 ### Structure of an Azure Function
 
 ### Test an Azure Functions app locally
