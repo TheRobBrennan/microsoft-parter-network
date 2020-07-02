@@ -144,6 +144,24 @@ While the code is running, you'll see trace messages appearing in the Function R
 
 ## Exercise - Create and test a simple Azure Function locally with Visual Studio
 
+Visual Studio provides an excellent environment for creating and testing an Azure Functions app. You can develop an Azure Function locally, and verify that it operates correctly, before deploying it to the cloud.
+
+In the luxury watch online website scenario, there's a requirement for a function that returns information about a type of watch when given the model number of the watch. The information includes data such as the manufacturer, the type of case back (solid, transparent, engraved), the bezel, the style of the dial, the finishing of the case, the number of jewels, and so on.
+
+In this exercise, you'll implement a version of this function locally, and test it using Visual Studio.
+
+### Setup
+
+If you've installed Visual Studio 2019 on macOS, this entire section is unnecessary.
+
+Please see [https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/3-exercise-develop-and-test-azure-functions-locally](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-visual-studio/3-exercise-develop-and-test-azure-functions-locally) if you want to see how to install the `Azure Functions and Web Jobs Tools` extension in Visual Studio 2017.
+
+### Create an Azure Functions app
+
+### Create the WatchInfo Azure Function
+
+### Test the Azure Function locally
+
 ## Publish a simple Azure Function
 
 ## Exercise - Publish a simple Azure Function
