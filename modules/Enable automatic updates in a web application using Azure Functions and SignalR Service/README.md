@@ -824,6 +824,21 @@ The script automatically opens the browser and navigates to http://localhost:808
 
 ### Observe automatic updates
 
+Now you can change the application's data and observe how to the UI automatically updates.
+
+Arrange Visual Studio Code on one side of the screen and the web browser on the other. This way you can see the UI update as changes are made to the database.
+
+Return to Visual Studio Code and enter the following command in a new integrated terminal. Again, watch as the application automatically updates the stock ABC:
+
+```sh
+$ npm run update-data
+```
+
+When you're done, stop the running processes:
+
+- To stop the web server, click the kill process (trash can icon) on the terminal window that is running the web server.
+- To stop the functions app, click the Stop button or press Shift + F5.
+
 ## Use a storage account to host a static website
 
 ## Exercise - Use a storage account to host a static website
