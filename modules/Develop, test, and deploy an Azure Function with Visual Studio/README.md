@@ -567,3 +567,12 @@ public void TestWatchFunctionFailureNoModel()
 You've now seen how to create a unit test project, and implement unit tests for an Azure Function.
 
 ## Summary
+
+In this module, you learned about Azure Functions. You've seen how to use Visual Studio to create an Azure Function and deploy it to the cloud. You've also seen how to create and run unit tests for an Azure Function.
+
+Learn more
+
+- [An introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
+- [Develop Azure Functions using Visual Studio](https://docs.microsoft.com/en-us/azure/azure-functions/functions-develop-vs)
+- [Create your first function using Visual Studio](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-your-first-function-visual-studio)
+- [Strategies for testing your code in Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-test-a-function)
