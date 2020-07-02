@@ -197,6 +197,26 @@ In this exercise, you'll add the Orders function app to the API and use the `cur
 
 ### Test the OrderDetails function
 
+Before we add the Orders function app to the API, let's test the function it hosts, OrderDetails:
+
+On the Azure portal menu or from the Home page, and select All resources and then select the OrderFunction App Service.
+
+Under **Functions** select **OrderDetails**, and then select **Test**.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-test-order-details.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-test-order-details.png)
+
+In the HTTP method drop-down list, select GET, and then select Add parameter.
+
+In the name textbox, type name and in the value textbox, type Chiba. The parameter name and value are both case-sensitive.
+
+Select Run and then examine the results in the Output box.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-order-test-results.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-order-test-results.png)
+
+The output pane displays the details of an order in JSON format. You can also test the function with the names "Henri" and "Barriclough" for different orders.
+
+At the top of the page, select <`/> Get function URL`. Notice that the URL is the name of the function within the azurewebsites.net domain. Make a note of this URL for later comparison.
+
 ### Add another function app to our existing API
 
 ### Test the OnlineStore orders endpoint in the portal
