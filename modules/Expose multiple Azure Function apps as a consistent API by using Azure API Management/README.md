@@ -257,4 +257,127 @@ In the HTTP response, notice that the details of an order have been returned in 
 
 ### Test our combined API
 
+We can use the `curl` command-line tool to submit requests to our API. It's ideal because we can use it to include the correct subscription key with our requests. To submit requests, we also need the location of the API, which is hosted in Azure API Management and consists of the Products and Orders functions.
+
+In the Azure portal , select All resources and then select your Azure API Management service instance.
+
+In the Overview pane, select the Copy to clipboard button to the left of the Gateway URL value.
+
+Back in the Cloud Shell, enter the following command, paste the Gateway URL value that you copied in place of the token, and then press Enter:
+
+```sh
+GATEWAY_URL=https://productfunction3563adb3cc-apim.azure-api.net
+```
+
+Back in the Azure portal , in your Azure API Management instance, under API Management, select Subscriptions.
+
+To the right of the Built-in all-access subscription, select ... and then select Show/hide keys.
+
+To the right of the PRIMARY KEY, select the Copy to clipboard button.
+
+Back in the Cloud Shell, enter the following command, paste the PRIMARY KEY value that you copied in place of the token, and then press Enter:
+
+```sh
+SUB_KEY=0bf0f968b952492a8ba18b65c1ea9f0c
+```
+
+To request the details of a product, execute the following command in the Cloud Shell.
+
+```sh
+curl -v GET "$GATEWAY_URL/products/ProductDetails?id=2" -H "Ocp-Apim-Subscription-Key: $SUB_KEY"
+
+rob@Azure:~$ curl -v GET "$GATEWAY_URL/products/ProductDetails?id=2" -H "Ocp-Apim-Subscription-Key: $SUB_KEY"
+* Rebuilt URL to: GET/
+* Could not resolve host: GET
+* Closing connection 0
+curl: (6) Could not resolve host: GET
+*   Trying 40.80.155.102...
+* Connected to productfunction3563adb3cc-apim.azure-api.net (40.80.155.102) port 443 (#1)
+* found 148 certificates in /etc/ssl/certs/ca-certificates.crt
+* found 594 certificates in /etc/ssl/certs
+* ALPN, offering http/1.1
+* SSL connection using TLS1.2 / ECDHE_RSA_AES_256_GCM_SHA384
+*        server certificate verification OK
+*        server certificate status verification SKIPPED
+*        common name: *.azure-api.net (matched)
+*        server certificate expiration date OK
+*        server certificate activation date OK
+*        certificate public key: RSA
+*        certificate version: #3
+*        subject: CN=*.azure-api.net
+*        start date: Mon, 11 May 2020 23:39:33 GMT
+*        expire date: Tue, 11 May 2021 23:39:33 GMT
+*        issuer: C=US,ST=Washington,L=Redmond,O=Microsoft Corporation,OU=Microsoft IT,CN=Microsoft IT TLS CA 2
+*        compression: NULL
+* ALPN, server did not agree to a protocol
+> GET /products/ProductDetails?id=2 HTTP/1.1
+> Host: productfunction3563adb3cc-apim.azure-api.net
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Ocp-Apim-Subscription-Key: 0bf0f968b952492a8ba18b65c1ea9f0c
+>
+< HTTP/1.1 200 OK
+< Cache-Control: private
+< Content-Length: 74
+< Content-Type: application/json; charset=utf-8
+< Request-Context: appId=cid-v1:b2acd8f4-b09d-4125-83b3-a90c1442df3c
+< Date: Thu, 02 Jul 2020 07:24:03 GMT
+<
+* Connection #1 to host productfunction3563adb3cc-apim.azure-api.net left intact
+{"ID":2,"Name":"Home Security Camera","Price":105.99,"PartNumber":"SC967"}rob@Azure:~$
+
+```
+
+The command returns the details of a product. You can also try the command with IDs 1 and 3 for different results.
+
+To request the details of an order, execute the following command and then press Enter:
+
+```sh
+curl -v GET "$GATEWAY_URL/orders/OrderDetails?name=Henri" -H "Ocp-Apim-Subscription-Key: $SUB_KEY"
+
+rob@Azure:~$ curl -v GET "$GATEWAY_URL/orders/OrderDetails?name=Henri" -H "Ocp-Apim-Subscription-Key: $SUB_KEY"
+* Rebuilt URL to: GET/
+* Could not resolve host: GET
+* Closing connection 0
+curl: (6) Could not resolve host: GET
+*   Trying 40.80.155.102...
+* Connected to productfunction3563adb3cc-apim.azure-api.net (40.80.155.102) port 443 (#1)
+* found 148 certificates in /etc/ssl/certs/ca-certificates.crt
+* found 594 certificates in /etc/ssl/certs
+* ALPN, offering http/1.1
+* SSL connection using TLS1.2 / ECDHE_RSA_AES_256_GCM_SHA384
+*        server certificate verification OK
+*        server certificate status verification SKIPPED
+*        common name: *.azure-api.net (matched)
+*        server certificate expiration date OK
+*        server certificate activation date OK
+*        certificate public key: RSA
+*        certificate version: #3
+*        subject: CN=*.azure-api.net
+*        start date: Mon, 11 May 2020 23:39:33 GMT
+*        expire date: Tue, 11 May 2021 23:39:33 GMT
+*        issuer: C=US,ST=Washington,L=Redmond,O=Microsoft Corporation,OU=Microsoft IT,CN=Microsoft IT TLS CA 2
+*        compression: NULL
+* ALPN, server did not agree to a protocol
+> GET /orders/OrderDetails?name=Henri HTTP/1.1
+> Host: productfunction3563adb3cc-apim.azure-api.net
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Ocp-Apim-Subscription-Key: 0bf0f968b952492a8ba18b65c1ea9f0c
+>
+< HTTP/1.1 200 OK
+< Cache-Control: private
+< Content-Length: 99
+< Content-Type: application/json; charset=utf-8
+< Request-Context: appId=cid-v1:b2acd8f4-b09d-4125-83b3-a90c1442df3c
+< Date: Thu, 02 Jul 2020 07:24:28 GMT
+<
+* Connection #1 to host productfunction3563adb3cc-apim.azure-api.net left intact
+{"ID":56224,"CustomerFirstName":"Pascale","CustomerLastName":"Henri","Total":307.98,"Shipped":true}
+```
+
+The command returns the details of an order. You can also try the command with the names "Chiba" and "Barriclough" for different results.
+
+Notice that both the functions can now be called through endpoints within the azure-api.net domain, which is the domain used by Azure API Management. We can also access them both by using the same subscription key, because that key grants access to the API Management gateway. In other Learn modules, you can learn how to apply policies, security settings, external caches, and other features to all the functions in an API Management Gateway. The gateway provides you with a central control point, where you can manage multiple microservices without altering their code.
+
 ## Summary
