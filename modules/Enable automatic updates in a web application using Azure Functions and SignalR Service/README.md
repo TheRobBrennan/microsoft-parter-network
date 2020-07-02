@@ -182,6 +182,17 @@ $ brew install azure-functions-core-tools@3
 
 ### Download sample app code
 
+```sh
+# Clone the repo from GitHub
+$ git clone https://github.com/MicrosoftDocs/mslearn-advocates.azure-functions-and-signalr.git serverless-demo
+
+# Navigate to the new directory
+$ cd serverless-demo
+
+# Launch VS Code using the start folder of the app (the end folder contains the finished version for comparison)
+$ code start
+```
+
 ### Create a Storage account
 
 ### Create an Azure Cosmos DB account
