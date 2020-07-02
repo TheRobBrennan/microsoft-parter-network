@@ -487,6 +487,28 @@ Save the file.
 
 ## Retrieve a message from the queue
 
+To run the component that receives a message about a sale, run this command in the Cloud Shell:
+
+```sh
+dotnet run -p privatemessagereceiver
+```
+
+When you see that the message has been received and displayed in the console, press `Enter` to stop the app. Then, run the same command as before to confirm that all of the messages have been removed from the queue:
+
+```sh
+az servicebus queue show \
+    --resource-group learn-9edcb786-618c-45b8-a063-51d51761bd0d \
+    --name salesmessages \
+    --query messageCount \
+    --namespace-name salesteamapprb
+```
+
+This will show `0` if all the messages have been removed.
+
+You have written code that sends a message about individual sales to a Service Bus queue. In the sales force distributed application, you should write this code in the mobile app that sales personnel use on devices.
+
+You have also written code that receives a message from the Service Bus queue. In the sales force distributed application, you should write this code in the web service that runs in Azure and processes received messages.
+
 # Write code that uses Service Bus topics
 
 # Exercise - Write code that uses Service Bus topics
