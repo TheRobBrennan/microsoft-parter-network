@@ -905,6 +905,16 @@ Now Visual Studio Code is configured to use the sandbox resources and avoid any 
 
 ### Deploy the function app
 
+Press F1 to open the Visual Studio Code command palette.
+
+Search for and select the Azure Functions: Deploy to Function App command.
+
+Follow the prompts. For specific details, please refer to [https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/7-exercise-host-a-static-website-using-a-storage-account](https://docs.microsoft.com/en-us/learn/modules/automatic-update-of-a-webapp-using-azure-functions-and-signalr/7-exercise-host-a-static-website-using-a-storage-account)
+
+Open `public/index.html.js` and replace <FUNCTION_APP_ENDPOINT> with the function's endpoint.
+
+Next, upload your local settings to Azure by opening the command palette via F1 and select `Azure Functions: Upload local settings`. When prompted, choose the function app you just created, and choose to overwrite all settings.
+
 ### Configure static websites in Azure Storage
 
 ### Deploy the web application to Azure Storage
