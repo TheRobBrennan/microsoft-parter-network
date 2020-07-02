@@ -287,6 +287,82 @@ rob@Azure:~$
 
 ### Create an Azure Cosmos DB account
 
+You store stock prices in an Azure Cosmos DB database, so you'll set that up in the sandbox account.
+
+Run the following `az cosmosdb create` command in the Cloud Shell to create a new Azure Cosmos DB account in your sandbox resource group:
+
+```sh
+rob@Azure:~$ az cosmosdb create  \
+>   --name msl-sigr-cosmos-$(openssl rand -hex 5) \
+>   --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df
+{
+  "capabilities": [],
+  "connectorOffer": null,
+  "consistencyPolicy": {
+    "defaultConsistencyLevel": "Session",
+    "maxIntervalInSeconds": 5,
+    "maxStalenessPrefix": 100
+  },
+  "databaseAccountOfferType": "Standard",
+  "disableKeyBasedMetadataWriteAccess": false,
+  "documentEndpoint": "https://msl-sigr-cosmos-13d13a2f2d.documents.azure.com:443/",
+  "enableAutomaticFailover": false,
+  "enableCassandraConnector": null,
+  "enableMultipleWriteLocations": false,
+  "failoverPolicies": [
+    {
+      "failoverPriority": 0,
+      "id": "msl-sigr-cosmos-13d13a2f2d-westus",
+      "locationName": "West US"
+    }
+  ],
+  "id": "/subscriptions/2508a8ca-0ade-47af-8754-3b95fed7a14c/resourceGroups/learn-20d0f9bb-e322-4a6f-b83c-66d970a878df/providers/Microsoft.DocumentDB/databaseAccounts/msl-sigr-cosmos-13d13a2f2d",
+  "ipRangeFilter": "",
+  "isVirtualNetworkFilterEnabled": false,
+  "keyVaultKeyUri": null,
+  "kind": "GlobalDocumentDB",
+  "location": "West US",
+  "locations": [
+    {
+      "documentEndpoint": "https://msl-sigr-cosmos-13d13a2f2d-westus.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "msl-sigr-cosmos-13d13a2f2d-westus",
+      "isZoneRedundant": false,
+      "locationName": "West US",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "name": "msl-sigr-cosmos-13d13a2f2d",
+  "privateEndpointConnections": null,
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "readLocations": [
+    {
+      "documentEndpoint": "https://msl-sigr-cosmos-13d13a2f2d-westus.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "msl-sigr-cosmos-13d13a2f2d-westus",
+      "isZoneRedundant": false,
+      "locationName": "West US",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "resourceGroup": "learn-20d0f9bb-e322-4a6f-b83c-66d970a878df",
+  "tags": {},
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "virtualNetworkRules": [],
+  "writeLocations": [
+    {
+      "documentEndpoint": "https://msl-sigr-cosmos-13d13a2f2d-westus.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "msl-sigr-cosmos-13d13a2f2d-westus",
+      "isZoneRedundant": false,
+      "locationName": "West US",
+      "provisioningState": "Succeeded"
+    }
+  ]
+}
+```
+
 ### Update local settings
 
 ### Run the application
