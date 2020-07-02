@@ -933,6 +933,17 @@ The error document path is the page the browser will load when a routing error o
 
 ### Deploy the web application to Azure Storage
 
+Open the Visual Studio Code command palette via F1.
+
+Search for and select the `Azure Storage: Deploy to Static Website` command.
+
+| Name            | Value                                                                 |
+| --------------- | --------------------------------------------------------------------- |
+| Storage account | Select the Storage account you created earlier.                       |
+| Select folder   | Select browse and choose the public subfolder containing the web app. |
+
+After the extension is done deploying your application, a notification appears that the upload was successful. The upload can take several minutes.
+
 ### Determine the primary endpoint address of the static website
 
 ### Set up CORS in the function app
