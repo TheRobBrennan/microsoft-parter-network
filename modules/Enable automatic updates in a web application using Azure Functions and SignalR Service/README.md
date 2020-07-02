@@ -502,6 +502,25 @@ az resource update \
 
 ### Update local settings
 
+For the app to run, you need to add the SignalR connection string saved to your local settings.
+
+Run the following commands in the Cloud Shell to get the connection strings for the resources we created in this exercise:
+
+```sh
+SIGNALR_CONNECTION_STRING=$(az signalr key list \
+  --name $(az signalr list \
+    --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+    --query [0].name -o tsv) \
+  --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+  --query primaryConnectionString -o tsv)
+
+printf "\n\nReplace <SIGNALR_CONNECTION_STRING> with:\n$SIGNALR_CONNECTION_STRING\n\n"
+```
+
+Navigate to where you cloned the application and open the start folder in Visual Studio Code. Open **local.settings.json** in the editor so you can update the file.
+
+In **local.settings.json**, update the variable `AzureSignalRConnectionString` with the value listed in the Cloud Shell and save the file.
+
 ### Manage client connections
 
 ### Detect and broadcast database changes
