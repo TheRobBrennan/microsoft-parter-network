@@ -473,6 +473,45 @@ Let's look at how to use SignalR to broadcast information from function that rea
 
 ## Exercise – Enable automatic updates in a web application using SignalR Service
 
+To support the new functionality, you need to create a few new functions and update the JavaScript on the client.
+
+### Create a SignalR account
+
+You'll need to add a SignalR account to your sandbox subscription.
+
+The first step is to run the following command in the Cloud Shell to create a new SignalR account in the sandbox resource group. This command can take a couple of minutes to complete, so please wait for it to finish before proceeding to the next step.
+
+```sh
+SIGNALR_SERVICE_NAME=msl-sigr-signalr$(openssl rand -hex 5)
+az signalr create \
+  --name $SIGNALR_SERVICE_NAME \
+  --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+  --sku Free_DS2 \
+  --unit-count 1
+```
+
+For SignalR Service to work properly with Azure Functions, you need to set its service mode to Serverless. Configure the service mode using the following command.
+
+```sh
+az resource update \
+  --resource-type Microsoft.SignalRService/SignalR \
+  --name $SIGNALR_SERVICE_NAME \
+  --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+  --set properties.features[flag=ServiceMode].value=Serverless
+```
+
+### Update local settings
+
+### Manage client connections
+
+### Detect and broadcast database changes
+
+### Update the web application
+
+### Run the application
+
+### Observe automatic updates
+
 ## Use a storage account to host a static website
 
 ## Exercise - Use a storage account to host a static website
