@@ -29,7 +29,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 10 - Expose multiple Azure Function apps as a consistent API by using Azure API Management (~41 min)
 - [Connect your services together](https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/) - Estimated 3 hours 31 mins to complete
   - [ x ] Module 1 - Choose a messaging model in Azure to loosely connect your services (~45 mins)
-  - [] Module 2 - Implement message-based communication workflows with Azure Service Bus (~54 mins)
+  - [ x ] Module 2 - Implement message-based communication workflows with Azure Service Bus (~54 mins)
   - [] Module 3 - Communicate between applications with Azure Queue storage (~56 mins)
   - [] Module 4 - Enable reliable messaging for Big Data applications using Azure Event Hubs (~56 mins)
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 4 hours 10 mins to complete
@@ -53,7 +53,6 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 ## Monday, July 6th, 2020
 
 - [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
-- ~~[Introduction to machine learning with Python and Azure Notebooks](https://docs.microsoft.com/en-us/learn/paths/intro-to-ml-with-python/) - Estimated 2 hours 11 mins to complete~~
 
 ## Tuesday, July 7th, 2020
 
