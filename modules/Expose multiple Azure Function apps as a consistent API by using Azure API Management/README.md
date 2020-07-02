@@ -381,3 +381,11 @@ The command returns the details of an order. You can also try the command with t
 Notice that both the functions can now be called through endpoints within the azure-api.net domain, which is the domain used by Azure API Management. We can also access them both by using the same subscription key, because that key grants access to the API Management gateway. In other Learn modules, you can learn how to apply policies, security settings, external caches, and other features to all the functions in an API Management Gateway. The gateway provides you with a central control point, where you can manage multiple microservices without altering their code.
 
 ## Summary
+
+In this module, you published a serverless API with two Azure Functions apps in an instance of Azure API Management. This approach enables you to implement a microservices architecture by coding Azure Functions as serverless components. Use API Management to assemble these microservices into a single API product at a single URL with consistent behavior imposed by using API Management policies.
+
+Learn more
+
+- [An introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview)
+- [API Management documentation](https://docs.microsoft.com/en-us/azure/api-management/)
+- [Import an Azure Function App as an API in Azure API Management](https://docs.microsoft.com/en-us/azure/api-management/import-function-app-as-api)
