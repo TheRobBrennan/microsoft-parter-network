@@ -14,3 +14,23 @@ Prerequisites:
 - A GitHub account
 
 # Notes and key takeaways
+
+## Introduction
+
+## Create a function that is triggered by a webhook
+
+## Exercise - Create an Azure function triggered by a webhook
+
+## Set up a webhook for a GitHub repository
+
+## Exercise - Set up a webhook for a GitHub repository
+
+## Trigger an Azure Function with a GitHub event
+
+## Exercise - Trigger an Azure Function with a GitHub event
+
+## Secure Webhook payloads with a secret
+
+## Exercise - Secure webhook payloads with a secret
+
+## Summary
