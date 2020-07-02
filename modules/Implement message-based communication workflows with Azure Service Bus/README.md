@@ -308,6 +308,40 @@ code .
 
 ## Configure a connection string to a Service Bus namespace
 
+In order to access a Service Bus namespace and use a queue, you must configure two pieces of information in your console apps:
+
+- The endpoint for your namespace
+- The shared access key for authentication
+
+Both of these values can be obtained from the Azure portal in the form of a complete connection string.
+
+For simplicity, you will hard-code the connection string in the `Program.cs` file of both console applications. In a production application, you might use a configuration file or even Azure Key Vault to store the connection string.
+
+Run the following command in the CloudShell to display the primary connection string for your Service Bus namespace. Replace <namespace-name> with the name of your Service Bus namespace:
+
+```sh
+az servicebus namespace authorization-rule keys list \
+    --resource-group learn-9edcb786-618c-45b8-a063-51d51761bd0d \
+    --name RootManageSharedAccessKey \
+    --query primaryConnectionString \
+    --output tsv \
+    --namespace-name salesteamapprb
+
+Endpoint=sb://salesteamapprb.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=95c/nn1CjiexHWCPzAKG7dOgVaqlLRrziTtPdhrlc4g=
+```
+
+You'll need this connection string multiple times throughout this module, so you might want to paste it somewhere handy.
+
+Copy the key from Cloud Shell. In the editor, open `privatemessagesender/Program.cs` and locate the following line of code:
+
+```csharp
+const string ServiceBusConnectionString = "";
+```
+
+Paste the connection string between the quotation marks. Save the file using the Ctrl+S keys.
+
+Repeat the previous step in `privatemessagereceiver/Program.cs`, pasting in the same connection string value. Save the file either through the "..." menu, or the accelerator key (Ctrl+S on Windows and Linux, Cmd+S on macOS).
+
 ## Write code that sends a message to the queue
 
 ## Send a message to the queue
