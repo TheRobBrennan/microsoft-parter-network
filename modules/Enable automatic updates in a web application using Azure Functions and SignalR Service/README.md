@@ -917,6 +917,20 @@ Next, upload your local settings to Azure by opening the command palette via F1 
 
 ### Configure static websites in Azure Storage
 
+Use the following steps to configure the Azure Storage account to host a static website.
+
+Open the Visual Studio Code command palette via F1.
+
+Search for and select the Azure Storage: Configure Static Website command.
+
+| Name            | Value                                                         |
+| --------------- | ------------------------------------------------------------- |
+| Storage account | Select the account you created earlier.                       |
+| Default file    | Select index.html as the index document name for the account. |
+| Error document  | Enter index.html for the default 404 error document path.     |
+
+The error document path is the page the browser will load when a routing error occurs. This is important for JavaScript frameworks like Vue.js which have client-side routing.
+
 ### Deploy the web application to Azure Storage
 
 ### Determine the primary endpoint address of the static website
