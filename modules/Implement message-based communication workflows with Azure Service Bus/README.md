@@ -683,37 +683,69 @@ If you substitute `EuropeAndAfrica` for `Americas`, you should see that both sub
 
 ## Write code that receives a message from a topic subscription
 
-```csharp
+To complete the component that retrieves messages about sales performance, follow these steps:
 
-```
+Open `performancemessagereceiver/Program.cs` in the editor.
 
-```csharp
+Locate the `MainAsync()` method.
 
-```
-
-```csharp
-
-```
+Within that method, locate the following line of code:
 
 ```csharp
-
+// Create a subscription client here
 ```
+
+To create a subscription client, replace that line with the following code:
 
 ```csharp
-
+subscriptionClient = new SubscriptionClient(ServiceBusConnectionString, TopicName, SubscriptionName);
 ```
+
+Locate the `RegisterMessageHandler()` method.
+
+To configure message handling options, replace all the code within that method with the following code:
 
 ```csharp
-
+var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+{
+    MaxConcurrentCalls = 1,
+    AutoComplete = false
+};
 ```
+
+To register the message handler, on the next line, add the following code:
 
 ```csharp
-
+subscriptionClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
 ```
+
+Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+
+To display incoming messages in the console, replace all the code within that method with the following code:
 
 ```csharp
-
+Console.WriteLine($"Received sale performance message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
 ```
+
+To remove the received message from the subscription, on the next line, add the following code:
+
+```csharp
+await subscriptionClient.CompleteAsync(message.SystemProperties.LockToken);
+```
+
+Return to the `MainAsync()` method and locate the following line of code:
+
+```csharp
+// Close the subscription here
+```
+
+To close the connection to Service Bus, replace that code with the following code:
+
+```csharp
+await subscriptionClient.CloseAsync();
+```
+
+In Visual Studio Code, close all editor windows and save all changed files.
 
 ## Retrieve a message from a topic subscription
 
