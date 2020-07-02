@@ -344,6 +344,61 @@ Repeat the previous step in `privatemessagereceiver/Program.cs`, pasting in the 
 
 ## Write code that sends a message to the queue
 
+To complete the component that sends messages about sales, open `privatemessagesender/Program.cs` in the editor.
+
+Locate the `SendSalesMessageAsync()` method.
+
+Within that method, locate the following line of code:
+
+```csharp
+// Create a queue client here
+```
+
+To create a queue client, replace that line of code with the following code:
+
+```csharp
+queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+```
+
+Within the try...catch block, locate the following line of code:
+
+```csharp
+// Create and send a message here
+```
+
+To create and format a message for the queue, replace that line of code with the following code:
+
+```csharp
+string messageBody = $"$10,000 order for bicycle parts from retailer Adventure Works.";
+var message = new Message(Encoding.UTF8.GetBytes(messageBody));
+```
+
+To display the message in the console, on the next line, add the following code:
+
+```csharp
+Console.WriteLine($"Sending message: {messageBody}");
+```
+
+To send the message to the queue, on the next line, add the following code:
+
+```csharp
+await queueClient.SendAsync(message);
+```
+
+Locate the following line of code:
+
+```csharp
+// Close the connection to the queue here
+```
+
+To close the connection to the Service Bus, replace that line of code with the following code:
+
+```csharp
+await queueClient.CloseAsync();
+```
+
+Save the file.
+
 ## Send a message to the queue
 
 ## Write code that receives a message from the queue
