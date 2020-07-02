@@ -749,12 +749,23 @@ In Visual Studio Code, close all editor windows and save all changed files.
 
 ## Retrieve a message from a topic subscription
 
-```sh
-
-```
+To run the component that retrieves a message about sales performance, follow these steps:
 
 ```sh
-
+dotnet run -p performancemessagereceiver
 ```
+
+When the program stops printing notifications that it is receiving messages, press `Enter` to stop the app. Then, run the same command as before to confirm that there are zero remaining messages in the Americas subscription.
+
+```sh
+az servicebus topic subscription show \
+    --resource-group learn-9edcb786-618c-45b8-a063-51d51761bd0d \
+    --namespace-name salesteamapprb \
+    --topic-name salesperformancemessages \
+    --name Americas \
+    --query messageCount
+```
+
+If you substitute `EuropeAndAfrica` for `Americas`, you'll see that the message count has not changed. The application only received messages from the `Americas` subscription.
 
 # Summary
