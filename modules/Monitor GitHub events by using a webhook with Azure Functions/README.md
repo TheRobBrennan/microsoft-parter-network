@@ -157,6 +157,28 @@ Add some text, and then select Save Page.
 
 ### Add a webhook for the Gollum Event
 
+The **Gollum** event is the name of the event in GitHub that is fired whenever a page in the repo's wiki is created or updated.
+
+Go back to main page for your repository.
+
+Select the Settings tab.
+
+Select Webhooks in the navigation panel to the left of the page.
+
+Select the Add webhook button on the top-right.
+
+Set the payload to the URL for your function app's function from the previous exercise. Remember that it looks similar to this - `https://rbtriggerapp.azurewebsites.net/api/HttpTrigger1`
+
+Set the content type to `application/json`.
+
+In the section Which events would you like to trigger this webhook?, select the radio button labeled Let me select individual events.
+
+Select the Wiki checkbox. Make sure no other check boxes are selected.
+
+At the bottom of the page, ensure Active is checked and select Add webhook.
+
+Verify that your new webhook appears when the Webhooks page is displayed.
+
 ### Test the webhook
 
 ## Trigger an Azure Function with a GitHub event
