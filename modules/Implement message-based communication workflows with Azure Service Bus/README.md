@@ -150,6 +150,39 @@ If you want to send messages to multiple subscribers, use a Service Bus topic.
 
 # Exercise - Implement a Service Bus topic and queue
 
+Suppose you have an application for the sales team in your global company. Each team member has a mobile phone where your app will be installed. A web service hosted in Azure implements the business logic for your application and stores information in Azure SQL Database. There is one instance of the web service for each geographical region. You have identified the following purposes for sending messages between the mobile app and the web service:
+
+- Messages that relate to individual sales must be sent only to the web service instance in the user's region.
+- Messages that relate to sales performance must be sent to all instances of the web service.
+
+You have decided to implement a Service Bus queue for the first use case and the Service Bus topic for the second use case.
+
+In this exercise, you will create a Service Bus namespace, which will contain both a queue and a topic with subscriptions.
+
+## Create a Service Bus namespace
+
+In Azure Service Bus, a namespace is a container, with a unique fully qualified domain name, for queues, topics, and relays. You must start by creating the namespace.
+
+Each namespace has primary and secondary shared access signature encryption keys. To gain access to the objects within the namespace, a sending or receiving component must provide these keys when it connects.
+
+On the Azure portal menu, let's create a new `Service Bus`
+
+In the Subscription drop-down list, select `Concierge subscription`
+
+Under Resource group, select `learn-9edcb786-618c-45b8-a063-51d51761bd0d`
+
+In the Name text box, type a unique name for the namespace. For example: `salesteamapprb`
+
+In the Location drop-down list, select a location near you from the below list.
+
+In the Pricing tier drop-down list, select `Standard`.
+
+Click `Create` to create the Service Bus namespace.
+
+## Create a Service Bus queue
+
+## Create a Service Bus topic and subscriptions
+
 # Write code that uses Service Bus queues
 
 # Exercise - Write code that uses Service Bus queues
