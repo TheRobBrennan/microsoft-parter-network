@@ -589,12 +589,96 @@ cd ~/mslearn-connect-services-together/implement-message-workflows-with-service-
 
 ## Configure a connection string to a Service Bus namespace
 
+```csharp
+
+```
+
 ## Write code that sends a message to the topic
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
 
 ## Send a message to the topic
 
+```sh
+
+```
+
+```sh
+
+```
+
 ## Write code that receives a message from a topic subscription
 
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
 ## Retrieve a message from a topic subscription
+
+```sh
+
+```
+
+```sh
+
+```
 
 # Summary
