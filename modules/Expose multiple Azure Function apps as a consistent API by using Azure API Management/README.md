@@ -60,6 +60,20 @@ In the next unit, we'll create an API Management instance and add a function to 
 
 ## Exercise - Create a new API in API Management from a function app
 
+You can add Functions to Azure API Management, to present them to users as parts of a single API.
+
+In your online store company, your developers have created multiple Azure Functions as microservices. Each function implements a small part of the store's functionality. You want to assemble these functions into single API.
+
+Here, you will create a new API Management instance and then add a Product Details function to it.
+
+### Create functions
+
+### Test the product details function
+
+### Expose our function app as an API using Azure API Management
+
+### Test the OnlineStore products endpoint
+
 ## The benefits of using Azure API Management to compose your API
 
 ## Exercise - Add another Azure Functions app to an existing API
