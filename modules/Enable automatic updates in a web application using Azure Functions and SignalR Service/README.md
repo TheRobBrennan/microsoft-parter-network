@@ -849,4 +849,26 @@ When you copy files to a storage container named `\$web`, those files are availa
 
 ## Exercise - Use a storage account to host a static website
 
+Up to this point you have only run the application on your machine. The next step is to deploy the app to Azure.
+
+### Customize Visual Studio Code
+
+#### Add concierge tenant to Visual Studio Code
+
+#### Sign out and back in
+
+#### Select subscription
+
+### Deploy the function app
+
+### Configure static websites in Azure Storage
+
+### Deploy the web application to Azure Storage
+
+### Determine the primary endpoint address of the static website
+
+### Set up CORS in the function app
+
+### Run the deployed application
+
 ## Summary
