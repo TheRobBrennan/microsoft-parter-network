@@ -861,9 +861,47 @@ The second customization tells the Azure Functions extension to use the advanced
 
 #### Add concierge tenant to Visual Studio Code
 
+The following steps associate the free Azure subscription created for you with Visual Studio Code. At the end of the tutorial you'll follow steps to restore Visual Studio Code back to its original settings.
+
+In the Cloud Shell, run the following command and copy the tenant ID to your clipboard:
+
+```sh
+rob@Azure:~$ az account list --query "[?name=='Concierge Subscription'].tenantId" -o tsv
+604c1504-c6a3-4080-81aa-b33091104187
+```
+
+Open settings in Visual Studio Code. On Windows or Linux, select File > Preferences > Settings. On macOS, select Code > Preferences > Settings.
+
+Navigate through User Settings > Extensions > Azure configuration
+
+Enter the tenant in the Azure: Tenant textbox.
+
+![https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-vs-code-tenant.png](https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-vs-code-tenant.png)
+
 #### Sign out and back in
 
+Now that you've made these changes, you need to sign out and back into the Azure extension.
+
+Press F1 to open the Visual Studio Code command palette.
+
+Search for and select Azure: Sign Out.
+
+Press F1 again.
+
+Search for and select Azure: Sign In and sign in with the same account you used to sign into the Learn sandbox.
+
 #### Select subscription
+
+Click on the Azure extension icon.
+![https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-azure-extension-icon.png](https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-azure-extension-icon.png)
+
+Under the Functions heading, click on Select Subscriptions.
+![https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-select-subscriptions.png](https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-select-subscriptions.png)
+
+Next, the command palette appears. Select Concierge Subscription and click OK.
+![https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-select-concierge.png](https://docs.microsoft.com/en-us/learn/advocates/automatic-update-of-a-webapp-using-azure-functions-and-signalr/media/serverless-app-select-concierge.png)
+
+Now Visual Studio Code is configured to use the sandbox resources and avoid any billing against your account.
 
 ### Deploy the function app
 
