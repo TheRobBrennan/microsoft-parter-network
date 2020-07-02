@@ -423,6 +423,68 @@ az servicebus queue show \
 
 ## Write code that receives a message from the queue
 
+Open `privatemessagereceiver/Program.cs` in the editor
+
+Locate the `ReceiveSalesMessageAsync()` method.
+
+Within that method, locate the following line of code:
+
+```csharp
+// Create a queue client here
+```
+
+To create a queue client, replace that line with the following code:
+
+```csharp
+queueClient = new QueueClient(ServiceBusConnectionString, QueueName);
+```
+
+Locate the `RegisterMessageHandler()` method.
+
+To configure message handling options, replace all the code within that method with the following code:
+
+```csharp
+var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
+{
+    MaxConcurrentCalls = 1,
+    AutoComplete = false
+};
+```
+
+To register the message handler, on the next line, add the following code:
+
+```csharp
+queueClient.RegisterMessageHandler(ProcessMessagesAsync, messageHandlerOptions);
+```
+
+Locate the `ProcessMessagesAsync()` method. You have registered this method as the one that handles incoming messages.
+
+To display incoming messages in the console, replace all the code within that method with the following code:
+
+```csharp
+Console.WriteLine($"Received message: SequenceNumber:{message.SystemProperties.SequenceNumber} Body:{Encoding.UTF8.GetString(message.Body)}");
+```
+
+To remove the received message from the queue, on the next line, add the following code:
+
+```csharp
+await queueClient.CompleteAsync(message.SystemProperties.LockToken);
+```
+
+Return to the `ReceiveSalesMessageAsync()` method and locate the following line of code:
+
+```csharp
+// Close the queue here
+```
+
+To close the connection to Service Bus, replace that line with the following code:
+
+```csharp
+await queueClient.CloseAsync();
+```
+
+Save the file.
+
 ## Retrieve a message from the queue
 
 # Write code that uses Service Bus topics
