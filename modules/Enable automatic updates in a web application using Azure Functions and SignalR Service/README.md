@@ -363,6 +363,8 @@ rob@Azure:~$ az cosmosdb create  \
 }
 ```
 
+NOTE: This will take many minutes to spin up. During this particular run, it took approximately ten minutes or so to spin up fully. Be patient. Grab a cold beverage.
+
 ### Update local settings
 
 ### Run the application
