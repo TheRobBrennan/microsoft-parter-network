@@ -191,4 +191,16 @@ In the next unit, you'll add the order details microservice to the Online Store 
 
 ## Exercise - Add another Azure Functions app to an existing API
 
+Recall that you want to integrate all of the separate microservices in the Online Store, which are Azure Functions, into a single API. You have already added the Products function to a new instance of API Management. Now you want to add more functions.
+
+In this exercise, you'll add the Orders function app to the API and use the `curl` tool to test the integrated system.
+
+### Test the OrderDetails function
+
+### Add another function app to our existing API
+
+### Test the OnlineStore orders endpoint in the portal
+
+### Test our combined API
+
 ## Summary
