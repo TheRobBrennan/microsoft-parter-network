@@ -91,6 +91,46 @@ module.exports = async function (context, req, stocks) {
 
 ### Client
 
+The sample client uses Vue.js to compose the UI and the axios HTTP client to handle requests to the function.
+
+The page uses a timer to send a request to the server every five seconds to request stocks. The response returns an array of stocks, which are then displayed to the user.
+
+```js
+const LOCAL_BASE_URL = "http://localhost:7071"
+
+const app = new Vue({
+  el: "#app",
+  interval: null,
+  data() {
+    return {
+      stocks: [],
+    }
+  },
+  methods: {
+    async update() {
+      try {
+        const apiUrl = `${LOCAL_BASE_URL}/api/getStocks`
+        const response = await axios.get(apiUrl)
+        app.stocks = response.data
+      } catch (ex) {
+        console.error(ex)
+      }
+    },
+    startPoll() {
+      this.interval = setInterval(this.update, 5000)
+    },
+  },
+  created() {
+    this.update()
+    this.startPoll()
+  },
+})
+```
+
+The `update` method is called every five seconds once polling is started by the `startPoll` method. Inside the update method, a `GET` request is sent to the `getStocks` function and the result is set to `app.stocks` which updates the UI.
+
+The server and client code is relatively straightforward but, as we'll see, this simplicity brings with it some limitations.
+
 ### Supporting CORS
 
 ### Analysis of current solution
