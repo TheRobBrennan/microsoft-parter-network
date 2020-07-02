@@ -341,3 +341,9 @@ Choose Event Hubs if:
 **If you need a simple event publish-subscribe infrastructure, with trusted publishers (for instance, your own web server), you should choose Event Grid.**
 
 Event Hubs lets you build a big data pipeline capable of processing millions of events per second with low latency. It can handle data from concurrent sources and route it to a variety of stream-processing infrastructures and analytics services. It enables real-time processing and supports repeated replay of stored raw data.
+
+# Summary
+
+In this module, you have explored four different Azure services that allow you to create reliable and resilient distributed applications. Choosing between them is a matter of deciding the type of data that needs to be passed between components (messages or events), and then what features you need to deliver and process the data.
+
+Continue learning with the other Microsoft Learn modules that will show you how to use each of these messaging components in Azure!
