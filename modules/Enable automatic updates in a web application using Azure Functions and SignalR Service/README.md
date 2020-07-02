@@ -954,6 +954,18 @@ Keep this browser window open. You will return refresh this window once the CORS
 
 ### Set up CORS in the function app
 
+In the command palette, search for and select the `Azure Functions: Open in portal` command.
+
+Select the function app name.
+
+Once the portal is open in the browser, select the Platform features tab and under API select CORS.
+
+Check the checkbox next to Enable Access-Control-Allow-Credentials.
+
+Add an entry with the static website primary endpoint as the value (make sure to remove the trailing /). You can paste this value in from your clipboard.
+
+Click Save to persist the CORS settings.
+
 ### Run the deployed application
 
 ## Summary
