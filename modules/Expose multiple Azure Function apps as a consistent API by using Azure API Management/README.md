@@ -219,6 +219,26 @@ At the top of the page, select <`/> Get function URL`. Notice that the URL is th
 
 ### Add another function app to our existing API
 
+In this step, we'll add the Order function to the API Management resource that we created in the preceding exercise. In that exercise, we used the API Management interface from within the function app UI. Here, we'll navigate to our API Management instance through the portal main navigation pane, just to demonstrate that both approaches are available.
+
+On the Azure portal menu or from the Home page, select All resources and then select your API Management service instance.
+
+Under API Management, select APIs and then under Add a new API, select Function App.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-import-azure-function-app.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-import-azure-function-app.png)
+
+To select your function, select Browse and then select the Function App section.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-import-azure-function-app-03.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-import-azure-function-app-03.png)
+
+In the list of Function Apps, select the OrderFunction and then choose Select.
+
+Ensure that OrderDetails is checked, and then choose Select.
+
+In the API URL suffix textbox, type orders, and then select Create.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-complete-function-import.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/5-complete-function-import.png)
+
 ### Test the OnlineStore orders endpoint in the portal
 
 ### Test our combined API
