@@ -117,6 +117,28 @@ You can use this URL to test the function in your browser. Append the query stri
 
 ### Expose our function app as an API using Azure API Management
 
+Now that we have our function app deployed and tested, we'll expose the functionality as an API using Azure API Management so that the function can be called from other apps and services.
+
+On the Azure portal menu or from the Home page, select All resources, and select the App Service whose name begins with **ProductFunction**.
+
+Select **API Management**, and select **Create new** under API Management and use the following settings:
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-api-details.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-api-details.png)
+
+Choose **Create** to create the API Management instance, which may take several minutes, then select **Link API**.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-link-api.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-link-api.png)
+
+The Import Azure Functions dialog opens with the ProductDetails function highlighted. Choose Select to continue.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-import-azure-functions.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-import-azure-functions.png)
+
+In the Create from Function App page, change API URL suffix to products and select Create. The API is now created for the ProductDetails function.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-create-from-function-app.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-create-from-function-app.png)
+
+Note that we were able to define our API all from within the function app portal experience.
+
 ### Test the OnlineStore products endpoint
 
 ## The benefits of using Azure API Management to compose your API
