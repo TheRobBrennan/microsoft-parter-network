@@ -281,6 +281,47 @@ In the next exercise, we'll update our function code to be able to handle incomi
 
 ## Exercise - Trigger an Azure Function with a GitHub event
 
+In this exercise, you'll update your function to parse information from the GitHub webhook payload, and display the results.
+
+### Update our function to parse the webhook payload
+
+In the Azure portal, navigate to the function app that you created earlier.
+
+Expand Functions and select the function that you created.
+
+Select View files on the far right of the portal UI, and then select index.js.
+
+Update the index.js file by editing the code in the main window for the function:
+
+```js
+module.exports = async function (context, req) {
+  context.log("JavaScript HTTP trigger function processed a request.")
+
+  if (req.body.pages[0].title) {
+    context.res = {
+      body:
+        "Page is " +
+        req.body.pages[0].title +
+        ", Action is " +
+        req.body.pages[0].action +
+        ", Event Type is " +
+        req.headers["x-github-event"],
+    }
+  } else {
+    context.res = {
+      status: 400,
+      body: "Invalid payload for Wiki event",
+    }
+  }
+}
+```
+
+This code retrieves the event type from the request header, and the title and action fields from the message body. This information indicates that page has changed, and whether it has been edited or newly created. The code constructs a response that summarizes the action.
+
+Select Save.
+
+### Trigger your Azure Function with a Gollum event
+
 ## Secure Webhook payloads with a secret
 
 ## Exercise - Secure webhook payloads with a secret
