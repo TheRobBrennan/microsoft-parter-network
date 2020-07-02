@@ -92,6 +92,14 @@ The binding specifies that the function is triggered by HTTP GET and POST reques
 
 ### Test triggering your function
 
+In your new function, select </> Get function URL at the top.
+
+In the Get function URL message box, select default (Function key), and then select Copy. The URL will look something like this [https://rbtriggerapp.azurewebsites.net/api/HttpTrigger1](https://rbtriggerapp.azurewebsites.net/api/HttpTrigger1)
+
+Paste your function URL into your browser's address bar. Add the query string value `&name=Rob%20Brennan` to the end of this URL and press the Enter key on your keyboard to execute the request - [https://rbtriggerapp.azurewebsites.net/api/HttpTrigger1?name=Rob%20Brennan](https://rbtriggerapp.azurewebsites.net/api/HttpTrigger1?name=Rob%20Brennan)
+
+Congratulations! You now have a function that can be triggered by a URL!
+
 ## Set up a webhook for a GitHub repository
 
 ## Exercise - Set up a webhook for a GitHub repository
