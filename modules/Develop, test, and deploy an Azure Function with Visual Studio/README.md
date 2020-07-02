@@ -351,6 +351,20 @@ The function app must have a unique name. I will use `rbwatchfunctions` wherever
 
 ### Deploy the WatchInfo function to the Azure Functions App
 
+1. On your desktop, return to Visual Studio.
+2. In the **Solution Explorer** window, right-click the **WatchPortalFunction** project, and then click **Publish**.
+3. In the **Pick a publish target** window, under **Azure App Service**, click **Select Existing**, and then click **Publish**
+4. In the **App Service** window, select your Azure account. If you aren't already signed in to Azure, then click **Add an account** first and sign in.
+5. After signing in, enter the following details in the **App Service** window.
+
+| Property     | Value                  |
+| ------------ | ---------------------- |
+| Subscription | Concierge Subscription |
+| View         | Resource Group         |
+
+6. In the lower **Search** box, expand the resource group that is displayed, click your Azure Functions App, and then click **OK**.
+7. Wait for your functions to be deployed. The **Output** window in Visual Studio shows the progress of the build and publish processes. If everything works, the final two messages should be **Publish Succeeded** and **Publish completed**.
+
 ### Verify the functions have been deployed
 
 ## Exercise - Unit test an Azure Function
