@@ -660,13 +660,26 @@ await topicClient.CloseAsync();
 
 ## Send a message to the topic
 
-```sh
-
-```
+To run the component that sends a message about a sale, run the following command in the Cloud Shell:
 
 ```sh
-
+dotnet run -p performancemessagesender
 ```
+
+As the program executes, you'll see messages printed indicating that it's sending a message. Each time you run the app, one additional message will be added to the topic and each subscriber will receive a copy.
+
+Once it's finished, run the following command to see how many messages are in the Americas subscription:
+
+```sh
+az servicebus topic subscription show \
+    --resource-group learn-9edcb786-618c-45b8-a063-51d51761bd0d \
+    --namespace-name salesteamapprb \
+    --topic-name salesperformancemessages \
+    --name Americas \
+    --query messageCount
+```
+
+If you substitute `EuropeAndAfrica` for `Americas`, you should see that both subscriptions have the same number of messages.
 
 ## Write code that receives a message from a topic subscription
 
