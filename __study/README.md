@@ -19,7 +19,15 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 - [Create serverless applications](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) - Estimated 4 hours 18 mins remaining out of original estimated 8 hours 11 mins to complete
   - [ x ] Module 5 - Create a long-running serverless workflow with Durable Functions (~46 min)
   - [ x ] Module 6 - Develop, test, and publish Azure Functions by using Azure Functions Core Tools (~20 mins)
+  - [] Module 7 - Develop, test, and deploy an Azure Function with Visual Studio (~43 mins)
+  - [] Module 8 -
+  - [] Module 9 -
+  - [] Module 10 -
 - [Connect your services together](https://docs.microsoft.com/en-us/learn/paths/connect-your-services-together/) - Estimated 3 hours 31 mins to complete
+  - [] Module 1 -
+  - [] Module 2 -
+  - [] Module 3 -
+  - [] Module 4 -
 
 ## Thursday, July 2nd, 2020
 
