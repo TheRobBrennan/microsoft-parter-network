@@ -68,6 +68,21 @@ Here, you will create a new API Management instance and then add a Product Detai
 
 ### Create functions
 
+In this exercise, you will add an Azure Functions app to Azure API Management. Later you will add a second function app to the same API Management instance in order to create a single serverless API from multiple functions. Let's start by using a script to create the functions:
+
+```sh
+# Clone the repo to the Cloud Shell in our sandbox
+rob@Azure:~$ git clone https://github.com/MicrosoftDocs/mslearn-apim-and-functions.git ~/OnlineStoreFuncs
+
+# Run the following commands in the Cloud Shell to set up the necessary Azure resources we need for this exercise
+rob@Azure:~$ cd ~/OnlineStoreFuncs
+rob@Azure:~/OnlineStoreFuncs$ bash setup.sh
+```
+
+The `setup.sh` script creates the two function apps in the sandbox resource group that we've activated for this module. As the following graphic illustrates, each app hosts a single function - `OrderDetails` and `ProductDetails`. The script also sets up a storage account for the functions. The functions both have URLs in the **azurewebsites.net** domain. The function names include random numbers for uniqueness. The script takes a few minutes to complete.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-script-results.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-script-results.png)
+
 ### Test the product details function
 
 ### Expose our function app as an API using Azure API Management
