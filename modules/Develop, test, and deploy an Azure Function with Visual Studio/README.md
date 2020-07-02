@@ -367,6 +367,16 @@ The function app must have a unique name. I will use `rbwatchfunctions` wherever
 
 ### Verify the functions have been deployed
 
+1. Return to the Azure portal.
+2. On the Azure portal menu or from the Home page, select All resources.
+3. Select <your-function-app-name>
+4. In the <your-function-app-name> window, expand Functions, and verify that the **Function1** and **WatchInfo** functions are listed. In the right pane, check that the status of the Azure Functions App is Running. The functions are marked as Read Only. You cannot modify their settings or configuration from the Azure portal because you published them from Visual Studio. If you need to update either of these functions, make the changes in Visual Studio and publish them again.
+5. In the right pane, click the URL (highlighted in the image above). A browser window will open, and confirm that the functions app is up and running - [http://rbwatchfunctions.azurewebsites.net](http://rbwatchfunctions.azurewebsites.net)
+6. Append the URL of the watchinfo function, `api/watchinfo` to the URL in the browser and refresh the display. This invokes the **WatchInfo** function without a query string. You'll see the error response with the message `Please provide a watch model in the query string`.
+7. Add the querystring `?model=abc` to the URL and refresh the browser window. This time, you'll see the details of the watch model returned by the function.
+
+You've now created an Azure Functions App in the cloud, and published your functions to this app from Visual Studio.
+
 ## Exercise - Unit test an Azure Function
 
 ## Summary
