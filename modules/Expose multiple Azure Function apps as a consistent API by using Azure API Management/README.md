@@ -24,6 +24,20 @@ In this module, you will learn how to use API Management to assemble multiple mi
 
 ## Create a new API in API Management from a function app
 
+The Azure API Management (APIM) service enables you to construct an API from a set of disparate microservices.
+
+In your online store, you have implemented each part of the application as a microservice - one for the product details, one for order details, and so on. A separate team manages each microservice and each team uses continuous development and delivery to update and deploy their code on a regular basis. You want to find a way to assemble these microservices into a single product and then manage that product centrally.
+
+In this unit, you'll learn how Azure API Management is useful in a serverless architecture, by building single APIs from individual microservices.
+
+### Serverless architecture and microservices
+
+### Azure Functions
+
+### Azure API Management
+
+#### APIM Consumption Tier
+
 ## Exercise - Create a new API in API Management from a function app
 
 ## The benefits of using Azure API Management to compose your API
