@@ -401,6 +401,26 @@ Save the file.
 
 ## Send a message to the queue
 
+To run the component that sends a message about a sale, run the following command in the Cloud Shell:
+
+```sh
+dotnet run -p privatemessagesender
+```
+
+NOTE: The apps you run during this exercise may take a moment to start up, as `dotnet` has to restore packages from remote sources and build the apps the first time they are run.
+
+As the program executes, you'll see messages printed indicating that it's sending a message. Each time you run the app, one additional message will be added to the queue.
+
+Once it's finished, run the following command to see how many messages are in the queue:
+
+```sh
+az servicebus queue show \
+    --resource-group learn-9edcb786-618c-45b8-a063-51d51761bd0d \
+    --name salesmessages \
+    --query messageCount \
+    --namespace-name salesteamapprb
+```
+
 ## Write code that receives a message from the queue
 
 ## Retrieve a message from the queue
