@@ -158,6 +158,37 @@ Please see [https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-a
 
 ### Create an Azure Functions app
 
+1. Follow the prompts inside Visual Studio 2019 to create a new `Cloud` > `General` > `Azure Functions` app.
+2. In the **Name** box type _WatchPortalFunction_, select a convenient location on your computer to store the project, and then click **OK**.
+3. In the **New Project - WatchPortalFunction** dialog box, select **Azure Functions v2 (.NET Core)**, and then click **Http Trigger**. Leave the **Storage Account** set to **Storage Emulator** because you'll be running the function app locally to start with. Under **Access rights**, select **Anonymous**, and then click **OK**.
+4. Wait while Visual Studio creates and configures the Azure Functions app. When it's complete, you'll see the code for a class named Function1 in the code window. This code contains the boilerplate code for an HTTP trigger. The Run method is annotated with the [FunctionName ("Function1")] attribute. Recall from the previous unit that the parameters to the Run method are an HttpRequest object containing the details of the request that triggered the function, and a reference to a trace log that you can use for recording trace information:
+
+```csharp
+namespace WatchPortalFunction
+{
+    public static class Function1
+    {
+        [FunctionName("Function1")]
+        public static async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+        ILogger log)
+        {
+            log.LogInformation("C# HTTP trigger function processed a request.");
+
+            string name = req.Query["name"];
+
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            dynamic data = JsonConvert.DeserializeObject(requestBody);
+            name = name ?? data?.name;
+
+            return name != null
+                ? (ActionResult)new OkObjectResult($"Hello, {name}")
+                : new BadRequestObjectResult("Please pass a name on the query string or in the request body");
+        }
+    }
+}
+```
+
 ### Create the WatchInfo Azure Function
 
 ### Test the Azure Function locally
