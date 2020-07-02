@@ -193,6 +193,24 @@ In the `Create queue` pane, in the `Name` text box, type `salesmessages`, and th
 
 ## Create a Service Bus topic and subscriptions
 
+You also want to create a topic that will be used for messages that relate to sales performance. Multiple instances of the business logic web service will subscribe to this topic from different countries. Each message will be delivered to multiple instances.
+
+Find the `Service Bus` namespace you just created, click `+ Topic`.
+
+In the `Create topic` pane, in the `Name` text box, type `salesperformancemessages`, ensure `Enable partitioning` is `checked`, and then click `Create`.
+
+![https://docs.microsoft.com/en-us/learn/modules/implement-message-workflows-with-service-bus/media/3-create-topic.png](https://docs.microsoft.com/en-us/learn/modules/implement-message-workflows-with-service-bus/media/3-create-topic.png)
+
+When the topic has been created, in the `Service Bus Namespace` pane, under `Entities`, click `Topics`.
+
+In the list of topics, click `salesperformancemessages`, and then click `+ Subscription`.
+
+In the `Name` text box type `Americas`, in `Max delivery count` type `1`, and then click `Create`.
+
+Click `+ Subscription`, and in the `Name` text box type `EuropeAndAfrica`, in `Max delivery count` type `1`, and then click `Create`.
+
+You have built the infrastructure required to use Service Bus to increase the resilience of your sales force distributed application. You have created a queue for messages about individual sales and a topic for messages about sales performance. The topic includes multiple subscriptions because messages sent to that topic can be delivered to multiple recipient web services around the world.
+
 # Write code that uses Service Bus queues
 
 # Exercise - Write code that uses Service Bus queues
