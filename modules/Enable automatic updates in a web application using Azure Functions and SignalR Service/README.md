@@ -195,6 +195,96 @@ $ code start
 
 ### Create a Storage account
 
+Azure Functions requires a storage account, and you'll need it when you deploy the web app to the cloud later in the module.
+
+Execute the following command in the Cloud Shell to define a name for your Azure Storage account:
+
+```sh
+rob@Azure:~$ export STORAGE_ACCOUNT_NAME=mslsigrstorage$(openssl rand -hex 5)
+rob@Azure:~$ echo "Storage Account Name: $STORAGE_ACCOUNT_NAME"
+Storage Account Name: mslsigrstoragea814da8c2a
+```
+
+Run the following az storage account create command in the Cloud Shell to create a storage account for your function and static website:
+
+```sh
+rob@Azure:~$ az storage account create \
+>   --name $STORAGE_ACCOUNT_NAME \
+>   --resource-group learn-20d0f9bb-e322-4a6f-b83c-66d970a878df \
+>   --kind StorageV2 \
+>   --sku Standard_LRS
+
+{- Finished ..
+  "accessTier": "Hot",
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2020-07-02T04:34:14.475675+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-02T04:34:14.553831+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-02T04:34:14.553831+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/2508a8ca-0ade-47af-8754-3b95fed7a14c/resourceGroups/learn-20d0f9bb-e322-4a6f-b83c-66d970a878df/providers/Microsoft.Storage/storageAccounts/mslsigrstoragea814da8c2a",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "StorageV2",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "westus",
+  "name": "mslsigrstoragea814da8c2a",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://mslsigrstoragea814da8c2a.blob.core.windows.net/",
+    "dfs": "https://mslsigrstoragea814da8c2a.dfs.core.windows.net/",
+    "file": "https://mslsigrstoragea814da8c2a.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://mslsigrstoragea814da8c2a.queue.core.windows.net/",
+    "table": "https://mslsigrstoragea814da8c2a.table.core.windows.net/",
+    "web": "https://mslsigrstoragea814da8c2a.z22.web.core.windows.net/"
+  },
+  "primaryLocation": "westus",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "learn-20d0f9bb-e322-4a6f-b83c-66d970a878df",
+  "routingPreference": null,
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+rob@Azure:~$
+```
+
 ### Create an Azure Cosmos DB account
 
 ### Update local settings
