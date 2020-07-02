@@ -302,7 +302,8 @@ git clone https://github.com/MicrosoftDocs/mslearn-connect-services-together.git
 Next, change directories into the starter folder and open the Cloud Shell editor:
 
 ```sh
-
+cd mslearn-connect-services-together/implement-message-workflows-with-service-bus/src/start
+code .
 ```
 
 ## Configure a connection string to a Service Bus namespace
