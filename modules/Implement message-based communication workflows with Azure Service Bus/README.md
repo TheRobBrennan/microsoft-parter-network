@@ -589,9 +589,17 @@ cd ~/mslearn-connect-services-together/implement-message-workflows-with-service-
 
 ## Configure a connection string to a Service Bus namespace
 
-```csharp
+Start by configuring connection strings both in the sending and receiving components. You'll use the same connection string as before. If you don't still have it, refer back to the previous exercise to learn how to retrieve it.
 
+In the editor, open `performancemessagesender/Program.cs` and locate the following line of code:
+
+```csharp
+const string ServiceBusConnectionString = "";
 ```
+
+Paste the connection string between the quotation marks and save the file either through the "..." menu, or the accelerator key (Ctrl+S on Windows and Linux, Cmd+S on macOS).
+
+Repeat the previous step in `performancemessagereceiver/Program.cs`, pasting in the same connection string value and save the file.
 
 ## Write code that sends a message to the topic
 
