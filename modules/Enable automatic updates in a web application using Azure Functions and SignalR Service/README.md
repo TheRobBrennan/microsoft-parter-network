@@ -814,6 +814,14 @@ Manipulating the array this way allows Vue to detect changes in the data and tri
 
 ### Run the application
 
+Now you can see the new version of the app running locally.
+
+Press F5 to start debugging the functions app.
+
+Next, open a new terminal window in Visual Studio Code and run `npm start`
+
+The script automatically opens the browser and navigates to http://localhost:8080. If the browser fails to open automatically, you can navigate to http://localhost:8080 manually.
+
 ### Observe automatic updates
 
 ## Use a storage account to host a static website
