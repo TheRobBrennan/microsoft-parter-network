@@ -141,6 +141,20 @@ Note that we were able to define our API all from within the function app portal
 
 ### Test the OnlineStore products endpoint
 
+You now have a functional product details API in the API Management instance that you created. Let's test that API, by using the API Management tools in the Azure portal.
+
+With the API Management instance still open, select the Test tab.
+
+Select Get ProductDetails as the operation that we want to test.
+
+Under Query parameters, select Add parameter.
+
+In the name textbox, enter id.
+
+In the value textbox, enter 1, and then select Send.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-complete-product-details-test.png](https://docs.microsoft.com/en-us/learn/modules/build-serverless-api-with-functions-api-management/media/3-complete-product-details-test.png)
+
 ## The benefits of using Azure API Management to compose your API
 
 ## Exercise - Add another Azure Functions app to an existing API
