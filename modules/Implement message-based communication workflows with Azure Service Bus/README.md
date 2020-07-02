@@ -284,6 +284,18 @@ await queueClient.CompleteAsync(message.SystemProperties.LockToken);
 
 # Exercise - Write code that uses Service Bus queues
 
+## Clone and open the starter application
+
+## Configure a connection string to a Service Bus namespace
+
+## Write code that sends a message to the queue
+
+## Send a message to the queue
+
+## Write code that receives a message from the queue
+
+## Retrieve a message from the queue
+
 # Write code that uses Service Bus topics
 
 # Exercise - Write code that uses Service Bus topics
