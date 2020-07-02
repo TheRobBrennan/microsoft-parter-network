@@ -946,6 +946,12 @@ After the extension is done deploying your application, a notification appears t
 
 ### Determine the primary endpoint address of the static website
 
+In the command palette, search for `Azure Storage: Browse static website` and choose your Storage account. The site opens in the browser. At this point, the app won't run because of CORS requirements of Azure Functions.
+
+Copy the URL in the browser, which is the endpoint of the static site hosted in your Storage account - [https://mslsigrstoragea814da8c2a.z22.web.core.windows.net](https://mslsigrstoragea814da8c2a.z22.web.core.windows.net) in my time-limited sandbox. You use the endpoint value to set up CORS settings for the function app in the next section.
+
+Keep this browser window open. You will return refresh this window once the CORS settings are updated in your function app.
+
 ### Set up CORS in the function app
 
 ### Run the deployed application
