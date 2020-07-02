@@ -603,36 +603,59 @@ Repeat the previous step in `performancemessagereceiver/Program.cs`, pasting in 
 
 ## Write code that sends a message to the topic
 
-```csharp
+To complete the component that sends messages about sales performance, follow these steps:
 
+Open `performancemessagesender/Program.cs` in the editor.
+
+Locate the `SendPerformanceMessageAsync()` method.
+
+Within that method, locate the following line of code:
+
+```csharp
+// Create a Topic Client here
 ```
 
-```csharp
+To create a topic client, replace that line of code with the following code:
 
+```csharp
+topicClient = new TopicClient(ServiceBusConnectionString, TopicName);
 ```
 
-```csharp
+Within the `try...catch` block, locate the following line of code:
 
+```csharp
+// Create and send a message here
 ```
 
-```csharp
+To create and format a message for the queue, replace that line of code with the following code:
 
+```csharp
+string messageBody = $"Total sales for Brazil in August: $13m.";
+var message = new Message(Encoding.UTF8.GetBytes(messageBody));
 ```
 
-```csharp
+To display the message in the console, on the next line, add the following code:
 
+```csharp
+Console.WriteLine($"Sending message: {messageBody}");
 ```
 
-```csharp
+To send the message to the queue, on the next line, add the following code:
 
+```csharp
+await topicClient.SendAsync(message);
 ```
 
-```csharp
+Locate the following line of code:
 
+```csharp
+// Close the connection to the topic here
 ```
 
-```csharp
+To close the connection to Service Bus, replace that line of code with the following code:
 
+```csharp
+await topicClient.CloseAsync();
 ```
 
 ## Send a message to the topic
