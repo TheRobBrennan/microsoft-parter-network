@@ -968,4 +968,16 @@ Click Save to persist the CORS settings.
 
 ### Run the deployed application
 
+Now you can make change to the application's data and observe how to the data is automatically updated.
+
+Arrange Visual Studio Code on one side of the screen and the web browser running the static site on the other. This way you can see the UI update as changes are made to the database.
+
+Refresh the browser. It may take a moment for stocks to appear as the serverless functions are running for the first time.
+
+In Visual Studio integrated terminal, enter the following command and watch as the UI is automatically updated:
+
+```sh
+$ npm run update-data
+```
+
 ## Summary
