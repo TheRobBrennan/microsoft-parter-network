@@ -421,6 +421,20 @@ module.exports = async function (context, req) {
 
 ### Update the webhook secret
 
+Switch to your GitHub account in the GitHub portal.
+
+Select your repository.
+
+Select the Settings tab.
+
+Select Webhooks in the navigation panel.
+
+Select the Edit button next to your webhook.
+
+In the Secret text box, enter the default key from your function that you saved earlier in this exercise.
+
+At the bottom of the page, select Update webhook.
+
 ### Test the webhook and the Azure Function
 
 ### Test an invalid signature
