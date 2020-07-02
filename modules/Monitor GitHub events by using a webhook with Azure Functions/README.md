@@ -449,4 +449,20 @@ In the header, you'll see the `x-hub-signature`. You'll also see that the respon
 
 ### Test an invalid signature
 
+In the GitHub portal, on the webhooks page, scroll up to the Secret test box and then select Edit.
+
+Enter a random string, scroll down, and then select Update webhook.
+
+The key used by the webhook should no longer match that expected by the Azure function.
+
+Scroll down to the Recent Deliveries section.
+
+Select the latest delivery entry by selecting the ellipsis (...) button.
+
+Select Redeliver, and then Yes, redeliver this payload.
+
+This time, you'll see that the response code is 401, indicating that the request was not authorized.
+
+Select the Response tab, and verify that the message "Signatures don't match" appears as the body of the response.
+
 ## Summary
