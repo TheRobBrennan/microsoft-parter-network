@@ -262,6 +262,22 @@ You've now created a new Event Hub, and you've all the necessary information rea
 
 # Configure applications to send or receive messages through an Event Hub
 
+After you've created and configured your Event Hub, you'll need to configure applications to send and receive event data streams.
+
+For example, a payment processing solution will use some form of sender application to collect customer's credit card data and a receiver application to verify that the credit card is valid.
+
+Although there are differences in how a Java application is configured, compared to a .NET application, the principles are the same for enabling applications to connect to an Event Hub, and to successfully send or receive messages.
+
+## What are the minimum Event Hub application requirements?
+
+## Azure CLI commands for creating a general-purpose standard storage account
+
+## Shell command for cloning an application GitHub repository
+
+## Editing files in the Cloud Shell
+
+## Summary
+
 # Exercise - Configure applications to send or receive messages through an Event Hub
 
 # Evaluate the performance of the deployed Event Hub using the Azure portal
