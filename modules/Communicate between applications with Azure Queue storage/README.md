@@ -617,6 +617,66 @@ Add `<LangVersion>7.1</LangVersion>` into the first PropertyGroup in the build f
 
 ### Apply the async keyword
 
+Apply the async keyword
+
+Next, apply the `async` keyword to the **Main** method. We will have to do three things.
+
+Add the `async` keyword onto the **Main** method signature.
+
+Change the return type from `void` to `Task`.
+
+Remove the call to `Wait()` on the call to `SendArticleAsync` and replace it with `await`.
+
+Your code will look something like:
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
+
+namespace QueueApp
+{
+    class Program
+    {
+        private const string connectionString = "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw==";
+
+        static async Task Main(string[] args)
+        {
+            if (args.Length > 0)
+            {
+                string value = String.Join(" ", args);
+                await SendArticleAsync(value);
+                Console.WriteLine($"Sent: {value}");
+            }
+        }
+
+        static async Task SendArticleAsync(string newsMessage)
+        {
+            // Connect to our queue
+            CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+            CloudQueueClient client = account.CreateCloudQueueClient();
+            CloudQueue queue = client.GetQueueReference("newsqueue");
+
+            // Create
+            bool createdQueue = await queue.CreateIfNotExistsAsync();
+            if (createdQueue)
+            {
+                Console.WriteLine("The queue of news articles was created.");
+            }
+
+            // Add a message to the queue
+            CloudQueueMessage articleMessage = new CloudQueueMessage(newsMessage);
+            await queue.AddMessageAsync(articleMessage);
+        }
+    }
+}
+```
+
+Try running the app again - it should still work exactly as before, but now the code is able to release the thread back to the .NET threadpool while we wait for the message to be queued.
+
+Now that we have sent a message, the last step is to add support to receive the message.
+
 # Exercise - Retrieve a message from the queue
 
 # Summary
