@@ -480,9 +480,77 @@ Save the file and build it by typing `dotnet build` into the command window. Fix
 
 ## Add code to send a message
 
-```csharp
+Let's modify the `Main` method to pass any parameters received into our new method so we can test our new send method.
 
+Locate the `Main` method.
+
+Check the passed `args` parameter to see if any data was passed to the command line. If so, use `String.Join` to create a single string from all the words using a space as the separator.
+
+Pass that to the new `SendArticleAsync` method.
+
+Once it returns, use `Console.WriteLine` to output the message we sent.
+
+Since our method is technically asynchronous, we will want to use the await keyword, however that feature isn't available on your Main method unless you are using C# 7.1 or later. Just call Wait() on the method to actually block waiting for the method to return, we'll fix that in a minute.
+
+```csharp
+static void Main(string[] args)
+{
+    if (args.Length > 0)
+    {
+        string value = String.Join(" ", args);
+        SendArticleAsync(value).Wait();
+        Console.WriteLine($"Sent: {value}");
+    }
+}
 ```
+
+`Program.cs` should look something like:
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
+
+namespace QueueApp
+{
+    class Program
+    {
+        private const string connectionString = "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw==";
+
+        static void Main(string[] args)
+        {
+            if (args.Length > 0)
+            {
+                string value = String.Join(" ", args);
+                SendArticleAsync(value).Wait();
+                Console.WriteLine($"Sent: {value}");
+            }
+        }
+
+        static async Task SendArticleAsync(string newsMessage)
+        {
+            // Connect to our queue
+            CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+            CloudQueueClient client = account.CreateCloudQueueClient();
+            CloudQueue queue = client.GetQueueReference("newsqueue");
+
+            // Create
+            bool createdQueue = await queue.CreateIfNotExistsAsync();
+            if (createdQueue)
+            {
+                Console.WriteLine("The queue of news articles was created.");
+            }
+
+            // Add a message to the queue
+            CloudQueueMessage articleMessage = new CloudQueueMessage(newsMessage);
+            await queue.AddMessageAsync(articleMessage);
+        }
+    }
+}
+```
+
+Save the file and build the program (`dotnet build`), you can use the code below to check your work.
 
 ## Execute the application
 
