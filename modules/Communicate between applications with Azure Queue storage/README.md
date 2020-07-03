@@ -356,10 +356,16 @@ Let's now apply this new knowledge to our application!
 
 # Exercise - Add a message to the queue
 
+Now that all the requirements are in place, you can write code that creates a new storage queue and adds a message. We would typically place this code in our front-end apps that generate the data.
+
 ## Add the client library for Azure Storage
 
-```sh
+Let's start by adding the **Azure Storage Client Library for .NET** to our app. It can be installed with NuGet (a .NET package manager).
 
+Install the `WindowsAzure.Storage` package to the project with the `dotnet add package` command. You can do this in the terminal window below the Cloud Shell, or if you are working on your local computer, in a terminal/console window in the same folder as the project.
+
+```sh
+dotnet add package WindowsAzure.Storage
 ```
 
 ## Add a method to send a news alert
