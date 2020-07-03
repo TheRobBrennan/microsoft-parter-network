@@ -566,13 +566,31 @@ This should add the string `"This is an important message. Furballs are the best
 
 ## Check your results
 
-```sh
+You can check queues in the Azure portal using the **Storage Explorer**, if you open that product it will let you explore the data in each storage account you own.
 
+Alternatively, you can use the Azure CLI or PowerShell. Try this command in the shell, replacing the <connection-string> value with your specific connection string:
+
+```sh
+az storage message peek --queue-name newsqueue --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw=="
 ```
+
+This should dump the information for your message, which will look something like this:
 
 ```json
-
+[
+  {
+    "content": "VGhpcyBpcyBhbiBpbXBvcnRhbnQgbWVzc2FnZS4gRnVyYmFsbHMgYXJlIHRoZSBiZXN0IQ==",
+    "dequeueCount": 0,
+    "expirationTime": "2020-07-10T03:27:36+00:00",
+    "id": "29ce72ba-ff1e-4668-88f0-1725ba93517e",
+    "insertionTime": "2020-07-03T03:27:36+00:00",
+    "popReceipt": null,
+    "timeNextVisible": null
+  }
+]
 ```
+
+There are several other commands available that you can try with the tools - check out both `az storage queue --help` and `az storage message --help` to explore them.
 
 ## Optional - Use the async versions of the methods
 
