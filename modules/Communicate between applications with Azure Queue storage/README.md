@@ -272,6 +272,17 @@ After the receiver gets a message, that message remains in the queue but is invi
 
 ## The Azure Storage Client Library for .NET
 
+The **Azure Storage Client Library for .NET** provides types to represent each of the objects you need to interact with:
+
+- `CloudStorageAccount` represents your Azure storage account.
+- `CloudQueueClient` represents Azure Queue storage.
+- `CloudQueue` represents one of your queue instances.
+- `CloudQueueMessage` represents a message.
+
+You will use these classes to get programmatic access to your queue. The library has both synchronous and asynchronous methods; you should prefer to use the asynchronous versions to avoid blocking the client app.
+
+The Azure Storage Client Library for .NET is available in the **WindowsAzure.Storage** NuGet package. You can install it through an IDE, Azure CLI, or through PowerShell `Install-Package WindowsAzure.Storage`
+
 ## How to connect to a queue
 
 ```csharp
