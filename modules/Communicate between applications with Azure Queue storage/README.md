@@ -285,9 +285,17 @@ The Azure Storage Client Library for .NET is available in the **WindowsAzure.Sto
 
 ## How to connect to a queue
 
-```csharp
+To connect to a queue, you first create a `CloudStorageAccount` with your connection string. The resulting object can then create a `CloudQueueClient`, which in turn can open a `CloudQueue` instance. The basic code flow is shown below.
 
+```csharp
+CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+
+CloudQueueClient client = account.CreateCloudQueueClient();
+
+CloudQueue queue = client.GetQueueReference("myqueue");
 ```
+
+Creating a `CloudQueue` doesn't necessarily mean the _actual_ storage queue exists. However, you can use this object to create, delete, and check for an existing queue. As mentioned above, all methods support both synchronous and asynchronous versions, but we will only be using the `Task`-based asynchronous versions.
 
 ## How to create a queue
 
