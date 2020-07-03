@@ -679,4 +679,34 @@ Now that we have sent a message, the last step is to add support to receive the 
 
 # Exercise - Retrieve a message from the queue
 
+Now we want to complete the application by writing code to read the next message in the queue, process it, and delete it from the queue.
+
+We're going to place this code into the same application and execute it when you don't pass any parameters, however in our news service scenario, we would really place this code into our middle-tier servers to process the stories.
+
+## Dequeue a message
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+## Call the ReceiveArticleAsync method
+
+```csharp
+
+```
+
+## Execute the application
+
 # Summary
