@@ -579,4 +579,12 @@ The Azure portal provides message counts and other metrics that you can use as a
 
 # Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal
 
+In this unit, you'll use the Azure portal to verify your Event Hub is working according to the wanted expectations. You'll also test how Event Hub messaging works when it's temporarily unavailable and use Event Hubs metrics to check the performance of your Event Hub.
+
+## View Event Hub activity
+
+## Test Event Hub resilience
+
+## Summary
+
 # Summary
