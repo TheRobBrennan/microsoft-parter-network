@@ -370,17 +370,113 @@ dotnet add package WindowsAzure.Storage
 
 ## Add a method to send a news alert
 
-```csharp
+Next, let's create a new method to send a news story into a queue.
 
+Open the `Program.cs` file in your code editor.
+
+At the top of the file, add the following namespaces. We'll be using types from both of these to connect to Azure Storage and then to work with queues.
+
+- `System.Threading.Tasks`
+- `Microsoft.WindowsAzure.Storage`
+- `Microsoft.WindowsAzure.Storage.Queue`
+
+Create a static method in the `Program` class named `SendArticleAsync` that takes a `string` and returns a `Task`. We'll use this method to send a news article in to our service. Name the input parameter `newsMessage` as shown below.
+
+```csharp
+...
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
+
+class Program
+{
+    ...
+
+    static async Task SendArticleAsync(string newsMessage)
+    {
+    }
+}
 ```
 
-```csharp
+In your new method, use the static `CloudStorageAccount.Parse` method to parse your connection string (recall we placed it into a constant string). This method returns a `CloudStorageAccount` object that needs to be stored in a variable.
 
+Call the `CreateCloudQueueClient()` method on the storage account object to get a client object and store that in a variable.
+
+Next, call `GetQueueReference` method on the client object and pass the string "newsqueue" for the queue name. This returns a `CloudQueue` object that we can use to work with the queue. It's OK if the queue does not exist yet.
+
+Call `CreateIfNotExistsAsync()` on the `CloudQueue` object to ensure the queue is ready for use. This will create the queue if necessary.
+
+- Since this is an asynchronous method, use the C# `await` keyword to ensure we work properly with it. That also means you need to decorate the _method_ with the `async` keyword.
+- `CreateIfNotExistsAsync` returns a `bool` value that will be `true` if the queue was created and `false` if it already exists. Output a message to the console if we created the queue.
+
+Here is what my function looks like so far:
+
+```csharp
+static async Task SendArticleAsync(string newsMessage)
+{
+    // Connect to our queue
+    CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+    CloudQueueClient client = account.CreateCloudQueueClient();
+    CloudQueue queue = client.GetQueueReference("newsqueue");
+
+    // Create
+    bool createdQueue = await queue.CreateIfNotExistsAsync();
+    if (createdQueue)
+    {
+        Console.WriteLine("The queue of news articles was created.");
+    }
+
+}
 ```
 
-```csharp
+Create an instance of a `CloudQueueMessage`.
 
+- It takes a `string` parameter, pass in the method parameter (`newsMessage`). This will be the _body_ of the message. There is also a static method named that can create a binary message payload.
+
+Call `AddMessageAsync` on the `CloudQueue` object to add the message to the queue. This is also an asynchronous method and you will need to use the `await` keyword to ensure we properly interact with it.
+
+My final code looks like:
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
+
+namespace QueueApp
+{
+    class Program
+    {
+        private const string connectionString = "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw==";
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+
+        static async Task SendArticleAsync(string newsMessage)
+        {
+            // Connect to our queue
+            CloudStorageAccount account = CloudStorageAccount.Parse(connectionString);
+            CloudQueueClient client = account.CreateCloudQueueClient();
+            CloudQueue queue = client.GetQueueReference("newsqueue");
+
+            // Create the queue if it doesn't exist already
+            bool createdQueue = await queue.CreateIfNotExistsAsync();
+            if (createdQueue)
+            {
+                Console.WriteLine("The queue of news articles was created.");
+            }
+
+            // Add a message to the queue
+            CloudQueueMessage articleMessage = new CloudQueueMessage(newsMessage);
+            await queue.AddMessageAsync(articleMessage);
+        }
+    }
+}
 ```
+
+Save the file and build it by typing `dotnet build` into the command window. Fix any errors, you can use the following code to check your work.
 
 ## Add code to send a message
 
