@@ -262,6 +262,40 @@ Now that we have this starter project setup, let's look at how to work with a qu
 
 # Programmatically access a queue
 
+Queues hold messages - packets of data whose shape is known to the sender application and receiver application. The sender creates the queue and adds a message. The receiver retrieves a message, processes it, and then deletes the message from the queue. The following illustration shows a typical flow of this process.
+
+![https://docs.microsoft.com/en-us/learn/modules/communicate-between-apps-with-azure-queue-storage/media/6-message-flow.png](https://docs.microsoft.com/en-us/learn/modules/communicate-between-apps-with-azure-queue-storage/media/6-message-flow.png)
+
+Notice that `get` and `delete` are separate operations. This arrangement handles potential failures in the receiver and implements a concept called _at-least-once delivery_.
+
+After the receiver gets a message, that message remains in the queue but is invisible for 30 seconds. If the receiver crashes or experiences a power failure during processing, then it will never delete the message from the queue. After 30 seconds, the message will reappear in the queue and another instance of the receiver can process it to completion.
+
+## The Azure Storage Client Library for .NET
+
+## How to connect to a queue
+
+```csharp
+
+```
+
+## How to create a queue
+
+```csharp
+
+```
+
+## How to send a message
+
+```csharp
+
+```
+
+## How to receive and delete a message
+
+```csharp
+
+```
+
 # Exercise - Add a message to the queue
 
 # Exercise - Retrieve a message from the queue
