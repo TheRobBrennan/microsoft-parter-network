@@ -190,6 +190,56 @@ This command returns a JSON block with the connection string for your Event Hubs
 
 ## Create an Event Hub
 
+Now let's create your new Event Hub.
+
+Create a new Event Hub using the `eventhub create` command. It needs the following parameters:
+
+| Parameter                   | Description                      |
+| --------------------------- | -------------------------------- |
+| --name (required)           | Enter a name for your Event Hub. |
+| --resource-group (required) | Resource group owner.            |
+| --namespace-name (required) | Enter the namespace you created. |
+
+Let's define the Event Hub name in an environment variable first.
+
+```sh
+HUB_NAME=hubname-$RANDOM
+
+# Create the event hub
+az eventhubs eventhub create --name $HUB_NAME --namespace-name $NS_NAME
+```
+
+View the details of your Event Hub using the eventhub show command. It takes:
+
+| Parameter                   | Description                      |
+| --------------------------- | -------------------------------- |
+| --resource-group (required) | Resource group owner.            |
+| --namespace-name (required) | Enter the namespace you created. |
+| --name (required)           | Name of the Event Hub.           |
+
+```sh
+az eventhubs eventhub show --namespace-name $NS_NAME --name $HUB_NAME
+```
+
+This will generate output similar to:
+
+```json
+{
+  "captureDescription": null,
+  "createdAt": "2020-07-03T05:25:21.307000+00:00",
+  "id": "/subscriptions/c33c9fed-a8e5-40ab-a49a-fe578004f6f3/resourceGroups/learn-b5bddcad-0f44-49fb-9f09-72219e09d13b/providers/Microsoft.EventHub/namespaces/ehubns-14870/eventhubs/hubname-6540",
+  "location": "West US 2",
+  "messageRetentionInDays": 7,
+  "name": "hubname-6540",
+  "partitionCount": 4,
+  "partitionIds": ["0", "1", "2", "3"],
+  "resourceGroup": "learn-b5bddcad-0f44-49fb-9f09-72219e09d13b",
+  "status": "Active",
+  "type": "Microsoft.EventHub/Namespaces/EventHubs",
+  "updatedAt": "2020-07-03T05:25:21.777000+00:00"
+}
+```
+
 ## View the Event Hub in the Azure portal
 
 ## Summary
