@@ -648,3 +648,15 @@ You'll see that though the messages were sent before the Event Hub was taken off
 In this unit, you used the Event Hubs metrics to test that your Event Hub is successfully processing the sending and receiving messages.
 
 # Summary
+
+Azure Event Hubs provides big data applications the capability to process large volume of data. It can also scale out during exceptionally high-demand periods as and when required. Azure Event Hubs decouples the sending and receiving messages to manage the data processing. This helps eliminate the risk of overwhelming consumer application and data loss because of any unplanned interruptions.
+
+In this module, you've seen how to deploy Azure Event Hubs as part of an event processing solution.
+
+You learned how to:
+
+- Use the Azure CLI commands to create an Event Hubs namespace and an event hub in that namespace.
+- Configure sender and receiver applications to send and receive messages through the event hub.
+- Use the Azure portal to view your event hub status and performance.
+
+## Check your knowledge
