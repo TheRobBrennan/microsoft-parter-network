@@ -242,7 +242,23 @@ This will generate output similar to:
 
 ## View the Event Hub in the Azure portal
 
+Next, let's see what this looks like in the Azure portal.
+
+Find your Event Hubs namespace using the Search bar at the top of portal.
+
+Select your namespace to open it.
+
+Select **Event Hubs namespace** under the **ENTITIES** section.
+
+Click **Event Hubs**.
+
+Your Event Hub displays with a status of **Active**, and default values for **Message Retention** (7) and **Partition Count** of (4).
+
+![https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/3-event-hub.png](https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/3-event-hub.png)
+
 ## Summary
+
+You've now created a new Event Hub, and you've all the necessary information ready to configure your publisher and consumer applications.
 
 # Configure applications to send or receive messages through an Event Hub
 
