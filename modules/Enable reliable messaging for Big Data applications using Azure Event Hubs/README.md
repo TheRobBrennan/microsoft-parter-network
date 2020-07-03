@@ -406,6 +406,45 @@ The repository is cloned to your home folder.
 
 ## Edit SimpleSend.java
 
+You're going to use the built-in Cloud Shell editor. You'll use the editor to modify the SimpleSend application and add your Event Hubs namespace, Event Hub name, shared access policy name, and primary key. The main commands are displayed at the bottom of the editor window.
+
+You'll need to write out your edits using Ctrl+O, and then ENTER to confirm the output file name, and exit the editor using Ctrl+X. Alternatively, the editor has a "..." menu in the top/right corner for all the editing commands.
+
+Change to the SimpleSend folder:
+
+```sh
+cd ~/azure-event-hubs/samples/Java/Basic/SimpleSend/src/main/java/com/microsoft/azure/eventhubs/samples/SimpleSend
+```
+
+Open the Cloud Shell editor in the current folder. This will show a list of files on the left and an editor space on the right.
+
+```sh
+code .
+```
+
+Open the **SimpleSend.java** file by selecting it from the file list.
+
+In the editor, locate and replace the following strings:
+
+- "Your Event Hubs namespace name" with the name of your Event Hub namespace.
+- "Your Event Hub" with the name of your Event Hub.
+- "Your policy name" with RootManageSharedAccessKey.
+- "Your primary SAS key" with the value of the primaryKey key for your Event Hub namespace that you saved earlier.
+
+If you've forgotten some of them, you can switch down to the terminal window below the editor and use the echo command to list out one of the environment variables. For example:
+
+```sh
+echo $NS_NAME
+echo $HUB_NAME
+echo $STORAGE_NAME
+```
+
+When you create an Event Hubs namespace, a 256-bit SAS key called **RootManageSharedAccessKey** is created that has an associated pair of primary and secondary keys that grant send, listen, and manage rights to the namespace. In the previous unit, you displayed the key using an Azure CLI command, and you can also find this key by opening the **Shared access policies** page for your Event Hubs namespace in the Azure portal.
+
+Save **SimpleSend.java** either through the "..." menu, or the accelerator key (Ctrl+S on Windows and Linux, Cmd+S on macOS).
+
+Close the editor through the "..." menu, or the accelerator key CTRL+Q.
+
 ## Use Maven to build SimpleSend.java
 
 ## Edit EventProcessorSample.java
