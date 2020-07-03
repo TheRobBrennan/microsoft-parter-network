@@ -130,6 +130,16 @@ To deploy Azure Event Hubs, you must configure an Event Hubs namespace and then 
 
 # Exercise - Use the Azure CLI to Create an Event Hub
 
+You're now ready to create a new Event Hub. After creating the Event Hub, you'll use the Azure portal to view your new hub.
+
+## Create an Event Hubs namespace
+
+## Create an Event Hub
+
+## View the Event Hub in the Azure portal
+
+## Summary
+
 # Configure applications to send or receive messages through an Event Hub
 
 # Exercise - Configure applications to send or receive messages through an Event Hub
