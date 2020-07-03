@@ -316,6 +316,8 @@ The Cloud Shell supports **nano**, **vim**, **emacs**, and the Cloud Shell edito
 
 ## Summary
 
+Sender and receiver applications must be configured with specific information about the Event Hub environment. You create a storage account if your receiver application stores messages in Blob Storage. If your application is hosted on GitHub, you have to clone it to your local directory. Text editors, such as nano are used to add your namespace to the application.
+
 # Exercise - Configure applications to send or receive messages through an Event Hub
 
 # Evaluate the performance of the deployed Event Hub using the Azure portal
