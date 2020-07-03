@@ -328,6 +328,69 @@ You'll configure two separate applications; one acts as the message sender (**Si
 
 ## Create a general-purpose, standard storage account
 
+The Java receiver application, that you'll configure in this unit, stores messages in Azure Blob Storage. Blob Storage requires a storage account.
+
+In the Cloud Shell, create a storage account (general-purpose V2) using the `storage account create` command. Remember we set a default resource group and location, so even though those parameters are normally required, we can leave them off.
+
+| Parameter                   | Description                                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------------------------------- |
+| --name (required)           | A name for your storage account.                                                                          |
+| --resource-group (required) | The resource group owner. We'll use the pre-created sandbox resource group.                               |
+| --location (optional)       | An optional location if you want the storage account in a specific place vs. the resource group location. |
+
+Set the storage account name into a variable. It must be between 3 and 24 characters in length and use numbers and lower-case letters only. It also must be unique within Azure.
+
+```sh
+STORAGE_NAME=storagename$RANDOM
+```
+
+Then use this command to create the storage account.
+
+```sh
+az storage account create --name $STORAGE_NAME --sku Standard_RAGRS --encryption-service blob
+```
+
+List all the access keys associated with your storage account using the account keys list command. It takes your account name and the resource group (which is defaulted).
+
+```sh
+az storage account keys list --account-name $STORAGE_NAME
+
+# Sample output
+[
+  {
+    "keyName": "key1",
+    "permissions": "Full",
+    "value": "HMHcNXcyABR4GwTVTEOiGI35ouV0n3dWiH0c9VIktVnrEKgYT2RS26woMVQeii8btXPwMZn+MBkutJNUPUPIkA=="
+  },
+  {
+    "keyName": "key2",
+    "permissions": "Full",
+    "value": "q7MP9JrSEId0OVLi9Yg8+/A15yfIxsdxBwFKdXlya13QNBdMQZB99gVPXpuxgs86GwfYJHfUL2noXReebL4k9Q=="
+  }
+]
+```
+
+Access keys associated with your storage account are listed. Copy and save the value of **key** for future use. You'll need this key to access your storage account.
+
+View the connections string for your storage account using the following command:
+
+```sh
+az storage account show-connection-string -n $STORAGE_NAME
+
+# Sample output
+{
+  "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=storagename24352;AccountKey=HMHcNXcyABR4GwTVTEOiGI35ouV0n3dWiH0c9VIktVnrEKgYT2RS26woMVQeii8btXPwMZn+MBkutJNUPUPIkA=="
+}
+```
+
+This command returns the connection details for the storage account. Copy and save the value of **connectionString**. It should look something like:
+
+Create a container called **messages** in your storage account using the following command. Use the **connectionString** you copied in the previous step:
+
+```sh
+az storage container create -n messages --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=storagename24352;AccountKey=HMHcNXcyABR4GwTVTEOiGI35ouV0n3dWiH0c9VIktVnrEKgYT2RS26woMVQeii8btXPwMZn+MBkutJNUPUPIkA=="
+```
+
 ## Clone the Event Hubs GitHub repository
 
 ## Edit SimpleSend.java
