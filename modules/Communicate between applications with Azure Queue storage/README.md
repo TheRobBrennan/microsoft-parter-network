@@ -598,8 +598,21 @@ We used `Wait()` on the send method above but that's not an efficient use of our
 
 ### Switch to C# 7.1
 
-```xml
+C#'s `async` and `await` keywords were not valid keywords in **Main** methods until C# 7.1. We can easily switch to that compiler through a flag in the **.csproj** file.
 
+Open the **QueueApp.csproj** file in the editor.
+
+Add `<LangVersion>7.1</LangVersion>` into the first PropertyGroup in the build file. It should look like the following when you are finished.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+...
 ```
 
 ### Apply the async keyword
