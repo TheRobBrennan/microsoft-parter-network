@@ -543,6 +543,8 @@ Whatever. At least it's enough to see what's involved in getting this set up.
 
 ## Summary
 
+You've now configured a sender application ready to send messages to your Event Hub. You've also configured a receiver application ready to receive messages from your Event Hub.
+
 # Evaluate the performance of the deployed Event Hub using the Azure portal
 
 # Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal
