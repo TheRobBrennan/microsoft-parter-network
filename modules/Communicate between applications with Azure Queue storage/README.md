@@ -685,20 +685,155 @@ We're going to place this code into the same application and execute it when you
 
 ## Dequeue a message
 
-```csharp
+Let's add a new method that retrieves the next message from the queue.
 
+Open the `Program.cs` source file in your editor.
+
+Create a static method in the `Program` class named `ReceiveArticleAsync` that takes no parameters and returns a `Task<string>`. We'll use this method to pull a news article from the queue and return it.
+
+- Go ahead and add the `async` keyword to the method since we'll be using some asynchronous `Task`-based methods.
+
+```csharp
+static async Task<string> ReceiveArticleAsync()
+{
+}
 ```
 
-```csharp
+All of the setup code to get a `CloudQueue` will be identical to what we did in the last exercise. Code duplication is a bad habit, even in samples so go ahead and, refactor the code that obtains the `CloudQueue` to a new method named `GetQueue` and change the `SendArticleAsync` to use your new method.
 
+- Make sure to leave the code that creates the queue in the `SendArticleAsync` method; remember **only the publisher should create the queue**.
+
+```csharp
+const string ConnectionString = ...;
+// ...
+
+static CloudQueue GetQueue()
+{
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
+
+    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+    return queueClient.GetQueueReference("newsqueue");
+}
 ```
 
-```csharp
+In your `ReceiveArticleAsync` method, call the new `GetQueue` method to retrieve your queue reference and assign it to a variable.
 
+Next, call the `ExistsAsync` method on the `CloudQueue` object; this will return whether the queue has been created. If we attempt to retrieve a message from a non-existent queue, the API will throw an exception.
+
+- This method is asynchronous so use `await` to get the return value.
+- You should already have the `async` keyword on the `ReceiveArticleAsync` method, but if not add it now.
+
+Add an `if` block that uses the return value from `ExistsAsync`. We'll add our code to read a value from the queue into the block. Add a final return string to the method that indicates no value was read. Your method should be looking something like this:
+
+```csharp
+static async Task<string> ReceiveArticleAsync()
+{
+    CloudQueue queue = GetQueue();
+    bool exists = await queue.ExistsAsync();
+    if (exists)
+    {
+    }
+
+    return "<queue empty or not created>";
+}
 ```
 
-```csharp
+Call `GetMessageAsync` on the `CloudQueue` object to get the first `CloudQueueMessage` from the queue. The return value will be `null` if the queue is empty.
 
+If it's non-null, use the `AsString` property on the `CloudQueueMessage` object to get the contents of the message.
+
+Call `DeleteMessageAsync` on the `CloudQueue` object to delete the message from the queue.
+
+The final method implementation should resemble:
+
+```csharp
+static async Task<string> ReceiveArticleAsync()
+{
+    CloudQueue queue = GetQueue();
+    bool exists = await queue.ExistsAsync();
+    if (exists)
+    {
+        CloudQueueMessage retrievedArticle = await queue.GetMessageAsync();
+        if (retrievedArticle != null)
+        {
+            string newsMessage = retrievedArticle.AsString;
+            await queue.DeleteMessageAsync(retrievedArticle);
+            return newsMessage;
+        }
+    }
+
+    return "<queue empty or not created>";
+}
+```
+
+The final `Program.cs` implementation should look like:
+
+```csharp
+using System;
+using System.Threading.Tasks;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Queue;
+
+namespace QueueApp
+{
+    class Program
+    {
+        private const string ConnectionString = "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw==";
+
+        static async Task Main(string[] args)
+        {
+            if (args.Length > 0)
+            {
+                string value = String.Join(" ", args);
+                await SendArticleAsync(value);
+                Console.WriteLine($"Sent: {value}");
+            }
+        }
+
+        static CloudQueue GetQueue()
+        {
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
+
+            CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+            return queueClient.GetQueueReference("newsqueue");
+        }
+
+        static async Task<string> ReceiveArticleAsync()
+        {
+            CloudQueue queue = GetQueue();
+            bool exists = await queue.ExistsAsync();
+            if (exists)
+            {
+                CloudQueueMessage retrievedArticle = await queue.GetMessageAsync();
+                if (retrievedArticle != null)
+                {
+                    string newsMessage = retrievedArticle.AsString;
+                    await queue.DeleteMessageAsync(retrievedArticle);
+                    return newsMessage;
+                }
+            }
+
+            return "<queue empty or not created>";
+        }
+
+        static async Task SendArticleAsync(string newsMessage)
+        {
+            // Connect to our queue
+            CloudQueue queue = GetQueue();
+
+            // Create
+            bool createdQueue = await queue.CreateIfNotExistsAsync();
+            if (createdQueue)
+            {
+                Console.WriteLine("The queue of news articles was created.");
+            }
+
+            // Add a message to the queue
+            CloudQueueMessage articleMessage = new CloudQueueMessage(newsMessage);
+            await queue.AddMessageAsync(articleMessage);
+        }
+    }
+}
 ```
 
 ## Call the ReceiveArticleAsync method
