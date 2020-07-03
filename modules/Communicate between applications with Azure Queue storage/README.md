@@ -186,6 +186,29 @@ Let's get our connection string from Azure and set up a new application to use i
 
 # Exercise - Identify a queue
 
+Let's create a client application to work with a queue. Then we'll add our connection string to the code.
+
+## Create the application
+
+We'll create a .NET Core application that you can run on Linux, macOS, or Windows. Let's name it **QueueApp**. For simplicity, we'll use a single app that will both send and receive messages through our queue.
+
+Use the `dotnet new` command to create a new console app with the name **QueueApp**. You can type commands into the Cloud Shell on the right, or if you are working locally, in a terminal/console window. This command creates a simple app with a single source file: `Program.cs`
+
+```sh
+dotnet new console -n QueueApp
+```
+
+Switch to the newly created QueueApp folder and build the app to verify that all is well.
+
+```sh
+cd QueueApp
+dotnet build
+```
+
+## Get your connection string
+
+## Add the connection string to the application
+
 # Programmatically access a queue
 
 # Exercise - Add a message to the queue
