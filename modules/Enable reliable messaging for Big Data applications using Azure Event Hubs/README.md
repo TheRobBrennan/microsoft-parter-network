@@ -595,6 +595,54 @@ The SimpleSend and EventProcessorSample applications are configured to send/rece
 
 ## Test Event Hub resilience
 
+Use the following steps to see what happens when an application sends messages to an Event Hub while it's temporarily unavailable.
+
+Resend messages to the Event Hub using the SimpleSend application. Use the following command:
+
+```sh
+cd ~
+cd azure-event-hubs/samples/Java/Basic/SimpleSend
+java -jar ./target/simplesend-1.0.0-jar-with-dependencies.jar
+```
+
+When you see **Send Complete...**, press ENTER.
+
+Select your Event Hub in the **Overview** screen - this will show details specific to the Event Hub. You can also get to this screen through the **Event Hubs** entry from the namespace page.
+
+Select **Settings > Properties**.
+
+Under Event Hub state, click **Disabled**. Save the changes.
+
+![https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/7-disable-event-hub.png](https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/7-disable-event-hub.png)
+
+**Wait for a minimum of five minutes.**
+
+Click **Active** under Event Hub state to re-enable your Event Hub and save your changes.
+
+Rerun the EventProcessorSample application to receive messages. Use the following command.
+
+```sh
+cd ~
+cd azure-event-hubs/samples/Java/Basic/EventProcessorSample
+java -jar ./target/eventprocessorsample-1.0.0-jar-with-dependencies.jar
+```
+
+When messages stop being displayed to the console, press ENTER.
+
+Back in the Azure portal, go back to your Event Hub Namespace. If you're still on the Event Hub page, you can use the breadcrumb on the top of the screen to go backwards. Or you can search for the namespace and select it.
+
+Click **MONITORING > Metrics (preview)**.
+
+![https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/7-event-hub-metrics.png](https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/7-event-hub-metrics.png)
+
+From the **Metric** list, select **Incoming Messages** and click **Add Metric**.
+
+From the **Metric** list, select **Outgoing Messages** and click **Add Metric**.
+
+At the top of the chart, click **Last 24 hours (Automatic)** to change the time period to **Last 30 minutes** to expand the data graph.
+
+You'll see that though the messages were sent before the Event Hub was taken offline for a period, all 100 messages were successfully transmitted.
+
 ## Summary
 
 # Summary
