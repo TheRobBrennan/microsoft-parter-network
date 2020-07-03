@@ -94,6 +94,30 @@ When you create a storage account that will contain queues, you should consider 
 
 # Exercise - Create a storage account
 
+You've discovered that spikes in traffic can overwhelm our middle-tier. To deal with this, you've decided to add a queue between the front-end and the middle tier in your article-upload application.
+
+The first step in creating a queue is to create the Azure Storage Account that will store our data.
+
+## Create a Storage Account with the Azure CLI
+
+Normally, you'd start a new project by creating a resource group to hold all the associated resources. In this case, we'll be using the Azure sandbox which provides a resource group named learn-a6fa1b6e-59c5-4994-9d57-d081a3715af0.
+
+The command needs several parameters:
+
+| Parameter | Value                                                                                                                                                                                                                                                                                                                                           |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --name    | Sets the name. Remember that storage accounts use the name to generate a public URL - so it has to be unique. In addition, the account name must be between 3 and 24 characters, and be composed of numbers and lowercase letters only. We recommend you use the prefix articles with a random number suffix but you can use whatever you like. |
+| -g        | Supplies the Resource Group, use learn-a6fa1b6e-59c5-4994-9d57-d081a3715af0 as the value.                                                                                                                                                                                                                                                       |
+| --kind    | Sets the Storage Account type - use StorageV2 to create a general-purpose V2 account.                                                                                                                                                                                                                                                           |
+| --sku     | Sets the Replication and Storage type, it defaults to Standard_RAGRS. Let's use Standard_LRS which means it's only locally redundant within the data center.                                                                                                                                                                                    |
+| -l        | Sets the Location independent of the resource group owner. It's optional, but you can use it to place the queue in a different region than the resource group. Place it close to you, choosing from the below list of available regions in the sandbox.                                                                                         |
+
+Here's an example command line that uses the above parameters. Make sure to change the `--name` parameter.
+
+```sh
+az storage account create --name rbstoragedemo732 -g learn-a6fa1b6e-59c5-4994-9d57-d081a3715af0 --kind StorageV2 --sku Standard_LRS
+```
+
 # Identify a queue
 
 # Exercise - Identify a queue
