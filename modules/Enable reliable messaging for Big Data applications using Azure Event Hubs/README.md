@@ -291,6 +291,17 @@ If you have a receiver application that stores messages in Azure Blob Storage, y
 
 ## Azure CLI commands for creating a general-purpose standard storage account
 
+The Azure CLI provides a set of commands you can use to create and manage a storage account. We'll work with them in the next unit, but here's a basic synopsis of the commands.
+
+There are several MS Learn modules that cover storage accounts, starting in the module Introduction to Azure Storage.
+
+| Command                                  | Description                                                  |
+| ---------------------------------------- | ------------------------------------------------------------ |
+| `storage account create`                 | Create a general-purpose V2 Storage account.                 |
+| `storage account key list`               | Retrieve the storage account key.                            |
+| `storage account show-connection-string` | Retrieve the connection string for an Azure Storage account. |
+| `storage container create`               | Creates a new container in a storage account.                |
+
 ## Shell command for cloning an application GitHub repository
 
 ## Editing files in the Cloud Shell
