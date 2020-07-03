@@ -766,6 +766,30 @@ static async Task<string> ReceiveArticleAsync()
 }
 ```
 
+## Call the ReceiveArticleAsync method
+
+Finally, let's add support to invoke our new method. We'll do this when we don't pass any parameters into the program.
+
+Locate the `Main` method and specifically the `if` block you added earlier to look for parameters.
+
+Add an `else` condition and call the `ReceiveArticleAsync` method.
+
+Since it's asynchronous, use the `await` keyword to retrieve the result and print it to the console window. If you didn't convert your app to C# 7.1, you can get the value using the `Result` property from the returning task.
+
+Your code should look something like:
+
+```csharp
+if (args.Length > 0)
+{
+    // ...
+}
+else
+{
+    string value = await ReceiveArticleAsync();
+    Console.WriteLine($"Received {value}");
+}
+```
+
 The final `Program.cs` implementation should look like:
 
 ```csharp
@@ -787,14 +811,17 @@ namespace QueueApp
                 string value = String.Join(" ", args);
                 await SendArticleAsync(value);
                 Console.WriteLine($"Sent: {value}");
+            } else {
+                string value = await ReceiveArticleAsync();
+                Console.WriteLine($"Received {value}");
             }
         }
 
         static CloudQueue GetQueue()
         {
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConnectionString);
-
             CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
+
             return queueClient.GetQueueReference("newsqueue");
         }
 
@@ -834,12 +861,6 @@ namespace QueueApp
         }
     }
 }
-```
-
-## Call the ReceiveArticleAsync method
-
-```csharp
-
 ```
 
 ## Execute the application
