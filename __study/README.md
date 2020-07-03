@@ -31,7 +31,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 1 - Choose a messaging model in Azure to loosely connect your services (~45 mins)
   - [ x ] Module 2 - Implement message-based communication workflows with Azure Service Bus (~54 mins)
   - [ x ] Module 3 - Communicate between applications with Azure Queue storage (~56 mins)
-  - [] Module 4 - Enable reliable messaging for Big Data applications using Azure Event Hubs (~56 mins)
+  - [ x ] Module 4 - Enable reliable messaging for Big Data applications using Azure Event Hubs (~56 mins)
 
 ## Friday, July 3rd, 2020 (HOLIDAY)
 
