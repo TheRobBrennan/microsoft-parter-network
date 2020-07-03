@@ -511,6 +511,30 @@ Close the editor.
 
 ## Use Maven to build EventProcessorSample.java
 
+Change to the main EventProcessorSample folder using the following command:
+
+```sh
+cd ~/azure-event-hubs/samples/Java/Basic/EventProcessorSample
+```
+
+Build the Java SimpleSend application using the following command. This ensures that your application uses the connection details for your Event Hub:
+
+```sh
+mvn clean package -DskipTests
+```
+
+The build process may take several minutes to complete. Ensure that you see a **[INFO] BUILD SUCCESS** message before continuing.
+
+```sh
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 8.367 s
+[INFO] Finished at: 2020-07-03T06:12:31+00:00
+[INFO] Final Memory: 37M/271M
+[INFO] ------------------------------------------------------------------------
+```
+
 ## Start the sender and receiver apps
 
 ## Summary
