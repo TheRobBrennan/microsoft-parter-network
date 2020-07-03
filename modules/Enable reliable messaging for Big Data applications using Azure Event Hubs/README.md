@@ -393,6 +393,17 @@ az storage container create -n messages --connection-string "DefaultEndpointsPro
 
 ## Clone the Event Hubs GitHub repository
 
+Use the following steps to clone the Event Hubs GitHub repository with `git`. You can execute this right in the Cloud Shell.
+
+The source files for the applications that you'll build in this unit are located in a GitHub repository. Use the following commands to make sure that you are in your home directory in Cloud Shell, and then to clone this repository:
+
+```sh
+cd ~
+git clone https://github.com/Azure/azure-event-hubs.git
+```
+
+The repository is cloned to your home folder.
+
 ## Edit SimpleSend.java
 
 ## Use Maven to build SimpleSend.java
