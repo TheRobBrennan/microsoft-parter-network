@@ -356,6 +356,58 @@ Let's now apply this new knowledge to our application!
 
 # Exercise - Add a message to the queue
 
+## Add the client library for Azure Storage
+
+```sh
+
+```
+
+## Add a method to send a news alert
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+## Add code to send a message
+
+```csharp
+
+```
+
+## Execute the application
+
+```sh
+
+```
+
+## Check your results
+
+```sh
+
+```
+
+```json
+
+```
+
+## Optional - Use the async versions of the methods
+
+### Switch to C# 7.1
+
+```xml
+
+```
+
+### Apply the async keyword
+
 # Exercise - Retrieve a message from the queue
 
 # Summary
