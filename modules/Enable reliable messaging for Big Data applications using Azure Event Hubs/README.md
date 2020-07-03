@@ -583,6 +583,16 @@ In this unit, you'll use the Azure portal to verify your Event Hub is working ac
 
 ## View Event Hub activity
 
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+Find your Event Hub using the Search bar, and open it as we did in the previous exercise.
+
+On the Overview page, view the message counts.
+
+![https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/6-view-messages.png](https://docs.microsoft.com/en-us/learn/modules/enable-reliable-messaging-for-big-data-apps-using-event-hubs/media/6-view-messages.png)
+
+The SimpleSend and EventProcessorSample applications are configured to send/receive 100 messages. You'll see that the Event Hub has processed 100 messages from the SimpleSend application and has transmitted 100 messages to the EventProcessorSample application.
+
 ## Test Event Hub resilience
 
 ## Summary
