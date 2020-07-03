@@ -270,6 +270,25 @@ Although there are differences in how a Java application is configured, compared
 
 ## What are the minimum Event Hub application requirements?
 
+To configure an application to send messages to an Event Hub, you must provide the following information, so that the application can create connection credentials:
+
+- Event Hub namespace name
+- Event Hub name
+- Shared access policy name
+- Primary shared access key
+
+To configure an application to receive messages from an Event Hub, provide the following information, so that the application can create connection credentials:
+
+- Event Hub namespace name
+- Event Hub name
+- Shared access policy name
+- Primary shared access key
+- Storage account name
+- Storage account connection string
+- Storage account container name
+
+If you have a receiver application that stores messages in Azure Blob Storage, you'll also need to configure a storage account.
+
 ## Azure CLI commands for creating a general-purpose standard storage account
 
 ## Shell command for cloning an application GitHub repository
