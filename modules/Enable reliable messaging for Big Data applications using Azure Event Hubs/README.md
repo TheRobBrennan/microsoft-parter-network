@@ -645,4 +645,6 @@ You'll see that though the messages were sent before the Event Hub was taken off
 
 ## Summary
 
+In this unit, you used the Event Hubs metrics to test that your Event Hub is successfully processing the sending and receiving messages.
+
 # Summary
