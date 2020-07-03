@@ -320,6 +320,28 @@ Sender and receiver applications must be configured with specific information ab
 
 # Exercise - Configure applications to send or receive messages through an Event Hub
 
+You're now ready to configure your publisher and consumer applications for your Event Hub.
+
+In this unit, you'll configure these applications to send or receive messages through your Event Hub. These applications are stored in a GitHub repository.
+
+You'll configure two separate applications; one acts as the message sender (**SimpleSend**), the other as the message receiver (**EventProcessorSample**). These are Java applications, which enable you to do everything within the browser. However, the same configuration is needed for any platform, such as .NET.
+
+## Create a general-purpose, standard storage account
+
+## Clone the Event Hubs GitHub repository
+
+## Edit SimpleSend.java
+
+## Use Maven to build SimpleSend.java
+
+## Edit EventProcessorSample.java
+
+## Use Maven to build EventProcessorSample.java
+
+## Start the sender and receiver apps
+
+## Summary
+
 # Evaluate the performance of the deployed Event Hub using the Azure portal
 
 # Exercise - Evaluate the performance of the deployed Event Hub using the Azure portal
