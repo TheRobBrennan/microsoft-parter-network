@@ -134,6 +134,60 @@ You're now ready to create a new Event Hub. After creating the Event Hub, you'll
 
 ## Create an Event Hubs namespace
 
+Let's create an Event Hubs namespace using Bash shell supported by Azure Cloud shell.
+
+First, set default values for the Azure CLI in the Cloud Shell. This will keep you from having to type these in every time. In particular, let's set the resource group and location. Type the following command into the Azure CLI, feel free to replace the location with one close to you.
+
+```sh
+az configure --defaults group=learn-b5bddcad-0f44-49fb-9f09-72219e09d13b location=westus2
+```
+
+Create the Event Hubs namespace using the az eventhubs namespace create command. Use the following parameters.
+
+| Parameter                   | Description                                                                                                                                                                                        |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --name (required)           | Enter a 6-50 characters-long unique name for your Event Hubs namespace. The name should contain only letters, numbers, and hyphens. It should start with a letter and end with a letter or number. |
+| --resource-group (required) | This will be the pre-created Azure sandbox resource group supplied from the defaults.                                                                                                              |
+| --l (optional)              | Enter the location of your nearest Azure datacenter, this will use your default.                                                                                                                   |
+| --sku (optional)            | The pricing tier for the namespace [Basic / Standard], defaults to Standard. This determines the connections and consumer thresholds.                                                              |
+
+Set the name into an environment variable so we can reuse it.
+
+```sh
+NS_NAME=ehubns-$RANDOM
+az eventhubs namespace create --name $NS_NAME
+```
+
+Fetch the connection string for your Event Hubs namespace using the following command. You'll need this to configure applications to send and receive messages using your Event Hub.
+
+```sh
+az eventhubs namespace authorization-rule keys list \
+    --name RootManageSharedAccessKey \
+    --namespace-name $NS_NAME
+```
+
+| Parameter                   | Description                                                                           |
+| --------------------------- | ------------------------------------------------------------------------------------- |
+| --resource-group (required) | This will be the pre-created Azure sandbox resource group supplied from the defaults. |
+| --namespace-name (required) | Enter the name of the namespace you created.                                          |
+
+This command returns a JSON block with the connection string for your Event Hubs namespace that you'll use later to configure your publisher and consumer applications. Save the value of the following keys for later use.
+
+- primaryConnectionString
+- primaryKey
+
+```sh
+{
+  "aliasPrimaryConnectionString": null,
+  "aliasSecondaryConnectionString": null,
+  "keyName": "RootManageSharedAccessKey",
+  "primaryConnectionString": "Endpoint=sb://ehubns-14870.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=yRVVI2CvBERAtrGLNY6tAgEzg7srtwRgrdwHCoXcco4=",
+  "primaryKey": "yRVVI2CvBERAtrGLNY6tAgEzg7srtwRgrdwHCoXcco4=",
+  "secondaryConnectionString": "Endpoint=sb://ehubns-14870.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=AsCbCI/BeETHNJIQyRKYjySfrJiTapmoErp7W2Jk4CM=",
+  "secondaryKey": "AsCbCI/BeETHNJIQyRKYjySfrJiTapmoErp7W2Jk4CM="
+}
+```
+
 ## Create an Event Hub
 
 ## View the Event Hub in the Azure portal
