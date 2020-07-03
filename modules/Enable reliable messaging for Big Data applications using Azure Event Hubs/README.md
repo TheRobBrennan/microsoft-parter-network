@@ -475,6 +475,40 @@ The build process may take several minutes to complete. Ensure that you see the 
 
 ## Edit EventProcessorSample.java
 
+You'll now configure a **receiver** (also known as **subscribers** or **consumers**) application to ingest data from your Event Hub.
+
+For the receiver application, two methods are available; **EventHubReceiver** and **EventProcessorHost**. EventProcessorHost is built on top of EventHubReceiver, but provides simpler programmatic interface than EventHubReceiver. EventProcessorHost can automatically distribute message partitions across multiple instances of EventProcessorHost using the same storage account.
+
+In this unit, you'll use the EventProcessorHost method. You'll edit the EventProcessorSample application to add your Event Hubs namespace, Event Hub name, shared access policy name and primary key, storage account name, connection string, and container name.
+
+Change to the EventProcessorSample folder using the following command:
+
+```sh
+cd ~/azure-event-hubs/samples/Java/Basic/EventProcessorSample/src/main/java/com/microsoft/azure/eventhubs/samples/eventprocessorsample
+```
+
+Open the Cloud Shell editor.
+
+```sh
+code .
+```
+
+Select the **EventProcessorSample.java** file.
+
+Locate and replace the following strings in the editor:
+
+- ----ServiceBusNamespaceName---- with the name of your Event Hubs namespace.
+- ----EventHubName---- with the name of your Event Hub.
+- ----SharedAccessSignatureKeyName---- with **RootManageSharedAccessKey**.
+- ----SharedAccessSignatureKey---- with the value of the **primaryKey** key for your Event Hubs namespace that you saved earlier.
+- ----AzureStorageConnectionString---- with your storage account connection string that you saved earlier.
+- ----StorageContainerName---- with **messages**.
+- ----HostNamePrefix---- with the name of your storage account.
+
+Save EventProcessorSample.java either through the "..." menu, or the accelerator key (Ctrl+S on Windows and Linux, Cmd+S on macOS).
+
+Close the editor.
+
 ## Use Maven to build EventProcessorSample.java
 
 ## Start the sender and receiver apps
