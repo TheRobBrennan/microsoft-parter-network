@@ -335,9 +335,24 @@ If you need a larger payload you can combine queues and blobs – passing the UR
 
 ## How to receive and delete a message
 
-```csharp
+In the receiver, you get the next message, process it, and then delete it after processing succeeds. Here's a simple example:
 
+```csharp
+CloudQueue queue;
+//...
+
+CloudQueueMessage message = await queue.GetMessageAsync();
+
+if (message != null)
+{
+    // Process the message
+    //...
+
+    await queue.DeleteMessageAsync(message);
+}
 ```
+
+Let's now apply this new knowledge to our application!
 
 # Exercise - Add a message to the queue
 
