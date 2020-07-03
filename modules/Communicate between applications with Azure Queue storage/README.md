@@ -299,9 +299,20 @@ Creating a `CloudQueue` doesn't necessarily mean the _actual_ storage queue exis
 
 ## How to create a queue
 
-```csharp
+You will use a common pattern for queue creation: **the sender application should always be responsible for creating the queue**. This keeps your application more self-contained and less dependent on administrative set-up.
 
+To make the creation simple, the client library exposes a `CreateIfNotExistsAsync` method that will create the queue if necessary, or return `false` if the queue already exists.
+
+Typical code is shown below.
+
+```csharp
+CloudQueue queue;
+//...
+
+await queue.CreateIfNotExistsAsync();
 ```
+
+You must have `Write` or `Create` permissions for the storage account to use this API. This is always true if you use the **Access Key** security model, but you can lock down permissions to the account with other approaches that will only allow read operations against the queue.
 
 ## How to send a message
 
