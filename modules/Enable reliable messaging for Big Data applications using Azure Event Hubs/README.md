@@ -304,6 +304,10 @@ There are several MS Learn modules that cover storage accounts, starting in the 
 
 ## Shell command for cloning an application GitHub repository
 
+Git is a collaboration tool that uses a distributed version control model, and is designed for collaborative working on software and documentation projects. Git clients are available for multiple platforms, including Windows, and the Git command line is included in the Azure Bash cloud shell. GitHub is a web-based hosting service for Git repositories.
+
+If you have an application that is hosted as a project in GitHub, you can make a local copy of the project, by cloning its repository using the git clone command.
+
 ## Editing files in the Cloud Shell
 
 ## Summary
