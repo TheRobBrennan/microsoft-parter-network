@@ -904,3 +904,33 @@ rob@Azure:~/QueueApp$ dotnet run This is a new message.Unhandled Exception: Micr
 ```
 
 # Summary
+
+In this module, you've seen how queues in Azure storage accounts are used to pass messages between components in a distributed application. Using queues in this way can help to make a distributed application more reliable and resilient to failures and periods of high demand. If you use the Microsoft Azure Storage Client Library for .NET, you can easily write C# or VB.NET code that creates queues, adds messages, or retrieves and removes messages from queues.
+
+## Check your knowledge
+
+1. Suppose you work for a government agency that plans the long-term expansion of the highway system. You receive traffic data from thousands of sensors and analyze it to make your recommendations. The amount of incoming data varies throughout the day; for example, it spikes during the morning and evening commuting hours. True or false: a server-side architecture consisting of an Azure Queue connected to a single virtual machine is a reasonable choice for this workload?
+
+   [ X ] True
+
+   [ ] False
+
+> This data is used for long-term planning, so there is no need to process it in real time. A queue connected to a single VM is likely to handle the workload and be a cost-efficient solution.
+
+2. What information uniquely identifies a queue?
+
+   [ ] Queue name
+
+   [ ] Account key
+
+   [ X ] Storage account name and queue name
+
+> Storage account names must be globally unique. Queue names must be unique within their containing storage account. This means the combination of storage account name and queue name uniquely identifies a queue.
+
+3. True or false: when a client programmatically retrieves a message from a queue, the message is automatically deleted from the queue?
+
+   [ ] True
+
+   [ X ] False
+
+> By design, messages are not automatically deleted from a queue after they are retrieved for processing. This helps ensure that every message is processed to completion. If a consumer application crashes during processing, the message is still available to be processed by a different instance of the consumer app.
