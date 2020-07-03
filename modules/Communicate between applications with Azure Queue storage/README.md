@@ -865,4 +865,42 @@ namespace QueueApp
 
 ## Execute the application
 
+The code is now complete. It can now send and retrieve messages.
+
+Make sure you have saved all the files in the online editor before you build and run the program.
+
+To test it, use `dotnet run` and pass parameters to send messages, and leave off parameters to read a single message:
+
+```sh
+rob@Azure:~/QueueApp$ dotnet run
+Received This is an important message. Furballs are the best!
+rob@Azure:~/QueueApp$ dotnet run
+Received This is another important message.
+rob@Azure:~/QueueApp$ dotnet run
+Received <queue empty or not created>
+rob@Azure:~/QueueApp$ dotnet run This is a new message.
+Sent: This is a new message.
+rob@Azure:~/QueueApp$ dotnet run
+Received This is a new message.
+```
+
+If you want to test when a queue doesn't exist, you can delete the queue (and all the data) with the Azure CLI. Make sure to replace the <connection-string> parameter (or set the environment variable).
+
+```sh
+az storage queue delete --name newsqueue --connection-string "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw=="
+```
+
+The next time you add a message, the queue should be re-created.
+
+The delete operation actually occurs asynchronously. If it has not completed you may get an exception when you attempt to re-create the queue:
+
+```sh
+rob@Azure:~/QueueApp$ dotnet run This is a new message.Unhandled Exception: Microsoft.WindowsAzure.Storage.StorageException: The specifiedqueue is being deleted.
+   at Microsoft.WindowsAzure.Storage.Core.Executor.Executor.ExecuteAsyncInternal[T](RESTCommand`1 cmd, IRetryPolicy policy, OperationContext operationContext, CancellationToken token)
+   at Microsoft.WindowsAzure.Storage.Queue.CloudQueue.CreateIfNotExistsAsync(QueueRequestOptions options, OperationContext operationContext, CancellationToken cancellationToken)
+   at QueueApp.Program.SendArticleAsync(String newsMessage) in /home/rob/QueueApp/Program.cs:line 57
+   at QueueApp.Program.Main(String[] args) in /home/rob/QueueApp/Program.cs:line 17
+   at QueueApp.Program.<Main>(String[] args)
+```
+
 # Summary
