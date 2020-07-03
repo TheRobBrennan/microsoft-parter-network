@@ -227,6 +227,39 @@ This command will return a JSON block with your connection string. It will inclu
 
 ## Add the connection string to the application
 
+Finally, let's add the connection string into our app so it can access the storage account.
+
+For simplicity, you will place the connection string in the **Program.cs** file. In a production application, you should store it in a secure location. For server side use, we recommend using Azure Key Vault.
+
+Type `code .` in the terminal to open the online code editor. Alternatively, if you are working on your own you can use the IDE of your choice. We recommend Visual Studio Code, which is an excellent cross-platform IDE.
+
+Open the `Program.cs` source file in the project.
+
+In the Program class, add a const string value to hold the connection string. You only need the value (it starts with the text DefaultEndpointsProtocol).
+
+Save the file. You can click the ellipse "..." in the right corner of the cloud editor, or use the accelerator key (Ctrl+S on Windows and Linux, Cmd+S on macOS).
+
+Your code should look something like this (the string value will be unique to your account):
+
+```csharp
+using System;
+
+namespace QueueApp
+{
+    class Program
+    {
+        private const string ConnectionString = "DefaultEndpointsProtocol=https; ...";
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+Now that we have this starter project setup, let's look at how to work with a queue in code. It all starts with _messages_.
+
 # Programmatically access a queue
 
 # Exercise - Add a message to the queue
