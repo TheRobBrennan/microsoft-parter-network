@@ -554,9 +554,15 @@ Save the file and build the program (`dotnet build`), you can use the code below
 
 ## Execute the application
 
-```sh
+The application can now send messages. To test it, you can run it from the command line with the `dotnet run` command. Any additional strings are passed as parameters to the application.
 
+Make sure you have saved all the files in the online editor before you build and run the program.
+
+```sh
+dotnet run This is an important message. Furballs are the best!
 ```
+
+This should add the string `"This is an important message. Furballs are the best!"` into the queue.
 
 ## Check your results
 
