@@ -316,9 +316,22 @@ You must have `Write` or `Create` permissions for the storage account to use thi
 
 ## How to send a message
 
-```csharp
+To send a message, you instantiate a `CloudQueueMessage` object. The class has a few overloaded constructors that load your data into the message. We will use the constructor that takes a `string`. After creating the message, you use a `CloudQueue` object to send it.
 
+Here's a typical example:
+
+```csharp
+var message = new CloudQueueMessage("your message here");
+
+CloudQueue queue;
+//...
+
+await queue.AddMessageAsync(message);
 ```
+
+While the **total queue size can be up to 500 TB**, the **individual messages in it can only be up to 64 KB in size** (**48 KB when using Base64 encoding**).
+
+If you need a larger payload you can combine queues and blobs – passing the URL to the actual data (stored as a Blob) in the message. This approach would allow you to enqueue up to 200 GB for a single item.
 
 ## How to receive and delete a message
 
