@@ -207,6 +207,24 @@ dotnet build
 
 ## Get your connection string
 
+Recall that your connection string is available in the Azure portal **Settings > Access keys** section of your storage account.
+
+You can also retrieve it through the Azure CLI or PowerShell tools. Let's use the Azure CLI command. Remember to replace the <name> with the specific name of the storage account you created - `rbstoragedemo732`.
+
+You can use `az storage account list` if you need a reminder.
+
+```sh
+az storage account show-connection-string --name rbstoragedemo732 --resource-group learn-a6fa1b6e-59c5-4994-9d57-d081a3715af0
+```
+
+This command will return a JSON block with your connection string. It will include the storage account name and the account key:
+
+```json
+{
+  "connectionString": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=rbstoragedemo732;AccountKey=EHtcfoUf9PXwgw80KKWXA9HEm1takeyTYO5Bz2f1pwDqZ3dIleIiNXiWB9vBRxAvHJ4UnANuGfbyz9w+egdHiw=="
+}
+```
+
 ## Add the connection string to the application
 
 # Programmatically access a queue
