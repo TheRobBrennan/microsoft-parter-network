@@ -594,6 +594,8 @@ There are several other commands available that you can try with the tools - che
 
 ## Optional - Use the async versions of the methods
 
+We used `Wait()` on the send method above but that's not an efficient use of our computing resources. Instead, we want to use the C# async and await methods. However, we will need to be using _at least_ C# 7.1 to be able to apply these keywords to our **Main** method.
+
 ### Switch to C# 7.1
 
 ```xml
