@@ -537,6 +537,10 @@ The build process may take several minutes to complete. Ensure that you see a **
 
 ## Start the sender and receiver apps
 
+TODO: The suggested code changes suggested above **DID NOT WORK** here.
+
+Whatever. At least it's enough to see what's involved in getting this set up.
+
 ## Summary
 
 # Evaluate the performance of the deployed Event Hub using the Azure portal
