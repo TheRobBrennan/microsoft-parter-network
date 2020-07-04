@@ -466,6 +466,32 @@ You also need to disable the **Enforce SSL connection** option.
 
 ### Create a firewall rule
 
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+Navigate to the server resource for which you would like to create a firewall rule.
+
+Select the **Connection Security** option to open the connection security pane to the right.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-db-security-settings.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-db-security-settings.png)
+
+Recall that you want to allow access to PowerShell clients running psql.
+
+You can choose to either:
+
+- Set **Allow access to Azure services** to **ON**
+- Set **Enforce SSL connection** to **DISABLED**
+- Click the **Save** button to save your changes
+
+Or, you can add a firewall rule to allow access to all IP addresses by adding a firewall rule. Use the following values:
+
+- Rule Name: `AllowAll`
+- Start IP: 0.0.0.0
+- End IP: 255.255.255.255
+- Set **Enforce SSL connection** to **DISABLED**
+- Click the **Save** button to save your changes
+
+WARNING: Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. In production environments, you'll want to restrict access to specific IP addresses.
+
 ### Connect to the database with psql
 
 # Summary
