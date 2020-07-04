@@ -150,6 +150,64 @@ Because you don't have specific requirements around how data is sorted and compa
 
 ## Create your Azure SQL database
 
+Here you'll set up your database, which includes creating your logical server. You'll choose settings that support your transportation logistics application. In practice, you would choose settings that support the kind of app you're building.
+
+Over time if you realize you need additional compute power to keep up with demand, you can adjust performance options or even switch between the DTU and vCore performance models.
+
+From the Azure portal menu or the **Home** page, select **Create a resource**. Select **Databases**, then select **SQL Database**.
+
+Use these values to fill out the rest of the form:
+
+| Setting                       | Value                                      |
+| ----------------------------- | ------------------------------------------ |
+| Subscription                  | Concierge Subscription                     |
+| Resource group                | learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3 |
+| Database name                 | Logistics                                  |
+| Server                        | [See below]                                |
+| Want to use SQL elastic pool? | No                                         |
+| Compute + storage             | [See below]                                |
+
+Under **Server**, click **Create new**, fill out the form, then click **OK**. Here's more information on how to fill out the form:
+
+| Setting                               | Value                                                                                                                                                                                               |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Server name                           | A globally unique [server name](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions).                                                                             |
+| Server admin login                    | A [database identifier](https://docs.microsoft.com/en-us/sql/relational-databases/databases/database-identifiers) that serves as your primary administrator login name.                             |
+| Password                              | Any valid password that has at least eight characters and contains characters from three of these categories: uppercase characters, lowercase characters, numbers, and non-alphanumeric characters. |
+| Location                              | Any valid location from the available list below.                                                                                                                                                   |
+| Allow Azure services to access server | This checkbox should be checked.                                                                                                                                                                    |
+
+Under **Compute + storage**, click **configure database**, then use the following steps:
+
+- To configure your database to use DTUs, click **Looking for basic, standard, premium?**
+- Depending on your application needs, choose **Basic**, **Standard**, or **Premium**.
+- Click **Apply**.
+
+Click **Additional settings**, then use these values to fill out the form.
+
+| Setting                | Value                        |
+| ---------------------- | ---------------------------- |
+| Data source            | None                         |
+| Database Collation     | SQL_Latin1_General_CP1_CI_AS |
+| Advanced Data Security | Not now                      |
+
+IMPORTANT: Remember your server name, admin login, and password for later.
+
+```sh
+# Credentials (temporary and random)
+Server name - `rbsqldb837`
+Server admin login - `rbadmin`
+Server admin password - `ViVKUwPtAdW2`
+```
+
+Click **Review + Create** and then **Create** to create your Azure SQL database.
+
+On the toolbar, click **Notifications** to monitor the deployment process.
+
+When the process completes, click **Pin to dashboard** to pin your database server to the dashboard so that you have quick access when you need it later.
+
+![https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-notifications-complete.png](https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-notifications-complete.png)
+
 ## Set the server firewall
 
 # Exercise - Connect to your database and add sample data
