@@ -75,6 +75,14 @@ You can add existing Azure SQL databases from your Azure SQL server into the poo
 
 # Exercise - Create a SQL elastic pool
 
+In this exercise, we'll create two Azure SQL databases to represent two fitness locations, and then create a SQL elastic pool to manage two databases.
+
+## Create SQL servers
+
+## Create a SQL elastic pool
+
+## Add existing databases to the elastic pool
+
 # Manage SQL elastic pools performance and cost
 
 # Exercise - Manage SQL elastic pools
