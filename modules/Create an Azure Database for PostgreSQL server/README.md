@@ -206,6 +206,30 @@ You've now seen the steps to create an Azure Database for PostgreSQL server usin
 
 # Exercise - Create an Azure Database for PostgreSQL server via the Azure CLI
 
+You decide to create an Azure Database for PostgreSQL server to store routes captured from runners' fitness devices. Based on historic captured data volumes, you know your server storage requirements should be set at 20 GB. To support your processing requirements, you need compute Gen 5 support with 1 vCore. You also know that you require a retention period of 15 days for data backups.
+
+## Create an Azure PostgreSQL database server with the Azure CLI
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Server security considerations
 
 # Exercise - Connect to an Azure Database for PostgreSQL server
