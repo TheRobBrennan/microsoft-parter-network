@@ -359,6 +359,12 @@ Observe the **Cost summary** on the right, which updates the estimated monthly c
 
 ## Create a new database in the pool
 
+Go to the **Overview** section.
+
+Click **+ Create database**.
+
+Give your new database a meaningful name such as **FitnessLondonDB** and press **OK**.
+
 # Knowledge Check
 
 # Summary
