@@ -355,11 +355,74 @@ Azure Database for PostgreSQL prefers that your client applications connect to t
 
 ## Configure connection security
 
+Let's look at the decisions and steps you make to configure an Azure Database for PostgreSQL server firewall. You'll also see how to connect to the server that you created earlier.
+
+Sign into the Azure portal using the same account you activated the sandbox with. Navigate to the server resource for which you'd like to create a firewall rule.
+
+Then, you'll select the **Connection Security** option to open the connection security pane to the right.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-db-security-settings.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-db-security-settings.png)
+
+On this screen, you have several options. You can:
+
+- Add the IP address that you use to access the portal as a firewall entry by clicking on the Add client IP button.
+- Allow access to Azure services. By default, all Azure services **don't** have access to the PostgreSQL server.
+- Add firewall rules by entering ranges of IP addresses.
+- Enforce SSL connections. This option forces your client to connect to the server using an SSL certificate.
+
+Always remember to click on the **Save** icon above the entry fields to save the updated configuration after you've made changes.
+
 ### Allow access to Azure services
+
+To use Azure Cloud Shell to access or configure your server, make sure to enable **Allow Access to Azure Services**. This step is going to add a firewall rule to the server configuration to allow access from Cloud Shell. This rule won't show as one of the custom rules that you add.
+
+You also need to disable **Enforce SSL connection**. PowerShell can't connect to the server if SSL is required for client connections.
+
+Both of these options will result in an error message that's displayed on the command line if not configured correctly.
+
+For example, if access is not allowed to Azure services and enforce SSL connections is enabled, then you'll see something similar to this error when the firewall is blocking access:
+
+```sh
+psql: FATAL: no pg_hba.conf entry for host "123.45.67.89", user "adminuser", database "postgres", SSL on FATAL:  SSL connection is required. Please specify SSL options and retry.
+```
 
 ### Create a firewall rule using the portal
 
+Let's say you want to create a firewall rule that provides access from any IP address.
+
+WARNING: Creating this firewall rule will allow any IP address on the Internet to attempt to connect to your server. Even though clients won't be able access the server without the username and password, enable this rule with caution and make sure you understand the security implications.
+
+You create a new firewall rule by entering the following data in the labeled fields:
+
+- Rule Name: `AllowAll`
+- Start IP: 0.0.0.0
+- End IP: 255.255.255.255
+
+To remove a firewall rule, you'll click the ellipsis (...) at the end of the rule that you want to delete. Click the **Delete** button to delete the rule.
+
+Click on the **Save** icon above the entry fields to commit the deletion of the rule.
+
 ### Create a firewall rule using the Azure CLI
+
+You can use the Azure CLI to add firewall rules to your server with the `az postgres server firewall-rule create` command. Here's an example that creates the rule from above.
+
+```sh
+az postgres server firewall-rule create \
+  --resource-group learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0 \
+  --server <server-name> \
+  --name AllowAll \
+  --start-ip-address 0.0.0.0 \
+  --end-ip-address 255.255.255.255
+```
+
+You remove firewall rules from your server with the command `az postgres server firewall-rule delete`. Here's an example:
+
+```sh
+az postgres server firewall-rule delete \
+  --name AllowAll \
+  --resource-group learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0 \
+  --server-name <server-name>
+```
 
 ## Connecting to your server
 
