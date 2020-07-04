@@ -351,6 +351,12 @@ Observe the **Cost summary** on the right, which shows the estimated monthly cos
 
 ## Adjust per database settings
 
+Click on the _\*Per database settings_ tab.
+
+Change the max and min eDTUs and click **Save**.
+
+Observe the **Cost summary** on the right, which updates the estimated monthly cost of your elastic pool based on your new settings.
+
 ## Create a new database in the pool
 
 # Knowledge Check
