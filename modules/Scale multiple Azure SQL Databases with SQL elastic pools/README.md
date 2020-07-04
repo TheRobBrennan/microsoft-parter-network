@@ -335,6 +335,14 @@ The Azure portal displays the results of your pool settings as an estimated mont
 
 # Exercise - Manage SQL elastic pools
 
+In this exercise, we'll manage the SQL elastic pool and add an additional databases to the pool for another location.
+
+## Adjust elastic pool settings
+
+## Adjust per database settings
+
+## Create a new database in the pool
+
 # Knowledge Check
 
 # Summary
