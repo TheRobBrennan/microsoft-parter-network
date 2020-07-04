@@ -210,25 +210,108 @@ You decide to create an Azure Database for PostgreSQL server to store routes cap
 
 ## Create an Azure PostgreSQL database server with the Azure CLI
 
-```sh
+Keep in mind you want to set your server storage size at 20 GB, compute Gen 5 support with 1 vCore and a retention period of 15 days for data backups.
 
-```
-
-```sh
-
-```
+Set the name of our new database server into an environment variable so we can reuse it.
 
 ```sh
-
+serverName=wingtiptoys-$RANDOM
 ```
+
+Set the username of the user that is allowed to access the server into an environment variable so we can reuse it.
 
 ```sh
-
+userName=azureuser
 ```
+
+Use the `az postgres server create` method to create a new database using the following syntax.
 
 ```sh
-
+az postgres server create \
+   --name [unique_server_name] \
+   --resource-group [resource_group_name] \
+   --location [your_region] \
+   --sku-name [sku_name] \
+   --storage-size [size_in_mb] \
+   --backup-retention [number_days] \
+   --version [server_version] \
+   --admin-user [admin_user_name] \
+   --admin-password [server_admin_password]
 ```
+
+Where:
+
+- --name - Specify a unique server name using lowercase letters 'a'-'z', the numbers 0-9, and the hyphen.
+- --resource-group - Specify your resource group; use `learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0` for this exercise.
+- --location - Specify a location from the following list: - `westus2` - southcentralus - centralus - eastus - westeurope - southeastasia - japaneast - brazilsouth - australiasoutheast - centralindia
+- --admin-user - Specify the admin username for your server.
+- --admin-password - Specify the admin password for your server.
+- --sku-name - For this exercise, specify `B_Gen5_1` for pricing tier B, generation 5 hardware, and 1 vCore.
+- --storage-size - Specify the storage capacity of the server in megabytes.
+- --backup-retention - Specify the number of days a backup is retained.
+- --version - Specify the major version of the server.
+
+Run the following command. Remember to replace the `<location>` value with one of the regions suggested above - `westus2`
+
+```sh
+az postgres server create \
+   --name $serverName \
+   --resource-group learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0 \
+   --location westus2 \
+   --sku-name B_Gen5_1 \
+   --storage-size 20480 \
+   --backup-retention 15 \
+   --version 11 \
+   --admin-user $userName \
+   --admin-password "P@ssw0rd"
+```
+
+The system will take a few minutes to process the information when executed. Go ahead and wait for the command to complete.
+
+Once the command has completed, a JavaScript Object Notation (JSON) string that describes the server is returned. If there was a failure, an error message is displayed. You can use this error information to review and fix your command parameters and try again.
+
+The JSON object will look something like:
+
+```json
+{
+  "administratorLogin": "azureuser",
+  "byokEnforcement": "Disabled",
+  "earliestRestoreDate": "2020-07-04T05:23:53.927000+00:00",
+  "fullyQualifiedDomainName": "wingtiptoys-21753.postgres.database.azure.com",
+  "id": "/subscriptions/1f1aa1cf-6365-422a-8504-a1acdf9bc529/resourceGroups/learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0/providers/Microsoft.DBforPostgreSQL/servers/wingtiptoys-21753",
+  "identity": null,
+  "infrastructureEncryption": "Disabled",
+  "location": "westus2",
+  "masterServerId": "",
+  "minimalTlsVersion": "TLSEnforcementDisabled",
+  "name": "wingtiptoys-21753",
+  "privateEndpointConnections": [],
+  "publicNetworkAccess": "Enabled",
+  "replicaCapacity": 5,
+  "replicationRole": "None",
+  "resourceGroup": "learn-2d954eb7-fcdc-4e83-a37e-cf0286a555c0",
+  "sku": {
+    "capacity": 1,
+    "family": "Gen5",
+    "name": "B_Gen5_1",
+    "size": null,
+    "tier": "Basic"
+  },
+  "sslEnforcement": "Enabled",
+  "storageProfile": {
+    "backupRetentionDays": 15,
+    "geoRedundantBackup": "Disabled",
+    "storageAutogrow": "Enabled",
+    "storageMb": 20480
+  },
+  "tags": null,
+  "type": "Microsoft.DBforPostgreSQL/servers",
+  "userVisibleState": "Ready",
+  "version": "11"
+}
+```
+
+You've successfully created a PostgreSQL server using the Azure CLI. In the next unit, you'll see how to configure your server's security settings.
 
 # Server security considerations
 
