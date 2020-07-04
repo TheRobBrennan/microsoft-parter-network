@@ -339,6 +339,16 @@ In this exercise, we'll manage the SQL elastic pool and add an additional databa
 
 ## Adjust elastic pool settings
 
+Search for and select the SQL elastic pool you created in the previous exercise. Search for and select **All resources** to browse for your SQL elastic pool.
+
+Click on **Configure** in the **Settings** section.
+
+Here you can select either a _DTU-based_ or _vCore-based_ pricing model by selecting the service tier for the elastic pool; select **Basic** and click **Save**.
+
+Within each tier, you can change the number of eDTUs for the pool; change the eDTUs to **200** and click **Save**.
+
+Observe the **Cost summary** on the right, which shows the estimated monthly cost of your elastic pool.
+
 ## Adjust per database settings
 
 ## Create a new database in the pool
