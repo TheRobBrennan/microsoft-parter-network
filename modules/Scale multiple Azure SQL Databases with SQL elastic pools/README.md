@@ -367,4 +367,15 @@ Give your new database a meaningful name such as **FitnessLondonDB** and press *
 
 # Knowledge Check
 
-# Summary
+1. Which of the following scenarios would likely benefit from a SQL elastic pool.
+
+[] You're hosting several SQL servers to track election data for a regional election.
+[] You're running a popular gaming website with customer data stored in an Azure SQL server.
+[X] You manage a cloud platform that tracks inventory for car dealerships.
+
+> It's likely each dealership's data would be stored in a separate database. This scenario would likely benefit from elastic pools.
+
+2. True or False, you can add multiple SQL elastic pools to a single Azure SQL server.
+
+[X] True
+[] False
