@@ -319,15 +319,39 @@ Let's assume you're using an on-premises PostgreSQL database. You're managing al
 
 ## Server security considerations and connection methods
 
+You have a number of options to restrict access to your Azure Database for PostgreSQL server and databases. Network access can be restricted at a network, server, or database level.
+
+You can use any of the following options:
+
+- User accounts to restrict database access
+- Virtual networks to restrict network access
+- Firewall rules to restrict server access
+
 ### Authentication and authorization
+
+The Azure Database for PostgreSQL server supports native PostgreSQL authentication. You can connect and authenticate to the server with the server's admin login. You'll also create users to connect to specific databases to limit access.
 
 ### What is a virtual network?
 
+A virtual network is a logically isolated network that's created within the Azure network. You can use a virtual network to control what Azure resources can connect to other resources.
+
+Imagine you're running a web application that connects to a database. You'll use subnets to isolate different parts of the network. A subnet is a part of a network that's based on a range of IP addresses.
+
+To configure these subnets, you'll create a virtual network and then subdivide the network into subnets. The web application will operate on one subnet and the database on another subnet. Each subnet will have its own rules for communicating to and from the other network. These rules give you the ability to restrict access from the database to the web application.
+
 ### What is a firewall?
+
+A firewall is a service that grants server access based on the originating IP address of each request. You create firewall rules that specify ranges of IP addresses. Only clients from these granted IP addresses will be allowed to access the server. Firewall rules, generally speaking, also include specific network protocol and port information. For example, a PostgreSQL server by default listens to TCP requests on port 5432.
 
 ### Azure Database for PostgreSQL server firewall
 
+The Azure Database for PostgreSQL server firewall prevents all access to your database server until you specify which computers have permission. The firewall configuration allows you to specify a range of IP addresses that are allowed to connect to the server. The server always uses the default PostgreSQL connection information.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-firewall-diagram.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-db-for-postgresql-server/media/6-firewall-diagram.png)
+
 ### Azure Database for PostgreSQL server SSL connections
+
+Azure Database for PostgreSQL prefers that your client applications connect to the PostgreSQL service using the Secure Sockets Layer (SSL). Enforcing SSL connections between your database server and your client applications helps protect against "man in the middle" and similar attacks by encrypting the data between the server and client. Enabling SSL requires the exchange of keys and strict authentication between client and server for the connection to work. Details about using SSL are beyond the scope of this learning module.
 
 ## Configure connection security
 
