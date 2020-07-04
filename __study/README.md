@@ -37,7 +37,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 4 hours 10 mins to complete
   - [ x ] Module 1 - Provision an Azure SQL database to store application data (~50 mins)
-  - [] Module 2 - Create an Azure Database for PostgreSQL server (~44 mins)
+  - [ x ] Module 2 - Create an Azure Database for PostgreSQL server (~44 mins)
   - [] Module 3 - Scale multiple Azure SQL Databases with SQL elastic pools (~39 mins)
   - [] Module 4 - Secure your Azure SQL Database (~1 hr 7 mins)
   - [] Module 5 - Develop and configure an ASP.NET application that queries an Azure SQL database (~50 mins)
