@@ -129,6 +129,12 @@ Your transportation and logistics prototype only needs one Azure SQL Database in
 
 ## What are SQL elastic pools?
 
+When you create your Azure SQL database, you can create a _SQL elastic pool_.
+
+SQL elastic pools relate to eDTUs. They enable you to buy a set of compute and storage resources that are shared among all the databases in the pool. Each database can use the resources they need, within the limits you set, depending on current load.
+
+For your prototype, you won't need a SQL elastic pool because you need only one SQL database.
+
 ## What is collation?
 
 ## Create your Azure SQL database
