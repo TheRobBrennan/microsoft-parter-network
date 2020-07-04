@@ -544,3 +544,25 @@ You can try other psql commands.
 When you're finished executing `psql` operations on your server, execute the command `\q` to quit psql.
 
 # Summary
+
+In this module, you've seen what the Azure Database for PostgreSQL offering looks like. You saw how to create an Azure Database for PostgreSQL server using the Azure portal as well as the Azure CLI.
+
+You looked at the configuration options available to configure a PostgreSQL server-level firewall rule and enforce SSL connections. Finally, you saw how to connect to an Azure Database for PostgreSQL server using _psql_ in Azure Cloud Shell.
+
+## Check your knowledge
+
+1. True or false: The Azure Database for PostgreSQL server firewall permits connections from any remote computer by default.
+
+[] True
+[x] False
+
+2. Suppose you would like to set a retention period of 30 days for the data backups of your PostgreSQL database. How do you enable that?
+
+[x] Specify the retention period when you create your server.
+[] Install the retention extension.
+[] Run a script each day that removes backups that are older than 30 days.
+
+3. Say you need 10 PostgreSQL databases to support a number of projects. Which is the easiest way to create and manage all of them?
+
+[] Using the portal.
+[x] Using the Azure CLI.
