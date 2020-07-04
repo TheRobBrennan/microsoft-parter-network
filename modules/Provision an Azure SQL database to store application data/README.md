@@ -101,6 +101,12 @@ Let's take a quick look at some things you need to consider when you create an A
 
 ## One server, many databases
 
+When you create your first Azure SQL database, you also create an _Azure SQL logical server_. Think of a logical server as an administrative container for your databases.
+
+You can control logins, firewall rules, and security policies through the logical server. You can also override these policies on each database within the logical server.
+
+For now, you need just one database. But a logical server enables you to add more later and tune performance among all your databases.
+
 ## Choose performance: DTUs versus vCores
 
 ## What are SQL elastic pools?
