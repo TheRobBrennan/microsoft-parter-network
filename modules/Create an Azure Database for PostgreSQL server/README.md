@@ -426,7 +426,31 @@ az postgres server firewall-rule delete \
 
 ## Connecting to your server
 
+Like any modern database, PostgreSQL requires regular server administration to achieve best performance. You have a number of options to connect and manage your Azure Database for PostgreSQL server. We'll use `psql` to connect to the server.
+
 ### What is psql?
+
+The command-line tool called `psql` is the PostgreSQL distributed interactive terminal for working with PostgreSQL servers and databases. `psql` works with Azure Database for PostgreSQL the same as with any other PostgreSQL implementation and is included with Azure Cloud Shell. The `psql` tool allows you to manage databases as well as execute structure queries against these databases.
+
+Using `psql` requires a successful connection to a PostgreSQL server. There are a number of command-line parameters available for use when working with psql.
+
+- `--host` - The host to which you'd like to connect.
+- `--username` - The user name/ID with which to connect.
+- `--dbname` - The name of the database to connect to.
+
+TIP: You'll typically connect to the `postgres` management database when managing your server access and database configurations.
+
+Here is the complete command:
+
+```sh
+psql --host=<server-name>.postgres.database.azure.com \
+  --username=<admin-user>@<server-name> \
+  --dbname=<database>
+```
+
+After you're connected, you'll be presented with a command prompt and can execute commands to your server and databases.
+
+You've now seen the steps that you take to configure Azure Database for PostgreSQL security settings. In the next unit, you'll configure Azure Database for PostgreSQL security settings. You'll also connect to the server using Cloud Shell.
 
 # Exercise - Connect to an Azure Database for PostgreSQL server
 
