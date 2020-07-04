@@ -210,6 +210,26 @@ When the process completes, click **Pin to dashboard** to pin your database serv
 
 ## Set the server firewall
 
+Your Azure SQL database is now up and running. You have many options to further configure, secure, monitor, and troubleshoot your new database. You can also specify which systems can access your database through the firewall. Initially, the firewall prevents all access to your database server from outside of Azure.
+
+For your prototype, you only need to access the database from your laptop. Later, you can add additional systems, such as your mobile app.
+
+For now, let's enable your development computer to access the database through the firewall.
+
+Go to the overview pane of the Logistics database. If you pinned the database earlier, you can click the **Logistics** tile on the dashboard to get there.
+
+Click **Set server firewall**.
+
+![https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-set-server-firewall.png](https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-set-server-firewall.png)
+
+Click **Add client IP**, this will automatically add the IP address for your development computer.
+
+![https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-add-client-ip.png](https://docs.microsoft.com/en-us/learn/modules/provision-azure-sql-db/media/3-add-client-ip.png)
+
+Click **Save**.
+
+In the next unit, you'll get some hands-on practice with your new database and with Azure Cloud Shell. You'll connect to the database, create a table, add some sample data, and execute a few SQL statements.
+
 # Exercise - Connect to your database and add sample data
 
 # Summary and cleanup
