@@ -109,6 +109,24 @@ For now, you need just one database. But a logical server enables you to add mor
 
 ## Choose performance: DTUs versus vCores
 
+Azure SQL Database has two purchasing models: DTU and vCore.
+
+What are DTUs?
+
+DTU stands for _Database Transaction Unit_, and is a combined measure of compute, storage, and IO resources. Think of the DTU model as a simple, preconfigured purchase option.
+
+Because your logical server can hold more than one database, there's also the idea of eDTUs, or elastic Database Transaction Units. This option enables you to choose one price, but allow each database in the pool to consume fewer or greater resources depending on current load.
+
+What are vCores?
+
+vCores are _Virtual cores_, which give you greater control over the compute and storage resources that you create and pay for.
+
+While the DTU model provides fixed combinations of compute, storage, and IO resources, the vCore model enables you to configure resources independently.
+
+For example, with the vCore model you can increase storage capacity but keep the existing amount of compute and IO throughput.
+
+Your transportation and logistics prototype only needs one Azure SQL Database instance. You decide on the DTU option because it provides a good balance of compute, storage, and IO performance and is less expensive to get started.
+
 ## What are SQL elastic pools?
 
 ## What is collation?
