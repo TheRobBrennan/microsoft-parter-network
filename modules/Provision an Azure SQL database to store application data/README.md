@@ -245,6 +245,20 @@ How you access your database and connect it to your app is up to you. But to get
 
 ## What is Azure Cloud Shell?
 
+Azure Cloud Shell is a browser-based shell experience to manage and develop Azure resources. Think of Cloud Shell as an interactive console that runs in the cloud.
+
+Behind the scenes, Cloud Shell runs on Linux. But depending on whether you prefer a Linux or Windows environment, you have two experiences to choose from: Bash and PowerShell.
+
+Cloud Shell is accessible from anywhere. Besides the portal, you can also access Cloud Shell from [shell.azure.com](https://shell.azure.com/), the Azure mobile app, or from Visual Studio Code. The panel on the right is a Cloud Shell terminal for you to use during this exercise.
+
+Cloud Shell includes popular tools and text editors. Here's a brief look at the `az`, `jq`, and `sqlcmd` utilities, which are three tools that you'll use for this exercise.
+
+- `az` is also known as the Azure CLI. It's the command-line interface for working with Azure resources. You'll use this to get information about your database, including the connection string.
+- `jq` is a command-line JSON parser. You'll pipe output from `az` commands to this tool to extract important fields from JSON output.
+- `sqlcmd` enables you to execute statements on SQL Server. You'll use `sqlcmd` to create an interactive session with your Azure SQL database.
+
+TIP: When running the T-SQL commands in this module using `sqlcmd`, the `GO` on the second line may not copy through to the `sqlcmd` prompt, so you will likely need to type this out. The T-SQL command won't execute without it, so make sure to run the `GO` command.
+
 ## Get information about your Azure SQL database
 
 ## Connect to your database
