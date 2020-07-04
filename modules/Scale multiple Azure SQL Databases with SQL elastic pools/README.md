@@ -267,6 +267,22 @@ This will give output like:
 
 ## Create a SQL elastic pool
 
+We're ready to set up the resources for the SQL elastic pool. We'll switch to the portal to create the elastic pool.
+
+From the Azure portal menu or the **Home** page, select **Create a resource**. Search for and select **SQL Elastic database pool**.
+
+Select the **SQL Elastic database pool** result and then press the **Create** button on the next screen.
+
+Give your new elastic pool a meaningful name such as `FitnessSQLPool`, and ensure the learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9 resource group is selected.
+
+In the **Server** section, ensure your existing **FitnessSQLServer-nnnn** server is selected
+
+In the **Compute + storage** section, click **Configure elastic pool**.
+
+Click **Basic**, and then click **Apply**.
+
+Click **Review + create**. Review your information, and then click **Create**. The SQL elastic pool may take several minutes to provision.
+
 ## Add existing databases to the elastic pool
 
 # Manage SQL elastic pools performance and cost
