@@ -137,6 +137,17 @@ For your prototype, you won't need a SQL elastic pool because you need only one 
 
 ## What is collation?
 
+Collation refers to the rules that sort and compare data. Collation helps you define sorting rules when case sensitivity, accent marks, and other language characteristics are important.
+
+Let's take a moment to consider what the default collation, **SQL_Latin1_General_CP1_CI_AS**, means.
+
+- **Latin1_General** refers to the family of Western European languages.
+- **CP1** refers to [code page 1252](https://en.wikipedia.org/wiki/Windows-1252), a popular character encoding of the Latin alphabet.
+- **CI** means that comparisons are case insensitive. For example, "HELLO" compares equally to "hello".
+- **AS** means that comparisons are accent sensitive. For example, "résumé" doesn't compare equally to "resume".
+
+Because you don't have specific requirements around how data is sorted and compared, you choose the default collation.
+
 ## Create your Azure SQL database
 
 ## Set the server firewall
