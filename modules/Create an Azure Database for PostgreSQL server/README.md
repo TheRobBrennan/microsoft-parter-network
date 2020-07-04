@@ -454,4 +454,18 @@ You've now seen the steps that you take to configure Azure Database for PostgreS
 
 # Exercise - Connect to an Azure Database for PostgreSQL server
 
+## Allow Azure service access
+
+Before we begin, you'll have to allow access to Azure services if you want to use PowerShell and `psql` to connect to your server. Recall that you can allow access in two ways.
+
+Your first option is to enable **Allow access to Azure services**. Allowing access will create a firewall rule even though the rule isn't entered in the list of custom rules you create.
+
+Your second option is to create a firewall rule that allows access to all IP addresses. The rule will include the IP address for the client running PowerShell that you'll use to execute `psql` from.
+
+You also need to disable the **Enforce SSL connection** option.
+
+### Create a firewall rule
+
+### Connect to the database with psql
+
 # Summary
