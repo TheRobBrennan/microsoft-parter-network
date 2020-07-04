@@ -79,6 +79,192 @@ In this exercise, we'll create two Azure SQL databases to represent two fitness 
 
 ## Create SQL servers
 
+We'll start by creating a SQL server for our fitness databases and we'll add databases for two locations. The steps use Vancouver and Paris but feel free to use other location names.
+
+First declare a few helper variables. SERVERNAME variable will have a random number after the `'-'`. Replace `<location>` with `westus2` and replace `<password>` with `ViVKUwPtAdW2`
+
+```sh
+ADMIN_LOGIN="ServerAdmin"
+RESOURCE_GROUP=learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9
+SERVERNAME=FitnessSQLServer-$RANDOM
+LOCATION=westus2
+PASSWORD=ViVKUwPtAdW2
+```
+
+Create a server named **FitnessSQLServer-nnnn**.
+
+```sh
+az sql server create \
+--name $SERVERNAME \
+--resource-group $RESOURCE_GROUP \
+--location $LOCATION \
+--admin-user $ADMIN_LOGIN \
+--admin-password $PASSWORD
+```
+
+This generates output like:
+
+```json
+{
+  "administratorLogin": "ServerAdmin",
+  "administratorLoginPassword": null,
+  "fullyQualifiedDomainName": "fitnesssqlserver-30460.database.windows.net",
+  "id": "/subscriptions/eae641a0-d5a6-4cc1-af57-0dfdb436a3aa/resourceGroups/learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9/providers/Microsoft.Sql/servers/fitnesssqlserver-30460",
+  "identity": null,
+  "kind": "v12.0",
+  "location": "westus2",
+  "minimalTlsVersion": null,
+  "name": "fitnesssqlserver-30460",
+  "privateEndpointConnections": [],
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9",
+  "state": "Ready",
+  "tags": null,
+  "type": "Microsoft.Sql/servers",
+  "version": "12.0"
+}
+```
+
+Add a database named **FitnessVancouverDB** to **FitnessSQLServer-nnnn**.
+
+```sh
+az sql db create \
+--resource-group $RESOURCE_GROUP \
+--server $SERVERNAME \
+--name FitnessVancouverDB
+```
+
+This will give output like:
+
+```json
+{
+  "autoPauseDelay": null,
+  "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "createMode": null,
+  "creationDate": "2020-07-04T06:15:58.137000+00:00",
+  "currentServiceObjectiveName": "GP_Gen5_2",
+  "currentSku": {
+    "capacity": 2,
+    "family": "Gen5",
+    "name": "GP_Gen5",
+    "size": null,
+    "tier": "GeneralPurpose"
+  },
+  "databaseId": "b525f1ce-07a0-474c-89df-d12fa81e520b",
+  "defaultSecondaryLocation": "westcentralus",
+  "earliestRestoreDate": "2020-07-04T06:45:58.137000+00:00",
+  "edition": "GeneralPurpose",
+  "elasticPoolId": null,
+  "elasticPoolName": null,
+  "failoverGroupId": null,
+  "id": "/subscriptions/eae641a0-d5a6-4cc1-af57-0dfdb436a3aa/resourceGroups/learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9/providers/Microsoft.Sql/servers/fitnesssqlserver-30460/databases/FitnessVancouverDB",
+  "kind": "v12.0,user,vcore",
+  "licenseType": "LicenseIncluded",
+  "location": "westus2",
+  "longTermRetentionBackupResourceId": null,
+  "managedBy": null,
+  "maxLogSizeBytes": 10307502080,
+  "maxSizeBytes": 34359738368,
+  "minCapacity": null,
+  "name": "FitnessVancouverDB",
+  "pausedDate": null,
+  "readReplicaCount": 0,
+  "readScale": "Disabled",
+  "recoverableDatabaseId": null,
+  "recoveryServicesRecoveryPointId": null,
+  "requestedServiceObjectiveName": "GP_Gen5_2",
+  "resourceGroup": "learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9",
+  "restorableDroppedDatabaseId": null,
+  "restorePointInTime": null,
+  "resumedDate": null,
+  "sampleName": null,
+  "sku": {
+    "capacity": 2,
+    "family": "Gen5",
+    "name": "GP_Gen5",
+    "size": null,
+    "tier": "GeneralPurpose"
+  },
+  "sourceDatabaseDeletionDate": null,
+  "sourceDatabaseId": null,
+  "status": "Online",
+  "tags": null,
+  "type": "Microsoft.Sql/servers/databases",
+  "zoneRedundant": false
+}
+```
+
+Add a database named **FitnessParisDB** to **FitnessSQLServer-nnnn**.
+
+```sh
+az sql db create \
+--resource-group $RESOURCE_GROUP \
+--server $SERVERNAME \
+--name FitnessParisDB
+```
+
+This will give output like:
+
+```json
+{
+  "autoPauseDelay": null,
+  "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "createMode": null,
+  "creationDate": "2020-07-04T06:17:55.340000+00:00",
+  "currentServiceObjectiveName": "GP_Gen5_2",
+  "currentSku": {
+    "capacity": 2,
+    "family": "Gen5",
+    "name": "GP_Gen5",
+    "size": null,
+    "tier": "GeneralPurpose"
+  },
+  "databaseId": "88ecce41-e31e-4996-a417-5577da2cd791",
+  "defaultSecondaryLocation": "westcentralus",
+  "earliestRestoreDate": "2020-07-04T06:47:55.340000+00:00",
+  "edition": "GeneralPurpose",
+  "elasticPoolId": null,
+  "elasticPoolName": null,
+  "failoverGroupId": null,
+  "id": "/subscriptions/eae641a0-d5a6-4cc1-af57-0dfdb436a3aa/resourceGroups/learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9/providers/Microsoft.Sql/servers/fitnesssqlserver-30460/databases/FitnessParisDB",
+  "kind": "v12.0,user,vcore",
+  "licenseType": "LicenseIncluded",
+  "location": "westus2",
+  "longTermRetentionBackupResourceId": null,
+  "managedBy": null,
+  "maxLogSizeBytes": 10307502080,
+  "maxSizeBytes": 34359738368,
+  "minCapacity": null,
+  "name": "FitnessParisDB",
+  "pausedDate": null,
+  "readReplicaCount": 0,
+  "readScale": "Disabled",
+  "recoverableDatabaseId": null,
+  "recoveryServicesRecoveryPointId": null,
+  "requestedServiceObjectiveName": "GP_Gen5_2",
+  "resourceGroup": "learn-760338ef-317a-41a7-9e0f-8a8b6cb255c9",
+  "restorableDroppedDatabaseId": null,
+  "restorePointInTime": null,
+  "resumedDate": null,
+  "sampleName": null,
+  "sku": {
+    "capacity": 2,
+    "family": "Gen5",
+    "name": "GP_Gen5",
+    "size": null,
+    "tier": "GeneralPurpose"
+  },
+  "sourceDatabaseDeletionDate": null,
+  "sourceDatabaseId": null,
+  "status": "Online",
+  "tags": null,
+  "type": "Microsoft.Sql/servers/databases",
+  "zoneRedundant": false
+}
+```
+
 ## Create a SQL elastic pool
 
 ## Add existing databases to the elastic pool
