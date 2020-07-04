@@ -85,6 +85,32 @@ Although you don't need to be a DBA to use Azure SQL Database, there are a few c
 
 # Exercise - Create your Azure SQL database
 
+Your transportation company wants to set itself apart from other companies, without breaking the bank. You must have a good handle on how to set up the database to provide the best service while controlling costs.
+
+Here, you'll learn:
+
+- What considerations you need to make when creating an Azure SQL database, including:
+  - How a logical server acts as an administrative container for your databases.
+  - The differences between purchasing models.
+  - How elastic pools enable you to share processing power among databases.
+  - How collation rules affect how data is compared and sorted.
+- How to bring up Azure SQL Database from the portal.
+- How to add firewall rules so that your database is accessible from only trusted sources.
+
+Let's take a quick look at some things you need to consider when you create an Azure SQL database.
+
+## One server, many databases
+
+## Choose performance: DTUs versus vCores
+
+## What are SQL elastic pools?
+
+## What is collation?
+
+## Create your Azure SQL database
+
+## Set the server firewall
+
 # Exercise - Connect to your database and add sample data
 
 # Summary and cleanup
