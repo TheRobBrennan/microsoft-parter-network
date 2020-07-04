@@ -285,6 +285,22 @@ Click **Review + create**. Review your information, and then click **Create**. T
 
 ## Add existing databases to the elastic pool
 
+Open your newly created SQL elastic pool in the Azure portal and navigate to the **Overview** section. Note there are currently no databases in the pool.
+
+Select **Configure** in the **Settings** section.
+
+Select the **Databases** tab.
+
+Click **+ Add databases**.
+
+Select the databases for both locations.
+
+Click **Apply**.
+
+Click **Save**.
+
+Congratulations, you've successfully added databases to a SQL elastic pool.
+
 # Manage SQL elastic pools performance and cost
 
 # Exercise - Manage SQL elastic pools
