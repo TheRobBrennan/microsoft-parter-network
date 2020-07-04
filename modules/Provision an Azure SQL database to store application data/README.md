@@ -232,4 +232,21 @@ In the next unit, you'll get some hands-on practice with your new database and w
 
 # Exercise - Connect to your database and add sample data
 
+Before you connect the database to your app, you want to verify that you can connect to it, add a basic table, and work with sample data.
+
+We maintain the infrastructure, software updates, and patches for your Azure SQL database. Beyond that, you can treat your Azure SQL database like you would any other SQL Server installation. For example, **you can use Visual Studio, SQL Server Management Studio, Azure Data Studio, or other tools to manage your Azure SQL database**.
+
+How you access your database and connect it to your app is up to you. But to get some experience working with your database, here you'll connect to it directly from the portal, create a table, and run a few basic CRUD operations. You'll learn:
+
+- What Cloud Shell is and how to access it from the portal.
+- How to access information about your database from the Azure CLI, including connection strings.
+- How to connect to your database using `sqlcmd`.
+- How to initialize your database with a basic table and some sample data.
+
+## What is Azure Cloud Shell?
+
+## Get information about your Azure SQL database
+
+## Connect to your database
+
 # Summary and cleanup
