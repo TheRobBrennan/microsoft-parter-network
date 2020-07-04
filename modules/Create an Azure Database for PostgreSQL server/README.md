@@ -494,4 +494,53 @@ WARNING: Creating this firewall rule will allow any IP address on the Internet t
 
 ### Connect to the database with psql
 
+In the Azure Cloud Shell on the right, connect `psql` to your server using the following command:
+
+```sh
+psql --host=wingtiptoys-21753.postgres.database.azure.com --username=azureuser@wingtiptoys-21753 --dbname=postgres
+
+# Password - P@ssw0rd
+```
+
+Use the values you chose for the `server-name`, and `admin-user`.
+
+**postgres** is the default management database every PostgreSQL server is created with. You'll be prompted for the password you provided when you created the server.
+
+Once successfully connected, execute the `\l` command to list all databases. This command will result in two or more default databases returned.
+
+Press `q` to exit the list.
+
+Create a new database with the following SQL command:
+
+```sql
+CREATE DATABASE "Adventureworks";
+```
+
+Run the `psql` command `\c Adventureworks` to connect to the database.
+
+Add some data to the database with the following SQL commands that add data to two tables:
+
+```sql
+CREATE TABLE PEOPLE(NAME TEXT NOT NULL, AGE INT NOT NULL);
+INSERT INTO PEOPLE(NAME, AGE) VALUES ('Bob', 35);
+INSERT INTO PEOPLE(NAME, AGE) VALUES ('Sarah', 28);
+CREATE TABLE LOCATIONS(CITY TEXT NOT NULL, STATE TEXT NOT NULL);
+INSERT INTO LOCATIONS(CITY, STATE) VALUES ('New York', 'NY');
+INSERT INTO LOCATIONS(CITY, STATE) VALUES ('Flint', 'MI');
+```
+
+Retrieve the data you added using the following SQL commands:
+
+```sql
+SELECT * FROM PEOPLE;
+SELECT * FROM LOCATIONS;
+```
+
+You can try other psql commands.
+
+- `\?` to get help.
+- `\dt` to list the tables.
+
+When you're finished executing `psql` operations on your server, execute the command `\q` to quit psql.
+
 # Summary
