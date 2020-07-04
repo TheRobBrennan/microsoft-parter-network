@@ -515,4 +515,167 @@ You see that the database is online and can hold around 2 GB of data:
 
 ## Connect to your database
 
+Now that you understand a bit about your database, let's connect to it using `sqlcmd`, create a table that holds information about transportation drivers, and perform a few basic CRUD operations.
+
+Remember that CRUD stands for Create, Read, Update, and Delete. These terms refer to operations you perform on table data and are the four basic operations you need for your app. Now's a good time to verify you can perform each of them.
+
+Run this `az sql db show-connection-string` command to get the connection string to the **Logistics** database in a format that `sqlcmd` can use:
+
+```sh
+az sql db show-connection-string --client sqlcmd --name Logistics
+```
+
+Your output resembles this:
+
+```sh
+"sqlcmd -S tcp:rbsqldb837.database.windows.net,1433 -d Logistics -U <username> -P <password> -N -l 30"
+```
+
+REMEMBER: We defined our credentials earlier
+
+```sh
+# Credentials (temporary and random)
+Server name - `rbsqldb837`
+Server admin login - `rbadmin`
+Server admin password - `ViVKUwPtAdW2`
+```
+
+Run the `sqlcmd` statement from the output of the previous step to create an interactive session. Remove the surrounding quotes and replace `<username>` and `<password>` with the username and password you specified when you created your database. Here's an example.
+
+```sh
+sqlcmd -S tcp:rbsqldb837.database.windows.net,1433 -d Logistics -U rbadmin -P "ViVKUwPtAdW2" -N -l 30
+```
+
+TIP: Place your password in quotes so that "&" and other special characters aren't interpreted as processing instructions.
+
+IMPORTANT: You may see an error message that is similar to the following example:
+
+```sh
+Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : Cannot open server 'rbsqldb837' requested by the login. Client with IP address '168.61.18.156' is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect..
+r
+```
+
+If this happens, you will need to add another firewall rule for your client. To do so, use the following steps:
+
+- Sign into the Azure portal using the same account you activated the sandbox with.
+- Search for and select your database.
+- Click **Set server firewall**.
+- Specify a unique Rule name, then enter your IP address from the error message for both the Start IP and End IP fields.
+- Click Save.
+
+From your `sqlcmd` session, run the following T-SQL statements to create a table named `Drivers`.
+
+```sql
+CREATE TABLE Drivers (DriverID int, LastName varchar(255), FirstName varchar(255), OriginCity varchar(255));
+GO
+```
+
+The table contains four columns: a unique identifier, the driver's last and first name, and the driver's city of origin.
+
+Run the following T-SQL statements to verify that the Drivers table exists.
+
+```sh
+SELECT name FROM sys.tables;
+GO
+```
+
+You should see this output.
+
+```sh
+name
+--------------------------------------------------------------------------------------------------------------------------------
+Drivers
+
+(1 rows affected)
+```
+
+Run the following T-SQL statements to add a sample row to the table. This is the **create** operation.
+
+```sql
+INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
+GO
+```
+
+You see this to indicate the operation succeeded.
+
+```sh
+(1 rows affected)
+```
+
+Run the following T-SQL statements to list the `DriverID` and `OriginCity` columns from all rows in the table. This is the **read** operation.
+
+```sh
+SELECT DriverID, OriginCity FROM Drivers;
+GO
+```
+
+You see one result with the `DriverID` and `OriginCity` for the row you created in the previous step.
+
+```sh
+DriverID    OriginCity
+----------- --------------------------
+        123 Springfield
+
+(1 rows affected)
+```
+
+Run the following T-SQL statements to change the city of origin from "Springfield" to "Boston" for the driver with a `DriverID` of 123. This is the **update** operation.
+
+```sql
+UPDATE Drivers SET OriginCity='Boston' WHERE DriverID=123;
+GO
+```
+
+Run the following T-SQL statements to list the `DriverID` and `OriginCity` columns again.
+
+```sql
+SELECT DriverID, OriginCity FROM Drivers;
+GO
+```
+
+You should now see the following output. Notice how the `OriginCity` reflects the update to Boston.
+
+```sh
+DriverID    OriginCity
+----------- --------------------------
+        123 Boston
+
+(1 rows affected)
+```
+
+Run the following T-SQL statements to delete the record. This is the **delete** operation.
+
+```sql
+DELETE FROM Drivers WHERE DriverID=123;
+GO
+```
+
+```sh
+(1 rows affected)
+```
+
+Run the following T-SQL statements to verify the `Drivers` table is empty.
+
+```sh
+SELECT COUNT(*) FROM Drivers;
+GO
+```
+
+You see that the table contains no rows.
+
+```sh
+-----------
+          0
+
+(1 rows affected)
+```
+
+Now that you have a general idea for working with Azure SQL Database from Cloud Shell, you can get the connection string for your favorite SQL management tool – whether that's from SQL Server Management Studio, Visual Studio, or something else.
+
+Cloud Shell makes it easy to access and work with your Azure resources. Because Cloud Shell is browser-based, you can access it from Windows, macOS, or Linux – essentially any system with a web browser.
+
+You gained some hands-on experience running Azure CLI commands to get information about your Azure SQL database. As a bonus, you practiced your T-SQL skills.
+
+In the next unit, we'll wrap up this module and discuss how to tear down your database.
+
 # Summary and cleanup
