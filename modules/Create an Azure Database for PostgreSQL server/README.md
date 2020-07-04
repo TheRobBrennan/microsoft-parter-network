@@ -315,6 +315,32 @@ You've successfully created a PostgreSQL server using the Azure CLI. In the next
 
 # Server security considerations
 
+Let's assume you're using an on-premises PostgreSQL database. You're managing all security aspects and you've locked down all access to your servers using the standard PostgreSQL server-level firewall rules. Now you want to make sure that you can configure the same server-level firewall rules in Azure.
+
+## Server security considerations and connection methods
+
+### Authentication and authorization
+
+### What is a virtual network?
+
+### What is a firewall?
+
+### Azure Database for PostgreSQL server firewall
+
+### Azure Database for PostgreSQL server SSL connections
+
+## Configure connection security
+
+### Allow access to Azure services
+
+### Create a firewall rule using the portal
+
+### Create a firewall rule using the Azure CLI
+
+## Connecting to your server
+
+### What is psql?
+
 # Exercise - Connect to an Azure Database for PostgreSQL server
 
 # Summary
