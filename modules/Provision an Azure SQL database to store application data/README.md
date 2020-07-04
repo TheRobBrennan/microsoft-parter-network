@@ -261,6 +261,258 @@ TIP: When running the T-SQL commands in this module using `sqlcmd`, the `GO` on 
 
 ## Get information about your Azure SQL database
 
+Before you connect to your database, it's a good idea to verify that it exists and is online.
+
+Here, you use the `az` utility to list your databases and show some information about the **Logistics** database, including its maximum size and status.
+
+The `az` commands you'll run require the name of your resource group and the name of your Azure SQL logical server. To save typing, run this `azure configure` command to specify them as default values.
+
+REMEMBER: We defined our credentials earlier
+
+```sh
+# Credentials (temporary and random)
+Server name - `rbsqldb837`
+Server admin login - `rbadmin`
+Server admin password - `ViVKUwPtAdW2`
+```
+
+Replace [server-name] with the name of your Azure SQL logical server.
+
+```sh
+az configure --defaults group=learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3 sql-server=rbsqldb837
+```
+
+Depending on the pane you are on in the portal, your SQL server name may be displayed as a FQDN (e.g. servername.database.windows.net). However, for this command, you only need the logical name without the .database.windows.net suffix.
+
+Run `az sql db list` to list all databases on your Azure SQL logical server.
+
+```sh
+az sql db list
+```
+
+You see a large block of JSON as output:
+
+```json
+[
+  {
+    "autoPauseDelay": null,
+    "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "createMode": null,
+    "creationDate": "2020-07-04T03:46:41.620000+00:00",
+    "currentServiceObjectiveName": "S0",
+    "currentSku": {
+      "capacity": 10,
+      "family": null,
+      "name": "Standard",
+      "size": null,
+      "tier": "Standard"
+    },
+    "databaseId": "fe4c6c66-adc9-47f8-81b8-01b5798fcb32",
+    "defaultSecondaryLocation": "westcentralus",
+    "earliestRestoreDate": "2020-07-04T03:55:49+00:00",
+    "edition": "Standard",
+    "elasticPoolId": null,
+    "elasticPoolName": null,
+    "failoverGroupId": null,
+    "id": "/subscriptions/b6c97cdb-3ae5-40a9-ac7d-efec7b85dc3b/resourceGroups/learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3/providers/Microsoft.Sql/servers/rbsqldb837/databases/Logistics",
+    "kind": "v12.0,user",
+    "licenseType": null,
+    "location": "westus2",
+    "longTermRetentionBackupResourceId": null,
+    "managedBy": null,
+    "maxLogSizeBytes": null,
+    "maxSizeBytes": 268435456000,
+    "minCapacity": null,
+    "name": "Logistics",
+    "pausedDate": null,
+    "readReplicaCount": 0,
+    "readScale": "Disabled",
+    "recoverableDatabaseId": null,
+    "recoveryServicesRecoveryPointId": null,
+    "requestedServiceObjectiveName": "S0",
+    "resourceGroup": "learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3",
+    "restorableDroppedDatabaseId": null,
+    "restorePointInTime": null,
+    "resumedDate": null,
+    "sampleName": null,
+    "sku": {
+      "capacity": 10,
+      "family": null,
+      "name": "Standard",
+      "size": null,
+      "tier": "Standard"
+    },
+    "sourceDatabaseDeletionDate": null,
+    "sourceDatabaseId": null,
+    "status": "Online",
+    "tags": {},
+    "type": "Microsoft.Sql/servers/databases",
+    "zoneRedundant": false
+  },
+  {
+    "autoPauseDelay": null,
+    "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+    "collation": "SQL_Latin1_General_CP1_CI_AS",
+    "createMode": null,
+    "creationDate": "2020-07-04T03:45:46.723000+00:00",
+    "currentServiceObjectiveName": "System2",
+    "currentSku": {
+      "capacity": 0,
+      "family": null,
+      "name": "System",
+      "size": null,
+      "tier": "System"
+    },
+    "databaseId": "12beecf8-e32c-4b79-b31e-625eddfcc2ce",
+    "defaultSecondaryLocation": "westcentralus",
+    "earliestRestoreDate": null,
+    "edition": "System",
+    "elasticPoolId": null,
+    "elasticPoolName": null,
+    "failoverGroupId": null,
+    "id": "/subscriptions/b6c97cdb-3ae5-40a9-ac7d-efec7b85dc3b/resourceGroups/learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3/providers/Microsoft.Sql/servers/rbsqldb837/databases/master",
+    "kind": "v12.0,system",
+    "licenseType": null,
+    "location": "westus2",
+    "longTermRetentionBackupResourceId": null,
+    "managedBy": "/subscriptions/b6c97cdb-3ae5-40a9-ac7d-efec7b85dc3b/resourceGroups/learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3/providers/Microsoft.Sql/servers/rbsqldb837",
+    "maxLogSizeBytes": null,
+    "maxSizeBytes": 32212254720,
+    "minCapacity": null,
+    "name": "master",
+    "pausedDate": null,
+    "readReplicaCount": 0,
+    "readScale": "Disabled",
+    "recoverableDatabaseId": null,
+    "recoveryServicesRecoveryPointId": null,
+    "requestedServiceObjectiveName": "System2",
+    "resourceGroup": "learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3",
+    "restorableDroppedDatabaseId": null,
+    "restorePointInTime": null,
+    "resumedDate": null,
+    "sampleName": null,
+    "sku": {
+      "capacity": 0,
+      "family": null,
+      "name": "System",
+      "size": null,
+      "tier": "System"
+    },
+    "sourceDatabaseDeletionDate": null,
+    "sourceDatabaseId": null,
+    "status": "Online",
+    "tags": null,
+    "type": "Microsoft.Sql/servers/databases",
+    "zoneRedundant": false
+  }
+]
+```
+
+Since we want to see only the database names, run the command a second time. But this time, pipe the output to `jq` to print out only the name fields.
+
+```sh
+az sql db list | jq '[.[] | {name: .name}]'
+```
+
+You should see this output:
+
+```json
+[
+  {
+    "name": "Logistics"
+  },
+  {
+    "name": "master"
+  }
+]
+```
+
+**Logistics** is your database. Like SQL Server, **master** includes server metadata, such as sign-in accounts and system configuration settings.
+
+Run this `az sql db show` command to get details about the _Logistics_ database.
+
+```sh
+az sql db show --name Logistics
+```
+
+As before, you see a large block of JSON as output:
+
+```json
+{
+  "autoPauseDelay": null,
+  "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "createMode": null,
+  "creationDate": "2020-07-04T03:46:41.620000+00:00",
+  "currentServiceObjectiveName": "S0",
+  "currentSku": {
+    "capacity": 10,
+    "family": null,
+    "name": "Standard",
+    "size": null,
+    "tier": "Standard"
+  },
+  "databaseId": "fe4c6c66-adc9-47f8-81b8-01b5798fcb32",
+  "defaultSecondaryLocation": "westcentralus",
+  "earliestRestoreDate": "2020-07-04T03:55:49+00:00",
+  "edition": "Standard",
+  "elasticPoolId": null,
+  "elasticPoolName": null,
+  "failoverGroupId": null,
+  "id": "/subscriptions/b6c97cdb-3ae5-40a9-ac7d-efec7b85dc3b/resourceGroups/learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3/providers/Microsoft.Sql/servers/rbsqldb837/databases/Logistics",
+  "kind": "v12.0,user",
+  "licenseType": null,
+  "location": "westus2",
+  "longTermRetentionBackupResourceId": null,
+  "managedBy": null,
+  "maxLogSizeBytes": null,
+  "maxSizeBytes": 268435456000,
+  "minCapacity": null,
+  "name": "Logistics",
+  "pausedDate": null,
+  "readReplicaCount": 0,
+  "readScale": "Disabled",
+  "recoverableDatabaseId": null,
+  "recoveryServicesRecoveryPointId": null,
+  "requestedServiceObjectiveName": "S0",
+  "resourceGroup": "learn-0dfeebf6-6c92-46bb-b140-848f1e6d39f3",
+  "restorableDroppedDatabaseId": null,
+  "restorePointInTime": null,
+  "resumedDate": null,
+  "sampleName": null,
+  "sku": {
+    "capacity": 10,
+    "family": null,
+    "name": "Standard",
+    "size": null,
+    "tier": "Standard"
+  },
+  "sourceDatabaseDeletionDate": null,
+  "sourceDatabaseId": null,
+  "status": "Online",
+  "tags": {},
+  "type": "Microsoft.Sql/servers/databases",
+  "zoneRedundant": false
+}
+```
+
+Run the command a second time. This time, pipe the output to `jq` to limit output to only the name, maximum size, and status of the Logistics database:
+
+```sh
+az sql db show --name Logistics | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
+```
+
+You see that the database is online and can hold around 2 GB of data:
+
+```sh
+{
+  "name": "Logistics",
+  "maxSizeBytes": 268435456000,
+  "status": "Online"
+}
+```
+
 ## Connect to your database
 
 # Summary and cleanup
