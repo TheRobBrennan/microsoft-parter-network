@@ -758,6 +758,24 @@ You'll receive email notifications as vulnerabilities are detected. The email wi
 
 ### Data Discovery & Classification
 
+Navigate to your marketplace database. In the search bar at the top of the portal, search for marketplace, then select the database in the portal.
+
+In the **Security** section, select **Advanced Data Security**.
+
+Click on the **Data Discovery & Classification** panel.
+
+The Data Discovery & Classification panel shows columns within your tables that need to be protected. Some of the columns may have sensitive information or may be considered classified in different countries or regions.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-data-discovery-and-classification.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-data-discovery-and-classification.png)
+
+A message will be displayed if any columns need protection configured. This message will be formatted like "We have found 10 columns with classification recommendations". You can click on the text to view the recommendations.
+
+Select the columns that you want to classify by clicking the checkmark next to the column, or select the checkbox to the left of the schema header. Select the Accept selected recommendations options to apply the classification recommendations.
+
+Next, you'll edit the columns and then define the information type and the sensitivity label for the database. Click on the Save button to save the changes.
+
+No active recommendations should be listed once you've managed the recommendations successfully.
+
 ### Vulnerability Assessment
 
 ### Threat Detection
