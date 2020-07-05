@@ -790,6 +790,14 @@ On the vulnerability page you will see the details such as the risk level, which
 
 ### Threat Detection
 
+Click on the **Threat Detection** panel.
+
+This displays a list of detected threats. For example, here you can see one potential SQL injection attack listed.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-threat-detection-dashboard.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-threat-detection-dashboard.png)
+
+Address any issues by following the recommendations. For issues such as the SQL injection warnings, you'll be able to look at the query and work backward to where the query is being executed in code. Once found, you should rewrite the code so it will no longer have the issue.
+
 # Knowledge check
 
 # Summary
