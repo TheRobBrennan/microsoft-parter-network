@@ -33,7 +33,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 3 - Communicate between applications with Azure Queue storage (~56 mins)
   - [ x ] Module 4 - Enable reliable messaging for Big Data applications using Azure Event Hubs (~56 mins)
 
-## Friday, July 3rd, 2020 (HOLIDAY)
+## Friday, July 3rd, 2020 [HOLIDAY WEEKEND]
 
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 4 hours 10 mins to complete
   - [ x ] Module 1 - Provision an Azure SQL database to store application data (~50 mins)
@@ -42,17 +42,16 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 ## Saturday, July 4th, 2020 [WEEKEND]
 
+## Sunday, July 5th, 2020 [WEEKEND]
+
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 1 hour 57 mins to complete
   - [] Module 4 - Secure your Azure SQL Database (~1 hr 7 mins)
   - [] Module 5 - Develop and configure an ASP.NET application that queries an Azure SQL database (~50 mins)
 - [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) - Estimated 3 hours 50 mins to complete
 
-## Sunday, July 5th, 2020 [WEEKEND]
-
-- [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
-
 ## Monday, July 6th, 2020
 
+- [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
 - [Manage resources in Azure](https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/) - Estimated 5 hours 02 mins to complete
 
 ## Tuesday, July 7th, 2020
