@@ -800,4 +800,34 @@ Address any issues by following the recommendations. For issues such as the SQL 
 
 # Knowledge check
 
+Here's a few questions to review what we've discussed and check what you've learned.
+
+## Check your knowledge
+
+1. Which of the following is the most efficient way to secure a database to allow only access from a VNet while restricting access from the internet?
+
+[] An allow access to Azure services rule
+[] A server-level IP address rule
+[X] A server-level virtual network rule
+[] A database-level IP address rule
+
+2. A mask has been applied to a column in the database that holds a user’s email address, laura@contoso.com. From the list of options, what would the mask display for a database administrator account?
+
+[] lxxx@xxxx.com
+[] laura@xxxxxxx.com
+[X] laura@contoso.com
+[] Data not available
+
+3. Transparent Data Encryption will encrypt which database files?
+
+[] Database files only
+[] Log files and backup files only
+[] Backup files only
+[X] Database files, log files, and backup files
+
+4. Is encrypted communication turned on automatically when connecting to an Azure SQL Server?
+
+[X] Yes
+[] No
+
 # Summary
