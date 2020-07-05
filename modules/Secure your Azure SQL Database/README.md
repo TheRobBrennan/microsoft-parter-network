@@ -534,6 +534,42 @@ It's important to properly secure your database, and only grant access where nec
 
 # Exercise - Secure your data in transit, at rest, and on display
 
+The _marketplaceDb_ database stores information that is sensitive, such as physical addresses, email addresses, and phone numbers. If exposed, this information could be used by malicious attackers to harm our business or our customers. Let's look at how we can use encryption and data masking to enhance the security of our database.
+
+## TLS network encryption
+
+## Transparent data encryption
+
+## Dynamic data masking
+
+|     |     |
+| --- | --- |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+
+|     |     |
+| --- | --- |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+|     |     |
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Exercise - Monitor your database
 
 # Knowledge check
