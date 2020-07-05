@@ -664,6 +664,58 @@ Audit logs are written to Append Blobs in an Azure Blob storage account that you
 
 ## Auditing in practice
 
+As a best practice, **avoid enabling both server blob auditing and database blob auditing together**, unless:
+
+- You want to use a different storage account or retention period for a specific database.
+- You want to audit event types or categories for a specific database that differs from the rest of the databases on the server. For example, you might have table inserts that need to be audited but only for a specific database.
+
+Otherwise, **it's recommended you enable only server-level blob auditing and leave the database-level auditing disabled for all databases**.
+
+Let's look at the steps you take to set up auditing on your system.
+
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+In the search bar at the top of the portal, search for **serverNNNN** (replacing `NNNN` with the number from your server name), then select the server in the portal.
+
+In the left menu, in the **Security** section, select the **Auditing** option.
+
+Auditing is turned off by default. To enable it on your database server, tap the **ON** button.
+
+Once the ON button is selected, select the **Storage** checkbox, then click **Storage details** to define the storage account.
+
+In the **Storage settings** dialog, you can select an existing storage account or create a new storage account to store your audits. The storage account must be configured to use the same region as your server. In this case, we'll define a new storage account. Click **Storage account**, which will then open up the **Create storage account** dialog. Name the storage account `serverNNNNauditing`, replacing the `NNNN` with the number from your logical server name. Leave the rest of the options at their defaults and select **OK**. Back in the **Storage settings** dialog, leave the defaults and click **OK**.
+
+Click the **Save** button in the toolbar to save your changes and enable auditing on your database server.
+
+Now let's generate some audit records and take a look at what you can expect.
+
+Let's log back in to the database as the _ApplicationUser_ user.
+
+```sh
+sqlcmd -S tcp:serverNNNN.database.windows.net,1433 -d marketplaceDb -U 'ApplicationUser' -P '[password]' -N -l 30
+```
+
+Run the following query.
+
+```sql
+SELECT FirstName, LastName, EmailAddress, Phone FROM SalesLT.Customer;
+GO
+```
+
+Back in the portal on your SQL server, select **SQL databases** in the left menu and select the _marketplace_ database.
+
+In the left menu on your _marketplace_ database, in the **Security** section select **Auditing**.
+
+Since we enabled auditing at the server-level, you should see that it's enabled here. Select **View audit logs** in the top menu bar to view the logs.
+
+You should see one or more audit records with **PRINCIPAL NAME** of _ApplicationUser_ and **EVENT TYPE** of **BATCH COMPLETED**. One of them should contain the details of the query you just executed. You might also see other events such as authentication failures and success. Select any record to see the full details of the event.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-audit-log.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-audit-log.png)
+
+These actions configure the audits at the database server level and will apply to all databases on the server. You can also configure auditing at a database level.
+
+Let's take a look at another feature that leverages these logs to increase the security of your database.
+
 ## Advanced Data Security for Azure SQL Database
 
 ### Setup and configuration
