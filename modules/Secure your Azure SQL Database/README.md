@@ -31,6 +31,139 @@ Let's get things set up!
 
 ## Create an Azure SQL Database
 
+First, let's set up some variables. Replace values below that are shown in `[]` with values of your choice. Note that the `[password]` must have at least eight characters and contain characters from at least three of these categories: uppercase characters, lowercase characters, numbers, and non-alphanumeric characters. Save the login for use later.
+
+```sh
+# Set an admin login and password for your database
+export ADMINLOGIN='rbadmin'
+export PASSWORD='ViVKUwPtAdW2'
+# Set the logical SQL server name. We'll add a random string as it needs to be globally unique.
+export SERVERNAME=server$RANDOM
+export RESOURCEGROUP=learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e
+# Set the location, we'll pull the location from our resource group.
+export LOCATION=$(az group show --name $RESOURCEGROUP | jq -r '.location')
+```
+
+Run the following command to create a new Azure SQL Database logical server.
+
+```sh
+az sql server create \
+    --name $SERVERNAME \
+    --resource-group $RESOURCEGROUP \
+    --location $LOCATION \
+    --admin-user $ADMINLOGIN \
+    --admin-password "$PASSWORD"
+```
+
+This will generate output:
+
+```json
+{
+  "administratorLogin": "rbadmin",
+  "administratorLoginPassword": null,
+  "fullyQualifiedDomainName": "server18714.database.windows.net",
+  "id": "/subscriptions/179dd20b-e2ea-45a0-8003-473940f3d4f1/resourceGroups/learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e/providers/Microsoft.Sql/servers/server18714",
+  "identity": null,
+  "kind": "v12.0",
+  "location": "westus",
+  "minimalTlsVersion": null,
+  "name": "server18714",
+  "privateEndpointConnections": [],
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e",
+  "state": "Ready",
+  "tags": null,
+  "type": "Microsoft.Sql/servers",
+  "version": "12.0"
+}
+```
+
+Now run the following to create the database called **marketplaceDb** on the logical server you just created. This will use the _AdventureWorksLT_ database as a template so we'll have some pre-populated tables to work with.
+
+```sh
+az sql db create --resource-group $RESOURCEGROUP \
+    --server $SERVERNAME \
+    --name marketplaceDb \
+    --sample-name AdventureWorksLT \
+    --service-objective Basic
+```
+
+This will generate output like:
+
+```json
+{
+  "autoPauseDelay": null,
+  "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+  "collation": "SQL_Latin1_General_CP1_CI_AS",
+  "createMode": null,
+  "creationDate": "2020-07-05T21:33:17.347000+00:00",
+  "currentServiceObjectiveName": "Basic",
+  "currentSku": {
+    "capacity": 5,
+    "family": null,
+    "name": "Basic",
+    "size": null,
+    "tier": "Basic"
+  },
+  "databaseId": "fa80c550-d707-4d8d-abed-9183872f88b3",
+  "defaultSecondaryLocation": "eastus",
+  "earliestRestoreDate": "2020-07-05T22:03:17.347000+00:00",
+  "edition": "Basic",
+  "elasticPoolId": null,
+  "elasticPoolName": null,
+  "failoverGroupId": null,
+  "id": "/subscriptions/179dd20b-e2ea-45a0-8003-473940f3d4f1/resourceGroups/learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e/providers/Microsoft.Sql/servers/server18714/databases/marketplaceDb",
+  "kind": "v12.0,user",
+  "licenseType": null,
+  "location": "westus",
+  "longTermRetentionBackupResourceId": null,
+  "managedBy": null,
+  "maxLogSizeBytes": null,
+  "maxSizeBytes": 2147483648,
+  "minCapacity": null,
+  "name": "marketplaceDb",
+  "pausedDate": null,
+  "readReplicaCount": 0,
+  "readScale": "Disabled",
+  "recoverableDatabaseId": null,
+  "recoveryServicesRecoveryPointId": null,
+  "requestedServiceObjectiveName": "Basic",
+  "resourceGroup": "learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e",
+  "restorableDroppedDatabaseId": null,
+  "restorePointInTime": null,
+  "resumedDate": null,
+  "sampleName": null,
+  "sku": {
+    "capacity": 5,
+    "family": null,
+    "name": "Basic",
+    "size": null,
+    "tier": "Basic"
+  },
+  "sourceDatabaseDeletionDate": null,
+  "sourceDatabaseId": null,
+  "status": "Online",
+  "tags": null,
+  "type": "Microsoft.Sql/servers/databases",
+  "zoneRedundant": false
+}
+```
+
+Let's do one last thing and get the connection string for this database.
+
+```sh
+az sql db show-connection-string --client sqlcmd --name marketplaceDb --server $SERVERNAME | jq -r
+```
+
+Your output resembles this. Keep this handy, you'll need this command to connect to your database later in this module. Note the `[username]` and `[password]` placeholders in the command that you will want to replace with the `ADMINLOGIN` and `PASSWORD` credentials you specified in variables earlier.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U <username> -P <password> -N -l 30
+
+# Example command for my Azure sandbox to obtain the connection string will be
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U rbadmin -P ViVKUwPtAdW2 -N -l 30
+```
+
 ## Create and configure a Linux virtual machine
 
 # Exercise - Restrict network access
