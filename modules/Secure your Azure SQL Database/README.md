@@ -269,6 +269,14 @@ For server-level rules, all of the above can be created and manipulated through 
 
 ### Database-level firewall rules
 
+These rules allow access to an individual database on a logical server and are stored in the database itself. **For database-level rules, only IP address rules can be configured.** They function the same as when applied at the server-level, but are scoped to the database only.
+
+The benefits of database-level rules are their portability. When replicating a database to another server, the database-level rules will be replicated, since they are stored in the database itself.
+
+The downside to database-level rules is that you can only use IP address rules. This may limit the flexibility you have and can increase administrative overhead.
+
+Lastly, database-level firewall rules can be created and manipulated only through T-SQL.
+
 ## Restricting network access in practice
 
 ### Use the server-level allow access to Azure services rule
