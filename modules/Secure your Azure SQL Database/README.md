@@ -390,13 +390,32 @@ So we've isolated connectivity to only the IP address we specified in the rule. 
 
 #### Use a server-level virtual network rule
 
-```sh
+In this case, since our VM is running in Azure, we can use a server-level virtual network rule to isolate access and make it easy to enable future services to gain access to the database.
 
+Back in the portal and still on the **Firewalls and virtual networks** panel, in the **Virtual networks** section click the **+ Add existing virtual network** option.
+
+The Create/Update virtual network rule dialog will show. Set the following values:
+
+| Setting                      | Value                         |
+| ---------------------------- | ----------------------------- |
+| Name                         | Leave the default value       |
+| Subscription                 | Concierge Subscription        |
+| Virtual network              | appServerVNET                 |
+| Subnet name / Address prefix | appServerSubnet / 10.0.0.0/24 |
+
+Click **Enable** to enable the service endpoint on the subnet, then **OK** once the endpoint is enabled to create the rule.
+
+Now, let's remove the IP address rule. Click the ... next to your **Allow appServer** rule and click **Delete**, then click **Save**.
+
+Back in cloud shell, on your _appServer_ VM, try connecting to your database again.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
 
-```sh
+At this point, you should be able to connect. If it's successful, you should see a sqlcmd prompt.
 
-```
+What we've done here effectively removes any public access to the SQL server, and only permits access from the specific subnet in the Azure VNet we defined. If we were to add additional app servers in that subnet, no additional configuration would be necessary, as any server in that subnet would have the ability to connect to the SQL server. This limits our exposure to services outside of our scope of control, and eases administration if we were to add additional servers. This is an effective method of securing network access to an Azure SQL Database.
 
 # Exercise - Control who can access your database
 
