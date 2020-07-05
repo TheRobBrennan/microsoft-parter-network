@@ -279,17 +279,36 @@ Lastly, database-level firewall rules can be created and manipulated only throug
 
 ## Restricting network access in practice
 
-```sh
+Whenever possible, as a best practice, use database-level IP firewall rules to enhance security and to make your database more portable. Use server-level IP firewall rules for administrators and when you have several databases with the same access requirements, and you don't want to spend time configuring each database individually.
 
+Let's take a look at how these work in practice, and how you can secure network access to only allow what is necessary. Recall that we created an Azure SQL Database logical server, a database, and the _appServer_ Linux VM acting as an application server. This scenario is often seen when a database has been migrated to Azure SQL Database and resources inside of a virtual network need to access it. The firewall feature of Azure SQL Database can be used in many scenarios, but this is an example that has practical applicability and demonstrates how each of the rules functions.
+
+Let's go through the firewall settings and see how they work. We'll use both the cloud shell and the portal for these exercises.
+
+The database we created currently does not allow access from any connections. This is by design based on the commands that we ran to create the logical server and database. Let's confirm this.
+
+In the cloud shell, SSH into your Linux VM if you aren't already connected.
+
+```sh
+ssh nnn.nnn.nnn.nnn
+
+# Example where nnn.nnn.nnn.nnn is the value from the publicIpAddress output in the previous step.
+ssh 40.112.170.37
 ```
 
-```sh
-
-```
+Recall the `sqlcmd` command we retrieved earlier. Go ahead and run it to attempt to connect to the database. Make sure you replace [username] and [password] with the ADMINUSER credentials you specified in the previous unit. Make sure to keep the single quotes around the username and password so that any special characters aren't misinterpreted by the shell.
 
 ```sh
-
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
+
+You should receive an error when trying to connect. This is expected since we've not allowed any access to the database.
+
+```sh
+Sqlcmd: Error: Microsoft ODBC Driver 17 for SQL Server : Cannot open server 'server18714' requested by the login. Client with IP address '40.112.170.37' is not allowedto access the server.  To enable access, use the Windows Azure Management Portal orrun sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to takeeffect..
+```
+
+Let's grant access so we can connect.
 
 ### Use the server-level allow access to Azure services rule
 
