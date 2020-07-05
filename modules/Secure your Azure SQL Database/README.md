@@ -334,21 +334,34 @@ So we've opened up connectivity, but this setting currently allows access from _
 
 ### Use a database-level IP address rule
 
-```sh
+Recall that database-level IP address rules allow only access to an individual database on a logical server. We'll use one here to grant access to the static IP of our _appServer_ VM.
 
+To create a database-level IP rule, we'll need to run some T-SQL commands. You'll create a database rule using the following convention, where you pass in the rule name, the starting IP address, and the ending IP address. By specifying the start and end IP to be the same, we're limiting access to a single IP, though we could expand the range if we had a larger block of addresses that required access.
+
+```sql
+EXECUTE sp_set_database_firewall_rule N'My Firewall Rule', '40.112.128.214', '40.112.128.214'
 ```
 
-```sh
+While still at the `sqlcmd` prompt, run the following command, replacing the public IP address of your _appServer_ VM in both locations below.
 
+TIP: When running T-SQL commands such as the following, the `GO` on the second line may not copy through to the `sqlcmd` prompt, so you will likely need to type this out. The T-SQL command won't execute without it, so make sure to run the `GO` command.
+
+```sql
+EXECUTE sp_set_database_firewall_rule N'Allow appServer database level rule', '40.112.170.37', '40.112.170.37';
+GO
 ```
 
-```sh
+Once the command completes, type `exit` to exit `sqlcmd`. Remain connected via SSH.
 
+In the portal, on the **Firewalls and virtual networks** panel for your SQL server, set **Allow access to Azure services** to **OFF** and click **Save**. This will disable access from all Azure services, but we'll still be able to connect since we have a database-level IP rule for our server.
+
+Back in cloud shell, in the VM you are connected via SSH to, try connecting to your database again.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
 
-```sh
-
-```
+Using a database-level rule allows access to be isolated specifically to the database. This can be useful if you'd like to keep your network access configured per database. If multiple databases share the same level of network access, you can simplify administration by using a server-level rule to apply the same access to all databases on the server.
 
 #### Use a server-level IP address rule
 
