@@ -28,6 +28,38 @@ The university needs a location to store data that's currently in text files. Th
 
 ## Create a single database by using the Azure portal
 
+SQL Database is a relational database service that's based on the latest stable version of Microsoft SQL Server Database Engine. SQL Database is an easy-to-use, high-performance database that's reliable and highly secure. You can use SQL Database to build new apps, websites, and microservices in the programming language of your choice, and you won't have to manage infrastructure.
+
+You can create a single database through the Azure portal or by using Azure PowerShell or CLI.
+
+From the Azure portal menu, select **Create a resource**.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-create-a-resource.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-create-a-resource.png)
+
+Select **Databases**, and then select **SQL Database**
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-databases-sql-database.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-databases-sql-database.png)
+
+To use CLI, run the `az sql server create` and `az sql db create` commands.
+
+To use PowerShell, run the `New-AzSqlServer` and `New-AzSqlDatabase` commands.
+
+When you create a single database, you're prompted to specify the server to manage it. You can create a new server or use an existing server.
+
+When you create a new server, you're prompted to specify a server admin user name and password. You'll use these credentials to connect to the server to do administrative tasks and to access the databases that the server controls. SQL Database also supports Azure Active Directory (Azure AD) authentication. But you must always create an admin account when you create a new server and then grant access to accounts that are stored in Azure AD.
+
+Each database server is protected by a firewall to block potentially malicious processes. You can open the firewall to other Azure services. And you can selectively enable access to other computers based on their IP address or address range. SQL Database also provides advanced data security that enables you to:
+
+- Specify the sensitivity of data in individual columns in tables.
+- Assess the vulnerability of your databases and take necessary remediation steps.
+- Send alerts when a threat is detected.
+
+You provision resources by using the virtual core (vCore) model, which specifies the resources (memory, I/O, and CPU) to allocate. You can scale the compute and storage resources independently. Or, you can assign resources in terms of database transaction units (DTUs). A DTU is a measure of the calibrated cost of the resources that you need to perform a benchmarked transaction.
+
+If you have multiple databases and the resource needs of the databases fluctuate, you can use SQL elastic pool. This feature enables sharing a pool of resources among pooled databases as demand requires.
+
+When you create a database, you also specify how the data will be collated. A _collation_ defines the rules that the database uses for sorting and comparing data. It also specifies the character set to use for text data. You can change the collation after you've created the database, but it's best not to change it after the database contains data.
+
 ## Create tables
 
 ```sh
