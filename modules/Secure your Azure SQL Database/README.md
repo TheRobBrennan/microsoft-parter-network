@@ -726,6 +726,36 @@ Advanced Data Security (ADS) provides a set of advanced SQL security capabilitie
 
 ### Setup and configuration
 
+Let's enable Advanced Data Security on our database. Advanced Data Security is a server-level setting, so we'll start there.
+
+Back in the portal, navigate to your SQL server. In the search bar at the top of the portal, search for **serverNNNN**, then select the server.
+
+In the left menu, in the **Security** section, select the **Advanced Data Security** option.
+
+Click the **ON** button to enable Advanced Data Security.
+
+In the **Vulnerability Assessment Settings** box, will see a default storage account that will be used to store the results of scans.
+
+You can also turn on **periodic recurring scans** to configure Vulnerability Assessment to run automatic scans once per week. A scan result summary is sent to the email address(es) you provide. In this case, we'll leave this **OFF**. Go ahead and click **Save** at the top to save your settings and enable Vulnerability Assessment.
+
+You can optionally define where notification emails will be delivered for both the vulnerability assessment and Advanced Threat Protection as a list of semicolon separated email addresses. **Also send email notification to admins and subscription owners** is enabled by default to send the threats to the service administrators.
+
+Select **Advanced Threat Protection Types** to take a quick look at those. The preferred option is All, which is the default setting.
+
+**All** represents the following values:
+
+- SQL injection reports where SQL injection attacks have occurred.
+- SQL injection vulnerability reports where the possibility of a SQL injection is likely.
+- Anomalous client login looks at logins that are irregular and could be cause for concern, such as a potential attacker gaining access.
+
+Click the **Save** button to apply the changes and enable Advanced Data Security on your server.
+
+Once Advanced Data Security is enabled, you'll initiate vulnerability scans and view details and results at a database level.
+
+You'll receive email notifications as vulnerabilities are detected. The email will outline what occurred and the actions to take.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-email-with-warning.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-email-with-warning.png)
+
 ### Data Discovery & Classification
 
 ### Vulnerability Assessment
