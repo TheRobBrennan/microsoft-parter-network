@@ -279,13 +279,69 @@ Lastly, database-level firewall rules can be created and manipulated only throug
 
 ## Restricting network access in practice
 
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 ### Use the server-level allow access to Azure services rule
+
+```sh
+
+```
+
+```sh
+
+```
 
 ### Use a database-level IP address rule
 
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 #### Use a server-level IP address rule
 
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 #### Use a server-level virtual network rule
+
+```sh
+
+```
+
+```sh
+
+```
 
 # Exercise - Control who can access your database
 
