@@ -166,6 +166,62 @@ sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U rbadmin 
 
 ## Create and configure a Linux virtual machine
 
+Now let's create the Linux VM that we'll use through some examples.
+
+Run the following command to create the VM; this might take several minutes to complete.
+
+```sh
+az vm create \
+  --resource-group $RESOURCEGROUP \
+  --name appServer \
+  --image UbuntuLTS \
+  --size Standard_DS2_v2 \
+  --generate-ssh-keys
+```
+
+When this command completes, you should see output that resembles the following example:
+
+```json
+{
+  "fqdns": "",
+  "id": "/subscriptions/179dd20b-e2ea-45a0-8003-473940f3d4f1/resourceGroups/learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e/providers/Microsoft.Compute/virtualMachines/appServer",
+  "location": "westus",
+  "macAddress": "00-22-48-04-01-B6",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "40.112.170.37",
+  "resourceGroup": "learn-de1b0057-e21d-46a6-a43e-44b6e36fc45e",
+  "zones": ""
+}
+```
+
+Once your VM is successfully created, connect to its public IP address using SSH.
+
+```sh
+ssh nnn.nnn.nnn.nnn
+
+# Example where nnn.nnn.nnn.nnn is the value from the publicIpAddress output in the previous step.
+ssh 40.112.170.37
+```
+
+Two things to note. First, we don't need a password because we generated an SSH key pair as part of the VM creation. Second, on the initial shell connection into the VM it will give you a prompt about the authenticity of the host. This occurs because we are connecting to an IP address instead of a host name. Answering "yes" will save the IP as a valid host for connection and allow the connection to proceed.
+
+Now let's finish things up by installing mssql-tools on the Linux VM so we'll be able to connect to our database through sqlcmd.
+
+```sh
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt-get update
+sudo ACCEPT_EULA=Y apt-get install -y mssql-tools unixodbc-dev
+```
+
+A lot of text will scroll by for some of these commands, so make sure you hit enter after the final command to ensure it runs.
+
+We've created an Azure SQL Database logical server, a database on that logical server, and a virtual machine called _appServer_ that we'll use to simulate network connectivity from an application server. Let's take a look at how we can properly secure our database.
+
 # Exercise - Restrict network access
 
 # Exercise - Control who can access your database
