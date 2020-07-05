@@ -562,33 +562,87 @@ Azure includes a built in service called Azure Security Center that gives you vi
 
 ## Dynamic data masking
 
-|     |     |
-| --- | --- |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
+You might have noticed when we ran our query in the previous unit that some of the information in the database is sensitive; there are phone numbers, email addresses, and other information that we may not want to fully display to everyone with access to the data.
 
-|     |     |
-| --- | --- |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
-|     |     |
+Maybe we don't want our users to be able to see the full phone number or email address, but we'd still like to make a portion of the data available for customer service representatives to identify a customer. By using the dynamic data masking feature of Azure SQL Database, we can limit the data that is displayed to the user. Dynamic data masking is a policy-based security feature that hides the sensitive data in the result set of a query over designated database fields, while the data in the database is not changed.
+
+Data masking rules consist of the column to apply the mask to, and how the data should be masked. You can create your own masking format, or use one of the standard masks such as:
+
+- Default value, which displays the default value for that data type instead.
+- Credit card value, which only shows the last four digits of the number, converting all other numbers to lower case x’s.
+- Email, which hides the domain name and all but the first character of the email account name.
+- Number, which specifies a random number between a range of values. For example, on the credit card expiry month and year, you could select random months from 1 to 12 and set the year range from 2018 to 3000.
+- Custom string, which allows you to set the number of characters exposed from the start of the data, the number of characters exposed from the end of the data, and the characters to repeat for the remainder of the data.
+
+When querying the columns, database administrators will still see the original values, but non-administrators will see the masked values. You can allow other users to see the non-masked versions by adding them to the SQL users excluded from masking list.
+
+Let's take a look at how data masking would work in our _marketplaceDb_ database.
+
+While still in the portal on the _marketplaceDb_ database panel, in the **Security** section in the left menu select **Dynamic Data Masking**.
+
+The Masking rules screen shows a list of existing dynamic data masks, and recommendations for columns that should potentially have a dynamic data mask applied.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/4-view-recommended-masked-columns.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/4-view-recommended-masked-columns.png)
+
+Let's add a mask for the phone number that only displays the last four digits. Click the **+ Add mask** button at the top to open the **Add masking rule** dialog.
+
+Select the following values.
+
+| Setting              | Value                                   |
+| -------------------- | --------------------------------------- |
+| Schema               | SalesLT                                 |
+| Table                | Customer                                |
+| Column               | Phone (nvarchar)                        |
+| Masking field format | Custom string (prefix [padding] suffix) |
+| Exposed Prefix       | 0                                       |
+| Padding String       | XXX-XXX-                                |
+| Exposed Suffix       | 4                                       |
+
+Click **Add** to add the masking rule.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/4-add-masking-rule.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/4-add-masking-rule.png)
+
+Let's add one more for the email address. Click the **+ Add mask** button at the top again to open up the **Add masking rule** dialog.
+
+| Setting              | Value                   |
+| -------------------- | ----------------------- |
+| Schema               | SalesLT                 |
+| Table                | Customer                |
+| Column               | EmailAddress (nvarchar) |
+| Masking field format | Email (aXXX@XXX.com)    |
+
+Click **Add** to add the masking rule.
+
+Each new mask will be added to the masking rules list. Click the **Save** button to apply the masks.
+
+Let's take a look at how data masking changes our query.
+
+Now let's log back in to the database, but as the _ApplicationUser_ user.
 
 ```sh
-
+sqlcmd -S tcp:serverNNNN.database.windows.net,1433 -d marketplaceDb -U 'ApplicationUser' -P '[password]' -N -l 30
 ```
+
+Run the following query.
+
+```sql
+SELECT FirstName, LastName, EmailAddress, Phone FROM SalesLT.Customer;
+GO
+```
+
+Look at how the output has been masked.
 
 ```sh
-
+FirstName     LastName      EmailAddress         Phone
+------------- ------------- -------------------- ------------
+Orlando       Gee           oXXX@XXXX.com        XXX-XXX-0173
+Keith         Harris        kXXX@XXXX.com        XXX-XXX-0127
+Donna         Carreras      dXXX@XXXX.com        XXX-XXX-0130
+Janet         Gates         jXXX@XXXX.com        XXX-XXX-0173
+...
 ```
 
-```sh
-
-```
+With the masking rules we created, our data is masked with format that we've specified. These rules allow our customer service reps to verify a customer with the last four digits of their phone number, but hides the full number and the customer's email address from reps view.
 
 # Exercise - Monitor your database
 
