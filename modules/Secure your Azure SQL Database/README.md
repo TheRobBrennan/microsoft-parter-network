@@ -224,6 +224,24 @@ We've created an Azure SQL Database logical server, a database on that logical s
 
 # Exercise - Restrict network access
 
+Users will connect to our app server to enter orders, update their account, and perform similar activities, which will in turn update the database with these changes. Because we have personal data stored in the database it's critical to ensure that we only allow access from trusted and necessary resources. Let's take a look at a number of ways you can control access to your SQL database over the network.
+
+## Firewall rules
+
+### Server-level firewall rules
+
+### Database-level firewall rules
+
+## Restricting network access in practice
+
+### Use the server-level allow access to Azure services rule
+
+### Use a database-level IP address rule
+
+#### Use a server-level IP address rule
+
+#### Use a server-level virtual network rule
+
 # Exercise - Control who can access your database
 
 # Exercise - Secure your data in transit, at rest, and on display
