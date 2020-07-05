@@ -542,6 +542,24 @@ Azure SQL Database enforces Transport Layer Security (TLS) encryption at all tim
 
 ## Transparent data encryption
 
+Azure SQL Database **protects your data at rest** using transparent data encryption (TDE). TDE performs real-time encryption and decryption of the database, associated backups, and transaction log files at rest without requiring changes to the application. Using a database encryption key, transparent data encryption performs real-time I/O encryption and decryption of the data at the page level. Each page is decrypted when it's read into memory and then encrypted before being written to disk.
+
+By default, TDE is enabled for all newly deployed Azure SQL databases. It's important to check that data encryption hasn’t been turned off, and older Azure SQL Server databases may not have TDE enabled.
+
+Let's take a look in the portal at where TDE is configured on our _marketplaceDb_ database.
+
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+In the search bar at the top of the portal, search for **marketplaceDb**, then select the database in the portal.
+
+In the left menu, in the **Security** section, select the **Transparent data encryption** option.
+
+In the data encryption option, verify that **Data encryption** is set to **On**. You should also see an encryption status of **Encrypted**.
+
+Since new databases are encrypted by default, we can be sure that our data is encrypted on disk from as soon as we create the database.
+
+Azure includes a built in service called Azure Security Center that gives you visibility into the security of your environment, including Azure SQL databases. Azure Security Center will flag any databases that don't have TDE enabled on them, giving you the ability to report and take action to secure your data.
+
 ## Dynamic data masking
 
 |     |     |
