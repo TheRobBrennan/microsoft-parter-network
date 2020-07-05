@@ -365,17 +365,28 @@ Using a database-level rule allows access to be isolated specifically to the dat
 
 #### Use a server-level IP address rule
 
-```sh
+Database-level rules are a great option, but what if we had multiple databases on the same server that our _appServer_ VM needed to connect to? We could add a database-level rule to each database, this can take more work as we add more databases. It would reduce our administration efforts to allow access with a server-level rule, which would apply to all databases on the server.
 
+Let's now use a server-level IP rule to restrict the systems that can connect.
+
+While still at the sqlcmd prompt, run the following command to delete the database-level IP address rule.
+
+```sql
+EXECUTE sp_delete_database_firewall_rule N'Allow appServer database level rule';
+GO
 ```
 
-```sh
+Once the command completes, type exit to exit sqlcmd. Remain connected via SSH.
 
+Back in the portal, on the **Firewalls and virtual networks** panel for your SQL server, add a new rule with a **RULE NAME** of **Allow appServer** and with the **START IP** and **END IP** set to the public IP address of the _appServer_ VM - which is `40.112.170.37` in my sandbox example.
+
+Back in cloud shell, on your appServer VM, try connecting to your database again.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
 
-```sh
-
-```
+So we've isolated connectivity to only the IP address we specified in the rule. This works great, but can still be an administrative challenge as you add more systems that need to connect. It also requires a static IP or an IP from a defined IP address range; if the IP is dynamic and changes, we'd have to update the rule to ensure connectivity. The appServer VM is currently configured with a dynamic IP address, so this IP address is likely to change at some point, breaking our access as soon as that happens. Let's now look at how virtual network rules can be beneficial in our configuration.
 
 #### Use a server-level virtual network rule
 
