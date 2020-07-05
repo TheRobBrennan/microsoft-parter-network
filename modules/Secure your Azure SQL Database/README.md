@@ -21,6 +21,18 @@ In this module, you will:
 
 # Exercise - Set up sandbox environment
 
+Here you'll set up the resources you'll need for use throughout this module. Let's envision a basic architecture consisting of a server hosting an application that your customers use, which connects to a database for the storage of its data. The application runs on a virtual machine, and the database has been recently migrated from a SQL Server database running on a VM to a database on the Azure SQL Database service. To show how you can secure your database, we're going to set up the following resources for use throughout this module:
+
+- A Linux VM named _appServer_. This server will act as the application server that users would be connecting to, and will need to connect to the database. We'll install `sqlcmd` on the VM to simulate an application running on _appServer_ making connections to the database.
+- An Azure SQL Database logical server. This logical server is needed to host one or more databases.
+- A database on our logical server called _marketplaceDb_. We'll create it using the _AdventureWorksLT_ demo database so we have some tables and data to work with. This will include some sensitive data, such as email addresses and phone numbers that we'll want to make sure are properly secured.
+
+Let's get things set up!
+
+## Create an Azure SQL Database
+
+## Create and configure a Linux virtual machine
+
 # Exercise - Restrict network access
 
 # Exercise - Control who can access your database
