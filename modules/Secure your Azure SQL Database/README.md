@@ -228,6 +228,21 @@ Users will connect to our app server to enter orders, update their account, and 
 
 ## Firewall rules
 
+Azure SQL Database has a built-in firewall that is used to allow and deny network access to both the database server itself, as well as individual databases. Initially, all public access to your Azure SQL Database is blocked by the SQL Database firewall. To access a database server, you must specify one or more server-level IP firewall rules that enable access to your Azure SQL Database. You use the IP firewall rules to specify which IP address ranges from the Internet are allowed, and whether Azure applications can attempt to connect to your Azure SQL Database.
+
+Firewall rules are configured at the server and/or database level, and will specifically state which network resources are allowed to establish a connection to the database. Depending on the level, the rules you can apply will be as follows:
+
+- Server-level firewall rules
+  - Allow access to Azure services
+  - IP address rules
+  - Virtual network rules
+- Database-level firewall rules
+  - IP address rules
+
+SQL Data Warehouse only supports server-level IP firewall rules, and not database-level IP firewall rules.
+
+Let's take a closer look at how these rules work.
+
 ### Server-level firewall rules
 
 ### Database-level firewall rules
