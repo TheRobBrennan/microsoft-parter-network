@@ -468,33 +468,69 @@ With these credentials, the user will be able to authenticate to the database, b
 
 ### Grant permissions to a user
 
-```sh
+Let's make the user a member of the `db_datareader` and `db_datawriter` roles, granting access to read and write to the database, respectively. We also want to prevent this user from accessing a table with addresses.
 
+While still connected to sqlcmd on _appServer_, run the following T-SQL to grant the `db_datareader` and `db_datawriter` roles to the user we just created.
+
+```sql
+ALTER ROLE db_datareader ADD MEMBER ApplicationUser;
+ALTER ROLE db_datawriter ADD MEMBER ApplicationUser;
+GO
 ```
 
-```sh
-
-```
+We can narrow the scope of access further. We could deny a user's access to other elements within the database using the DENY operator. Run the following T-SQL to deny the user _ApplicationUser_ the ability to select data from the `SalesLT.Address` table.
 
 ```sh
-
+DENY SELECT ON SalesLT.Address TO ApplicationUser;
+GO
 ```
+
+Let's now log in as that user and take a look at this in action.
+
+While still at the T-SQL prompt, type exit to exit your session.
+
+Now let's log back in to the database, but as the user we just created.
 
 ```sh
-
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'ApplicationUser' -P 'YourStrongPassword1' -N -l 30
 ```
+
+Run the following query. This is pulling data from a table that the user is authorized to access.
+
+```sql
+SELECT FirstName, LastName, EmailAddress, Phone FROM SalesLT.Customer;
+GO
+```
+
+You should get back a listing of customers.
 
 ```sh
-
+FirstName      LastName       EmailAddress                    Phone
+-------------- -------------- ------------------------------- ------------
+Orlando        Gee            orlando0@adventure-works.com    245-555-0173
+Keith          Harris         keith0@adventure-works.com      170-555-0127
+Donna          Carreras       donna0@adventure-works.com      279-555-0130
+Janet          Gates          janet1@adventure-works.com      710-555-0173
+...
 ```
+
+Now let's see what happens when we try to query a table that we don't have access to.
+
+```sql
+SELECT * FROM SalesLT.Address;
+GO
+```
+
+You should get a message that you don't have access to this table.
 
 ```sh
-
+Msg 229, Level 14, State 5, Server server-22942, Line 1
+The SELECT permission was denied on the object 'Address', database 'marketplace', schema 'SalesLT'.
 ```
 
-```sh
+As you can see here, even though we've granted read/write access to the database, we can further secure access to data by explicitly denying access to tables. If you had multiple users who shared similar access, you could create custom roles with the proper permissions and simplify your administration.
 
-```
+It's important to properly secure your database, and only grant access where necessary. Azure SQL Database provides the built-in ability to fully control the ability to authenticate and authorize identities to access the data in your database.
 
 # Exercise - Secure your data in transit, at rest, and on display
 
