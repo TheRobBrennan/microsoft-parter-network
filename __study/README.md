@@ -47,36 +47,38 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 1 hour 57 mins to complete
   - [ x ] Module 4 - Secure your Azure SQL Database (~1 hr 7 mins)
   - [] Module 5 - Develop and configure an ASP.NET application that queries an Azure SQL database (~50 mins)
-- [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) - Estimated 3 hours 50 mins to complete
 
 ## Monday, July 6th, 2020
 
-- [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
-- [Manage resources in Azure](https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/) - Estimated 5 hours 02 mins to complete
+- [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) - Estimated 3 hours 50 mins to complete
 
 ## Tuesday, July 7th, 2020
 
-- [Deploy a website to Azure with Azure App Service](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/) - Estimated 4 hours 37 mins to complete
+- [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
 
 ## Wednesday, July 8th, 2020
 
-- [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
+- [Manage resources in Azure](https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/) - Estimated 5 hours 02 mins to complete
 
 ## Thursday, July 9th, 2020
 
-- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 5 hours 28 mins to complete
+- [Deploy a website to Azure with Azure App Service](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/) - Estimated 4 hours 37 mins to complete
 
 ## Friday, July 10th, 2020
 
-- [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
+- [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
 
 ## Saturday, July 11th, 2020 [WEEKEND]
 
-- [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
+- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 5 hours 28 mins to complete
 
 ## Sunday, July 12th, 2020 [WEEKEND]
 
+- [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
+
 ## Monday, July 13th, 2020
+
+- [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
 
 ## Tuesday, July 14th, 2020
 
