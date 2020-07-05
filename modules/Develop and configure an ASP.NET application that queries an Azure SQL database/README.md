@@ -24,6 +24,56 @@ In this module, you will:
 
 # Create tables, bulk import, and query data
 
+The university needs a location to store data that's currently in text files. They want to make the data relational to improve the ability to access it. They've selected a single database in Azure SQL Database as the storage service for this data. Let's take a look at SQL Database and see how to upload and query data.
+
+## Create a single database by using the Azure portal
+
+## Create tables
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Bulk import data with bcp
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Query data
+
+```sh
+
+```
+
 # Exercise - Create tables, bulk import, and query data
 
 # Connect an ASP.NET application to Azure SQL Database
