@@ -435,6 +435,10 @@ This authentication method uses identities managed by Azure Active Directory (AD
 
 ## Authorization
 
+Authorization refers to what an identity can do within an Azure SQL Database. This is controlled by permissions granted directly to the user account and/or database role memberships. A database role is used to group permissions together to ease administration, and a user is added to a role to be granted the permissions the role has. These permissions can grant things such as the ability to log in to the database, the ability to read a table, and the ability to add and remove columns from a database. As a best practice, you should grant users the least privileges necessary. The process of granting authorization to both SQL and Azure AD users is the same.
+
+In our example here, the server admin account you are connecting with is a member of the db_owner role, which has authority to do anything within the database.
+
 ## Authentication and authorization in practice
 
 ### Create a database user
