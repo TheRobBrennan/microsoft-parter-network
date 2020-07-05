@@ -419,6 +419,58 @@ What we've done here effectively removes any public access to the SQL server, an
 
 # Exercise - Control who can access your database
 
+Even though we may be able to connect to the database over the network, that doesn't mean we can actually gain access to the data itself. Following a layered approach, we'll want to ensure that only users who need access to the data can actually access it. This is where authentication and authorization come in to play.
+
+## Authentication
+
+### SQL authentication
+
+### Azure Active Directory authentication
+
+## Authorization
+
+## Authentication and authorization in practice
+
+### Create a database user
+
+```sh
+
+```
+
+```sh
+
+```
+
+### Grant permissions to a user
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Exercise - Secure your data in transit, at rest, and on display
 
 # Exercise - Monitor your database
