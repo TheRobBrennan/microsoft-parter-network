@@ -646,6 +646,24 @@ With the masking rules we created, our data is masked with format that we've spe
 
 # Exercise - Monitor your database
 
+Imagine you receive an alert from your company's security administrator that a potential security breach has been detected on your network. It's suspected that an unauthorized individual may have accessed your database through malicious activity. How would you track this down? You know you need to be actively monitoring your database for suspicious activity, but what can you do to not only gain visibility into what's happening in your database, but to also prevent malicious activity from occurring?
+
+Azure SQL Database has built-in features that can help you track what's happening in your database, and will monitor and alert you if malicious activity is identified.
+
+## Azure SQL Database auditing
+
+## Auditing in practice
+
+## Advanced Data Security for Azure SQL Database
+
+### Setup and configuration
+
+### Data Discovery & Classification
+
+### Vulnerability Assessment
+
+### Threat Detection
+
 # Knowledge check
 
 # Summary
