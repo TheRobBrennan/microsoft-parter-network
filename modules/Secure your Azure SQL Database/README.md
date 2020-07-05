@@ -449,13 +449,22 @@ Let's now take a look at how to set up a user and grant them access to a databas
 
 ### Create a database user
 
-```sh
+Let's go ahead and create a new user that we can use to grant access to.
 
+In cloud shell, on your _appServer_ VM, connect to your database again as your ADMINUSER.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
 
-```sh
+Run the following command to create a new user. This will be a _contained user_ and will only allow access to the _marketplace_ database. Feel free to adjust the password as necessary, but be sure and note it as we'll need it for a future step.
 
+```sql
+CREATE USER ApplicationUser WITH PASSWORD = 'YourStrongPassword1';
+GO
 ```
+
+With these credentials, the user will be able to authenticate to the database, but they aren't authorized to access any data. Let's grant this user access.
 
 ### Grant permissions to a user
 
