@@ -778,6 +778,16 @@ No active recommendations should be listed once you've managed the recommendatio
 
 ### Vulnerability Assessment
 
+Click on the **Vulnerability Assessment** panel.
+
+![https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-vulnerability-assessment-dashboard.png](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/media/5-vulnerability-assessment-dashboard.png)
+
+The Vulnerability Assessment lists configuration issues on your database and the associated risk. For example, in the image above, you can see the server-level firewall needs to be set up.
+
+Click on the Vulnerability Assessment panel to review a full list of vulnerabilities. From here, you can click on each individual vulnerability.
+
+On the vulnerability page you will see the details such as the risk level, which database it applies to, a description of the vulnerability, and the recommended remediation to fix the issue. Apply the remediation to fix the issue or issues. Make sure to address all the vulnerabilities.
+
 ### Threat Detection
 
 # Knowledge check
