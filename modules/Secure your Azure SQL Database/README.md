@@ -538,6 +538,8 @@ The _marketplaceDb_ database stores information that is sensitive, such as physi
 
 ## TLS network encryption
 
+Azure SQL Database enforces Transport Layer Security (TLS) encryption at all times for all connections, which ensures all data is encrypted "in transit" between the database and the client. By using TLS encryption, you can ensure that anyone who may have intercepted the traffic between the app server and database would not be able to read the data. TLS encryption is a standard of securing traffic over the internet, and in this case ensures your network traffic to and from your Azure SQL database is secure by default.
+
 ## Transparent data encryption
 
 ## Dynamic data masking
