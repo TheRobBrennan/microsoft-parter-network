@@ -312,13 +312,25 @@ Let's grant access so we can connect.
 
 ### Use the server-level allow access to Azure services rule
 
-```sh
+Since our VM has outbound internet access, we can use the **Allow access to Azure services** rule to allow access from our VM.
 
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+In the **Search resources, services, and docs** box at the top, search for your database server name, `serverNNNN`. Select the SQL server.
+
+In the SQL server panel, in the **Security** section in the left menu, select **Firewalls and virtual networks**.
+
+Set **Allow access to Azure services** to **ON** and click **Save**.
+
+Back in your SSH session, let's try to connect to your database again.
+
+```sh
+sqlcmd -S tcp:server18714.database.windows.net,1433 -d marketplaceDb -U 'rbadmin' -P 'ViVKUwPtAdW2' -N -l 30
 ```
 
-```sh
+At this point, you should be able to connect. If it's successful, you should see a `sqlcmd` prompt.
 
-```
+So we've opened up connectivity, but this setting currently allows access from _any_ Azure resource, **including resources outside of our subscription**. Let's restrict this further to limit network access to only resources that are within our control.
 
 ### Use a database-level IP address rule
 
