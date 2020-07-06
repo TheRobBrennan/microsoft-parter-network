@@ -53,7 +53,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 1 - [Choose a data storage approach in Azure](https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/) (~30 mins)
   - [ x ] Module 2 - [Create an Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/) (~30 mins)
   - [ x ] Module 3 - [Connect an app to Azure Storage](https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/) (~1 hr 15 mins)
-  - [] Module 4 - [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/) (~45 mins)
+  - [ x ] Module 4 - [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/) (~45 mins)
   - [] Module 5 - [Store application data with Azure Blob storage](https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/) (~50 mins)
 
 ## Tuesday, July 7th, 2020
