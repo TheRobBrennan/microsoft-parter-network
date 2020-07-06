@@ -4,10 +4,9 @@ I would like to aggressively pursue studying for [Exam AZ-204: Developing Soluti
 
 There are several dates I would like to keep in mind:
 
-- BLITZ: Complete review of materials by EOD Monday, July 6th
-- ALL IN: Complete review of materials by EOD Sunday, July 12th
-- AGGRESSIVE: Complete review of materials by EOD Sunday, July 19th
-- DRIVE IT HOME: Complete review of materials by EOD Sunday, July 26th
+- ALL IN: Complete review of materials by EOD Monday, July 13th
+- BREATHING ROOM: Complete review of materials by EOD Sunday, July 19th
+- WARNING ZONE: Complete review of materials by EOD Sunday, July 26th
 - Time must be allowed to take a peek at practice exams/questions and to schedule the actual exam
 
 # Outline of my learning path for Exam AZ-204
