@@ -640,9 +640,13 @@ queryCmd.CommandType = CommandType.Text;
 
 ## Run a command
 
-```csharp
+If your `SqlCommand` object references an SQL statement that doesn't return a result set, run the command by using the `ExecuteNonQuery` method. If the command succeeds, it returns the number of rows that are affected by the operation. The next example shows how to run the **deleteOrdersForCustomer** command that was shown earlier.
 
+```csharp
+int numDeleted = deleteOrdersForCustomer.ExecuteNonQuery();
 ```
+
+If you expect the command to take a while to run, you can use the `ExecuteNonQueryAsync` method to perform the operation asynchronously.
 
 ## Execute a query and fetch data
 
