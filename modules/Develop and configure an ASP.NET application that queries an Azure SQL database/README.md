@@ -617,12 +617,25 @@ using (SqlConnection con = new SqlConnection(connectionString))
 
 ## Define an SQL command or query
 
-```csharp
+Create an `SqlCommand` object to specify an SQL command or query to run. The following example shows an SQL **DELETE** statement that removes rows for a given customer from an **Orders** table. You can parameterize commands. This example uses a parameter that's named _CustID_ for the **CustomerID** value. The line that sets the `CommandType` property of the `SqlCommand` object to `Text` indicates that the command is an SQL statement. You can also run a stored procedure rather than an SQL statement. In that case, you set the `CommandType` to `StoredProcedure`.
 
+```csharp
+SqlCommand deleteOrdersForCustomer = new SqlCommand("DELETE FROM Orders WHERE CustomerID = @custID", con);
+deleteOrdersForCustomer.CommandType = CommandType.Text;
+string customerID = <prompt the user for a customer to delete>;
+deleteOrdersForCustomer.Parameters.Add(new SqlParameter("custID", customerID));
 ```
 
-```csharp
+The final parameter to the `SqlCommand` constructor in this example is the connection that's used to run the command.
 
+The next example shows a query that joins the **Customers** and **Orders** tables together to produce a list of customer names and their orders.
+
+```csharp
+SqlCommand queryCmd = new SqlCommand(
+                    @"SELECT c.FirstName, c.LastName, o.OrderID
+                      FROM Customers c JOIN Orders o
+                      ON c.CustomerID = o.CustomerID", con);
+queryCmd.CommandType = CommandType.Text;
 ```
 
 ## Run a command
