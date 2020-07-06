@@ -323,6 +323,28 @@ When it comes to _using_ the configuration, our starter app already includes the
 
 ### Initialize
 
+Open `Models/BlobStorage.cs` in the editor. Add the following using statements to the top of the file to prepare it for the code you're going to add during the exercise.
+
+```csharp
+using System.Linq;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Blob;
+```
+
+Locate the `Initialize` method. Our app will call this method when `BlobStorage` is used for the first time. If you're curious, you can look at `ConfigureServices` in `Startup.cs` to see how this is done.
+
+`Initialize` is where we want to create our container if it doesn't already exist. Replace the current implementation of `Initialize` with the following code and save your work:
+
+```csharp
+public Task Initialize()
+{
+    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConfig.ConnectionString);
+    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+    CloudBlobContainer container = blobClient.GetContainerReference(storageConfig.FileContainerName);
+    return container.CreateIfNotExistsAsync();
+}
+```
+
 # Exercise - Get blob references
 
 # Exercise - Blob uploads and downloads
