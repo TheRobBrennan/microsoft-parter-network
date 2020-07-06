@@ -112,6 +112,133 @@ Block blobs are the best choice for most scenarios that don't specifically call 
 
 # Exercise - Create Azure storage resources
 
+Once we have an idea of how we're going to store data across storage accounts, containers and blobs, we can think about the Azure resources we need to create to support the app.
+
+## Storage accounts
+
+Storage account creation is an administrative/management activity that takes place prior to deploying and running your app. Accounts are usually created by a deployment or environment setup script, an Azure Resource Manager template, or manually by an administrator. Applications other than administrative tools generally should not have permissions to create storage accounts.
+
+## Containers
+
+Unlike storage account creation, container creation is a lightweight activity that makes sense to perform from within an app. It's not uncommon for apps to create and delete containers as part of their work.
+
+For apps that rely on a known set of containers with hard-coded or preconfigured names, typical practice is to let the app create the containers it needs on startup or first usage if they don't already exist.
+
+**Letting your app create containers instead of doing it as part of your app's deployment eliminates the need for both your application and your deployment process to know the names of the containers the app uses.**
+
+## Exercise
+
+We're going to complete an unfinished ASP.NET Core app by adding code to use Azure Blob storage. This exercise is more about exploring the Blob storage API than it is about designing an organization and naming scheme, but here's a quick overview of the app and how it stores data.
+
+![https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/media/4-fileuploader-with-files.png](https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/media/4-fileuploader-with-files.png)
+
+Our app works like a shared folder that accepts file uploads and makes them available for download. It doesn't use a database for organizing blobs — instead, it sanitizes the names of uploaded files and uses them as blob names directly. All uploaded files are stored in a single container.
+
+The code we'll start with compiles and runs, but the parts responsible for storing and loading data are empty. After we complete the code, we'll deploy the app to Azure App Service and test it.
+
+Let's set up the storage infrastructure for our app.
+
+### Storage account
+
+We'll use the Azure Cloud Shell with the Azure CLI to create a storage account. You'll need to provide a unique name for the storage account — make a note of it for later.
+Execute the following command to create the storage account.
+
+```sh
+az storage account create \
+  --kind StorageV2 \
+  --resource-group learn-899129fd-7565-40c6-bccb-927b5e0f0c7f \
+  --location centralus \
+  --name rbblobapp405
+```
+
+NOTE: Why `--kind StorageV2`? There are a few different kinds of storage accounts. For most scenarios, you should use general-purpose v2 accounts. The only reason you need to explicitly specify `--kind StorageV2` is that general-purpose v2 accounts have not yet been made the default kind in the Azure CLI.
+
+Sample output:
+
+```json
+{
+  "accessTier": "Hot",
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2020-07-06T23:06:05.159075+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-06T23:06:05.221534+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-06T23:06:05.221534+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/f500dc0d-177d-4393-87c4-047c5c9ec078/resourceGroups/learn-899129fd-7565-40c6-bccb-927b5e0f0c7f/providers/Microsoft.Storage/storageAccounts/rbblobapp405",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "StorageV2",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "centralus",
+  "name": "rbblobapp405",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://rbblobapp405.blob.core.windows.net/",
+    "dfs": "https://rbblobapp405.dfs.core.windows.net/",
+    "file": "https://rbblobapp405.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://rbblobapp405.queue.core.windows.net/",
+    "table": "https://rbblobapp405.table.core.windows.net/",
+    "web": "https://rbblobapp405.z19.web.core.windows.net/"
+  },
+  "primaryLocation": "centralus",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "learn-899129fd-7565-40c6-bccb-927b5e0f0c7f",
+  "routingPreference": null,
+  "secondaryEndpoints": {
+    "blob": "https://rbblobapp405-secondary.blob.core.windows.net/",
+    "dfs": "https://rbblobapp405-secondary.dfs.core.windows.net/",
+    "file": null,
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://rbblobapp405-secondary.queue.core.windows.net/",
+    "table": "https://rbblobapp405-secondary.table.core.windows.net/",
+    "web": "https://rbblobapp405-secondary.z19.web.core.windows.net/"
+  },
+  "secondaryLocation": "eastus2",
+  "sku": {
+    "name": "Standard_RAGRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": "available",
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+```
+
+### Container
+
+The app we'll be working with in this module uses a single container. We're going to follow the best practice of letting the app create the container at startup. However, container creation can be done from the Azure CLI: run `az storage container create -h` in the Cloud Shell terminal if you'd like to see the documentation.
+
 # Exercise - Configure and initialize the client library
 
 # Exercise - Get blob references
