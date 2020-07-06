@@ -703,9 +703,9 @@ To save time, you'll work with a pre-existing web application. You'll add the co
 
 You'll do the following things:
 
-- Create a class that holds the course name, module title, and sequence for each module in the database.
-- Create a data access controller class that retrieves the information from the database.
-- Edit the code that's behind the index page in the web app to create a data access controller object and fetch the data.
+- Create a _class_ that holds the course name, module title, and sequence for each module in the database.
+- Create a _data access controller class_ that retrieves the information from the database.
+- Edit the code that's behind the index page in the web app to create a _data access controller object_ and fetch the data.
 - Edit the index page to display the data.
 
 ## Deploy and run the pre-existing web app
