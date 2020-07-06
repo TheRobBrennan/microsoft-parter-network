@@ -216,6 +216,120 @@ You should see the following results.
 
 # Exercise - Create tables, bulk import, and query data
 
+The university currently stores their data in a series of comma-delimited files. You need to migrate this data to Azure SQL Database.
+
+In this exercise, you'll create a database server and a single database by using the SQL Database service. Next, you'll create tables and import data into the database. Finally, you'll use the query editor and the `sqlcmd` utility to query the data.
+
+## Examine the existing comma-delimited data
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Create a database server and database by using SQL Database
+
+## Create the tables
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Import the data
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Query the data in the database
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Connect an ASP.NET application to Azure SQL Database
 
 # Exercise - Connect an ASP.NET application to Azure SQL Database
