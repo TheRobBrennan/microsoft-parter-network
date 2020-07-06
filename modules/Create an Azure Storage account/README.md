@@ -249,4 +249,23 @@ You created a storage account with settings driven by your business requirements
 
 # Knowledge check - Create a storage account
 
+## Check your knowledge
+
+1. Suppose you have two video files stored as blobs. One of the videos is business-critical and requires a replication policy that creates multiple copies across geographically diverse datacenters. The other video is non-critical, and a local replication policy is sufficient. True or false: To satisfy these constraints, the two blobs will need to be in separate storage accounts.
+
+[ x ] True
+[] False
+
+2. The name of a storage account must be:
+
+[] Unique within the containing resource group.
+[] Unique within your Azure subscription.
+[ x ] Globally unique.
+
+3. In a typical project, when would you create your storage account(s)?
+
+[ x ] At the beginning, during project setup.
+[] After deployment, when the project is running.
+[] At the end, during resource cleanup.
+
 # Summary
