@@ -777,4 +777,27 @@ rm -r PhotoSharingApp/
 
 # Knowledge check
 
+## Check your knowledge
+
+1. How many access keys are provided for accessing your Azure storage account?
+
+[] 1
+[ x ] 2
+[] 3
+[] 4
+
+2. You can use either the REST API or the Azure client library to programmatically access a storage account. What is the primary advantage of using the client library?
+
+[] Cost
+[] Availability
+[] Localization
+[ x ] Convenience
+
+3. Which of the following is a good analogy for the access keys of a storage account?
+
+[] IP Address
+[] REST Endpoint
+[ x ] Username and password
+[] Cryptographic algorithm
+
 # Summary
