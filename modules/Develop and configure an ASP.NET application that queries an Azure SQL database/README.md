@@ -62,13 +62,47 @@ When you create a database, you also specify how the data will be collated. A _c
 
 ## Create tables
 
-```sh
+You can use any of these tools to create tables:
 
+- The query editor in the Azure portal
+- The `sqlcmd` utility and Cloud Shell
+- SQL Server Management Studio
+
+Whichever tool you choose, you define the table by using the `CREATE TABLE` SQL command. SQL Database supports primary keys, foreign keys, indexes, and triggers on tables. The following sample code creates a pair of related tables and a non-clustered index. You can run these commands as a batch in the query editor or in the `sqlcmd` utility.
+
+```sql
+CREATE TABLE MyTable
+(
+    MyColumn1 INT NOT NULL PRIMARY KEY,
+    MyColumn2 VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE MyTable2
+(
+    AnotherColumn1 INT NOT NULL,
+    AnotherColumn2 INT NOT NULL REFERENCES MyTable,
+    AnotherColumn3 VARCHAR(50) NULL,
+    PRIMARY KEY (AnotherColumn1, AnotherColumn2)
+);
+
+CREATE INDEX cci ON MyTable2(AnotherColumn3);
 ```
 
-```sh
+To access the query editor in the Azure portal, go to the page for your database and select **Query editor**. You'll be prompted for credentials. You can set the **Authorization type** to **SQL Server authentication** and enter the user name and password that you set up when you created the database. Or you can select **Active Directory password authentication** and provide the credentials of an authorized user in Azure AD. If Active Directory single sign-on is enabled, you can connect by using your Azure identity.
 
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-sign-in-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-sign-in-annotated.png)
+
+You enter your SQL code in the query pane and then click Run to execute it. If the SQL statement is a query, any rows that are returned appear in the Results pane. The Messages pane displays information like the number of rows returned or any errors that occurred:
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-query-editor-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-query-editor-annotated.png)
+
+To use the `sqlcmd` utility, go to Cloud Shell and run the following command. Replace `<server>` with the name of the database server that you created, `<database>` with the name of your database, and `<user name>` and `<password>` with your credentials.
+
+```sh
+sqlcmd -S <server>.database.windows.net -d <database> -U <username> -P <password>
 ```
+
+If the sign-in command succeeds, you'll see a `1>` prompt. You can enter SQL commands on several lines and then type `GO` to run them.
 
 ## Bulk import data with bcp
 
