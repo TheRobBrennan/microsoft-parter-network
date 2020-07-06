@@ -529,6 +529,86 @@ Now that we have that all wired up, we can start adding code to use our storage 
 
 # Initialize the storage account model
 
+The Azure Storage client library provides an object model that is used to interact with Azure storage accounts. It's used to quickly connect to an Azure storage account and use the Azure Storage service APIs.
+
+## Azure Storage client library object model
+
+The foundation of the storage account object model in the **Microsoft Azure Storage Client Library for Node.js and JavaScript** is the `azurestorage` object. This is created by adding the **azure-storage** module to your app through a `require` statement.
+
+```js
+const storage = require("azure-storage")
+```
+
+This object provides a series of _factory_ methods that create specific objects to work with each facet of Azure storage. You call `createXXX` methods to create each object.
+
+| Type  | Method               | Returns        |
+| ----- | -------------------- | -------------- |
+| Blob  | `createBlobService`  | `BlobService`  |
+| Table | `createTableService` | `TableService` |
+| Queue | `createQueueService` | `QueueService` |
+| File  | `createFileService`  | `FileService`  |
+
+The client library will not attempt to connect until an operation is invoked that requires it. Each of these `create` methods return a lightweight object representing access to the storage type — it does not validate the connection or the access key being used.
+
+Once you have a service object to a specific storage type, you can use methods to perform actual work. Methods that make network calls are intentionally asynchronous. The library currently supports _callbacks_ to return asynchronous results. For example, here is code that creates a blob container.
+
+```js
+var azure = require("azure-storage")
+var blobService = azure.createBlobService()
+
+blobService.createContainerIfNotExists("myblobcontainer", function (
+  err,
+  result,
+  response
+) {
+  if (!err) {
+    // if result.created = true, container was created.
+    // if result.created = false, container already existed.
+  }
+})
+```
+
+This approach works fine, but it tends to lead to a lot of code being added into the callbacks, which can get unmanageable. A better approach in JavaScript is to use _promises_ to work with these methods. There are several great libraries which will convert callback-style methods into promises—you can pick the one you prefer.
+
+Here, we'll use the `util.promisify` feature from Node and use the `BlobService` to create the container and upload a file to blob storage. In addition, we'll use the `async` and `await` keywords to work with the promises a bit more naturally.
+
+```js
+const util = require("util")
+const storage = require("azure-storage")
+
+const blobService = storage.createBlobService()
+const createContainerAsync = util
+  .promisify(blobService.createContainerIfNotExists)
+  .bind(blobService)
+const uploadBlobAsync = util
+  .promisify(blobService.createBlockBlobFromLocalFile)
+  .bind(blobService)
+
+async function main() {
+  try {
+    // This makes an actual service call to the Azure Storage service.
+    // Unless this call fails, the container will have been created.
+    await createContainerAsync(containerName)
+
+    // This transfers data in the file to the blob on the service.
+    var uploadResult = await uploadBlobAsync(
+      containerName,
+      "myphoto",
+      "photo.png"
+    )
+    if (uploadResult) {
+      console.log("blob uploaded")
+    }
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+main()
+```
+
+Let's try this in our app.
+
 # Exercise - Connect with your Azure Storage configuration
 
 # Knowledge check
