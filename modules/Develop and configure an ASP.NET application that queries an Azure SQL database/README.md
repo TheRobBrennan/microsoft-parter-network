@@ -222,36 +222,97 @@ In this exercise, you'll create a database server and a single database by using
 
 ## Examine the existing comma-delimited data
 
-```sh
+In the Azure Cloud Shell window on the right side of your screen, run the following command to download the data files and application code for the university system.
 
+```sh
+git clone https://github.com/MicrosoftDocs/mslearn-develop-app-that-queries-azure-sql education
 ```
 
-```sh
+Run these commands to move the sample data to its own folder and list the files in the folder.
 
+```sh
+mv ~/education/data ~/educationdata
+cd ~/educationdata
+ls
 ```
 
-```sh
+This folder contains three files: courses.csv, modules.csv, and studyplans.csv.
 
+View the contents of the courses.csv file.
+
+```sh
+cat courses.csv
 ```
 
-```sh
+This file contains the following comma-separated data. It includes a course name and ID for each course that the university offers.
 
+```sh
+ID,Course
+1,Computer Science
+2,Maths with Computing
+3,Maths with Physics
+4,Computer Science with Physics
+5,Maths with Chemistry
+6,Physics with Chemistry
+7,Maths
+8,Physics
+9,Chemistry
 ```
 
-```sh
+View the contents of the modules.csv file.
 
+```sh
+cat modules.csv
 ```
 
-```sh
+This file lists the various modules that students can take to fulfill the requirements of the courses. Each module has an identifying code and a name.
 
+```sh
+Module Code,Title
+CS101,Introduction to Computer Science
+CS102,Java Programming
+CS103,Distributed Applications
+CS104,Cloud-based systems
+MA101,Foundations of Applied Maths
+MA102,Advanced Calculus
+MA103,Number Theory
+MA104,String Theory
+PH101,Foundations of Physics
+PH102,Basic Experimental Phyics
+PH103,Basic Theoretical Physics
+PH104,Subatomic Physics
+CH101,Elements of Chemistry
+CH102,Basic Inorganic Chemistry
+CH103,Basic Organic Chemistry
+CH104,Chemical Engineering
 ```
 
-```sh
+View the contents of the studyplans.csv file.
 
+```sh
+cat studyplans.csv
 ```
 
-```sh
+This file contains the data that specifies which modules a student must pass to complete a course successfully. The Sequence column shows the order in which the student should take each module. For example, for course 1 (Computer Science) the student must take module CS101 before module MA101. Part of the data is shown here.
 
+```sh
+Course ID,Module Code,Sequence
+1,CS101,1
+1,MA101,2
+1,CS102,3
+1,CS103,4
+1,CS104,5
+2,MA101,1
+2,MA102,2
+2,CS101,3
+2,CS102,4
+2,CS103,5
+3,MA101,1
+3,MA102,2
+3,PH101,3
+3,PH102,4
+3,PH103,5
+...
 ```
 
 ## Create a database server and database by using SQL Database
