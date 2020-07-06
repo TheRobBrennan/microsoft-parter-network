@@ -741,9 +741,31 @@ main()
 
 ## Run the app
 
-```sh
+Build and run the application. Note: make sure you're in the **PhotoSharingApp** directory.
 
+```sh
+node index.js
 ```
+
+TIP: If you get an error about the use of the await keyword, make sure you have added the async keyword to the main function definition per the final step in the instructions above.
+
+It should report that the blob container was created. If you run it a second time, it should tell you it already exists.
+
+Sample output:
+
+```sh
+rob@Azure:~/PhotoSharingApp$ node index.js
+Blob container photoblobs created
+rob@Azure:~/PhotoSharingApp$ node index.js
+Blob container photoblobs already exists.
+```
+
+To verify the container:
+
+- Sign into the Azure portal using the same account you activated the sandbox with.
+- Navigate to your storage account. You can use the **All Resources** section to find the storage account or search by name from the search box at the top of the portal window.
+- Select the **Blobs** entry of the storage account in the **Blob services** section.
+- You should see your **photoblobs** container in the Blobs panel. You can delete the container through the "..." menu on the right-hand side of the entry to try recreating it with your app.
 
 ## Delete the app
 
