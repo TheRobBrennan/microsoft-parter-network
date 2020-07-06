@@ -566,6 +566,10 @@ The web app for the university must fetch and display the data that you uploaded
 
 ## System.Data.SqlClient library overview
 
+The `System.Data.SqlClient` library is a collection of types and methods that you can use to connect to a SQL Server database that's running on-premises or in the cloud on SQL Database. The library provides a generalized interface for retrieving and maintaining data. You can use the `System.Data.SqlClient` library to run SQL commands and transactional operations and to retrieve data. You can parameterize these operations to avoid problems that are associated with SQL-injection attacks. If an operation fails, the `System.Data.SqlClient` library provides error information through specialized exception and error classes. You handle these exceptions just like any other type of exception in a .NET application.
+
+The `System.Data.SqlClient` library is available in the _System.Data.SqlClient_ NuGet package.
+
 ## Connect to a single database
 
 ```csharp
