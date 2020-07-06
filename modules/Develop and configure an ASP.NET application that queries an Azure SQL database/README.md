@@ -1159,12 +1159,26 @@ Save the file, and close the code editor.
 
 ## Deploy and test the updated web app
 
-```sh
+With the application fully configured to retrieve and display the course data to the user, you can deploy the updated version.
 
+In Cloud Shell, return to the **education** folder.
+
+```sh
+cd ~/education
 ```
 
-```sh
+Run the following commands to build and deploy the updated web app.
 
+```sh
+WEBAPPNAME=educationapp-6606
+
+az webapp up \
+    --resource-group learn-2d6169d9-f68b-44b8-a6cd-c1d7fbd0e6f7 \
+    --name $WEBAPPNAME
 ```
+
+After the new web app is deployed, select the link for the app. It should now display a list of courses and modules with the data that's stored in the database.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-web-app-with-data.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-web-app-with-data.png)
 
 # Summary
