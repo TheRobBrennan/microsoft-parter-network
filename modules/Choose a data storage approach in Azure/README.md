@@ -18,7 +18,7 @@ An online retail business has different types of data. Each type of data may ben
 
 Application data can be classified in one of three ways: structured, semi-structured, and unstructured. Here, you'll learn how to classify your data so that you can choose the appropriate storage solution.
 
-[VIDEO: Approaches to storing data in the cloud ~2:46](https://www.microsoft.com/en-us/videoplayer/embed/RE2yEuY?pid=RE2yEuY-ax-86-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
+[VIDEO: Approaches to storing data in the cloud (~2:46)](https://www.microsoft.com/en-us/videoplayer/embed/RE2yEuY?pid=RE2yEuY-ax-86-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
 
 ## Structured data
 
@@ -31,6 +31,74 @@ Structured data is often stored in database tables with rows and columns with ke
 Structured data is straightforward in that it's easy to enter, query, and analyze. All of the data follows the same format. However, forcing a consistent structure also means evolution of the data is more difficult as each record has to be updated to conform to the new structure.
 
 ## Semi-structured data
+
+Semi-structured data is less organized than structured data, and is not stored in a relational format, as the fields do not neatly fit into tables, rows, and columns. Semi-structured data contains tags that make the organization and hierarchy of the data apparent - for example, key/value pairs. Semi-structured data is also referred to as non-relational or _NoSQL data_. The expression and structure of the data in this style is defined by a _serialization language_.
+
+For software developers, data serialization languages are important because they can be used to write data stored in memory to a file, sent to another system, parsed and read. The sender and receiver don’t need to know details about the other system, as long as the same serialization language is used, the data can be understood by both systems.
+
+[VIDEO: Data Serialization Languages (~2:14)](https://sec.ch9.ms/ch9/8fcb/f9263931-05e4-4767-8168-69cfb5358fcb/DataSerializationLang_mid.mp4)
+
+### Common formats
+
+Today, there are three common serialization languages you're likely to encounter:
+
+**XML**, or extensible markup language, was one of the first data languages to receive widespread support. It's text-based, which makes it easily human and machine-readable. In addition, parsers for it can be found for almost all popular development platforms. XML allows you to express relationships and has standards for schema, transformation, and even displaying on the web.
+
+Here's an example of a person with hobbies expressed in XML.
+
+```xml
+<Person Age="23">
+    <FirstName>John</FirstName>
+    <LastName>Smith</LastName>
+    <Hobbies>
+        <Hobby Type="Sports">Golf</Hobby>
+        <Hobby Type="Leisure">Reading</Hobby>
+        <Hobby Type="Leisure">Guitar</Hobby>
+   </Hobbies>
+</Person>
+```
+
+XML expresses the shape of the data using tags. These tags come in two forms: elements such as `<FirstName>` and \_attributes that can be expressed in text like `Age="23"`. Elements can have child elements to express relationships - such as the `<Hobbies>` tag above which is expressing a collection of `Hobby` elements.
+
+XML is flexible and can express complex data easily. However it tends to be more verbose making it larger to store, process, or pass over a network. As a result, other formats have become more popular.
+
+**JSON** – or JavaScript Object Notation, has a lightweight specification and relies on curly braces to indicate data structure. Compared to XML, it is less verbose and easier to read by humans. JSON is frequently used by web services to return data.
+
+Here's the same person expressed in JSON.
+
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "age": "23",
+  "hobbies": [
+    { "type": "Sports", "value": "Golf" },
+    { "type": "Leisure", "value": "Reading" },
+    { "type": "Leisure", "value": "Guitar" }
+  ]
+}
+```
+
+Notice that this format isn't as formal as XML. It's closer to a key/value pair model than a formal data expression. As you might guess from the name, JavaScript has built-in support for this format - making it very popular for web development. Like XML, other languages have parsers you can use to work with this data format. The downside to JSON is that it tends to be more programmer-oriented making it harder for non-technical people to read and modify.
+
+**YAML** – or YAML Ain’t Markup Language, is a relatively new data language that’s growing quickly in popularity in part due to its human-friendliness. The data structure is defined by line separation and indentation, and reduces the dependency on structural characters like parentheses, commas and brackets.
+
+Here's the same person data expressed in YAML.
+
+```yml
+firstName: John
+lastName: Doe
+age: 23
+hobbies:
+  - type: Sports
+    value: Golf
+  - type: Leisure
+    value: Reading
+  - type: Leisure
+    value: Guitar
+```
+
+[VIDEO: What is NoSQL / semi-structured data? (~2:20)](https://www.microsoft.com/en-us/videoplayer/embed/RE2yEvd?pid=RE2yEvd-ax-87-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
 
 ## Unstructured data
 
