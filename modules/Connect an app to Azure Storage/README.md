@@ -365,6 +365,22 @@ Let's add client library support to our application.
 
 # Exercise - Add the storage client library to your app
 
+Let's integrate the **Microsoft Azure Storage Client Library for Node.js and JavaScript** into your application.
+
+The client library for Node.js is available through the Node Package manager (NPM). You will want to add the **azure-storage** package to your **packages.json** file.
+
+NOTE: **The Microsoft Azure Storage Client Library for Node.js and JavaScript** is **intended for server** applications. If you are doing **client-side JavaScript**, you will want to use the **Azure Storage Client Library for JavaScript**, which provides the same functionality but is tailored to running in a browser.
+
+## Add the Azure Storage package
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Connect to your Azure storage account
 
 # Exercise - Add Azure Storage configuration to your app
