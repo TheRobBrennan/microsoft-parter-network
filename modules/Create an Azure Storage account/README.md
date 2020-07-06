@@ -233,6 +233,12 @@ The following screenshot shows the completed settings for the Advanced tab.
 
 ### Create
 
+You can explore the **Tags** settings if you like. This lets you associate key/value pairs to the account for your categorization and is a feature available to any Azure resource.
+
+Click **Review + create** to review the settings. This will do a quick validation of your options to make sure all the required fields are selected. If there are issues, they'll be reported here. Once you've reviewed the settings, click **Create** to provision the storage account.
+
+It will take a few minutes to deploy the account.
+
 ### Verify
 
 # Knowledge check - Create a storage account
