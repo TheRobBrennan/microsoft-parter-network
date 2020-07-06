@@ -464,21 +464,42 @@ Let's add support to our Node.js application to retrieve a connection string fro
 
 ## Create a .env configuration file
 
-```sh
+Make sure you are in the correct working directory for your project.
 
-```
-
-```sh
-
-```
+Use the touch tool on the command line to create a file named **.env**.
 
 ```sh
-
+touch .env
 ```
+
+Open the project in the Cloud Shell editor.
 
 ```sh
-
+code .
 ```
+
+Select the **.env** file in the editor and add the following text.
+
+```sh
+AZURE_STORAGE_CONNECTION_STRING=<value>
+```
+
+The **AZURE_STORAGE_CONNECTION_STRING** value is a hard-coded environment variable used for Storage APIs to look up access keys. You can use your own name if you prefer, but you must supply the name when you create the `BlobService` object in your Node.js app.
+
+Save the file.
+
+Now we need to get the storage account connection string and place it into the configuration for our app. In Cloud Shell run the following command.
+
+```sh
+az storage account show-connection-string \
+    --resource-group learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629 \
+    --query connectionString \
+    --name photostorerb222
+```
+
+Copy the connection string that is returned from that command, minus the quotes, and replace `<value>` in the **.env** file with this connection string.
+
+Save the file.
 
 ## Add support to read an environment configuration file
 
