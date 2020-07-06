@@ -695,4 +695,145 @@ using (SqlConnection con = new SqlConnection(connectionString))
 
 # Exercise - Connect an ASP.NET application to Azure SQL Database
 
+Your database is created. Now you will configure and deploy a web application that academic advisors can use to discuss courses and plans of study with students. The app will use the `System.Data.SqlClient` library to retrieve and display the details of courses and modules that a student must pass to complete a course.
+
+To save time, you'll work with a pre-existing web application. You'll add the code that connects this app to your database. The following diagram shows the primary components of this app:
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-diagram.svg](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-diagram.svg)
+
+You'll do the following things:
+
+- Create a class that holds the course name, module title, and sequence for each module in the database.
+- Create a data access controller class that retrieves the information from the database.
+- Edit the code that's behind the index page in the web app to create a data access controller object and fetch the data.
+- Edit the index page to display the data.
+
+## Deploy and run the pre-existing web app
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Add code to the web app to retrieve data
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Add code to the web app to display the data
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Deploy and test the updated web app
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Summary
