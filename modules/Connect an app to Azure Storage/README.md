@@ -640,19 +640,103 @@ const containerName = "photoblobs"
 
 ## Create a container
 
-```js
-```
+We can use the `BlobService` object to work with blob APIs in Azure storage. As mentioned before, all the APIs that make network calls are asynchronous to keep the app responsive. The `createContainerIfNotExists` method is one such method. We'll use _promises_ to handle the callback that contains the response.
+
+Add a `util` constant at the top of the file (after the initial require you added) to load the `util` package.
 
 ```js
+#!/usr/bin/env node
+require("dotenv").config()
+
+const util = require("util")
+const storage = require("azure-storage")
+const blobService = storage.createBlobService()
+const containerName = "photoblobs"
 ```
 
-```js
-```
+Next, after all the constants, use `util.promisify` to take the callback version of `createContainerIfNotExists` and turn it into a promise-returning method.
+
+- **Since the callback method is on an object, make sure to add a bind call at the end to connect it to that context.**
+- Assign the return value to a constant at the top of the file named `createContainerAsync`, as shown below.
+- You'll also need a `require` for the `util` module near the top of the file.
 
 ```js
+const util = require("util")
+const storage = require("azure-storage")
+const blobService = storage.createBlobService()
+const containerName = "photoblobs"
+
+const createContainerAsync = util
+  .promisify(blobService.createContainerIfNotExists)
+  .bind(blobService)
 ```
 
+Remove the "Hello, World!" output from `main()`.
+
+Call your new `createContainerAsync` promise.
+
+- Pass it the `containerName` constant.
+- Apply the `await` keyword to the call.
+- Wrap the call in a `try / catch` construct and output any error.
+
 ```js
+try {
+  await createContainerAsync(containerName)
+} catch (err) {
+  console.log(err.message)
+}
+```
+
+The `createContainerAsync` promise returns the first value from the underlying `createContainerIfNotExists`, which is the container result. This includes information on whether the container was created or not. Capture the result in a variable, and output whether the container was created based on the `result.created` property.
+
+```js
+try {
+  var result = await createContainerAsync(containerName)
+  if (result.created) {
+    console.log(`Blob container ${containerName} created`)
+  } else {
+    console.log(`Blob container ${containerName} already exists.`)
+  }
+} catch (err) {
+  console.log(err.message)
+}
+```
+
+Finally, decorate the `main` function with the `async` keyword.
+
+Save the file.
+
+The final file should look like this, if you'd like to check your work.
+
+```js
+#!/usr/bin/env node
+
+require("dotenv").config()
+
+const util = require("util")
+
+const storage = require("azure-storage")
+const blobService = storage.createBlobService()
+const createContainerAsync = util
+  .promisify(blobService.createContainerIfNotExists)
+  .bind(blobService)
+
+const containerName = "photoblobs"
+
+async function main() {
+  try {
+    var result = await createContainerAsync(containerName)
+    if (result.created) {
+      console.log(`Blob container ${containerName} created`)
+    } else {
+      console.log(`Blob container ${containerName} already exists.`)
+    }
+  } catch (err) {
+    console.log(err.message)
+  }
+}
+
+main()
 ```
 
 ## Run the app
