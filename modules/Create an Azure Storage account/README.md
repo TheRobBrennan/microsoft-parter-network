@@ -177,6 +177,16 @@ To fulfill these requirements, **you decide to buffer uploaded content in an Azu
 
 ## Use the Azure portal to create a storage account
 
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+On the Azure portal menu or from the **Home** page, select **Create a resource**.
+
+In the selection panel that appears, select **Storage**.
+
+On the right side of that pane, select **Storage account**.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-portal-storage-select.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-portal-storage-select.png)
+
 ### Configure the basic options
 
 ### Configure the networking options
