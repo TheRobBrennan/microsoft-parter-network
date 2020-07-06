@@ -317,6 +317,52 @@ Course ID,Module Code,Sequence
 
 ## Create a database server and database by using SQL Database
 
+Let's create the database and server to store the data for the app.
+
+Sign in to the Azure portal by using the account that you used to activate the sandbox.
+
+From the Azure portal menu, select **Create a resource**.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-create-a-resource.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-create-a-resource.png)
+
+Select **Databases**, and then select **SQL Database**.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-databases-sql-database.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-databases-sql-database.png)
+
+On the **Create SQL Database** page, specify the values in the following table for the database properties.
+
+| Property                      | Value                                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Subscription                  | Concierge Subscription                                                                                                   |
+| Resource Group                | learn-2d6169d9-f68b-44b8-a6cd-c1d7fbd0e6f7                                                                               |
+| Database name                 | The database must have a unique name. We suggest using something like `coursedatabase523`, where NNN is a random number. |
+| Server                        | Select Create new, and enter the details that are in the following table.                                                |
+| Want to use SQL elastic pool? | No                                                                                                                       |
+| Compute + storage             | General purpose                                                                                                          |
+
+For the server, specify the following details in the New server pane, and then click Select.
+
+| Property           | Value                                                                              |
+| ------------------ | ---------------------------------------------------------------------------------- |
+| Server name        | `courseserver523`, where NNN is the same number that you selected for the database |
+| Server admin login | `azuresql`                                                                         |
+| Password           | `ViVKUwPtAdW2`                                                                     |
+| Location           | `Central US`                                                                       |
+
+Select **Next : Networking >**.
+
+On the **Networking** pane, configure the following values:
+
+| Property                                                 | Value           |
+| -------------------------------------------------------- | --------------- |
+| Connectivity method                                      | Public endpoint |
+| Allow Azure services and resources to access this server | Yes             |
+| Add current client IP address                            | Yes             |
+
+Select **Review + create**.
+
+Select **Create**, and wait for the server and database to be created before you continue.
+
 ## Create the tables
 
 ```sh
