@@ -769,8 +769,10 @@ To verify the container:
 
 ## Delete the app
 
-```sh
+If you decide you don't want to keep the application source code in your Cloud Shell environment, you can use the following command to remove the folder and all the contents.
 
+```sh
+rm -r PhotoSharingApp/
 ```
 
 # Knowledge check
