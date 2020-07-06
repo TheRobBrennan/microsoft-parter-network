@@ -203,9 +203,16 @@ The important line is "5 rows copied." This reports the number of lines in the s
 
 ## Query data
 
-```sh
+Verify that the import was successful by querying the data. You can use the query editor from the Azure portal. Or you can use the `sqlcmd` utility to connect to the database from a command line. In either case, you run a `SELECT` statement such as this:
 
+```sql
+SELECT *
+FROM MyTable;
 ```
+
+You should see the following results.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-query-results-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/2-query-results-annotated.png)
 
 # Exercise - Create tables, bulk import, and query data
 
