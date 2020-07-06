@@ -345,3 +345,5 @@ Azure Stream Analytics is a great way to analyze data and transform it into acti
 Each type of data has different storage requirements, and it's your job to figure out which solution is best. Always consider the type of data, the operations required, expected latency, and the need for transactional support.
 
 # Summary
+
+In this module, you've learned how to classify data. You've also learned how to review how the data will be used, performance requirements for the application, and whether your data requires transactions. Considering the specific data sets for the online retailing scenario described here, you learned why some Azure services are better suited to the job than others. You can now apply these learnings to future projects, when you're choosing which solution to use for data storage in Azure.
