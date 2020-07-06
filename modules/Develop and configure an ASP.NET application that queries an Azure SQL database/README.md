@@ -970,49 +970,192 @@ Save the file, and close the **Code** editor.
 
 ## Add code to the web app to display the data
 
-```sh
+The application can now retrieve the course data. Now, update the app to display the data to the user.
 
-```
-
-```sh
-
-```
+In Cloud Shell, move to the **education/Pages** folder.
 
 ```sh
-
+cd ~/education/Pages
 ```
+
+This folder contains the .cshtml pages and code files that the web app uses to display information.
+
+Use the code editor to open the **Index.cshtml.cs** file.
 
 ```sh
-
+code Index.cshtml.cs
 ```
+
+This file contains code that the index page runs when it's displayed. The code defines a class `CoursesAndModulesModel`. The index page will use this model to display the details of courses and modules. In this file, you need to add the code that uses a `DataAccessController` object to fetch that data.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using CoursesWebApp.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace CoursesWebApp.Pages
+{
+    public class CoursesAndModulesModel : PageModel
+    {
+        // TODO: Create a DataAccessController object
+
+        // TODO: Create a collection for holding CoursesAndModules object
+
+        public void OnGet()
+        {
+            // TODO: Retrieve the data using the DataAccessController object and populate the CoursesAndModules object
+        }
+    }
+}
+```
+
+In **Index.cshtml.cs**, replace the comment `// TODO: Create a DataAccessController object` with the following code to create a new `DataAccessController` object.
+
+```csharp
+DataAccessController dac = new DataAccessController();
+```
+
+Replace the comment `// TODO: Create a collection for holding CoursesAndModules object` with the following code.
+
+```csharp
+public List<CoursesAndModules> CoursesAndModules;
+```
+
+In the `OnGet` method, replace the comment `// TODO: Retrieve the data using the DataAccessController object` and populate the `CoursesAndModules` object with the following code. This code uses the `DataAcessController` object to populate the list with the data from the database.
+
+```csharp
+CoursesAndModules = dac.GetAllCoursesAndModules().ToList();
+```
+
+The completed file should contain the following code. Save the file, and close the code editor.
+
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using CoursesWebApp.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace CoursesWebApp.Pages
+{
+    public class CoursesAndModulesModel : PageModel
+    {
+        // TODO: Create a DataAccessController object
+        DataAccessController dac = new DataAccessController();
+
+        // TODO: Create a collection for holding CoursesAndModules object
+        public List<CoursesAndModules> CoursesAndModules;
+
+        public void OnGet()
+        {
+            // TODO: Retrieve the data using the DataAccessController object and populate the CoursesAndModules object
+            CoursesAndModules = dac.GetAllCoursesAndModules().ToList();
+        }
+    }
+}
+```
+
+Use the code editor to open the file **Index.cshtml**.
 
 ```sh
-
+code Index.cshtml
 ```
 
-```sh
+This file contains the display logic for the index page. It specifies `CoursesAndModulesModel` as the data source. The code that we've added creates and populates this model.
 
+The page uses HTML data to display the data from the model. Currently, the page just displays the table headings. The table body (<tbody>) is empty.
+
+```html
+<h2>Courses and Modules</h2>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Course Name
+        </th>
+        <th>
+          Modules
+        </th>
+        <th>
+          Sequence
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- TODO: Display the data from the CoursesAndModules collection -->
+    </tbody>
+  </table>
+</div>
 ```
 
-```sh
+Replace the comment <!-- TODO: Display the data from the CoursesAndModules collection --> with the following markup.
 
+```html
+@foreach(var courseAndModule in Model.CoursesAndModules) {
+<tr>
+  <td>
+    @Html.DisplayFor(courseName => courseAndModule.CourseName)
+  </td>
+  <td>
+    @Html.DisplayFor(moduleTitle => courseAndModule.ModuleTitle)
+  </td>
+  <td>
+    @Html.DisplayFor(sequence => courseAndModule.Sequence)
+  </td>
+</tr>
+}
 ```
 
-```sh
+This code iterates through the rows in the model and outputs the data in each field.
 
+The completed **Index.cshtml** file should contain the following code.
+
+```html
+@page @model CoursesAndModulesModel @{ ViewData["Title"] = "Home page"; }
+
+<h2>Courses and Modules</h2>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          Course Name
+        </th>
+        <th>
+          Modules
+        </th>
+        <th>
+          Sequence
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var courseAndModule in Model.CoursesAndModules) {
+      <tr>
+        <td>
+          @Html.DisplayFor(courseName => courseAndModule.CourseName)
+        </td>
+        <td>
+          @Html.DisplayFor(moduleTitle => courseAndModule.ModuleTitle)
+        </td>
+        <td>
+          @Html.DisplayFor(sequence => courseAndModule.Sequence)
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
 ```
 
-```sh
-
-```
-
-```sh
-
-```
-
-```sh
-
-```
+Save the file, and close the code editor.
 
 ## Deploy and test the updated web app
 
