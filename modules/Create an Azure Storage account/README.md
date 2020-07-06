@@ -209,6 +209,10 @@ The following screenshot shows the completed settings for the Basics tab. Note t
 
 ### Configure the networking options
 
+Click the **Next: Networking >** button to move to the **Networking** tab, or select the **Networking** tab at the top of the screen.
+
+Set the **Connectivity** method option to _Public endpoint (all networks)_. We want to allow public Internet access. Our content is public facing and you need to allow access from public clients.
+
 ### Configure the advanced options
 
 ### Create
