@@ -460,6 +460,38 @@ Storage accounts offer a separate authentication mechanism called _shared access
 
 # Exercise - Add Azure Storage configuration to your app
 
+Let's add support to our Node.js application to retrieve a connection string from a configuration file. We'll start by adding the necessary plumbing to manage configuration from our JavaScript file.
+
+## Create a .env configuration file
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Add support to read an environment configuration file
+
+```sh
+
+```
+
+## Add code to read the configuration file
+
+```sh
+
+```
+
 # Initialize the storage account model
 
 # Exercise - Connect with your Azure Storage configuration
