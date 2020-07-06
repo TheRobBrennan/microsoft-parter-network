@@ -572,24 +572,47 @@ The `System.Data.SqlClient` library is available in the _System.Data.SqlClient_ 
 
 ## Connect to a single database
 
-```csharp
+You use an `SqlConnection` object to create a database connection. You provide a connection string that specifies the name and location of the database, the credentials to use, and other connection-related parameters. A typical connection string to a single database looks like this:
 
 ```
-
-```csharp
-
+Server=tcp:myserver.database.windows.net,1433;Initial Catalog=mydatabase;Persist Security Info=False;User ID=myusername;Password=mypassword;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 ```
 
-```csharp
+You can find the connection string for your single database on the **Connection strings** page for your database in the Azure portal.
 
+The following code example shows how to create an `SqlConnection` object:
+
+```csharp
+using System.Data.SqlClient;
+
+...
+
+string connectionString = "Server=tcp:myserver.database.windows.net,...";
+SqlConnection con = new SqlConnection(connectionString);
 ```
 
-```csharp
+The database connection isn't established until you open the connection. You typically open the connection immediately before you run an SQL command or query.
 
+```csharp
+con.Open();
 ```
 
-```csharp
+Some databases only support a finite number of concurrent connections. So, after you finish running a command and retrieving any results, it's good practice to close the connection and release any resources that were held.
 
+```csharp
+con.Close();
+```
+
+Another common approach is to create the connection in a using statement. This strategy automatically closes the connection when the using statement completes. But you can also explicitly call the `Close` method.
+
+```csharp
+using (SqlConnection con = new SqlConnection(connectionString))
+{
+    // Open and Use the connection here
+    con.Open();
+    ...
+}
+// Connection is now closed
 ```
 
 ## Define an SQL command or query
