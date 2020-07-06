@@ -513,9 +513,19 @@ npm install dotenv --save
 
 ## Add code to read the configuration file
 
-```sh
+Now that we have added the required libraries to enable reading configuration, we need to enable that functionality within our application.
 
+Select **index.js** in the editor.
+
+At the top of the file, a `#!/usr/bin/env node` line is present. Underneath that line, add a `require` statement to load the **dotenv** package. This will make environment variables defined in our **.env** file available to the program.
+
+```js
+#!/usr/bin/env node
+require("dotenv").config()
+// ... more code follows
 ```
+
+Now that we have that all wired up, we can start adding code to use our storage account.
 
 # Initialize the storage account model
 
