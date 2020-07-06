@@ -46,7 +46,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 - [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) - Estimated 1 hour 57 mins to complete
   - [ x ] Module 4 - Secure your Azure SQL Database (~1 hr 7 mins)
-  - [] Module 5 - Develop and configure an ASP.NET application that queries an Azure SQL database (~50 mins)
+  - [ x ] Module 5 - Develop and configure an ASP.NET application that queries an Azure SQL database (~50 mins)
 
 ## Monday, July 6th, 2020
 
