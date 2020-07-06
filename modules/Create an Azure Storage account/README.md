@@ -215,6 +215,22 @@ Set the **Connectivity** method option to _Public endpoint (all networks)_. We w
 
 ### Configure the advanced options
 
+Click the **Next: Advanced >** button to move to the **Advanced** tab, or select the **Advanced** tab at the top of the screen.
+
+Set **Secure transfer required** to _Enabled_. The Secure transfer required setting controls whether HTTP can be used for the REST APIs used to access data in the Storage account. Setting this option to Enabled will force all clients to use SSL (**HTTPS**). Most of the time you'll want to set this to Enabled as using HTTPS over the network is considered a best practice.
+
+WARNING: If this option is enabled, it will enforce some additional restrictions. Azure files service connections without encryption will fail, including scenarios using SMB 2.1 or 3.0 on Linux. **Because Azure storage doesn't support SSL for custom domain names, this option cannot be used with a custom domain name.**
+
+Leave the **Large file shares** option set to _Disabled_. **Large file shares provides support up to a 100TiB**, however this type of storage account can't convert to a Geo-redundant storage offering and upgrades are permanent.
+
+Leave the **Blob Soft delete** option set to _Disabled_. Soft delete lets you recover your blob data in many cases where blobs or blob snapshots are deleted accidentally or overwritten.
+
+Leave the **Data Lake Storage Gen2** option as _Disabled_. This is for big-data applications that aren't relevant to this module.
+
+The following screenshot shows the completed settings for the Advanced tab.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-create-storage-account-advanced.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-create-storage-account-advanced.png)
+
 ### Create
 
 ### Verify
