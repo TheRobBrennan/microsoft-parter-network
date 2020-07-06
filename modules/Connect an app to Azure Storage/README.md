@@ -503,8 +503,12 @@ Save the file.
 
 ## Add support to read an environment configuration file
 
-```sh
+Node.js apps can include support to read from the **.env** file by adding the **dotenv** package.
 
+In the command prompt section of the window, add a dependency to the **dotenv** package using `npm`.
+
+```sh
+npm install dotenv --save
 ```
 
 ## Add code to read the configuration file
