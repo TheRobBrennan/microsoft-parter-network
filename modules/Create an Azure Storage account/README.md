@@ -189,6 +189,24 @@ On the right side of that pane, select **Storage account**.
 
 ### Configure the basic options
 
+Under PROJECT DETAILS:
+
+- Select the _Concierge Subscription_ from the **Subscription** drop-down list.
+- Select the existing Resource Group ("**learn-b745e228-d148-4e5a-b543-deee583cc718**") from the drop-down list.
+
+Under INSTANCE DETAILS:
+
+- Enter a **Storage account name**. The name will be used to generate the public URL used to access the data in the account. The name must be unique across all existing storage account names in Azure. Names must be 3 to 24 characters long and can contain only lowercase letters and numbers.
+- Select a **Location** near to you from the list above.
+- Select _Standard_ for the **Performance** option. This decides the type of disk storage used to hold the data in the Storage account. **Standard** uses traditional hard disks, and Premium uses solid-state drives (SSD) for faster access. However, remember that **Premium only supports page blobs**. You'll need block blobs for your videos, and a queue for buffering - both of which are only available with the **Standard** option.
+- Select **StorageV2 (general purpose v2)** for the **Account kind**. This provides access to the latest features and pricing. In particular, Blob storage accounts have more options available with this account type. You need a mix of blobs and a queue, so the Blob storage option will not work. For this application, there would be no benefit to choosing a Storage (general purpose v1) account, since that would limit the features you could access and would be unlikely to reduce the cost of your expected workload.
+- Select **Locally-redundant storage (LRS)** for the **Replication** option. Data in Azure storage accounts are always replicated to ensure high availability - this option lets you choose how far away the replication occurs to match your durability requirements. In our case, the images and videos quickly become out-of-date and are removed from the site. As a result, there is little value to paying extra for global redundancy. If a catastrophic event results in data loss, you can restart the site with fresh content from your users.
+- Set the **Access tier** to _Hot_. This setting is only used for Blob storage. The Hot Access Tier is ideal for frequently accessed data, and the Cool Access Tier is better for infrequently accessed data. Note that this only sets the default value - when you create a Blob, you can set a different value for the data. In our case, we want the videos to load quickly, so you'll use the high-performance option for your blobs.
+
+The following screenshot shows the completed settings for the Basics tab. Note that the resource group, subscription, and name will have different values.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-create-storage-account-basics.png](https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/media/5-create-storage-account-basics.png)
+
 ### Configure the networking options
 
 ### Configure the advanced options
