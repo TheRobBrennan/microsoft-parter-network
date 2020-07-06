@@ -710,13 +710,45 @@ You'll do the following things:
 
 ## Deploy and run the pre-existing web app
 
+Change your working directory to the **education** folder.
+
 ```sh
+cd ~/education
+```
+
+Run the following commands to build and deploy the initial web app.
+
+```sh
+WEBAPPNAME=educationapp-$RANDOM
+az webapp up \
+    --resource-group learn-2d6169d9-f68b-44b8-a6cd-c1d7fbd0e6f7 \
+    --location centralus \
+    --sku F1 \
+    --name $WEBAPPNAME
+```
+
+When the web application has been deployed, the output will show an _App_url_ with the URL of the web site - [https://educationapp-6606.azurewebsites.net](https://educationapp-6606.azurewebsites.net). Open this site in a new tab.
+
+```sh
+You can launch the app at http://educationapp-6606.azurewebsites.net
+{
+  "URL": "http://educationapp-6606.azurewebsites.net",
+  "appserviceplan": "rob_asp_Windows_centralus_0",
+  "location": "centralus",
+  "name": "educationapp-6606",
+  "os": "Windows",
+  "resourcegroup": "learn-2d6169d9-f68b-44b8-a6cd-c1d7fbd0e6f7",
+  "runtime_version": "dotnetcore|2.1",
+  "runtime_version_detected": "2.1",
+  "sku": "FREE",
+  "src_path": "//home//rob//education"
+}
 
 ```
 
-```sh
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-web-app-no-data.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-web-app-no-data.png)
 
-```
+You want the web app to display a list of courses and the modules that make up each course. Currently, the app doesn't retrieve or display this data. So, you need to update the code to get the data from the database and display it.
 
 ## Add code to the web app to retrieve data
 
