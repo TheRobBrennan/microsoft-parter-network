@@ -165,6 +165,28 @@ In the rare cases where you need automation, the decision is between a programma
 
 # Exercise - Create a storage account using the Azure portal
 
+In this unit, you'll use the Azure portal to create a storage account that is appropriate for a fictitious southern California surf report web app.
+
+The surf report site lets users upload photos and videos of local beach conditions. Viewers will use the content to help them choose the beach with the best surfing conditions. Your list of design and feature goals is:
+
+- Video content must load quickly.
+- The site must handle unexpected spikes in upload volume.
+- Outdated content must be removed as surf conditions change so the site always shows current conditions.
+
+To fulfill these requirements, **you decide to buffer uploaded content in an Azure Queue for processing and then transfer it to an Azure Blob for persistent storage**. You need a storage account that can hold both queues and blobs while delivering low-latency access to your content.
+
+## Use the Azure portal to create a storage account
+
+### Configure the basic options
+
+### Configure the networking options
+
+### Configure the advanced options
+
+### Create
+
+### Verify
+
 # Knowledge check - Create a storage account
 
 # Summary
