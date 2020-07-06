@@ -50,7 +50,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 ## Monday, July 6th, 2020
 
 - [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) - Estimated 3 hours 50 mins to complete
-  - [] Module 1 - [Choose a data storage approach in Azure](https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/) (~30 mins)
+  - [ x ] Module 1 - [Choose a data storage approach in Azure](https://docs.microsoft.com/en-us/learn/modules/choose-storage-approach-in-azure/) (~30 mins)
   - [] Module 2 - [Create an Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/create-azure-storage-account/) (~30 mins)
   - [] Module 3 - [Connect an app to Azure Storage](https://docs.microsoft.com/en-us/learn/modules/connect-an-app-to-azure-storage/) (~1 hr 15 mins)
   - [] Module 4 - [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/) (~45 mins)
