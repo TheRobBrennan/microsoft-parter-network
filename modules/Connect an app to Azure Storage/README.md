@@ -373,13 +373,21 @@ NOTE: **The Microsoft Azure Storage Client Library for Node.js and JavaScript** 
 
 ## Add the Azure Storage package
 
-```sh
+In Cloud Shell, cd to the PhotoSharingApp directory if you aren't already there.
 
+Add the **azure-storage** package to the application. Make sure to supply the `--save` option so it persists to **packages.json**.
+
+```sh
+npm install azure-storage --save
 ```
 
-```sh
+This should result in some console activity while the client library and all the required dependencies are downloaded. Once it's done, go ahead and build and run the app again to make sure everything is ready to go.
 
+```sh
+node index.js
 ```
+
+Now that we have the necessary libraries in place, let's look at the common tasks you'll do in your code to work with Azure storage.
 
 # Connect to your Azure storage account
 
