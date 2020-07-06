@@ -611,6 +611,16 @@ Let's try this in our app.
 
 # Exercise - Connect with your Azure Storage configuration
 
+Let's add code to connect to the Azure storage account using our stored connection string. **The Azure client library will automatically use the AZURE_STORAGE_CONNECTION_STRING environment variable** to get the connection string.
+
+## Create a blob client
+
+## Create a container
+
+## Run the app
+
+## Delete the app
+
 # Knowledge check
 
 # Summary
