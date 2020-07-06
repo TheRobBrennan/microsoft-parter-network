@@ -14,6 +14,40 @@ In this module, you will:
 
 # Classify your data
 
+An online retail business has different types of data. Each type of data may benefit from a different storage solution.
+
+Application data can be classified in one of three ways: structured, semi-structured, and unstructured. Here, you'll learn how to classify your data so that you can choose the appropriate storage solution.
+
+[VIDEO: Approaches to storing data in the cloud ~2:46](https://www.microsoft.com/en-us/videoplayer/embed/RE2yEuY?pid=RE2yEuY-ax-86-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
+
+## Structured data
+
+## Semi-structured data
+
+## Unstructured data
+
+## Product catalog data
+
+## Photos and videos
+
+## Business data
+
+## Summary
+
+## Check your knowledge
+
+1. A JSON file is an example of which type of data?
+
+[] Structured
+[] Semi-structured
+[] Unstructured
+
+2. A video is an example of which type of data?
+
+[] Structured
+[] Semi-structured
+[] Unstructured
+
 # Determine operational needs
 
 # Group multiple operations in a transaction
