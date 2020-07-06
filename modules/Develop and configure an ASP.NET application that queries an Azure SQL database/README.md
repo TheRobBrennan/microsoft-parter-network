@@ -650,8 +650,21 @@ If you expect the command to take a while to run, you can use the `ExecuteNonQue
 
 ## Execute a query and fetch data
 
-```csharp
+If your `SqlCommand` contains an SQL SELECT statement, you run it by using the `ExecuteReader` method. This method returns an `SqlDataReader` object that you can use to iterate through the results and process each row in turn. You retrieve the data from an `SqlReader` object by using the `Read` method. This method returns _true_ if a row is found and _false_ if there are no more rows left to read. After a row is read, the data for that row is available in the fields in the `SqlReader` object. Each field has the same name as the corresponding column in the original SELECT statement. However, the data in each field is retrieved as an untyped `object`, so you must convert it to the appropriate type before you can use it. The following code shows how to run the `queryCmd` command that we illustrated earlier to fetch the data one row at a time.
 
+```csharp
+SqlDataReader rdr = queryCmd.ExecuteReader();
+
+// Read the data a row at a time
+while (rdr.Read())
+{
+    string firstName = rdr["FirstName"].ToString();
+    string lastName = rdr["LastName"].ToString();
+    int orderID = Convert.ToInt32(rdr["OrderID"]);
+
+    // Process the data
+    ...
+}
 ```
 
 ## Handle exceptions and errors
