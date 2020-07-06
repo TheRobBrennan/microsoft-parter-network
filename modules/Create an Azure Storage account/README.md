@@ -241,6 +241,12 @@ It will take a few minutes to deploy the account.
 
 ### Verify
 
+Select the **Storage accounts** link in the left sidebar.
+
+Locate the new storage account in the list to verify that creation succeeded.
+
+You created a storage account with settings driven by your business requirements. For example, you might have selected a West US datacenter because your customers were primarily located in southern California. This is a typical flow: first analyze your data and goals, and then configure the storage account options to match.
+
 # Knowledge check - Create a storage account
 
 # Summary
