@@ -752,65 +752,221 @@ You want the web app to display a list of courses and the modules that make up e
 
 ## Add code to the web app to retrieve data
 
-```sh
+Now let's add to the application the code to retrieve course data from the database.
 
-```
-
-```sh
-
-```
+In Cloud Shell, go to the **education/Models** folder.
 
 ```sh
-
+cd ~/education/Models
 ```
+
+This folder contains two files, **CoursesAndModules.cs** and **DataAccessController.cs**.
+
+Use the code editor to open the **CoursesAndModules.cs** file.
 
 ```sh
-
+code CoursesAndModules.cs
 ```
+
+This file contains an empty class that's named `CoursesAndModules`.
+
+```csharp
+namespace CoursesWebApp.Models
+{
+    public class CoursesAndModules
+    {
+        // TODO: Define the CourseName, ModuleTitle, and Sequence read-only properties
+
+        // TODO: Create a constructor that initializes the fields behind the properties
+    }
+}
+```
+
+Replace the comment `// TODO: Define the CourseName, ModuleTitle, and Sequence read-only properties` with the following code.
+
+```csharp
+public string CourseName { get; }
+public string ModuleTitle { get; }
+public int Sequence { get; }
+```
+
+This code defines a set of read-only fields that will contain the data for each row that's displayed by the web app.
+
+Replace the comment /`/ TODO: Create a constructor that initializes the fields behind the properties` with the following constructor.
+
+```csharp
+public CoursesAndModules(string courseName, string moduleTitle, int sequence)
+{
+    this.CourseName = courseName;
+    this.ModuleTitle = moduleTitle;
+    this.Sequence = sequence;
+}
+```
+
+This constructor populates the fields with the data to display. The complete file should contain the following code.
+
+```csharp
+namespace CoursesWebApp.Models
+{
+    public class CoursesAndModules
+    {
+        public string CourseName { get; }
+        public string ModuleTitle { get; }
+        public int Sequence { get; }
+
+        public CoursesAndModules(string courseName, string moduleTitle, int sequence)
+        {
+            this.CourseName = courseName;
+            this.ModuleTitle = moduleTitle;
+            this.Sequence = sequence;
+        }
+    }
+}
+```
+
+Save the file, and close the code editor.
+
+Use the code editor to open the **DataAccessController.cs** file.
 
 ```sh
-
+code DataAccessController.cs
 ```
 
-```sh
+This file contains a class that's named `DataAccessController`. This class will contain the data access logic to connect to the database and retrieve the course and module data. It will populate a list of `CoursesAndModules` objects with this data.
+
+Leave the code editor open, and switch to the Azure portal.
+
+On the Azure portal menu, select **SQL databases**, and select your database.
+
+Under **Settings**, select **Connection strings**. Copy the **ADO.NET** connection string to the clipboard.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-connection-string-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/5-connection-string-annotated.png)
 
 ```
-
-```sh
-
+Server=tcp:courseserver523.database.windows.net,1433;Initial Catalog=coursedatabase523;Persist Security Info=False;User ID=azuresql;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 ```
 
-```sh
+Return to the code editor. Replace the value of the `connectionString` variable with the value from the clipboard. In the connection string, replace the text {your_username} with the value `azuresql`. And replace the text {your_password} with the password `ViVKUwPtAdW2` for this account.
 
+```csharp
+private string connectionString = "Server=tcp:courseserver523.database.windows.net,1433;Initial Catalog=coursedatabase523;Persist Security Info=False;User ID=azuresql;Password=ViVKUwPtAdW2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 ```
 
-```sh
+After the comment `//TODO: Connect to the database`, replace the commented-out using statement with the following code.
 
+```csharp
+using (SqlConnection con = new SqlConnection(connectionString))
 ```
 
-```sh
+This code creates a new `SqlConnection` object that uses your connection string to connect to the database.
 
+Replace the comment `// TODO: Specify the SQL query to run` with the following statements.
+
+```csharp
+SqlCommand cmd = new SqlCommand(
+    @"SELECT c.CourseName, m.ModuleTitle, s.ModuleSequence
+    FROM dbo.Courses c JOIN dbo.StudyPlans s
+    ON c.CourseID = s.CourseID
+    JOIN dbo.Modules m
+    ON m.ModuleCode = s.ModuleCode
+    ORDER BY c.CourseName, s.ModuleSequence", con);
+cmd.CommandType = CommandType.Text;
 ```
 
-```sh
+The `SqlCommand` object contains an SQL statement that retrieves the data for all courses and modules. It joins them by using the information in the **StudyPlan** table.
 
+Replace the comment `// TODO: Execute the query` with the following code.
+
+```csharp
+con.Open();
+SqlDataReader rdr = cmd.ExecuteReader();
 ```
 
-```sh
+These statements open the connection to the database and run the SQL statement. You can use the `SqlDataReader` object to fetch the results one row at a time.
 
+Replace the comment `// TODO: Read the data a row at a time` with the following block of code.
+
+```csharp
+while (rdr.Read())
+{
+    string courseName = rdr["CourseName"].ToString();
+    string moduleTitle = rdr["ModuleTitle"].ToString();
+    int moduleSequence = Convert.ToInt32(rdr["ModuleSequence"]);
+    CoursesAndModules course = new CoursesAndModules(courseName, moduleTitle, moduleSequence);
+    courseList.Add(course);
+}
 ```
 
-```sh
+This block iterates through the rows that are returned in the `SqlDataReader` object. The code extracts the data in the fields in each row and uses them to populate a new `CoursesAndModules` object. This object is then added to a list.
 
+Replace the comment `// TODO: Close the database connection` with the following statement.
+
+```csharp
+con.Close();
 ```
 
-```sh
+This statement closes the connection to the database and releases any resources that were held.
 
+The completed class should contain the following code, which includes the connection string for your database.
+
+```csharp
+using Microsoft.Extensions.Options;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace CoursesWebApp.Models
+{
+    public class DataAccessController
+    {
+        // TODO: Add your connection string in the following statements
+        private string connectionString = "Server=tcp:courseserver523.database.windows.net,1433;Initial Catalog=coursedatabase523;Persist Security Info=False;User ID=azuresql;Password=ViVKUwPtAdW2;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+        // Retrieve all details of courses and their modules
+        public IEnumerable<CoursesAndModules> GetAllCoursesAndModules()
+        {
+            List<CoursesAndModules> courseList = new List<CoursesAndModules>();
+
+            // TODO: Connect to the database
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                // TODO: Specify the SQL query to run
+                SqlCommand cmd = new SqlCommand(
+                    @"SELECT c.CourseName, m.ModuleTitle, s.ModuleSequence
+                    FROM dbo.Courses c JOIN dbo.StudyPlans s
+                    ON c.CourseID = s.CourseID
+                    JOIN dbo.Modules m
+                    ON m.ModuleCode = s.ModuleCode
+                    ORDER BY c.CourseName, s.ModuleSequence", con);
+                cmd.CommandType = CommandType.Text;
+
+                // TODO: Execute the query
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+
+                // TODO: Read the data a row at a time
+                while (rdr.Read())
+                {
+                    string courseName = rdr["CourseName"].ToString();
+                    string moduleTitle = rdr["ModuleTitle"].ToString();
+                    int moduleSequence = Convert.ToInt32(rdr["ModuleSequence"]);
+                    CoursesAndModules course = new CoursesAndModules(courseName, moduleTitle, moduleSequence);
+                    courseList.Add(course);
+                }
+
+                // TODO: Close the database connection
+                con.Close();
+            }
+            return courseList;
+        }
+    }
+}
 ```
 
-```sh
-
-```
+Save the file, and close the **Code** editor.
 
 ## Add code to the web app to display the data
 
