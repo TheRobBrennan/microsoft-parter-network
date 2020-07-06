@@ -197,6 +197,26 @@ When deciding what storage solution to use, think about how your data will be us
 
 # Group multiple operations in a transaction
 
+Applications may need to group a series of data updates together, because a change to one piece of data needs to result in a change to another piece of data. Transactions enable you to group these updates so that if one event in a series of updates fails, the entire series can be rolled back, or undone.
+
+For example, as an online retailer you might use a transaction for the placement of an order and payment verification. The grouping of the related events ensures that you don't reduce your inventory levels until an approved form of payment is received.
+
+Here, you'll learn about transactions and whether they're required for your data.
+
+## What is a transaction?
+
+## OLTP vs OLAP
+
+## Product catalog data
+
+## Photos and videos
+
+## Business data
+
+## Summary
+
+## Check your knowledge
+
 # Choose a storage solution on Azure
 
 # Summary
