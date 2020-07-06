@@ -102,6 +102,17 @@ hobbies:
 
 ## Unstructured data
 
+The organization of unstructured data is ambiguous. Unstructured data is often delivered in files, such as photos or videos. The video file itself may have an overall structure and come with semi-structured metadata, but the data that comprises the video itself is unstructured. Therefore, photos, videos, and other similar files are classified as unstructured data.
+
+Examples of unstructured data include:
+
+- Media files, such as photos, videos, and audio files
+- Office files, such as Word documents
+- Text files
+- Log files
+
+Now that you know the differences between each kind of data, let's look at the data sets used in an online retail business, and classify them.
+
 ## Product catalog data
 
 ## Photos and videos
