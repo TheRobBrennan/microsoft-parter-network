@@ -560,6 +560,62 @@ You created a single database by using SQL Database. Next, you used the query ed
 
 # Connect an ASP.NET application to Azure SQL Database
 
+There are various ways to connect to databases within the Azure SQL Database service from an application. For .NET apps, you can use the `System.Data.SqlClient` library.
+
+The web app for the university must fetch and display the data that you uploaded to your SQL database. In this unit, you will learn how to connect to a database from a web app and use the `System.Data.SqlClient` library to process data.
+
+## System.Data.SqlClient library overview
+
+## Connect to a single database
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+## Define an SQL command or query
+
+```csharp
+
+```
+
+```csharp
+
+```
+
+## Run a command
+
+```csharp
+
+```
+
+## Execute a query and fetch data
+
+```csharp
+
+```
+
+## Handle exceptions and errors
+
+```csharp
+
+```
+
 # Exercise - Connect an ASP.NET application to Azure SQL Database
 
 # Summary
