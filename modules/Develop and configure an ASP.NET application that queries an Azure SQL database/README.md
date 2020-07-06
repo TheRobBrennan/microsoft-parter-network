@@ -505,21 +505,58 @@ Verify that this command imports 45 rows.
 
 ## Query the data in the database
 
-```sh
+Return to the Azure portal.
 
+On the Azure portal menu, select **SQL databases**.
+
+On the **SQL databases** page, select **coursedatabaseNNN**.
+
+On the **coursedatabaseNNN** page, under **Overview**, select _Query editor_.
+
+On the **coursedatabaseNNN - Query editor** page, enter the following details, and then select **OK** to connect to the database service.
+
+| Property           | Value                     |
+| ------------------ | ------------------------- |
+| Authorization type | SQL server authentication |
+| Login              | `azuresql`                |
+| Password           | `ViVKUwPtAdW2`            |
+
+In the **Query 1** pane, enter the following SQL statement, and then select **Run**.
+
+```sql
+SELECT * FROM dbo.Courses
 ```
 
-```sh
+This statement retrieves the data from the **Courses** table. The results window should display nine rows.
 
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-query-results-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-query-results-annotated.png)
+
+Change the query as follows, and then select **Run**.
+
+```sql
+SELECT * FROM dbo.Modules
 ```
 
-```sh
+This time you should see the modules in the **Results** window. There are 16 rows.
 
+Switch back to Cloud Shell, and run the following command to connect to the database.
+
+```sh
+sqlcmd -S "$DATABASE_SERVER.database.windows.net" -d "$DATABASE_NAME" -U $AZURE_USER -P $AZURE_PASSWORD
 ```
 
-```sh
+At the `1>` prompt, enter the following SQL command to fetch the data from the **StudyPlans** table.
 
+```sql
+SELECT * FROM StudyPlans;
+GO
 ```
+
+This query should return 45 rows.
+
+At the `1>` prompt, type `exit` to close the `sqlcmd` utility.
+
+You created a single database by using SQL Database. Next, you used the query editor in the Azure portal to create tables. You then used the `bcp` utility to upload data from a series of comma-delimited data files. Finally, you ran queries against the tables in the database from the query editor in the Azure portal and from the `sqlcmd` utility in Cloud Shell.
 
 # Connect an ASP.NET application to Azure SQL Database
 
