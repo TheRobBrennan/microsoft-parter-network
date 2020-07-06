@@ -615,11 +615,57 @@ Let's add code to connect to the Azure storage account using our stored connecti
 
 ## Create a blob client
 
+Open **index.js** in the code editor.
+
+Start by including the **azure-storage** module. Store the module in a variable named **storage**.
+
+```js
+#!/usr/bin/env node
+require("dotenv").config()
+
+const storage = require("azure-storage")
+```
+
+Next, right after that, use the **storage** object to create the `BlobService` object and store it in a global named `blobService`. Remember, these are lightweight objects representing access to the storage account.
+
+```js
+const blobService = storage.createBlobService()
+```
+
+Add a constant to represent the container we want to create. We'll name the container "photoblobs".
+
+```js
+const containerName = "photoblobs"
+```
+
 ## Create a container
+
+```js
+```
+
+```js
+```
+
+```js
+```
+
+```js
+```
+
+```js
+```
 
 ## Run the app
 
+```sh
+
+```
+
 ## Delete the app
+
+```sh
+
+```
 
 # Knowledge check
 
