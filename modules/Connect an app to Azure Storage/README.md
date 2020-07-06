@@ -90,6 +90,55 @@ If you are interested in learning more about creating storage accounts, make sur
 
 # Exercise - Create a new app to work with Azure storage
 
+Recall that we are working on a photo-sharing application that will use Azure Storage to manage pictures and other bits of data we store on behalf of our users.
+
+To simplify our scenario so that we can focus on the Storage APIs, we will create a new Node.js application that can run from the console. We will also assume it always has network connectivity. However, you should always harden your app to ensure network failures will not impact the user experience, or result in a failure of the application itself.
+
+## Create a Node.js application
+
+Node.js is a popular framework for running JavaScript apps. It is most commonly used for web apps, but you can use it to run logic from the command line as well. If you have the tools installed locally, you can run the following steps from a command line. Alternatively, you can use the Cloud Shell on the right side of the window to execute the below steps.
+
+Sign into the Cloud Shell or open a command-line session and create a new folder named "PhotoSharingApp".
+
+```sh
+mkdir PhotoSharingApp
+```
+
+Change into the new folder and use `npm` to initialize a new Node.js app. This will create a **package.json** file containing metadata that describes the app.
+
+```sh
+cd PhotoSharingApp
+npm init -y
+```
+
+Create a new source file **index.js**, which is where our code will go.
+
+```sh
+touch index.js
+```
+
+Open the **index.js** file with an editor. If you are using the Cloud Shell, you can type `code .` to open an editor.
+
+Paste the following program into the **index.js** file. You can use the Ctrl+V keyboard shortcut or right-click to paste.
+
+```sh
+#!/usr/bin/env node
+
+function main() {
+    console.log('Hello, World!');
+}
+
+main();
+```
+
+Save the file—you can use the "..." menu on the top right corner of the Cloud Shell editor.
+
+Run the app to make sure it executes correctly. It should display "Hello, World!" to the console.
+
+```sh
+node index.js
+```
+
 # Exercise - Create an Azure storage account
 
 # Interact with the Azure Storage APIs
