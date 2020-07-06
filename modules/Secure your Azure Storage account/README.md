@@ -154,6 +154,19 @@ To change default network access in the Azure portal:
 
 # Understand Advanced Threat Protection for Azure Storage
 
+Detecting threats to your data is an important part of security. You can check an audit trail for all activity against a storage account. But that will often only show you that an intrusion _has already occurred_. What you really want is a way to be notified when suspicious activity is happening. That's where the Advanced Threat Protection feature in Azure Storage can help.
+
+Advanced Threat Protection detects anomalies in account activity. It then notifies you of potentially harmful attempts to access your account. You don't have to be a security expert or manage security monitoring systems to take advantage of this layer of threat protection.
+
+**Currently, Advanced Threat Protection for Azure Storage is available for the Blob service**. Security alerts are integrated with Azure Security Center. The alerts are sent by email to subscription admins.
+
+In the Azure portal, you can turn on threat protection on the configuration page of the Azure Storage account.
+
+- On the **Settings** page, select **Advanced security**.
+- Select **Enable Advanced Threat Protection** to enable this layer of protection.
+
+![https://docs.microsoft.com/en-us/learn/data-ai-cert/secure-azure-storage-account/media/6-enable-advanced-threat-protection.png](https://docs.microsoft.com/en-us/learn/data-ai-cert/secure-azure-storage-account/media/6-enable-advanced-threat-protection.png)
+
 # Explore Azure Data Lake Storage security features
 
 # Summary
