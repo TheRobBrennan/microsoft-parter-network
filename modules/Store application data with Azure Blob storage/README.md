@@ -306,6 +306,15 @@ Each method uses an `IStorage` instance called `storage` to do its work. There i
 
 ### Add the NuGet package
 
+First, add a reference to the Azure Storage SDK. In the terminal, run the following:
+
+```sh
+dotnet add package WindowsAzure.Storage
+dotnet restore
+```
+
+This will make sure we're using the newest version of the Blob storage client library.
+
 ### Configure
 
 ### Initialize
