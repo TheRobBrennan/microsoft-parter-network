@@ -141,6 +141,114 @@ node index.js
 
 # Exercise - Create an Azure storage account
 
+Now that we have an app, we need an Azure storage account to work with.
+
+## Use the Azure CLI to create an Azure storage account
+
+We will use the `az storage account create` command to create a new storage account. There are several parameters to control the configuration of the storage account.
+
+- `--name` - A **Storage account name**. The name will be used to generate the public URL used to access the data in the account. It **must be unique across all existing storage account names in Azure**. It must be 3 to 24 characters long and can contain only lowercase letters and numbers.
+- `--resource-group` - Use **learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629** to place the storage account into the free sandbox.
+- `--location` - `westus2`
+- `--kind` - This determines the storage account _type_. Options include `BlobStorage`, `Storage`, and `StorageV2`.
+- `--sku` - This decides the storage account performance and replication model. Options include `Premium_LRS`, `Standard_GRS`, `Standard_LRS`, `Standard_RAGRS`, and `Standard_ZRS`.
+- `--access-tier` - The **Access tier** is only used for Blob storage, available options are [`Cool` | `Hot`]. The **Hot Access Tier** is ideal for frequently accessed data, and the **Cool Access Tier** is better for infrequently accessed data. Note that this only sets the _default_ value — **when you create a Blob, you can set a different value for the data**.
+
+Use the above table to craft a command line in the Cloud Shell on the right to create the account.
+
+- Use a unique name. We recommend something like `photostorerb222` with your initials and a random number. You will get an error if it's not unique.
+- Normally you would create a new resource group to hold your app resources, but in this case, use the sandbox resource group "**learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629**".
+- Use "Standard_LRS" for the **sku**. This will use standard storage with local replication, which is fine for this example.
+- Use "Cool" for the **Access Tier**.
+
+### Example command
+
+You can use the following example command to create a storage account. Remember to replace `<name>` with a unique value.
+
+```sh
+az storage account create \
+        --resource-group learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629 \
+        --kind StorageV2 \
+        --sku Standard_LRS \
+        --access-tier Cool \
+        --name photostorerb222
+```
+
+It will take a few minutes to deploy the account. While Azure is working on that, let's look at how we interact with the Azure Storage APIs.
+
+Sample output:
+
+```json
+{
+  "accessTier": "Cool",
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2020-07-06T21:23:47.495666+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-06T21:23:47.573768+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2020-07-06T21:23:47.573768+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/45b351fe-c7e8-4cb4-82e4-ff3615698d8d/resourceGroups/learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629/providers/Microsoft.Storage/storageAccounts/photostorerb222",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "StorageV2",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "westus",
+  "name": "photostorerb222",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://photostorerb222.blob.core.windows.net/",
+    "dfs": "https://photostorerb222.dfs.core.windows.net/",
+    "file": "https://photostorerb222.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://photostorerb222.queue.core.windows.net/",
+    "table": "https://photostorerb222.table.core.windows.net/",
+    "web": "https://photostorerb222.z22.web.core.windows.net/"
+  },
+  "primaryLocation": "westus",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "learn-e068bf6e-5da2-4b7f-aac4-0f1dc623e629",
+  "routingPreference": null,
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "name": "Standard_LRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+```
+
 # Interact with the Azure Storage APIs
 
 # Exercise - Add the storage client library to your app
