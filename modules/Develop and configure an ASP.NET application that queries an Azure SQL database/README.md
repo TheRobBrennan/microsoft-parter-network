@@ -669,8 +669,28 @@ while (rdr.Read())
 
 ## Handle exceptions and errors
 
-```csharp
+Exceptions and errors can occur for various reasons when you're using a database. For example, you might try to access a table that no longer exists. You can catch SQL errors by using the `SqlException` type.
 
+An exception might be triggered by various events or problems in the database. An `SqlException` object has a property `Errors` that contains a collection of `SqlError` objects. These objects provide the details for each error. The following example shows how to catch an `SqlException` and process the errors that it contains.
+
+```csharp
+...
+using (SqlConnection con = new SqlConnection(connectionString))
+{
+    SqlCommand command = new SqlCommand("DELETE FROM ...", con);
+    try
+    {
+        con.Open();
+        command.ExecuteNonQuery();
+    }
+    catch (SqlException ex)
+    {
+        for (int i = 0; i < ex.Errors.Count; i++)
+        {
+            Console.WriteLine($"Index # {i} Error: {ex.Errors[i].ToString()}");
+        }
+    }
+}
 ```
 
 # Exercise - Connect an ASP.NET application to Azure SQL Database
