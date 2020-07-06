@@ -523,3 +523,27 @@ az storage blob list --account-name <your-unique-storage-account-name> --contain
 ```
 
 # Clean up and knowledge check
+
+In this module, you learned how to use Azure Blob storage to store web application data. We discussed tips for creating a strategy to use Blob storage in a web app and how to use the Azure Storage SDK for .NET Core to write to and read from blobs. The app we made accepts uploaded files from users, stores them in Blob storage, and makes them available for download.
+
+## Check your knowledge
+
+1. Which of the following describes a good strategy for creating storage accounts and blob containers for your application?
+
+[] Create both your Azure Storage accounts and containers before deploying your application.
+[] Create Azure Storage accounts in your application as needed. Create the containers before deploying the application.
+[ x ] Create Azure Storage accounts before deploying your app. Create containers in your application as needed.
+
+2. Which of the following can be used to initialize the Blob Storage client library within an application?
+
+[] An Azure username and password.
+[ x ] The Azure Storage account connection string.
+[] A globally-unique identifier (GUID) that represents the application.
+[] The Azure Storage account datacenter and location identifiers.
+
+3. What happens when you call `GetBlockBlobReference` with the name of a blob?
+
+[] A new block blob is created in storage.
+[ x ] A CloudBlockBlob object is created locally. No network calls are made.
+[] An exception is thrown if the blob does not exist in storage.
+[] The contents of the named blob are downloaded.
