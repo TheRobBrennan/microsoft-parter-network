@@ -317,6 +317,10 @@ This will make sure we're using the newest version of the Blob storage client li
 
 ### Configure
 
+The configuration values we need are the storage account connection string and the name of the container the app will use to store files. In this module, we're only going to run the app in Azure App Service, so we'll follow App Service best practice and store the values in App Service application settings. We'll do that when we create the App Service instance, so there's nothing we need to do at the moment.
+
+When it comes to _using_ the configuration, our starter app already includes the plumbing we need. The `IOptions<AzureStorageConfig>` constructor parameter in `BlobStorage` has two properties: the storage account connection string and the name of the container our app will store blobs in. There is code in the `ConfigureServices` method of `Startup.cs` that loads the values from configuration when the app starts.
+
 ### Initialize
 
 # Exercise - Get blob references
