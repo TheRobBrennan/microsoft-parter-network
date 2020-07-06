@@ -365,17 +365,63 @@ Select **Create**, and wait for the server and database to be created before you
 
 ## Create the tables
 
-```sh
+You can now create the tables to store the data from the .csv files.
 
+On the Azure portal menu, select **SQL databases**.
+
+On the **SQL databases** page, select **coursedatabase523**.
+
+On the **coursedatabase523** page, select **Query editor**.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-query-editor-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-query-editor-annotated.png)
+
+On the **coursedatabaseNNN - Query editor** page, enter the following details, and then select **OK** to connect to the database service.
+
+| Property           | Value                     |
+| ------------------ | ------------------------- |
+| Authorization type | SQL server authentication |
+| Login              | `azuresql`                |
+| Password           | `ViVKUwPtAdW2`            |
+
+In the **Query 1** pane, enter the following SQL statement, and then select **Run**. This statement creates a new table to hold the course information. Verify that the statement runs without any errors.
+
+```sql
+CREATE TABLE Courses
+(
+    CourseID INT NOT NULL PRIMARY KEY,
+    CourseName VARCHAR(50) NOT NULL
+)
 ```
 
-```sh
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-create-table-courses-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-create-table-courses-annotated.png)
 
+Overwrite the existing statement with the following statement that creates a table to hold the modules. Select **Run**, and then verify that the statement runs without any errors.
+
+```sql
+CREATE TABLE Modules
+(
+    ModuleCode VARCHAR(5) NOT NULL PRIMARY KEY,
+    ModuleTitle VARCHAR(50) NOT NULL
+)
 ```
 
-```sh
+Change the statement to create a table that's named **StudyPlans**, and then select **Run**.
 
+```sql
+CREATE TABLE StudyPlans
+(
+    CourseID INT NOT NULL,
+    ModuleCode VARCHAR(5) NOT NULL,
+    ModuleSequence INT NOT NULL,
+    PRIMARY KEY(CourseID, ModuleCode)
+)
 ```
+
+In the database window, select the **Refresh** button on the toolbar. Expand **Tables**, and then expand each table in turn. You should see the three tables (**dbo.Courses**, **dbo.Modules**, and **dbo.StudyPlans**), together with the columns and primary key for each table.
+
+NOTE: _dbo_ stands for _database owner_. It's the default schema in the database. All three tables were created in this schema.
+
+![https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-tables-and-columns-annotated.png](https://docs.microsoft.com/en-us/learn/modules/develop-app-that-queries-azure-sql/media/3-tables-and-columns-annotated.png)
 
 ## Import the data
 
