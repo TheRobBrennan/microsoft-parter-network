@@ -59,76 +59,80 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 ## Tuesday, July 7th, 2020
 
 - [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
+  - [] Module 1 - [Introduction to Azure virtual machines](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/) (~1 hr 07 mins)
+  - [] Module 2 - [Create a Linux virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/) (~1 hr 26 mins)
+  - [] Module 3 - [Create a Windows virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/) (~51 mins)
+  - [] Module 4 - [Build and run a web application with the MEAN stack on an Azure Linux virtual machine](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/) (~42 mins)
 
 ## Wednesday, July 8th, 2020
 
 - [Manage resources in Azure](https://docs.microsoft.com/en-us/learn/paths/manage-resources-in-azure/) - Estimated 5 hours 02 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
+  - [] Module 1 - [Align requirements with cloud types and service models in Azure](https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/) (~35 mins)
+  - [] Module 2 - [Control Azure services with the CLI](https://docs.microsoft.com/en-us/learn/modules/control-azure-services-with-cli/) (~34 mins)
+  - [] Module 3 - [Automate Azure tasks using scripts with PowerShell](https://docs.microsoft.com/en-us/learn/modules/automate-azure-tasks-with-powershell/) (~1 hr 11 mins)
+  - [] Module 4 - [Predict costs and optimize spending for Azure](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/) (~1 hr 14 mins)
+  - [] Module 5 - [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/en-us/learn/modules/control-and-organize-with-azure-resource-manager/) (~46 mins)
+  - [] Module 6 - [Move Azure resources to another resource group](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/) (~42 mins)
 
 ## Thursday, July 9th, 2020
 
 - [Deploy a website to Azure with Azure App Service](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-app-service/) - Estimated 4 hours 37 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
+  - [] Module 1 - [Prepare your development environment for Azure development](https://docs.microsoft.com/en-us/learn/modules/prepare-your-dev-environment-for-azure-development/) (~28 mins)
+  - [] Module 2 - [Host a web application with Azure App service](https://docs.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/) (~58 mins)
+  - [] Module 3 - [Publish a web app to Azure with Visual Studio](https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/) (~48 mins)
+  - [] Module 4 - [Stage a web app deployment for testing and rollback by using App Service deployment slots](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/) (~44 mins)
+  - [] Module 5 - [Scale an App Service web app to efficiently meet demand with App Service scale up and scale out](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/) (~46 mins)
+  - [] Module 6 - [Deploy and run a containerized web app with Azure App Service](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/) (~46 mins)
 
 ## Friday, July 10th, 2020
 
 - [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
+  - [] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
+  - [] Module 2 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
+  - [] Module 3 - [Perform exploratory data analysis with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-exploratory-data-analysis-with-azure-databricks/) (~45 mins)
+  - [] Module 4 - [Train, evaluate, and select machine-learning models with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-model-training-evaluation-and-selection-with-azure-databricks/) (~47 mins)
+  - [] Module 5 - [Perform text analytics with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-text-analytics-with-azure-databricks/) (~41 mins)
 
 ## Saturday, July 11th, 2020 [WEEKEND]
 
 - [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 5 hours 28 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
-  - [] Module 7 -
+  - [] Module 1 - [Security, responsibility, and trust in Azure](https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/) (~1 hr 16 mins)
+  - [] Module 2 - [Top 5 security items to consider before pushing to production](https://docs.microsoft.com/en-us/learn/modules/top-5-security-items-to-consider/) (~45 mins)
+  - [] Module 3 - [Configure security policies to manage data](https://docs.microsoft.com/en-us/learn/modules/configure-security-policies-to-manage-data/) (~39 mins)
+  - [ x ] Module 4 - [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/) (~45 mins)
+    - This module will have already been completed as part of the [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) learning path
+  - [] Module 5 - [Configure and manage secrets in Azure Key Vault](https://docs.microsoft.com/en-us/learn/modules/configure-and-manage-azure-key-vault/) (~29 mins)
+  - [] Module 6 - [Secure your Azure resources with role-based access control (RBAC)](https://docs.microsoft.com/en-us/learn/modules/secure-azure-resources-with-rbac/) (~37 mins)
+  - [ x ] Module 7 - [Secure your Azure SQL Database](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/) (~1 hr 07 mins)
+    - This module will have already been completed as part of the [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) learning path
 
 ## Sunday, July 12th, 2020 [WEEKEND]
 
 - [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
-  - [] Module 7 -
-  - [] Module 8 -
-  - [] Module 9 -
+
+  - [ x ] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
+    - This module will have already been completed as part of the [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) learning path
+  - [] Module 2 - [Access SQL Data Warehouse instances with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/understand-the-sql-dw-connector-with-azure-databricks/) (~1 hr 23 mins)
+  - [] Module 3 - [Data ingestion with Azure data factory](https://docs.microsoft.com/en-us/learn/modules/data-ingestion-with-azure-data-factory/) (~49 mins)
+  - [ x ] Module 4 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
+    - This module will have already been completed as part of the [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) learning path
+  - [] Module 5 - [Perform basic data transformations in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-basic-data-transformation-in-azure-databricks/) (~46 mins)
+  - [] Module 6 - [Perform advanced data transformation in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-advanced-data-transformation-in-azure-databricks/) (~1 hr)
+  - [] Module 7 - [Create data pipelines by using Databricks Delta](https://docs.microsoft.com/en-us/learn/modules/create-data-pipelines-using-databricks-delta/) (~43 mins)
+  - [] Module 8 - [Work with streaming data in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/streaming-in-azure-databricks/) (~1 hr 04 mins)
+  - [] Module 9 - [Create data visualizations by using Azure Databricks and Power BI](https://docs.microsoft.com/en-us/learn/modules/create-data-visualizations-using-azure-databricks-and-power-bi/) (~42 mins)
 
 ## Monday, July 13th, 2020
 
 - [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
-  - [] Module 1 -
-  - [] Module 2 -
-  - [] Module 3 -
-  - [] Module 4 -
-  - [] Module 5 -
-  - [] Module 6 -
-  - [] Module 7 -
-  - [] Module 8 -
+  - [] Module 1 - [Create an Azure Cosmos DB database built to scale](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/) (~35 mins)
+  - [] Module 2 - [Choose the appropriate API for Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/) (~38 mins)
+  - [] Module 3 - [Insert and query data in your Azure Cosmos DB database](https://docs.microsoft.com/en-us/learn/modules/access-data-with-cosmos-db-and-sql-api/) (~58 mins)
+  - [] Module 4 - [Store and access graph data in Azure Cosmos DB with the Graph API](https://docs.microsoft.com/en-us/learn/modules/store-access-data-cosmos-graph-api/) (~42 mins)
+  - [] Module 5 - [Store and Access NoSQL Data with Azure Cosmos DB and the Table API](https://docs.microsoft.com/en-us/learn/modules/store-access-data-cosmos-table-api/) (~29 mins)
+  - [] Module 6 - [Build a .NET Core app for Azure Cosmos DB in Visual Studio Code](https://docs.microsoft.com/en-us/learn/modules/build-cosmos-db-app-with-vscode/) (~54 mins)
+  - [] Module 7 - [Optimize the performance of Azure Cosmos DB by using partitioning and indexing strategies](https://docs.microsoft.com/en-us/learn/modules/monitor-and-scale-cosmos-db/) (~1 hr 16 mins)
+  - [] Module 8 - [Distribute your data globally with Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/modules/distribute-data-globally-with-cosmos-db/) (~31 mins)
 
 ## Tuesday, July 14th, 2020
 
