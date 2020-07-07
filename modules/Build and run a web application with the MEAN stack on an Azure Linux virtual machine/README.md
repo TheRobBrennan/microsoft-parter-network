@@ -219,6 +219,13 @@ Node.js will act as the server-side host for your web application and handle inb
 
 ## What versions of Node.js are available?
 
+You can get Node.js in two ways:
+
+- **Long Term Support (LTS)** - LTS is generally considered to be more stable and is recommended for most users and for production environments.
+- **Current** - Current is for those who want to experiment with the latest features. Because it can introduce breaking changes between releases, it's not recommended for production environments.
+
+Here you'll use Node.js LTS.
+
 ## How do I install Node.js?
 
 ## Install Node.js
