@@ -134,6 +134,26 @@ Recall that our company processes video content on Windows VMs. A new city has c
 
 ## Create a new Windows virtual machine
 
+We can create Windows VMs with the Azure portal, Azure CLI, or Azure PowerShell. The easiest approach is the portal because it walks you through the required information and provides hints and helpful messages during the creation of the VM.
+
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+On the Azure portal menu or from the **Home** page, select **Create a resource**.
+
+Select the **See all** link next to the Azure Marketplace heading. This option displays all available images on the Azure Marketplace.
+
+Select **Microsoft** as the filter value from the _Publisher_ filter options. In the search box, enter **Windows Server** and then action the search by pressing enter or return.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-marketplace-search.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-marketplace-search.png)
+
+The result will show several Windows Server related images. Choose the **Windows Server** image.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-marketplace-windows-server.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-marketplace-windows-server.png)
+
+There are several Windows Server versions we can select from to create our VM. In the _Windows Server_ image overview panel, click on the **Select a software plan** dropdown list and find the **[smalldisk] Windows Server 2019 Datacenter** option.
+
+Click the **Create** button to start configuring the VM.
+
 ## Configure the VM settings
 
 ### Configure basic VM settings
