@@ -152,11 +152,33 @@ You can use the same single public-private key pair to access multiple Azure VMs
 
 ## Create the SSH key pair
 
-```sh
+On Linux, Windows 10, and macOS, you can use the built-in `ssh-keygen` command to generate the SSH public and private key files.
 
+Windows 10 includes an SSH client with the **Fall Creators Update**. Earlier versions of Windows require additional software to use SSH; [check the documentation for full details](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows). Alternatively, you can install the Linux subsystem for Windows and get the same functionality.
+
+**We will use Azure Cloud Shell, which stores the generated keys in Azure in your private storage account.** You can also type these commands directly into your local shell if you prefer. You will need to adjust the instructions throughout this module to reflect a local session if you take this approach.
+
+Here is the minimum command necessary to generate the key pair for an Azure VM. This creates an SSH protocol 2 (SSH-2) RSA public-private key pair. The minimum length is 2048, but for the sake of this learning module we will use 4096.
+
+Copy this command into Cloud Shell:
+
+```sh
+ssh-keygen -t rsa -b 4096
 ```
 
+Select the _Enter_ key to accept the default location. The command creates two files: `id_rsa` and `id_rsa.pub` in the `~/.ssh` directory. The files are overwritten if they exist.
+
+Enter a passphrase that you'll remember. You'll need this passphrase when you use the SSH key to access the VM.
+
+There are various options you can use to provide the file name or a passphrase to avoid the prompts.
+
 ### Private key passphrase
+
+You can provide a passphrase while generating your private key. This is a password you must enter when you use the key. This passphrase is used to access the private SSH key file and is not the user account password.
+
+When you add a passphrase to your SSH key, it encrypts the private key using 128-bit AES so that the private key is useless without the passphrase to decrypt it.
+
+We strongly recommended that you add a passphrase. If an attacker stole your private key and that key did not have a passphrase, they would be able to use that private key to log in to any servers that have the corresponding public key. If a passphrase protects a private key, it cannot be used by that attacker. This provides an additional layer of security for your infrastructure on Azure.
 
 ## Use the SSH key pair with an Azure Linux VM
 
