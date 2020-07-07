@@ -355,6 +355,16 @@ Switch back to the **General** tab and click **Save** to save the changes. You c
 
 ### Connect to the Windows VM
 
+Click the **Connect** button to start the connection to the VM.
+
+In the **Remote Desktop Connection** dialog box, note the security warning and the remote computer IP address, then click **Connect**.
+
+In the **Windows Security** dialog box, enter your username and password that you used in steps 6 and 7.
+
+NOTE: If you are using a Windows client to connect to the VM, it will default to known identities on your machine. You can click the **More choices** option and select "Use a different account" to let you enter a different username/password combination.
+
+In the second **Remote Desktop Connection** dialog box, note the certificate errors, then click **Yes**.
+
 ### Install worker roles
 
 ## Install custom software
