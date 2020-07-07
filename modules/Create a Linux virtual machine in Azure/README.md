@@ -631,3 +631,26 @@ Use the IP address of the server to make an HTTP request - [http://13.66.213.152
 Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by SSH to be something other than the default. Keep in mind that changing ports is not sufficient to stop attacks. It simply makes it a little harder to discover.
 
 # Summary
+
+In this module, you learned how to create a Linux VM using the Azure portal. You then connected to the public IP address of the VM and managed it with an SSH connection.
+
+You learned that while SSH allows us to interact with the operating system and software of the virtual machine, the portal will enable us to configure the virtual hardware and connectivity. We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.
+
+## Check your knowledge
+
+1. True or false: for security reasons, you must use an image from the official Azure Marketplace when creating a new virtual machine.
+
+[] True
+[ x ] False
+
+2. What is the effect of the default network security settings for a new virtual machine?
+
+[] Neither outbound nor inbound requests are allowed.
+[ x ] Outbound request are allowed. Inbound traffic is only allowed from within the virtual network.
+[] There are no restrictions: all outbound and inbound requests are allowed.
+
+3. Suppose you have several Linux virtual machines hosted in Azure. You will administer these VMs remotely over SSH from three dedicated machines in your corporate headquarters. Which of the following authentication methods would typically be considered best-practice for this situation?
+
+[] Username and password
+[] Private key
+[ x ] Private key with passphrase
