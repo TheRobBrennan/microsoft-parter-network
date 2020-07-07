@@ -211,7 +211,29 @@ Let's explore the Azure portal first - it's the easiest way to start with Azure.
 
 ## Azure portal
 
+The Azure portal provides an easy-to-use browser-based user interface that allows you to create and manage all your Azure resources. For example, you can set up a new database, increase the compute power of your virtual machines, and monitor your monthly costs. It's also a great learning tool, since you can survey all available resources and use guided wizards to create the ones you need.
+
+Once you're signed in, you're presented with two main areas. The first is a menu with options to help you create resources, monitor resources, and manage billing. The second is the home page that shows some of the most commonly used services. You'll most likely find the portal the most comfortable option to use when you start using Azure.
+
 ### Create an Azure VM with the Azure portal
+
+Let's assume you want to create a VM running an Ubuntu server. Setting up a site isn't difficult, but there are a couple of things to keep in mind. You need to install and configure an operating system, configure a website, install a database, and worry about things like firewalls. We're going to cover creating VMs in the next few modules, but let's create one here to see how easy it is. We won't go through all the options - check out one of the **Create a VM** modules to get complete details on each option.
+
+Sign into the Azure portal using the same account you activated the sandbox with.
+
+Click on the **Create a resource** option in the top-left corner of the portal page. The Azure Marketplace pane will open.
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-create-new-resource.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-create-new-resource.png)
+
+As you can see, there are many selectable options. We want to create a VM running an Ubuntu server. VMs are Azure compute resources, so select the **Compute** option on the available list and then search for Ubuntu VM images. You can click **See All** to get the full list.
+
+Use the **Search the Marketplace** search bar to find "**Ubuntu Server**". You see a list of options. Select the option that reads **Ubuntu Server 18.04 LTS** as shown below.
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-search-vm-image.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-search-vm-image.png)
+
+The pane that opens next presents licensing information for the image we're about to use. Click **Create**.
+
+You're presented with the **Create virtual machine** page. Notice the wizard-based approach we can use to configure the VM.
 
 ### Configure the VM
 
