@@ -393,9 +393,57 @@ Next, you'll create HTTP handlers that map GET, POST, and DELETE requests to dat
 
 ### Create the Express routes that handle HTTP requests
 
-```sh
+From the editor, open `app/routes.js` and add the following code.
 
+```js
+var path = require("path")
+var Book = require("./model")
+var routes = function (app) {
+  app.get("/book", function (req, res) {
+    Book.find({}, function (err, result) {
+      if (err) throw err
+      res.json(result)
+    })
+  })
+  app.post("/book", function (req, res) {
+    var book = new Book({
+      name: req.body.name,
+      isbn: req.body.isbn,
+      author: req.body.author,
+      pages: req.body.pages,
+    })
+    book.save(function (err, result) {
+      if (err) throw err
+      res.json({
+        message: "Successfully added book",
+        book: result,
+      })
+    })
+  })
+  app.delete("/book/:isbn", function (req, res) {
+    Book.findOneAndRemove(req.query, function (err, result) {
+      if (err) throw err
+      res.json({
+        message: "Successfully deleted the book",
+        book: result,
+      })
+    })
+  })
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname + "/public", "index.html"))
+  })
+}
+module.exports = routes
 ```
+
+We have routes defined for:
+
+- GET /book - Retrieves all books from the database.
+- POST /book - Creates a `Book` object based on the fields the user provided on the web form and writes that object to the database.
+- DELETE /book/:isbn - Deletes the book as identified by its ISBN from the database.
+- GET \* - Returns the index page when no other route is matched.
+
+Express can serve up HTTP responses directly in the route handling code or it can serve up static content from files. This code shows both. The first three routes return JSON data for book API requests. The fourth route (the default case) returns the contents of the index file, `index.html`.
 
 ### Create the client-side JavaScript application
 
