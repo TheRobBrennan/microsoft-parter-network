@@ -455,3 +455,27 @@ The last rule is always a **Deny All** rule. This is a default rule added to eve
 NOTE: SMTP (port 25) is a special case. Depending on your subscription level and when your account was created, outbound SMTP traffic may be blocked. You can request to remove this restriction with business justification.
 
 # Summary
+
+In this module, you learned how to create a Windows VM using the Azure portal. You then connected to the public IP address of the VM and managed it over RDP. You discovered how RDP in Azure provides a similar experience to logging on interactively to a physical computer.
+
+You learned that while RDP allows us to interact with the operating system and software of the virtual machine, the portal allows us to configure the virtual hardware and connectivity. We also could have used PowerShell or the Azure CLI, if a command-line or scriptable environment were preferred.
+
+## Check your knowledge
+
+1. When creating a Windows virtual machine in Azure, which port would you open using the INBOUND PORT RULES in order to allow remote-desktop access?
+
+[] HTTPS
+[] SSH (22)
+[ x ] RDP (3389)
+
+2. Suppose you have an application running on a Windows virtual machine in Azure. What is the best-practice guidance on where the app should store data files?
+
+[] The OS disk (C:)
+[] The Temporary disk (D:)
+[ x ] An attached data disk
+
+3. What is the final rule that is applied in every Network Security Group?
+
+[] Allow All
+[ x ] Deny All
+[] You configure the final rule to your needs
