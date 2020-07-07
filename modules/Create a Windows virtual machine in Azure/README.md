@@ -367,6 +367,12 @@ In the second **Remote Desktop Connection** dialog box, note the certificate err
 
 ### Install worker roles
 
+The first time you connect to a Windows server VM, it will launch Server Manager. This allows you to assign a worker role for common web or data tasks. You can also launch the Server Manager through the Start Menu.
+
+This is where we would add the Web Server role to the server. This will install IIS and as part of the configuration you would turn off HTTP requests and enable the FTP server. Or, we could ignore IIS and install a third-party FTP server. We'd then configure the FTP server to allow access to a folder on our big data drive we added to the VM.
+
+Since we aren't going to actually configure that here, just close Server Manager.
+
 ## Install custom software
 
 ## Initialize data disks
