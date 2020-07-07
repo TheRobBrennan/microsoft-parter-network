@@ -268,4 +268,123 @@ exit
 
 # Exercise - Create a basic web application
 
+So far, you have MongoDB and Node.js installed on your Ubuntu VM. Now it's time to create a basic web application to see things in action. Along the way, you'll see how AngularJS and Express fit in.
+
+A great way to learn is by example. The web application you'll build implements a basic book database. The web application enables you to list information about books, add new books, and delete existing books.
+
+The web application you'll see here demonstrates many concepts that apply to most MEAN stack web applications. Based on your needs and interests, you can explore the features you need to build your own MEAN stack applications.
+
+Here's what the Books web application will look like.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-page.png](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-page.png)
+
+Here's how each component of the MEAN stack fits in.
+
+- MongoDB stores information about books.
+- Express routes each HTTP request to the appropriate handler.
+- AngularJS connects the user interface with the program's business logic.
+- Node.js hosts the server-side application.
+
+IMPORTANT: For learning purposes, here you're building a basic web application. Its purpose is to test out your MEAN stack and give you a sense of how it works. The application is not sufficiently secure or ready for production use.
+
+## What about Express?
+
+## What about AngularJS?
+
+```html
+
+```
+
+## How will I build the application?
+
+## Create the Books web application
+
+```sh
+
+```
+
+### Create the files
+
+```sh
+
+```
+
+```sh
+
+```
+
+### Create the data model
+
+```sh
+
+```
+
+### Create the Express routes that handle HTTP requests
+
+```sh
+
+```
+
+### Create the client-side JavaScript application
+
+```sh
+
+```
+
+### Create the user interface
+
+```sh
+
+```
+
+### Create the Express server to host the application
+
+```sh
+
+```
+
+### Define package information and dependencies
+
+```sh
+
+```
+
+### Copy the files to your VM
+
+```sh
+
+```
+
+## Install additional Node packages
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Test the application
+
+```sh
+
+```
+
 # Summary
