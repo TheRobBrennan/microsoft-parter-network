@@ -416,17 +416,82 @@ sr0      11:0    1  628K  0 rom
 
 ## Initialize data disks
 
-```sh
+**Any additional drives you create from scratch need to be initialized and formatted.**
 
-```
+The process for initializing is identical to a physical disk:
 
-```sh
-
-```
+First, identify the disk. We did that above. You could also use `dmesg | grep SCSI`, which will list all the messages from the kernel for SCSI devices:
 
 ```sh
-
+azureuser@test-web-wus2-vm1:~$ dmesg | grep SCSI
+[    1.030941] SCSI subsystem initialized
+[    2.937313] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    3.396415] sd 1:0:1:0: [sdb] Attached SCSI disk
+[    3.634052] sd 0:0:0:0: [sda] Attached SCSI disk
+[   11.982383] Loading iSCSI transport class v2.0-870.
+[ 1799.965532] sd 3:0:0:0: [sdc] Attached SCSI disk
+azureuser@test-web-wus2-vm1:~$
 ```
+
+Once you know the drive (`sdc`) you need to initialize, you can use `fdisk` to do that. You will need to run the command with `sudo` and supply the disk you want to partition. We can use the following command to create a new primary partition:
+
+```sh
+(echo n; echo p; echo 1; echo ; echo ; echo w) | sudo fdisk /dev/sdc
+```
+
+Sample output:
+
+```sh
+Welcome to fdisk (util-linux 2.31.1).
+Changes will remain in memory only, until you decide to write them.
+Be careful before using the write command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x0245ae81.
+
+Command (m for help): Partition type
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended (container for logical partitions)
+Select (default p): Partition number (1-4, default 1): First sector (2048-2147483647, default 2048): Last sector, +sectors or +size{K,M,G,T,P} (2048-2147483647, default 2147483647):
+Created a new partition 1 of type 'Linux' and of size 1024 GiB.
+
+Command (m for help): The partition table has been altered.
+Calling ioctl() to re-read partition table.
+Syncing disks.
+```
+
+Next, we need to write a file system to the partition with the `mkfs` command.
+
+```sh
+sudo mkfs -t ext4 /dev/sdc1
+```
+
+Sample output:
+
+```sh
+azureuser@test-web-wus2-vm1:~$ sudo mkfs -t ext4 /dev/sdc1
+mke2fs 1.44.1 (24-Mar-2018)
+Discarding device blocks: done
+Creating filesystem with 268435200 4k blocks and 67108864 inodes
+Filesystem UUID: 8e521e94-0185-4118-a25d-f31dc65da2e2
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+        102400000, 214990848
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (262144 blocks): done
+Writing superblocks and filesystem accounting information: done
+```
+
+Finally, we need to mount the drive to the file system. Let's assume we will have a `data` folder. Let's **create the mount point folder and mount the drive**.
+
+```sh
+sudo mkdir /data && sudo mount /dev/sdc1 /data
+```
+
+We initialized the disk and mounted it. If you want more details on this process see the **Add and size disks in Azure virtual machines** module. This task is covered in more detail there.
 
 ## Install software onto the VM
 
