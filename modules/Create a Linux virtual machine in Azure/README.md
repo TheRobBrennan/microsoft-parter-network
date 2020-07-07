@@ -355,6 +355,25 @@ Let's connect to our Linux VM with SSH, and configure Apache, so we have a runni
 
 ## Get the public IP address of the VM
 
+In the Azure portal, ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel allows you to:
+
+- See if the VM is running
+- Stop or restart the VM
+- Get the public IP address of the VM
+- See the activity of the CPU, disk, and network
+
+Click the **Connect > SSH** at the top of the pane.
+
+Under step 4, copy the command to the clipboard.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/5-connect-ssh.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/5-connect-ssh.png)
+
+We used the default SSH private key file path when we created the SSH key pair. So we don't need to specify the private key path in the command by using the flag -i with the private key path. But if you entered a different path when you created the SSH key pair, you'd add that path to the command.
+
+```sh
+ssh azureuser@13.66.213.152
+```
+
 ## Connect with SSH
 
 ```sh
