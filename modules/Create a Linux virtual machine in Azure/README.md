@@ -501,21 +501,49 @@ You can also install software from the internet when you are connected to the VM
 
 ### Install the Apache web server
 
-```sh
+Apache is available within Ubuntu's default software repositories, so we will install it using conventional package management tools:
 
-```
-
-```sh
-
-```
+Start by updating the local package index to reflect the latest upstream changes:
 
 ```sh
-
+sudo apt-get update
 ```
+
+Next, install Apache:
 
 ```sh
-
+sudo apt-get install apache2 -y
 ```
+
+It should start automatically - we can check the status using `systemctl`:
+
+```sh
+sudo systemctl status apache2 --no-pager
+```
+
+Sample output:
+
+```sh
+azureuser@test-web-wus2-vm1:~$ sudo systemctl status apache2 --no-pager
+● apache2.service - The Apache HTTP Server
+   Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+  Drop-In: /lib/systemd/system/apache2.service.d
+           └─apache2-systemd.conf
+   Active: active (running) since Tue 2020-07-07 19:59:19 UTC; 32s ago
+ Main PID: 29776 (apache2)
+    Tasks: 55 (limit: 9479)
+   CGroup: /system.slice/apache2.service
+           ├─29776 /usr/sbin/apache2 -k start
+           ├─29779 /usr/sbin/apache2 -k start
+           └─29780 /usr/sbin/apache2 -k start
+
+Jul 07 19:59:19 test-web-wus2-vm1 systemd[1]: Starting The Apache HTTP Server...
+Jul 07 19:59:19 test-web-wus2-vm1 systemd[1]: Started The Apache HTTP Server.
+```
+
+Finally, we can try retrieving the default page through the public IP address - [http://13.66.213.152](http://13.66.213.152). However, **even though the web server is running on the VM, you won't get a valid connection or response**. Do you know why?
+
+**We need to perform one more step** to be able to interact with the web server. **netsta**. We can change that through configuration. Let's look at allowing the inbound request next.
 
 # Network and security settings
 
