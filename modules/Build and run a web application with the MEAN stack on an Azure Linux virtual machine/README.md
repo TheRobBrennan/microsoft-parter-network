@@ -695,8 +695,26 @@ Keep your SSH connection open for the next part.
 
 ## Test the application
 
-```sh
+You're now ready to test out your Node.js web application!
 
+From the `~/Books` directory, run this command to start the web application.
+
+```sh
+sudo node server.js
 ```
+
+This command starts the application by listening on port 80 for incoming HTTP requests.
+
+From a separate browser tab, navigate to your VM's public IP address - [http://104.209.46.71](http://104.209.46.71)
+
+You see the index page, which includes a web form.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-page.png](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-page.png)
+
+Try adding a few books to the database. Each time you add a book, the page updates the complete list of books.
+
+![https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-sample-entries.png](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/media/6-book-sample-entries.png)
+
+You can also click the **Delete** button to delete a book from the database.
 
 # Summary
