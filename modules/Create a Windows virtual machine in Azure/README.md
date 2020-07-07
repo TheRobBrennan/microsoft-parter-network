@@ -221,7 +221,33 @@ There should now be a new disk in the first row.
 
 ## Configure the Network
 
+Click **Next** to move to the Networking section.
+
+In a production system, where we already have other components, we'd want to utilize an existing virtual network. That way our VM can communicate with the other cloud services in our solution. If there isn't one defined in this location yet, we can create it here and configure the:
+
+- **Address space**: the overall IPV4 space available to this network.
+- **Subnet range**: the first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created, you can add additional subnets.
+
+Let's change the default ranges to use the `172.xxx` IP address space. Click **Create New** under Virtual Network.
+
+- Change the **Address space** field to be `172.16.0.0/16` to **give it the full range (65536) of addresses**
+- Change the **Subnet range** field to be `172.16.1.0/24` to **give it 256 IP addresses of the space.**
+
+Click **OK**.
+
+By default, Azure will create a virtual network, network interface, and public IP for your VM. It's not trivial to change the networking options after the VM has been created so always double-check the network assignments on services you create in Azure.
+
 ## Finish configuring the VM and create the image
+
+The rest of the options have reasonable defaults and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an (i) icon next to them that will show a help bubble to explain the option. This is a great way to learn about the various options you can use to configure the VM.
+
+Click the **Review + create** button at the bottom of the panel.
+
+The system will validate your options and give you details about the VM being created.
+
+Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+
+While that's deploying, let's look at what we can do with this VM.
 
 # Use RDP to connect to Windows Azure virtual machines
 
