@@ -149,6 +149,13 @@ MongoDB stores its data in JSON-like documents that don't require rigid data str
 
 ## What MongoDB editions are available?
 
+MongoDB provides two editions:
+
+- MongoDB Community Server
+- MongoDB Enterprise Server
+
+Here you'll install MongoDB Community Server. Later, you'll use MongoDB to store information about books.
+
 ## How do I install MongoDB?
 
 ## Install MongoDB
