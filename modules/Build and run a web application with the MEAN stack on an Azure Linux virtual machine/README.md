@@ -60,6 +60,14 @@ For example, the LAMP stack, which consists of Linux, Apache, MySQL, and PHP (so
 
 # Exercise - Create a VM to host your web application
 
+Like most application frameworks, you can run your MEAN stack application in many different environments. You can run your application on a physical computer in your server room, on a virtual machine, or in containers.
+
+Here you'll run your application on a VM running on Azure. MEAN supports many different operating systems. For learning purposes, here you'll use Ubuntu Linux.
+
+## Create an Ubuntu Linux VM
+
+## Summary
+
 # Exercise - Install MongoDB
 
 # Exercise - Install Node.js
