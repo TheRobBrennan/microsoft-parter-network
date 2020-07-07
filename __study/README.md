@@ -62,7 +62,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 1 - [Introduction to Azure virtual machines](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/) (~1 hr 07 mins)
   - [ x ] Module 2 - [Create a Linux virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/) (~1 hr 26 mins)
   - [ x ] Module 3 - [Create a Windows virtual machine in Azure](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/) (~51 mins)
-  - [] Module 4 - [Build and run a web application with the MEAN stack on an Azure Linux virtual machine](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/) (~42 mins)
+  - [ x ] Module 4 - [Build and run a web application with the MEAN stack on an Azure Linux virtual machine](https://docs.microsoft.com/en-us/learn/modules/build-a-web-app-with-mean-on-a-linux-vm/) (~42 mins)
 
 ## Wednesday, July 8th, 2020
 
