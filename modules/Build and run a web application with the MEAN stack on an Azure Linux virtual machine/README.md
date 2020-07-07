@@ -364,9 +364,32 @@ code Books
 
 ### Create the data model
 
-```sh
+From the editor, open `app/model.js` and add the following.
 
+```js
+var mongoose = require("mongoose")
+var dbHost = "mongodb://localhost:27017/Books"
+mongoose.connect(dbHost, { useNewUrlParser: true })
+mongoose.connection
+mongoose.set("debug", true)
+var bookSchema = mongoose.Schema({
+  name: String,
+  isbn: { type: String, index: true },
+  author: String,
+  pages: Number,
+})
+var Book = mongoose.model("Book", bookSchema)
+module.exports = Book
 ```
+
+This code uses Mongoose to simplify the process of transferring data in and out of MongoDB. Mongoose is a schema-based system for modeling data. The code defines a database document called "Book" with the provided schema. The schema defines four fields that describe a single book:
+
+- The book's name, or title
+- Its International Standard Book Number, or ISBN, which uniquely identifies the book
+- Its author
+- The number of pages it contains
+
+Next, you'll create HTTP handlers that map GET, POST, and DELETE requests to database operations.
 
 ### Create the Express routes that handle HTTP requests
 
