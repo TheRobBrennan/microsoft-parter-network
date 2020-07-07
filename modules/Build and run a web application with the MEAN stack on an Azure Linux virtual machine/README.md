@@ -289,6 +289,16 @@ IMPORTANT: For learning purposes, here you're building a basic web application. 
 
 ## What about Express?
 
+So far, you've installed MongoDB and Node.js on your VM. What about Express, the E in the MEAN acronym?
+
+Express is a web server framework that's built for Node.js that simplifies the process for building web applications.
+
+The main purpose of Express is to handle request routing. _Routing_ refers to how the application responds to a request to a specific endpoint. An endpoint is made up of a path, or URI, and a request method, such as GET or POST. For example, you might respond to a GET request to the /book endpoint by providing the list of all books in the database. You might respond to a POST request to the same endpoint by adding an entry to the database based on fields the user entered into a web form.
+
+In the web application you'll build shortly, you'll use Express to route HTTP requests and to return web content to your user. Express can also help your web applications work with HTTP cookies and process query strings.
+
+Express is a Node.js package. You use the `npm` utility, which comes with Node.js, to install and manage Node.js packages. Later in this part, you'll create a file named **package.json** to define Express and other dependencies and then run the `npm install` command to install these dependencies.
+
 ## What about AngularJS?
 
 ```html
