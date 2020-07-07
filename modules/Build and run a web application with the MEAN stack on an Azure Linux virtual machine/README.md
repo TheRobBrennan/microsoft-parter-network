@@ -447,9 +447,60 @@ Express can serve up HTTP responses directly in the route handling code or it ca
 
 ### Create the client-side JavaScript application
 
-```sh
+From the editor, open `public/script.js` and add this code:
 
+```sh
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    var getData = function() {
+        return $http( {
+            method: 'GET',
+            url: '/book'
+        }).then(function successCallback(response) {
+            $scope.books = response.data;
+        }, function errorCallback(response) {
+            console.log('Error: ' + response);
+        });
+    };
+    getData();
+    $scope.del_book = function(book) {
+        $http( {
+            method: 'DELETE',
+            url: '/book/:isbn',
+            params: {'isbn': book.isbn}
+        }).then(function successCallback(response) {
+            console.log(response);
+            return getData();
+        }, function errorCallback(response) {
+            console.log('Error: ' + response);
+        });
+    };
+    $scope.add_book = function() {
+        var body = '{ "name": "' + $scope.Name +
+        '", "isbn": "' + $scope.Isbn +
+        '", "author": "' + $scope.Author +
+        '", "pages": "' + $scope.Pages + '" }';
+        $http({
+            method: 'POST',
+            url: '/book',
+            data: body
+        }).then(function successCallback(response) {
+            console.log(response);
+            return getData();
+        }, function errorCallback(response) {
+            console.log('Error: ' + response);
+        });
+    };
+});
 ```
+
+Notice how this code defines a module named "myApp" and a controller named "myCtrl". We won't go into full details about how module and controllers work here, but you'll use these names in the next step to bind the user interface (HTML code) with the application's business logic.
+
+Earlier, you created four routes that handle various GET, POST, and DELETE operations on the server. This code resembles those same operations, but from the client side (the user's web browser).
+
+The `getData` function, for example, sends a GET request to the `/book` endpoint. Recall that the server handles this request by retrieving information about all books from the database and returning that information as JSON data. Notice how the resulting JSON data is assigned to the `\$scope.books` variable. You'll see how this affects what the user sees on the web page in the next step.
+
+This code calls the `getData` function when the page loads. You can examine the `del_book` and `add_book` functions to get a sense for how they work. You don't need client-side code to match the server's default handler because the default handler returns the index page and not JSON data.
 
 ### Create the user interface
 
