@@ -391,6 +391,22 @@ The more interesting thing to observe in the list of drives is what is missing. 
 
 ## Initialize data disks
 
+Any additional drives you create from scratch will need to be initialized and formatted. The process for doing this is identical to a physical drive.
+
+Launch the **Disk Management** tool from the Start Menu. You may have to go to the Computer Management tool first, then Disk Management, or try searching for "Disk Management" in the Start Menu.
+
+It will display a warning that it has detected an uninitialized disk.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/6-disk-management.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/6-disk-management.png)
+
+Click **OK** to initialize the disk. It will then show up in the list of volumes where you can format it and assign a drive letter.
+
+Open File Explorer and you should now see your data drive.
+
+Go ahead and close the RDP client to sign out of the VM. The server will continue to run.
+
+RDP allows you to work with the Azure VM just like a local computer. With Desktop UI access, you can administer this VM as you would any Windows computer: installing software, configuring roles, adjusting features and other common tasks. However, it's a manual process - if we always need to install some software, you might consider automating the process using scripting.
+
 # Configure Azure virtual machine network settings
 
 # Summary
