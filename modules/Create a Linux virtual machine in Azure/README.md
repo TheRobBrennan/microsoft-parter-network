@@ -376,12 +376,42 @@ ssh azureuser@13.66.213.152
 
 ## Connect with SSH
 
-```sh
+Paste the command from your clipboard into the Azure Cloud Shell. Delete the -i flag and the private key path placeholder. It should look something like the sample below with a different IP address and username:
 
+```sh
+ssh azureuser@13.66.213.152
 ```
 
-```sh
+The first time we connect, SSH will ask us about authenticating against an unknown host. SSH is telling you that you've never connected to this server before. If that's true, then it's perfectly normal, and you can respond with yes to save the fingerprint of the server in the known host file:
 
+```sh
+The authenticity of host '13.66.213.152 (13.66.213.152)' can't be established.
+ECDSA key fingerprint is SHA256:w1h08h4ie1iMq7ibIVSQM/PhcXFV7O7EEhjEqhPYMWY.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '13.66.213.152' (ECDSA) to the list of known hosts.
+```
+
+Enter the passphrase you used when you created the SSH key pair.
+
+In the shell command prompt for Linux, try executing a few Linux commands
+
+- `ls -la` / to show the root of the disk
+- `ps -l` to show all the running processes
+- `dmesg` to list all the kernel messages
+- `lsblk` to list all the block devices - here you will see your drives
+
+The more interesting thing to observe in the list of drives is what is missing. Notice that our **Data** drive (`sdc`) is present but not mounted into the file system. Azure added a VHD but didn't initialize it:
+
+```sh
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda       8:0    0   30G  0 disk
+├─sda1    8:1    0 29.9G  0 part /
+├─sda14   8:14   0    4M  0 part
+└─sda15   8:15   0  106M  0 part /boot/efi
+sdb       8:16   0   16G  0 disk
+└─sdb1    8:17   0   16G  0 part /mnt
+sdc       8:32   0    1T  0 disk
+sr0      11:0    1  628K  0 rom
 ```
 
 ## Initialize data disks
