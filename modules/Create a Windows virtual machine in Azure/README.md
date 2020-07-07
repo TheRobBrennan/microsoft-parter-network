@@ -156,7 +156,42 @@ Click the **Create** button to start configuring the VM.
 
 ## Configure the VM settings
 
+The VM creation experience in the portal is presented in a "wizard" format to walk you through all the configuration areas for the VM. Clicking the "Next" button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each section.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-azure-portal-create-vm.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-azure-portal-create-vm.png)
+
+Once you fill in all the required options (identified with red stars), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+
+We'll start with the **Basics** section.
+
 ### Configure basic VM settings
+
+Select the **Subscription** that should be billed for VM hours.
+
+For **Resource** group, choose "learn-388b6a0b-7439-4fbe-9b54-260d8fdb27d1".
+
+In the **Instance Details** section, enter a name for your VM, such as `test-vp-vm2` (for Test Video Processor VM #2).
+
+- It's best practice to standardize your resource names so you can easily identify their purpose. Windows VM names are a bit limited - they must be between 1 and 15 characters, cannot contain non-ASCII or special characters, and must be unique in the current resource group.
+
+The free sandbox allows you to create resources in a subset of the Azure global regions. Select a region from the following list when you create resources:
+West US 2
+
+Leave **Availability options** as "No Infrastructure redundancy required". This option is used to ensure the VM is highly available by grouping multiple VMs together a set to deal with planned or unplanned maintenance events or outages.
+
+Ensure the image is set to "[smalldisk] Windows Server 2019 Datacenter". You can open the drop-down list to see all the options available.
+
+The **Size** field is not directly editable and has a `DS1` default size. Click the **Change size** link to explore other VM sizes. The resulting dialog allows you to filter based on # of CPUs, Name, and Disk Type. Select "**Standard DS1 v2**" (normally the default) when you are done. That will give the VM 1 CPU and 3.5 GB of memory.
+
+In the **Administrator Account** section, set the **Username** field to a username you will use to sign in to the VM.
+
+In the **Password** field, enter a password - `ViVKUwPtAdW2` - that's at least 12 characters long. It must have three of the following: one lower case character, one uppercase character, one number, and one special character that is not '\' or '-'. Use something you will remember or write it down, you will need it later.
+
+Confirm the **password**.
+
+In the **Inbound Port Rules section**, open the list and choose _Allow selected ports_. Since this is a Windows VM, we want to be able to access the desktop using RDP. Scroll the list if necessary until you find RDP (3389) and select it. As the note in the UI indicates, we can also adjust the network ports after we create the VM.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-open-ports.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-open-ports.png)
 
 ## Configure Disks for the VM
 
