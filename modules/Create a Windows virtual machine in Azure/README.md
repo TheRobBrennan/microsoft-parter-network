@@ -319,7 +319,39 @@ Many of these are typical administrative tasks we won't actually cover here, and
 
 ## Connect to the VM with Remote Desktop Protocol
 
+To connect to an Azure VM with an RDP client, you will need:
+
+- The public IP address of the VM (or private if the VM is configured to connect to your network).
+- The port number.
+
+You can enter this information into the RDP client, or download a pre-configured **RDP** file.
+
+NOTE: An **RDP** file is a text file that contains a set of name/value pairs that define the connection parameters for an RDP client to connect to a remote computer using the Remote Desktop Protocol.
+
 ### Download the RDP file
+
+In the Azure portal , ensure the **Overview** panel for the virtual machine that you created earlier is open. You can find the VM under **All Resources** if you need to open it. The overview panel has a lot of information about the VM.
+
+- You can see whether the VM is running.
+- Stop or restart it.
+- Get the public IP address to connect to the VM.
+- See the activity of the CPU, disk, and network.
+
+Click the **Connect** button at the top of the pane.
+
+In the **Connect to virtual machine** pane, note the **IP address** and **Port number** settings, then click **Download RDP File** and save it to your computer.
+
+Before we connect, let's adjust a few settings. On Windows, find the file using Explorer, right-click and select Edit. On MacOS you will need to open the file first with the RDP client and then right-click on the item in the displayed list and select **Edit**.
+
+You can adjust a variety of settings to control the experience in connecting to the Azure VM. The settings you will want to examine are:
+
+- Display: By default, it will be full screen. You can change this to a lower resolution, or use all your monitors if you have more than one.
+- Local Resources: You can share local drives with the VM - allowing you to copy files from your PC to the VM. Click the More button under Local devices and resources to select what is shared.
+- Experience: Adjust the visual experience based on your network quality.
+
+Share your Local C: drive so it will be visible to the VM.
+
+Switch back to the **General** tab and click **Save** to save the changes. You can always come back and edit this file later to try other settings.
 
 ### Connect to the Windows VM
 
