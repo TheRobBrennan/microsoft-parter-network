@@ -236,22 +236,34 @@ Recall that you're working with an Ubuntu VM. Later, you can [check out the inst
 
 ## Install Node.js
 
-```sh
+Here you'll install Node.js. As with MongoDB, the process involves registering the Node.js repository so that `apt` can locate the package
 
-```
+IMPORTANT: Here, you'll work from the SSH connection to the Ubuntu VM that you created earlier in this module.
 
-```sh
-
-```
+Register the Node.js repository so the package manager can locate the packages, like this.
 
 ```sh
-
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 ```
+
+Install the Node.js package.
+
+```sh
+sudo apt-get install -y nodejs
+```
+
+Run `node -v` to verify the installation.
+
+```sh
+node -v
+```
+
+The output shows that you have the latest LTS version of Node.js.
 
 ## Exit your SSH session
 
 ```sh
-
+exit
 ```
 
 # Exercise - Create a basic web application
