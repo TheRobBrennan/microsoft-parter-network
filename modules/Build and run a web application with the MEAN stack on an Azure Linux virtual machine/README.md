@@ -228,6 +228,12 @@ Here you'll use Node.js LTS.
 
 ## How do I install Node.js?
 
+Like MongoDB, you can run Node.js on Windows, macOS, and Linux. Node.js also supports Unix-based operating systems such as SunOS and AIX.
+
+Just as with MongoDB, here you'll register the Node.js repository so that `apt` can locate the package.
+
+Recall that you're working with an Ubuntu VM. Later, you can [check out the installation guide](https://nodejs.org/en/download/package-manager) to learn how to install Node.js on your favorite platform.
+
 ## Install Node.js
 
 ```sh
