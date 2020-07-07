@@ -133,6 +133,36 @@ Before we create a virtual machine, we need to decide how we'd like to administe
 
 # Exercise - Decide an authentication method for SSH
 
+Before we can create a Linux virtual machine in Azure, we will need to think about remote access. We want to be able to sign in to our Linux web server to configure the software and perform maintenance. The default approach to administering Linux VMs hosted in Azure is SSH.
+
+## What is SSH?
+
+## Create the SSH key pair
+
+```sh
+
+```
+
+### Private key passphrase
+
+## Use the SSH key pair with an Azure Linux VM
+
+```sh
+
+```
+
+```sh
+
+```
+
+### Use the SSH key when creating a Linux VM
+
+### Add the SSH key to an existing Linux VM
+
+```sh
+
+```
+
 # Exercise - Create a Linux virtual machine with the Azure portal
 
 # Azure virtual machines IP addresses and SSH options
