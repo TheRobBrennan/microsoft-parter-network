@@ -130,6 +130,22 @@ We'll look more at virtual networks a bit later in this module. Let's apply some
 
 # Exercise - Create a Windows virtual machine
 
+Recall that our company processes video content on Windows VMs. A new city has contracted us to process their traffic cameras, but it's a model we've not worked with before. We need to create a new Windows VM and install some proprietary codecs so we can begin processing and analyzing their images.
+
+## Create a new Windows virtual machine
+
+## Configure the VM settings
+
+### Configure basic VM settings
+
+## Configure Disks for the VM
+
+### Create a data disk
+
+## Configure the Network
+
+## Finish configuring the VM and create the image
+
 # Use RDP to connect to Windows Azure virtual machines
 
 # Exercise - Connect to a Windows virtual machine using RDP
