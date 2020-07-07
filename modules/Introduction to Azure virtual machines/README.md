@@ -237,6 +237,43 @@ You're presented with the **Create virtual machine** page. Notice the wizard-bas
 
 ### Configure the VM
 
+We need to configure the basic parameters of our Ubuntu virtual machine. If some of the options at this point are unfamiliar to you, that's OK. We're going to discuss all of these options in a future module. You're welcome to copy the values used here.
+
+Use the following values on the _Basics_ tab.
+
+- The **Subscription** should be set to Concierge Subscription.
+- The **Resource Group** should be set to learn-e8b8704c-eafa-4001-8a16-f7c5e016fd2b.
+- Enter the **Virtual machine name** as `test-ubuntu-wus2-vm`
+- Select a **Region** close to you from the following list.
+  - West US 2
+- For **Availability options**, choose _No infrastructure redundancy required._
+- The **Image** should be the Ubuntu Server 18.04 LTS option we selected from the Marketplace.
+- Check to make sure the **Size** of the VM set as `Standard D2s V3` - currently defined as 2 vcpus, 8 GiB memory (\$85.41/mo - \$0.1170 / hr)
+- For the **Authentication type**, switch to `Password`. Enter a username and password.
+  - Username `AzureUser` / Password `ViVKUwPtAdW2`
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-create-vm-1.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-create-vm-1.png)
+
+There are several other tabs you can explore to see the settings you can influence during the VM creation. Once you're finished exploring, click **Review + create** to review and validate the settings.
+
+On the review screen, Azure will validate your settings. You might need to supply some additional information based on the requirements of the image creator. Verify all the settings are set the way you want, and then click **Create** to deploy and create the VM.
+
+You can monitor the deployment through the **Notifications** panel. Click the icon in the top toolbar to show or hide the panel.
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-deploying.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-deploying.png)
+
+The VM deployment process takes a few minutes to complete. You'll receive a notification informing you that the deployment succeeded. Click on the **Go to resource** button to go to the VM overview page.
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-deployment-succeeded.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-deployment-succeeded.png)
+
+Here you can see all the information and configuration options for your newly created Ubuntu VM. One of the pieces of information is the **Public IP address**.
+
+![https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-public-ip-address.png](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-virtual-machines/media/3-public-ip-address.png)
+
+By default, Ubuntu Server 18.04 LTS image doesn't install any reachable public services on the public IP address. However, recall that when you enabled password authentication in an earlier step, the UI also gave an option to enable SSH. SSH allows you to connect to your VM via the public IP using any SSH client.
+
+Congratulations! With a few steps, you deployed a VM that runs Linux. Let's explore some other ways we could have created a VM.
+
 # Describe the options available to create and manage an Azure Virtual Machine
 
 # Manage the availability of your Azure VMs
