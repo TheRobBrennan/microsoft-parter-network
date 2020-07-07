@@ -622,6 +622,10 @@ Click **Add** to create the rule.
 
 ## Open the default webpage
 
+Use the IP address of the server to make an HTTP request - [http://13.66.213.152](http://13.66.213.152). It should now work.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-apache-works.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-apache-works.png)
+
 ## One more thing
 
 # Summary
