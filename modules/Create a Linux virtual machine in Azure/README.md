@@ -234,7 +234,41 @@ Click the **Create** button to start configuring the VM.
 
 ## Configure the VM settings
 
+The VM creation experience in the portal is presented in a wizard format to walk you through all the configuration areas for the VM. Clicking the **Next** button will take you to the next configurable section. However, you can move between the sections at will with the tabs running across the top that identify each part.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-azure-portal-create-vm.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-azure-portal-create-vm.png)
+
+Once you fill in all the required options (identified with red asterisks), you can skip the remainder of the wizard experience and start creating the VM through the **Review + Create** button at the bottom.
+
+We'll start with the **Basics** section. These instructions are for the Sandbox portal. If you are using another Azure portal account, you may need to adapt some details accordingly.
+
 ### Configure basic VM settings
+
+For **Subscription**, the sandbox subscription should be selected for you by default.
+
+For **Resource group**, the resource group with the name learn-7124dd2f-c7c1-44a8-9694-a0258933d0a0 should be selected for you by default.
+
+In the **Instance details** section, enter a name for your web server VM, such as **test-web-wus2-vm1**. This indicates the environment (test), the role (web), location (West US 2), service (vm), and instance number (1). It's considered best practice to standardize your resource names, so you can quickly identify their purpose. Linux VM names must be between 1 and 64 characters and be comprised of numbers, letters, and dashes.
+
+Select a location.
+
+- West US 2
+
+Set **Availability options** to _No infrastructure redundancy required_. This option can be used to ensure the VM is highly available by grouping multiple VMs together as a set to deal with planned or unplanned maintenance events or outages. For this exercise we will not need this service.
+
+Ensure that the image is set to **Ubuntu Server 18.04 LTS**. You can open the drop-down list to see all the options available.
+
+Leave the **Size** field with the default of **D2s v3** choice, which **gives you two vCPUs with 8 GB of RAM**.
+
+Moving on to the **Administrator account** section, for **Authentication type** select the **SSH public key** option.
+
+Enter a **username** you'll use to sign in with SSH. Choose something you can remember or write it down. - `testuser`
+
+Paste the SSH key from your public key file you created in the previous unit into the **SSH public key** field. It should look similar to the example shown in unit 3 with no additional whitespace or line-feed characters.
+
+In the **INBOUND PORT RULES** section, first select **Allow selected ports**. Since this is a Linux VM, we want to be able to access the VM using SSH remotely. Scroll the **Select inbound ports** list if necessary until you find **SSH (22)** and **enable** it.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-open-ports.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-open-ports.png)
 
 ## Configure disks for the VM
 
