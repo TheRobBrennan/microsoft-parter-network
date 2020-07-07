@@ -195,7 +195,29 @@ In the **Inbound Port Rules section**, open the list and choose _Allow selected 
 
 ## Configure Disks for the VM
 
+Click **Next** to move to the Disks section.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-configure-disks.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-configure-disks.png)
+
+Choose "Premium SSD" for the **OS disk type**.
+
+Use managed disks so we don't have to work with storage accounts. You can flip the switch in the GUI to see the difference in information that Azure needs if you like.
+
 ### Create a data disk
+
+Recall we will get an OS disk (C:) and Temporary disk (D:). Let's add a data disk as well.
+
+Click the **Create and attach a new disk** link in the **DATA DISKS** section.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-add-data-disk.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-add-data-disk.png)
+
+You can take all the defaults: Premium SSD, 1023 GB, and None (empty disk); although notice that here is where we could use a snapshot, or Storage Blob to create a VHD.
+
+Click **OK** to create the disk and go back to the **DATA DISKS** section.
+
+There should now be a new disk in the first row.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-new-disk.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/3-new-disk.png)
 
 ## Configure the Network
 
