@@ -66,7 +66,80 @@ Here you'll run your application on a VM running on Azure. MEAN supports many di
 
 ## Create an Ubuntu Linux VM
 
+Normally, you create a _resource group_ before you create other resources on Azure. A resource group is a container that holds the resources that are related for an Azure solution. For this exercise, the Azure sandbox provides a resource group for you. However, when you are working in your own Azure subscription, you would use the following command to create a resource group in a location near you.
+
+```sh
+az group create \
+  --name <resource-group-name> \
+  --location <resource-group-location>
+```
+
+From Cloud Shell, run the `az vm create` command to create an Ubuntu VM.
+
+```sh
+az vm create \
+  --resource-group learn-bae85f89-002e-410e-a7ca-3a258e6408f6 \
+  --name MeanStack \
+  --image Canonical:UbuntuServer:16.04-LTS:latest \
+  --admin-username azureuser \
+  --generate-ssh-keys
+```
+
+The command takes about two minutes to complete. When the command finishes, you'll see output similar to this.
+
+```json
+{
+  "fqdns": "",
+  "id": "/subscriptions/f897b4e2-0504-4cf2-989a-7c363660153d/resourceGroups/learn-bae85f89-002e-410e-a7ca-3a258e6408f6/providers/Microsoft.Compute/virtualMachines/MeanStack",
+  "location": "westus",
+  "macAddress": "00-22-48-06-DC-CB",
+  "powerState": "VM running",
+  "privateIpAddress": "10.0.0.4",
+  "publicIpAddress": "104.209.46.71",
+  "resourceGroup": "learn-bae85f89-002e-410e-a7ca-3a258e6408f6",
+  "zones": ""
+}
+```
+
+The VM's name is "MeanStack". You'll use this name in future commands to identify the VM you want to work with.
+
+Open port 80 on the VM to allow incoming HTTP traffic to the web application you'll later create.
+
+```sh
+az vm open-port \
+  --port 80 \
+  --resource-group learn-bae85f89-002e-410e-a7ca-3a258e6408f6 \
+  --name MeanStack
+```
+
+Create an SSH connection to your VM.
+
+Although the output from the `az vm create` command displays your VM's public IP address, you may find it useful to store the address in a Bash variable.
+
+Start by running `az vm show`. This command saves the IP address in a Bash variable named `ipaddress`.
+
+```sh
+ipaddress=$(az vm show \
+  --name MeanStack \
+  --resource-group learn-bae85f89-002e-410e-a7ca-3a258e6408f6 \
+  --show-details \
+  --query [publicIps] \
+  --output tsv)
+```
+
+Connect to your VM like this.
+
+```sh
+ssh azureuser@$ipaddress
+```
+
+When prompted, answer "yes" to save the VM's identity locally so future connections are trusted.
+
+You'll use the SSH connection to configure software on the virtual machine in the next parts.
+
 ## Summary
+
+With your Ubuntu VM ready to go, you're ready to install each component of the MEAN stack. You'll start by installing MongoDB.
 
 # Exercise - Install MongoDB
 
