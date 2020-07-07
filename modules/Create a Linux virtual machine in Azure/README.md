@@ -495,6 +495,10 @@ We initialized the disk and mounted it. If you want more details on this process
 
 ## Install software onto the VM
 
+As you can see, SSH allows you to work with the Linux VM just like a local computer. You can administer this VM as you would any other Linux computer: installing software, configuring roles, adjusting features, and other everyday tasks. Let's focus on installing software for a moment.
+
+You can also install software from the internet when you are connected to the VM via SSH. Azure machines are, by default, internet connected. You can use standard commands to install popular software packages directly from standard repositories. Let's use this approach to install Apache.
+
 ### Install the Apache web server
 
 ```sh
