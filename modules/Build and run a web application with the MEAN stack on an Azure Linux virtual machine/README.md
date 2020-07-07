@@ -504,9 +504,70 @@ This code calls the `getData` function when the page loads. You can examine the 
 
 ### Create the user interface
 
-```sh
+From the editor, open `public/index.html` and add this code:
 
+```html
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div>
+      <table>
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" ng-model="Name" /></td>
+        </tr>
+        <tr>
+          <td>Isbn:</td>
+          <td><input type="text" ng-model="Isbn" /></td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td><input type="text" ng-model="Author" /></td>
+        </tr>
+        <tr>
+          <td>Pages:</td>
+          <td><input type="number" ng-model="Pages" /></td>
+        </tr>
+      </table>
+      <button ng-click="add_book()">Add</button>
+    </div>
+    <hr />
+    <div>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Isbn</th>
+          <th>Author</th>
+          <th>Pages</th>
+        </tr>
+        <tr ng-repeat="book in books">
+          <td>
+            <input
+              type="button"
+              value="Delete"
+              data-ng-click="del_book(book)"
+            />
+          </td>
+          <td>{{book.name}}</td>
+          <td>{{book.isbn}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.pages}}</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
 ```
+
+This code creates a basic HTML form with four fields to submit book data and a table that displays all the books stored in the database.
+
+Although this is standard HTML code, the `ng-` HTML attributes may be unfamiliar to you. These HTML attributes wire up the AngularJS code to the user interface. For example, when the user clicks the **Add** button, AngularJS calls the `add_book` function, which sends the form data to the server.
+
+You can examine the code here to get a sense of how each of the `ng-` attributes relate to application's business logic.
 
 ### Create the Express server to host the application
 
