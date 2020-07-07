@@ -294,6 +294,19 @@ There should now be a new disk in the first row.
 
 ## Configure the network
 
+Click **Next: Networking >** to move to the **Networking** section.
+
+In a production environment where we already have other components, you'd want to utilize an _existing_ virtual network. That way, your VM can communicate with the other cloud services in your solution. If there isn't one defined in this location yet, you can create it here and configure the:
+
+- **Address space**: The overall IPV4 space available to this network.
+- **Subnets**: The first subnet to subdivide the address space - it must fit within the defined address space. Once the VNet is created, you can add additional subnets.
+
+By default, Azure creates a virtual network, network interface, and public IP for your VM.
+
+**It's not trivial to change the networking options after the VM has been created, so always double-check the network assignments on services you create in Azure.**
+
+For this exercise, the defaults should work fine.
+
 ## Finish configuring the VM and create the image
 
 # Azure virtual machines IP addresses and SSH options
