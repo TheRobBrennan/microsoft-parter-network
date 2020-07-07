@@ -590,13 +590,58 @@ This code creates the web application itself. It serves static files from the pu
 
 ### Define package information and dependencies
 
-```sh
+Recall that `package.json` provides information about your application, including its name, description, and what Node.js packages your application needs to run.
+From the editor, open `package.json` and add this code:
 
+```json
+{
+  "name": "books",
+  "description": "Sample web app that manages book information.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MicrosoftDocs/mslearn-build-a-web-app-with-mean-on-a-linux-vm"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.16",
+    "mongoose": "~5.3",
+    "body-parser": "~1.18"
+  }
+}
 ```
+
+You see information, or metadata, about your application including its name, description, and license.
+
+The `repository` field specifies where the code is maintained. For reference, you can later review the code on GitHub at the URL shown here.
+
+The `main` field defines the application's entry point. It's provided here for completeness but it's not important because you're not planning to publish your application as a Node.js package for others to download and use.
+
+The `dependencies` field is important. It defines the Node.js packages your application needs. Shortly, you'll connect to your VM a second time and run the `npm install` command to install these packages.
+
+Node packages typically use the [Semantic Versioning](https://semver.org/) versioning scheme. The version number contains three components: major version, minor version, and patch. The tilde `~` notation here tells npm to install the latest patch version under the provided major and minor versions. The versions you see here are the latest this module was tested with. In practice, you can increment the version over time as you update and test your application to use the latest features each dependent package provides.
 
 ### Copy the files to your VM
 
+You're all done editing files. Ensure that you saved changes to each file and then close the editor.
+
+To close the editor, click the ellipses in the corner and then select **Close Editor**.
+
+Run the following `scp` command to copy the contents of the `~/Books` directory in your Cloud Shell session to the same directory name on your VM.
+
 ```sh
+scp -r ~/Books azureuser@$ipaddress:~/Books
+```
+
+Sample output:
+
+```sh
+model.js                                              100%  392     0.4KB/s   00:00
+routes.js                                             100% 1134     1.1KB/s   00:00
+server.js                                             100%  334     0.3KB/s   00:00
+index.html                                            100% 1184     1.2KB/s   00:00
+script.js                                             100% 1347     1.3KB/s   00:00
+package.json                                          100%  366     0.4KB/s   00:00
 
 ```
 
