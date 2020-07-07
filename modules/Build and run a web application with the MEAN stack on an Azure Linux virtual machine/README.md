@@ -301,9 +301,21 @@ Express is a Node.js package. You use the `npm` utility, which comes with Node.j
 
 ## What about AngularJS?
 
-```html
+Like Express, you haven't yet installed AngularJS, the A in the MEAN acronym.
 
+AngularJS makes web applications easier to write and test because it enables you to better separate the _appearance_ of your web page, your HTML code, from how your web page behaves. If you're familiar with the model–view–controller (MVC) pattern or the concept of data binding, AngularJS will be familiar to you.
+
+AngularJS is what's called a front-end JavaScript framework, which means it needs to only be available on the client that accesses the application. In other words, AngularJS runs in your user's web browser, not on your web server. And because AngularJS is JavaScript, you can use it to easily fetch data from your web server to show on the page.
+
+You don't really _install_ AngularJS. Instead, you add a reference to the JavaScript file in your HTML page, just as you do with other JavaScript libraries. There are several ways to include AngularJS in your web pages. Here you'll load AngularJS from a content delivery network, or CDN. A CDN is a way to distribute images, video, and other content geographically to improve download speeds.
+
+Don't add this code quite yet, but here's an example that loads AngularJS from a CDN. You would typically add this code to the `<head>` section of your HTML page.
+
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 ```
+
+NOTE: Don't confuse AngularJS with Angular. While many of the concepts are similar between the two, AngularJS is the predecessor to Angular. AngularJS is still commonly used for building web applications. While AngularJS is based on JavaScript, Angular is based on TypeScript, a programming language that makes it easier to write JavaScript programs.
 
 ## How will I build the application?
 
