@@ -166,25 +166,50 @@ Later, you can [check out the installation guide](https://docs.mongodb.com/manua
 
 ## Install MongoDB
 
-```sh
+Here you'll install MongoDB with just a few commands. You'll work from the SSH connection to the Ubuntu VM that you created in the previous unit.
 
-```
-
-```sh
-
-```
+First, we'll make sure all current packages are up to date.
 
 ```sh
-
+sudo apt update && sudo apt upgrade -y
 ```
+
+Remember - we're using SSH to connect with our `azureuser` account. We need `sudo` to run the above commands with administrative privileges.
+
+Install the MongoDB package.
 
 ```sh
-
+sudo apt-get install -y mongodb
 ```
+
+Once the installation completes, the service should automatically start up. Let's confirm this by running this command.
 
 ```sh
-
+sudo systemctl status mongodb
 ```
+
+You should see the service running.
+
+```sh
+azureuser@MeanStack:~$ sudo systemctl status mongodb
+● mongodb.service - An object/document-oriented database
+   Loaded: loaded (/lib/systemd/system/mongodb.service; enabled; vendor preset: enabled)
+   Active: active (running) since Tue 2020-07-07 23:02:09 UTC; 8s ago
+     Docs: man:mongod(1)
+ Main PID: 22154 (mongod)
+   CGroup: /system.slice/mongodb.service
+           └─22154 /usr/bin/mongod --config /etc/mongodb.conf
+
+Jul 07 23:02:09 MeanStack systemd[1]: Started An object/document-oriented database.
+```
+
+Run `mongod --version` to verify the installation.
+
+```sh
+mongod --version
+```
+
+Keep your SSH connection open for the next part.
 
 # Exercise - Install Node.js
 
