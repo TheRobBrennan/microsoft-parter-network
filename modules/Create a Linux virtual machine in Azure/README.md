@@ -137,6 +137,19 @@ Before we can create a Linux virtual machine in Azure, we will need to think abo
 
 ## What is SSH?
 
+Secure Shell (SSH) is an encrypted connection protocol that allows secure sign-ins over unsecured connections. SSH allows you to connect to a terminal shell from a remote location using a network connection.
+
+There are two approaches we can use to authenticate an SSH connection: **username and password**, or an **SSH key pair**.
+
+Although SSH provides an encrypted connection, using passwords with SSH connections leaves the VM vulnerable to brute-force attacks of passwords. A more secure and preferred method of connecting to a Linux VM with SSH is a public-private key pair, also known as SSH keys.
+
+With an SSH key pair, you can sign in to Linux-based Azure virtual machines without a password. This is a more secure approach if you only plan to sign in to the VM from a few computers. If you need to be able to access the Linux VM from a variety of locations, a username and password combination might be a better approach. There are two parts to an SSH key pair: a public key and a private key.
+
+- The public key is placed on your Linux VM or any other service that you wish to use with public-key cryptography. This can be shared with anyone.
+- The **private key** is what you present to verify your identity to your Linux VM when you make an SSH connection. Consider this confidential information and protect this like you would a password or any other private data.
+
+You can use the same single public-private key pair to access multiple Azure VMs and services.
+
 ## Create the SSH key pair
 
 ```sh
