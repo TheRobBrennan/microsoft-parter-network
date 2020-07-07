@@ -1,5 +1,7 @@
 [Deploy a website with Azure virtual machines](https://docs.microsoft.com/en-us/learn/paths/deploy-a-website-with-azure-virtual-machines/) - Estimated 4 hours 06 mins to complete
 
+If your web hosting requirements aren't directly supported by the Azure Web app platform, you can leverage virtual machines to customize and control every aspect of the web server. Learn how to create, configure, and manage virtual machines on Linux and Windows that host web apps.
+
 # Modules in this learning path
 
 ## Introduction to Azure virtual machines
