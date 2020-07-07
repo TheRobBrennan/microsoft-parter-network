@@ -216,6 +216,22 @@ Now that we have our public key, let's switch to the Azure portal and create a L
 
 # Exercise - Create a Linux virtual machine with the Azure portal
 
+Recall that our goal is to move an existing Linux server running Apache to Azure. We'll start by creating an Ubuntu Linux server.
+
+## Create a new Linux virtual machine
+
+## Configure the VM settings
+
+### Configure basic VM settings
+
+## Configure disks for the VM
+
+### Create a data disk
+
+## Configure the network
+
+## Finish configuring the VM and create the image
+
 # Azure virtual machines IP addresses and SSH options
 
 # Exercise - Connect to a Linux virtual machine with SSH
