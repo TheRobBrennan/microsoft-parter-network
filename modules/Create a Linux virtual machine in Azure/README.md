@@ -600,6 +600,26 @@ When we created the virtual machine (VM), we selected the inbound port `SSH` so 
 
 ## Update the NSG on the network interface
 
+Port 80 is open on the NSG applied to the subnet. But port 80 is blocked by the NSG applied to the network interface. Let's fix that so we can connect to the website.
+
+Switch back to the **Overview** panel for the virtual machine. You can find the VM under **All Resources**.
+
+In the **Settings** section, select the **Networking** item.
+
+You should see the NSG rules for the subnet in the top section and the NSG rules for the network interface in the bottom section of the same tab. In the bottom section, for the NSG rules for the network interface, select **Add inbound port rule**.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-add-rule-network-interface.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-add-rule-network-interface.png)
+
+Select **Basic**.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-inbound-port-basic.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-inbound-port-basic.png)
+
+Use the following information for our HTTP rule:
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-inbound-rule-basic-form.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/8-inbound-rule-basic-form.png)
+
+Click **Add** to create the rule.
+
 ## Open the default webpage
 
 ## One more thing
