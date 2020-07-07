@@ -309,6 +309,14 @@ For this exercise, the defaults should work fine.
 
 ## Finish configuring the VM and create the image
 
+The rest of the options have reasonable defaults, and there's no need to change any of them. You can explore the other tabs if you like. The individual options have an `(i)` icon next to them that will show a help tip to explain the option. This is a great way to learn about the various options you can use to configure the VM:
+
+- Click the **Review + create** button at the bottom of the panel.
+- The system will validate your options and give you details about the VM being created.
+- Click **Create** to create and deploy the VM. The Azure dashboard will show the VM that's being deployed. This may take several minutes.
+
+While that's deploying, let's look at what we can do with this VM.
+
 # Azure virtual machines IP addresses and SSH options
 
 # Exercise - Connect to a Linux virtual machine with SSH
