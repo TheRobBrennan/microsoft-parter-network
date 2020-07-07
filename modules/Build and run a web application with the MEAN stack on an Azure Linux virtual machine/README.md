@@ -325,18 +325,41 @@ In practice, you would typically write and test your web application in a more l
 
 ## Create the Books web application
 
-```sh
-
-```
+Here you'll create all the code, script, and HTML files that make up your web application. For brevity, we'll highlight the important parts of each file but won't go into complete details.
 
 ### Create the files
 
-```sh
+From Cloud Shell, run these commands to create the folders and files for your web application.
 
+```sh
+cd ~
+mkdir Books
+touch Books/server.js
+touch Books/package.json
+mkdir Books/app
+touch Books/app/model.js
+touch Books/app/routes.js
+mkdir Books/public
+touch Books/public/script.js
+touch Books/public/index.html
 ```
 
-```sh
+Here's what's included:
 
+- `Books` – the project's root directory.
+  - `server.js` defines the entry point to the web application. It loads the required Node.js packages, specifies the port to listen on, and begins listening for incoming HTTP traffic.
+  - `package.json` provides information about your application, including its name, description, and what Node.js packages your application needs to run.
+- `Books/app` – contains code that runs on the server.
+  - `model.js` defines the database connection and schema. Think of it as the data model for your application.
+  - `routes.js` handles request routing. For example, it defines GET requests to the /book endpoint by providing the list of all books in the database.
+- `Books/public` – contains files that are served directly to the client's browser.
+  - `index.html` contains the index page. It contains a web form that enables the user to submit information about books. It also displays all books in the database and enables you to delete entries from the database.
+  - `script.js` contains JavaScript code that runs in your user's browser. It can send requests to the server to list books, add books to the database, and delete books from the database.
+
+Run the `code` command to open your files through the Cloud Shell editor.
+
+```sh
+code Books
 ```
 
 ### Create the data model
