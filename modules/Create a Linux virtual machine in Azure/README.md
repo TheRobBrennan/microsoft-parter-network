@@ -272,7 +272,25 @@ In the **INBOUND PORT RULES** section, first select **Allow selected ports**. Si
 
 ## Configure disks for the VM
 
+Click **Next: Disks >** to move to the **Disks** section.
+
+Choose **Premium SSD** for the **OS disk type**.
+
 ### Create a data disk
+
+Recall that we will get an OS disk (`/dev/sda`) and a temporary disk (`/dev/sdb`). Let's `add a data disk` as well:
+
+Click the **Create and attach a new disk** link in the **Data disks** section.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-add-data-disk.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-add-data-disk.png)
+
+You can take all the defaults: **Premium SSD**, the auto-generated name, size of **1023 GiB**, and **None (empty disk)** for **Source type**, although notice that source type is where you could use a snapshot or Azure Blob storage to create a VHD.
+
+Click **OK** to create the disk and go back to the **Data disks** section.
+
+There should now be a new disk in the first row.
+
+![https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-new-disk.png](https://docs.microsoft.com/en-us/learn/modules/create-linux-virtual-machine-in-azure/media/3-new-disk.png)
 
 ## Configure the network
 
