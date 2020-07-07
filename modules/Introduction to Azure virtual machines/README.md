@@ -195,6 +195,26 @@ Finally, if you can't find a suitable OS image, you can create your disk image w
 
 # Exercise - Create a VM using the Azure portal
 
+You've planned out the network infrastructure and identified a few VMs to migrate to the cloud. You have several choices for creating your VMs. The choice you make depends on the environment you're comfortable with. Azure supports a web-based portal for creating and administering resources. You can also choose to use command-line tools that run on MacOS, Windows, and Linux.
+
+[VIDEO: Options to create and manage VMs (~2:54)](https://www.microsoft.com/en-us/videoplayer/embed/RE2yJKx?pid=RE2yJKx-ax-111-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
+
+- Video notes
+  - What templating tools are supported for creating VMs?
+    - ARM
+    - Terraform
+    - Ansible
+    - Jenkins
+    - Cloud-init
+
+Let's explore the Azure portal first - it's the easiest way to start with Azure.
+
+## Azure portal
+
+### Create an Azure VM with the Azure portal
+
+### Configure the VM
+
 # Describe the options available to create and manage an Azure Virtual Machine
 
 # Manage the availability of your Azure VMs
