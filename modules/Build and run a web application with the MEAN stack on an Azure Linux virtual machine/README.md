@@ -718,3 +718,52 @@ Try adding a few books to the database. Each time you add a book, the page updat
 You can also click the **Delete** button to delete a book from the database.
 
 # Summary
+
+MEAN is a development stack for building and hosting web applications. Recall that MEAN is an acronym for its component parts: MongoDB, Express, AngularJS, and Node.js.
+
+In this module, you learned when the MEAN stack is a good choice for web development and when you might want to choose something else. The main reason you might consider MEAN is if you're familiar with JavaScript.
+
+To see the MEAN stack in action, you created an Ubuntu virtual machine on Azure and installed the MEAN stack on it for web development.
+
+With your MEAN stack in place, you created a basic book inventory web application. To summarize, the web application uses:
+
+- MongoDB to store information about books.
+- Express to route each HTTP request to the appropriate handler.
+- AngularJS to connect the user interface with the program's business logic.
+- Node.js to host the server-side application.
+
+You can [find the source code for the web application](https://github.com/MicrosoftDocs/mslearn-build-a-web-app-with-mean-on-a-linux-vm) on GitHub.
+
+## Learn more
+
+In this module, you got a sense of how the MEAN stack works and brought up a basic web application that uses it. The next step is to start building applications that solve your own business challenges. You can then deploy your applications to Azure and use automated processes to monitor your applications and make them better. Here are some resources where you can learn more.
+
+### Learn more about MEAN stack application development
+
+### Learn about the Azure Web Apps service
+
+In this module, you used a VM to host your web application. A VM gives you more control over the environment and might best fit how you currently manage your deployments. But there are other ways to host web applications. Check out [Create a Node.js web app in Azure](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-get-started-nodejs) to learn how to use the Azure Web Apps service to simplify your deployments.
+
+### Automate your deployments
+
+Also in this module, you used a mainly manual process to configure your VM and run your app. As your process matures, you can use a more automated process to deploy changes more quickly and more reliably. Check out [Create a CI/CD pipeline for Node.js with the Azure DevOps Project](https://docs.microsoft.com/en-us/azure/devops-project/azure-devops-project-nodejs) to learn how to use Azure DevOps to deploy your Node.js application as part of a continuous integration and continuous delivery (CI/CD) pipeline.
+
+## Check your knowledge
+
+1. Which is a good reason to pick MEAN for your development stack?
+
+[] You're working with highly structured, relational data.
+[] MEAN apps run faster than ones created with other development stacks.
+[ x ] Everyone on your development team is an expert with JavaScript.
+
+2. What's a NoSQL database?
+
+[] It's a term used to describe any free, open-source database software.
+[ x ] It's a database that doesn't require data to be structured in a pre-defined way.
+[] It's a kind of relational database, but doesn't use the SQL language to access and manipulate data.
+
+3. What's the role of AngularJS in the MEAN stack?
+
+[ x ] AngularJS implements data binding for HTML and JavaScript. For example, you can use AngularJS to retrieve items from a database and display those items in the UI.
+[] It's a browser plugin that gets installed on your user's computer.
+[] It helps run the web application from the server side.
