@@ -351,6 +351,54 @@ Next, let's connect to the VM using SSH.
 
 # Exercise - Connect to a Linux virtual machine with SSH
 
+Let's connect to our Linux VM with SSH, and configure Apache, so we have a running web server.
+
+## Get the public IP address of the VM
+
+## Connect with SSH
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Initialize data disks
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Install software onto the VM
+
+### Install the Apache web server
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Network and security settings
 
 # Exercise - Configure network settings
