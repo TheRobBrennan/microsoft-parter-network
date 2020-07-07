@@ -213,6 +213,34 @@ Keep your SSH connection open for the next part.
 
 # Exercise - Install Node.js
 
+Here you'll install Node.js, the N in the MEAN acronym. Like MongoDB, Node.js is open source.
+
+Node.js will act as the server-side host for your web application and handle inbound HTTP traffic. Node.js also provides you with a way to communicate with your MongoDB installation, which you'll see later.
+
+## What versions of Node.js are available?
+
+## How do I install Node.js?
+
+## Install Node.js
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Exit your SSH session
+
+```sh
+
+```
+
 # Exercise - Create a basic web application
 
 # Summary
