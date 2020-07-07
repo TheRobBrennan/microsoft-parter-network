@@ -596,4 +596,12 @@ Security groups are managed resources like most everything in Azure. You can cre
 
 # Exercise - Configure network settings
 
+When we created the virtual machine (VM), we selected the inbound port `SSH` so we could connect to the VM. This created an NSG that's attached to the network interface of the VM. That NSG is blocking HTTP traffic. Let's update this NSG to allow inbound HTTP traffic on port 80.
+
+## Update the NSG on the network interface
+
+## Open the default webpage
+
+## One more thing
+
 # Summary
