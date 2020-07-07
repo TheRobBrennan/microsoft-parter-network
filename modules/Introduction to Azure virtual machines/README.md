@@ -538,4 +538,24 @@ Azure Backup uses a Recovery Services vault for storing the backup data. A vault
 
 # Knowledge check
 
+Check your knowledge
+
+1. Suppose you want to run a network appliance on a virtual machine. Which workload option should you choose?
+
+[] General purpose
+[ x ] Compute optimized - **Compute optimized virtual machines are designed to have a high CPU-to-memory ratio. Suitable for medium traffic web servers, network appliances, batch processes, and application servers.**
+[] Memory optimized
+[] Storage optimized
+
+2. True or false: Resource Manager templates are JSON files?
+
+[ x ] True
+[] False
+
 # Summary
+
+In this module, you looked at the decisions you need to make before creating a virtual machine. These decisions include aspects such as the VM size, types of disks used, operating system image selected, and the types of resources created.
+
+You also looked at the options to create and manage virtual machines in Azure. You saw how easy it is to create and manage VMs using the portal and when to use Resource Manager templates, PowerShell, the Azure CLI, and the Azure Client SDK.
+
+Finally, you looked at the extensions and services available to more easily administer your VMs.
