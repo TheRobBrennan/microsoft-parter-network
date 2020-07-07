@@ -571,9 +571,22 @@ You can examine the code here to get a sense of how each of the `ng-` attributes
 
 ### Create the Express server to host the application
 
-```sh
+From the editor, open `server.js` and add this code:
 
+```js
+var express = require("express")
+var bodyParser = require("body-parser")
+var app = express()
+app.use(express.static(__dirname + "/public"))
+app.use(bodyParser.json())
+require("./app/routes")(app)
+app.set("port", 80)
+app.listen(app.get("port"), function () {
+  console.log("Server up: http://localhost:" + app.get("port"))
+})
 ```
+
+This code creates the web application itself. It serves static files from the public directory and uses the routes you defined in previously to handle requests.
 
 ### Define package information and dependencies
 
