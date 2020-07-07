@@ -628,4 +628,6 @@ Use the IP address of the server to make an HTTP request - [http://13.66.213.152
 
 ## One more thing
 
+Always make sure to lock down ports used for administrative access. An even better approach is to create a VPN to link the virtual network to your private network and only allow RDP or SSH requests from that address range. You can also change the port used by SSH to be something other than the default. Keep in mind that changing ports is not sufficient to stop attacks. It simply makes it a little harder to discover.
+
 # Summary
