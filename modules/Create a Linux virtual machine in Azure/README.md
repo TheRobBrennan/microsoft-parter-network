@@ -182,21 +182,37 @@ We strongly recommended that you add a passphrase. If an attacker stole your pri
 
 ## Use the SSH key pair with an Azure Linux VM
 
-```sh
+Once you have the key pair generated, you can use it with a Linux VM in Azure. You can supply the public key during the VM creation or add it after the VM has been created.
 
+You can view the contents of the file in Azure Cloud Shell with the following command:
+
+```sh
+cat ~/.ssh/id_rsa.pub
 ```
 
-```sh
+It'll look something like the following output:
 
+```sh
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCw52la2vrgJSe3MzZy9WG96HxXRPG6JoOUXnMHD6H+1h+XH5YqG0UMs5hhqhk+S54rqR1lXQscUrznqibFwOxHhjmz5E8gXrKPb9lKlS/MyWh5dpukBsbkv2j/G4px5yUQe6hi9FSxhFJNHfn+zmtmX/4ie8AxF8i9CEXR8mtvPYBTsazqmZiRJ4xh5acEIHe8SIPKMD+qDhdgJ86JNQ+s8k+yjKOk9KYk7UkdORlR9/W8i0Iq6E/pB0Nz21jwYpGX8xILAnorlKN8kUcEGR3VHKlmNjNyKHQFaJ3TEdpXvjrcpDxfSEQnYOIliHKnyCqQhRhbX6fk+L4O4yNWzKOScK9FqMoZntuN9sKQKHB64SsJUVCvCSuBtlPD3rtwlRG5ux/ii7hzu7KzTyMucKoTT3hlCHunyubD8RxVrfRZ8Qnc86Dn+QYeAjguGll9FTfXGVW2t1sqqJh00vTA0NJyLbC4rF7xoTQErqUuTD0CAb1a0kb483O/zVgcXJSpQtJfyVM1ckVpa1HMXVPNIfeR67rKdK/9Qb0oaX6DnucUoL6M0JQX2CMTbjikP9ayAUAOFmqHeI1I9MAdTMbBtik4eF7874nMY6GkgKZvc/RJq85ikJB8piK22Rurp3NZzlhCzDfw/TSSkKKr+uz306Q6+fZkR8gTyyZL7m/DJwJ/kw== rob@cc-2f5ed202-778bb59c6-td9xd
 ```
+
+Copy this value, so you can use it in the next exercise.
 
 ### Use the SSH key when creating a Linux VM
 
+To apply the SSH key while creating a new Linux VM, you will need to copy the contents of the public key and supply it to the Azure portal, or supply the public key file to the Azure CLI or Azure PowerShell command. We'll use this approach when we create our Linux VM.
+
 ### Add the SSH key to an existing Linux VM
 
-```sh
+If you have already created a VM, you can install the public key onto your Linux VM with the `ssh-copy-id` command. Once the key has been authorized for SSH, it grants access to the server without a password, though you will still be prompted for the passphrase on the key if you set one.
 
+For example, if we had a Linux VM named _myserver_ with a user _azureuser_, we could use the following command to install the public key file and authorize the user with the key:
+
+```sh
+ssh-copy-id -i ~/.ssh/id_rsa.pub azureuser@myserver
 ```
+
+Now that we have our public key, let's switch to the Azure portal and create a Linux VM.
 
 # Exercise - Create a Linux virtual machine with the Azure portal
 
