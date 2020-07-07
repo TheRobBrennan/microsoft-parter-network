@@ -642,34 +642,56 @@ server.js                                             100%  334     0.3KB/s   00
 index.html                                            100% 1184     1.2KB/s   00:00
 script.js                                             100% 1347     1.3KB/s   00:00
 package.json                                          100%  366     0.4KB/s   00:00
-
 ```
 
 ## Install additional Node packages
 
-```sh
+Let's say that during the development process, you identified additional Node packages that you want to use. For example, recall that `app/model.js` starts with this line.
 
+```js
+var mongoose = require("mongoose")
+```
+
+Recall that the application uses Mongoose to help transfer data in and out of your MongoDB database.
+
+The application also requires Express and the body-parser packages. body-parser is a plugin that enables Express to work with data from the web form sent by the client.
+
+Let's connect to your VM and install the packages you specified in package.json.
+
+Before you connect to your VM, make sure you have your VM's IP address handy. If you don't have it, run these commands from Cloud Shell to retrieve it.
+
+```sh
+ipaddress=$(az vm show \
+  --name MeanStack \
+  --resource-group learn-bae85f89-002e-410e-a7ca-3a258e6408f6 \
+  --show-details \
+  --query [publicIps] \
+  --output tsv)
 ```
 
 ```sh
-
+echo $ipaddress
 ```
+
+Like you did earlier, create an SSH connection to your VM.
 
 ```sh
-
+ssh azureuser@$ipaddress
 ```
+
+Move to the Books directory under the home directory.
 
 ```sh
-
+cd ~/Books
 ```
+
+Run `npm install` to install the dependent packages.
 
 ```sh
-
+npm install
 ```
 
-```sh
-
-```
+Keep your SSH connection open for the next part.
 
 ## Test the application
 
