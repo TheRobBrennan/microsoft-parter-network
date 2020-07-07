@@ -375,6 +375,20 @@ Since we aren't going to actually configure that here, just close Server Manager
 
 ## Install custom software
 
+We have two approaches we can use to install software. First, this VM is connected to the Internet. If the software you need has a downloadable installer, you can open a web browser in the RDP session, download the software, and install it. Second, if your software is custom - like our custom service, you can copy it from your local machine over to the VM to install it. Let's look at this latter approach.
+
+Open File Explorer. Click on **This PC** in the sidebar. You should see several drives:
+
+- Windows (C:) drive representing the OS.
+- Temporary Storage (D:) drive.
+- Your local C: drive (it will have a different name than shown below).
+
+![https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/6-drive-list.png](https://docs.microsoft.com/en-us/learn/modules/create-windows-virtual-machine-in-azure/media/6-drive-list.png)
+
+With access to your local drive, you can copy the files for the custom software onto the VM and install the software. We won't actually do that since it's just a simulated scenario, but you can imagine how it would work.
+
+The more interesting thing to observe in the list of drives is what is missing. Notice that our **Data** drive is not present. Azure added a VHD but didn't initialize it.
+
 ## Initialize data disks
 
 # Configure Azure virtual machine network settings
