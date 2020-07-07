@@ -143,6 +143,36 @@ With your Ubuntu VM ready to go, you're ready to install each component of the M
 
 # Exercise - Install MongoDB
 
+Many applications require a database. Here you'll install MongoDB, the "M" in the MEAN stack. It's a popular NoSQL database solution that's free and open source. A NoSQL database doesn't require data to be structured in a pre-defined way as it would with a relational database like SQL Server or MySQL.
+
+MongoDB stores its data in JSON-like documents that don't require rigid data structures. You interact with MongoDB using queries and commands sent using JavaScript Object Notation, or JSON.
+
+## What MongoDB editions are available?
+
+## How do I install MongoDB?
+
+## Install MongoDB
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Exercise - Install Node.js
 
 # Exercise - Create a basic web application
