@@ -158,6 +158,12 @@ Here you'll install MongoDB Community Server. Later, you'll use MongoDB to store
 
 ## How do I install MongoDB?
 
+You can install MongoDB on Linux, macOS, and Windows. For learning purposes, here you'll install MongoDB on Ubuntu using Ubuntu's `apt` package manager.
+
+The installation process varies depending on your operating system. If you're not familiar with Ubuntu, you can still follow along to get a sense for how things work.
+
+Later, you can [check out the installation guide](https://docs.mongodb.com/manual/administration/install-community) to learn more.
+
 ## Install MongoDB
 
 ```sh
