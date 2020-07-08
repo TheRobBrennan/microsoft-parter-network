@@ -206,4 +206,104 @@ az group list --output table
 
 # Exercise - Create an Azure website using the CLI
 
+Next, let's use the Azure CLI to create a resource group, and then to deploy a web app into this resource group.
+
+## Using a resource group
+
+When you're working with your own machine and Azure subscription, you'll need to first sign in to Azure using the `az login` command. However, signing in is unnecessary when you are using the browser-based Cloud Shell environment.
+
+Next, you would normally create a resource group for all your related Azure resources with an `az group create` command, but for this exercise the following resource group has been created for you: **learn-1c517341-e13e-4262-a546-0ff623d299ed**.
+
+Your first step in this exercise will be to create several variables that you will use in later commands.
+
+```sh
+export RESOURCE_GROUP=learn-1c517341-e13e-4262-a546-0ff623d299ed
+export AZURE_REGION=centralus
+export AZURE_APP_PLAN=popupappplan-$RANDOM
+export AZURE_WEB_APP=popupwebapp-$RANDOM
+```
+
+You can ask the Azure CLI to list all your resource groups in a table. There should just be one while you are in the free Azure sandbox.
+
+```sh
+az group list --output table
+
+# Output
+Name                                        Location    Status
+------------------------------------------  ----------  ---------
+learn-1c517341-e13e-4262-a546-0ff623d299ed  westus      Succeeded
+```
+
+As you do more Azure development, you can end up with several resource groups. If you have several items in the group list, you can filter the return values by adding a `--query` option. Try the following command:
+
+```sh
+az group list --query "[?name == '$RESOURCE_GROUP']"
+
+# Output
+[
+  {
+    "id": "/subscriptions/e21efc6c-c28e-4d99-bfdb-ec8e6d22cac5/resourceGroups/learn-1c517341-e13e-4262-a546-0ff623d299ed",
+    "location": "westus",
+    "managedBy": null,
+    "name": "learn-1c517341-e13e-4262-a546-0ff623d299ed",
+    "properties": {
+      "provisioningState": "Succeeded"
+    },
+    "tags": {
+      "x-created-by": "freelearning",
+      "x-created-for": "1c83738b-6805-4d18-8922-a144892c839b",
+      "x-module-id": "learn.control-azure-services-with-cli"
+    },
+    "type": "Microsoft.Resources/resourceGroups"
+  }
+]
+
+```
+
+## Steps to create a service plan
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Steps to create a web app
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Steps to deploy code from GitHub
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Summary
