@@ -497,41 +497,74 @@ ssh bob@205.22.16.5
 
 ## Delete a VM
 
-```sh
-
-```
+Just to try out some more commands, let's delete the VM. We'll shut it down first.
 
 ```sh
-
+Stop-AzVM -Name $vm.Name -ResourceGroup $vm.ResourceGroupName
 ```
+
+Now, let's delete the VM with the `Remove-AzVM` cmdlet:
 
 ```sh
-
+Remove-AzVM -Name $vm.Name -ResourceGroup $vm.ResourceGroupName
 ```
+
+Try this command to list all the resources in your resource group:
 
 ```sh
-
+Get-AzResource -ResourceGroupName $vm.ResourceGroupName | ft
 ```
+
+You should see a bunch of resources (disks, virtual networks, etc.) that all still exist.
+
+This is because the `Remove-AzVM` command _just deletes the VM_. It doesn't cleanup any of the other resources! At this point, we'd likely just delete the Resource Group itself and be done with it. However, let's just run through the exercise to clean it up manually. You should see a pattern in the commands.
+
+Delete the Network Interface.
 
 ```sh
-
+$vm | Remove-AzNetworkInterface –Force
 ```
+
+Delete the managed OS disks and storage account
 
 ```sh
-
+Get-AzDisk -ResourceGroupName $vm.ResourceGroupName -DiskName $vm.StorageProfile.OSDisk.Name | Remove-AzDisk -Force
 ```
+
+Next, delete the virtual network.
 
 ```sh
-
+Get-AzVirtualNetwork -ResourceGroup $vm.ResourceGroupName | Remove-AzVirtualNetwork -Force
 ```
+
+Delete the network security group.
 
 ```sh
-
+Get-AzNetworkSecurityGroup -ResourceGroup $vm.ResourceGroupName | Remove-AzNetworkSecurityGroup -Force
 ```
+
+And finally, the public IP address.
 
 ```sh
-
+Get-AzPublicIpAddress -ResourceGroup $vm.ResourceGroupName | Remove-AzPublicIpAddress -Force
 ```
+
+We should have caught all the created resources; check the resource group just to be sure.
+
+```sh
+Get-AzResource -ResourceGroupName $vm.ResourceGroupName | ft
+```
+
+Sample output:
+
+```sh
+Name                 ResourceGroupName                          ResourceTyp
+                                                                e
+----                 -----------------                          -----------
+cloudshell1386646635 learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708 Microsoft.…
+```
+
+We did a lot of manual commands here but a better approach would have been to write a script so we could reuse this logic later to create or delete a VM. Let's look at scripting with PowerShell.
 
 # Create and save scripts in Azure PowerShell
 
