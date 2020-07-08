@@ -415,36 +415,84 @@ Let's try the commands you would use to create a VM.
 
 ## Create a Linux VM with Azure PowerShell
 
-```sh
+Since we are using the Azure sandbox, you won't have to create a Resource Group. Instead, use the Resource Group **learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708**. In addition, be aware of the location restrictions.
 
+Let's create a new Azure VM with PowerShell.
+
+Use the `New-AzVm` cmdlet to create a VM.
+
+- Use the Resource Group **learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708**.
+- Give the VM a name - typically you want to use something meaningful that identifies the purposes of the VM, location, and (if there is more than one) instance number. We'll use "testvm-wus2-01" for "Test VM in West US 2, instance 1". Come up with your own name based on where you place the VM. - `testvm-wus2-01`
+- Select a location close to you from the following list available in the Azure sandbox - `westus2`
+- Use "UbuntuLTS" for the image - this is Ubuntu Linux.
+- Use the `Get-Credential` cmdlet and feed the results into the `Credential` parameter. - `ViVKUwPtAdW2`
+- Add the `-OpenPorts` parameter and pass "22" as the port - this will let us SSH into the machine.
+
+```sh
+New-AzVm -ResourceGroupName learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708 -Name "testvm-wus2-01" -Credential (Get-Credential) -Location "West US 2" -Image UbuntuLTS -OpenPorts 22
 ```
 
-```sh
+Output:
 
+```sh
+ResourceGroupName        : learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708Id                       : /subscriptions/c19e4c79-7623-4b63-990c-698ba45a4d44/resourceGroups/learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708/providers/Microsoft.Compute/virtualMachines/testvm-wus2-01VmId                     : 18ea9716-a944-4546-8b93-06e2e27ca4d0Name                     : testvm-wus2-01Type                     : Microsoft.Compute/virtualMachinesLocation                 : westus2Tags                     : {}HardwareProfile          : {VmSize}NetworkProfile           : {NetworkInterfaces}OSProfile                : {ComputerName, AdminUsername,LinuxConfiguration, Secrets, AllowExtensionOperations,RequireGuestProvisionSignal}ProvisioningState        : SucceededStorageProfile           : {ImageReference, OsDisk, DataDisks}FullyQualifiedDomainName : testvm-wus2-01-02b79d.West US
+2.cloudapp.azure.com
 ```
 
-```sh
+This will take a few minutes to complete. Once it does, you can query it and assign the VM object to a variable (\$vm).
 
+```sh
+$vm = Get-AzVM -Name "testvm-wus2-01" -ResourceGroupName learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708
 ```
 
-```sh
+Then query the value to dump out the information about the VM:
 
+```sh
+$vm
 ```
 
-```sh
+You should see something like:
 
+```sh
+ResourceGroupName : learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708
+Id                : /subscriptions/c19e4c79-7623-4b63-990c-698ba45a4d44/res
+ourceGroups/learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708/providers/Microsoft.
+Compute/virtualMachines/testvm-wus2-01
+VmId              : 18ea9716-a944-4546-8b93-06e2e27ca4d0
+Name              : testvm-wus2-01
+Type              : Microsoft.Compute/virtualMachines
+Location          : westus2
+Tags              : {}
+HardwareProfile   : {VmSize}
+NetworkProfile    : {NetworkInterfaces}
+OSProfile         : {ComputerName, AdminUsername, LinuxConfiguration,
+Secrets, AllowExtensionOperations, RequireGuestProvisionSignal}
+ProvisioningState : Succeeded
+StorageProfile    : {ImageReference, OsDisk, DataDisks}
 ```
 
-```sh
+You can reach into complex objects through a dot (".") syntax. For example, to see the properties in the `VMSize` object associated with the HardwareProfile section you can type:
 
+```sh
+$vm.HardwareProfile
 ```
 
-```sh
+Or to get information on one of the disks:
 
+```sh
+$vm.StorageProfile.OsDisk
 ```
 
-```sh
+You can even pass the VM object into other cmdlets. For example, this will retrieve the public IP address of your VM:
 
+```sh
+$vm | Get-AzPublicIpAddress
+```
+
+With the IP address, you can connect to the VM with SSH. For example, if you used the username "bob", and the IP address is "205.22.16.5", then this command would connect to the Linux machine:
+
+```sh
+ssh bob@205.22.16.5
 ```
 
 ## Delete a VM
