@@ -202,4 +202,24 @@ For organizational use, you can rent productivity apps, such as email, collabora
 
 # Knowledge check - IaaS, PaaS & SaaS
 
+## Check your knowledge
+
+1. Which cloud service model would be the best match for the following situation? A SQL Server database is needed for a short-term project. The IT department does not have available hardware that meets the performance requirements or resources to deploy it. The project starts next week. Once the project is over, the database is no longer needed.
+
+[] IaaS
+[ x ] PaaS
+[] SaaS
+
+2. Which cloud service model is described in the following scenario? You create several virtual machines in the cloud. The VMs are networked together using a virtual network. The VMs have access to x-ray image files in cloud storage. One virtual machine is a web server that hosts a website exposed to the internet for customers to access their records. There is a VPN that connects the solution to your on-premises datacenter for customer information to display with the image files.
+
+[ x ] IaaS
+[] PaaS
+[] SaaS
+
+3. Which cloud service model would be the best match for the following situation? You work at a start-up company with a small number of employees who need to collaborate. They need email, calendar scheduling, and somewhere to store documents. The team is technical but do not have the time or hardware to implement and manage a solution.
+
+[] IaaS
+[] PaaS
+[ x ] SaaS
+
 # Summary
