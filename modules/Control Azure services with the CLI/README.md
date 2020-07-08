@@ -293,20 +293,34 @@ app     Central US  3                         popupappplan-54321  0             
 
 ## Steps to create a web app
 
-```sh
+Next, you'll create the web app in your service plan. You can deploy the code at the same time, but for our example, we'll create the web app and deploy the code as separate steps.
 
+To create the web app, you'll supply web app name and the name of the app plan you created above. Just like the app plan name, the web app name must be unique, and the variables that you created earlier will assign random values that should be sufficient for this exercise.
+
+```sh
+az webapp create --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --plan $AZURE_APP_PLAN
 ```
 
-```sh
+Verify that the app was created successfully by listing all your apps in a table.
 
+```sh
+az webapp list --output table
 ```
 
-```sh
+You'll see a response like the following example.
 
+```sh
+Name               Location    State    ResourceGroup                               DefaultHostName                      AppServicePlan
+-----------------  ----------  -------  ------------------------------------------  -----------------------------------  ------------------
+popupwebapp-12345  Central US  Running  Learn-12345678-1234-1234-1234-123456789abc  popupwebapp-12345.azurewebsites.net  popupappplan-54321
 ```
 
-```sh
+Make a note of the **DefaultHostName** listed in the table; this address is the URL for the new website. Azure will make your website available through the unique app name in the `azurewebsites.net` domain. For example, if my app name was "popupwebapp-mslearn123", then my website URL would be: http://popupwebapp-mslearn123.azurewebsites.net.
 
+Your site has a "quickstart" page created by Azure that you can see either in a browser, or with CURL, just use the **DefaultHostName**:
+
+```sh
+curl $AZURE_WEB_APP.azurewebsites.net
 ```
 
 ## Steps to deploy code from GitHub
