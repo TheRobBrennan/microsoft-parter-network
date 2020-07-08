@@ -110,6 +110,18 @@ Examples of why you would use hybrid cloud:
 
 # Cloud service models
 
+Cloud computing resources are delivered using three different service models.
+
+- **Infrastructure-as-a-service (IaaS)** provides instant computing infrastructure that you can provision and manage over the Internet.
+- **Platform as a service (PaaS)** provides ready-made development and deployment environments that you can use to deliver your own cloud services.
+- **Software as a service (SaaS)** delivers applications over the Internet as a web-based service.
+
+[VIDEO: IaaS versus SaaS versus PaaS (~2:32)](https://www.microsoft.com/en-us/videoplayer/embed/RE2yEbs?pid=RE2yEbs-ax-87-id-oneplayer&postJsllMsg=true&autoplay=false&mute=false&loop=false&market=en-us&playFullScreen=false)
+
+When choosing a service model, consider which party should be responsible for the computing resource. Based on your scenario, you can decide how much shared management responsibility you want. The following illustration shows a list of resources that you manage and that your service provider manages in each cloud service category.
+
+![https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/media/3-shared-responsibility.png](https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/media/3-shared-responsibility.png)
+
 # Infrastructure as a service
 
 # Platform as a service
