@@ -65,6 +65,63 @@ The Azure CLI must be installed before it can be used to manage Azure resources 
 
 # Exercise - Install and run the Azure CLI
 
+Let's install the Azure CLI on your local machine, and then run a command to verify your installation. The method you use for installing the Azure CLI depends on the operating system of your computer. Choose the steps for your operating system.
+
+NOTE: This exercise guides you through installing the Azure CLI tool locally. The remainder of the module will use the Azure Cloud Shell so you can leverage the free subscription support in Microsoft Learn. You can consider this exercise as an optional activity and just review the instructions if you prefer.
+
+## macOS
+
+Here you will install the Azure CLI on macOS using the Homebrew package manager.
+
+If the **brew** command is unavailable, you may need to install the Homebrew package manager. For details see the [Homebrew website](https://brew.sh/).
+
+Update your brew repository to make sure you get the latest Azure CLI package.
+
+```sh
+brew update
+```
+
+Install the Azure CLI.
+
+```sh
+brew install azure-cli
+```
+
+## Running the Azure CLI
+
+You run the Azure CLI by opening a bash shell (Linux and macOS), or from the command prompt or PowerShell (Windows).
+
+Start the Azure CLI and verify your installation by running the version check.
+
+```sh
+az --version
+```
+
+Sample output:
+
+```sh
+azure-cli                          2.8.0
+
+command-modules-nspkg              2.0.3
+core                               2.8.0
+nspkg                              3.0.4
+telemetry                          1.0.4
+
+Python location '/usr/local/Cellar/azure-cli/2.8.0/libexec/bin/python'
+Extensions directory '/Users/rob/.azure/cliextensions'
+
+Python (Darwin) 3.8.3 (default, Jul  7 2020, 13:04:12)
+[Clang 11.0.3 (clang-1103.0.32.62)]
+
+Legal docs and information: aka.ms/AzureCliLegal
+
+
+Your CLI is up-to-date.
+
+Please let us know how we are doing: https://aka.ms/azureclihats
+and let us know if you're interested in trying out our newest features: https://aka.ms/CLIUXstudy
+```
+
 # Work with the Azure CLI
 
 # Exercise - Create an Azure website using the CLI
