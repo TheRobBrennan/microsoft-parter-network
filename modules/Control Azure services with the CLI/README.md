@@ -325,16 +325,26 @@ curl $AZURE_WEB_APP.azurewebsites.net
 
 ## Steps to deploy code from GitHub
 
-```sh
+The final step is to deploy code from a GitHub repository to the web app. Let's use a simple PHP page available in the Azure Samples GitHub repository that displays "Hello World!" when it executes. Make sure to use the web app name you created.
 
-```
-
-```sh
-
-```
+(!) This is a great example to manually deploy a GitHub project to Azure (!)
 
 ```sh
-
+az webapp deployment source config --name $AZURE_WEB_APP --resource-group $RESOURCE_GROUP --repo-url "https://github.com/Azure-Samples/php-docs-hello-world" --branch master --manual-integration
 ```
+
+Once it's deployed, hit your site again with a browser or CURL.
+
+```sh
+curl $AZURE_WEB_APP.azurewebsites.net
+```
+
+The page displays "Hello World!"
+
+```sh
+Hello World!
+```
+
+This exercise demonstrated a typical pattern for an interactive Azure CLI session. You first used a standard command to create a new resource group. You then used a set of commands to deploy a resource (in this example, a web app) into this resource group. This set of commands could easily be combined into a shell script, and executed every time you need to create the same resource.
 
 # Summary
