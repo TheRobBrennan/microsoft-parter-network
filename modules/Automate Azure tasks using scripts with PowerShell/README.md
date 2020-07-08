@@ -674,40 +674,77 @@ Your company has paid for a booth at a big Linux trade show. You plan a demo are
 
 ## Write a script that creates Virtual Machines
 
-```sh
+Follow these steps in the Cloud Shell on the right to write the script:
 
+Switch to your home folder in the Cloud Shell.
+
+```sh
+cd $HOME\clouddrive
 ```
 
-```sh
+Create a new text file named **ConferenceDailyReset.ps1**.
 
+```sh
+touch "./ConferenceDailyReset.ps1"
 ```
 
-```sh
+Open the integrated editor and select the **ConferenceDailyReset.ps1** file.
 
+```sh
+code "./ConferenceDailyReset.ps1"
 ```
 
-```sh
+Start by capturing the input parameter in a variable. Add the following line to your script:
 
+```sh
+param([string]$resourceGroup)
 ```
 
-```sh
+NOTE: Normally, you'd have to authenticate with Azure using your credentials using Connect-AzAccount and this could be done in the script. However, in the Cloud Shell environment you will already be authenticated so this is unnecessary.
 
+Prompt for a username and password for the VM's admin account and capture the result in a variable:
+
+```sh
+$adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
 ```
 
-```sh
+Create a loop that executes three times:
 
+```sh
+For ($i = 1; $i -le 3; $i++)
+{
+
+}
 ```
 
-```sh
+In the loop body, create a name for each VM and store it in a variable and output it to the console:
 
+```sh
+$vmName = "ConferenceDemo" + $i
+Write-Host "Creating VM: " $vmName
 ```
 
-```sh
+Next, create a VM using the `$vmName` variable:
 
+```sh
+New-AzVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Image UbuntuLTS
 ```
 
-```sh
+Save the file. You can use the "..." menu at the top right corner of the editor. There are also common accelerator keys for Save.
 
+The completed script should look like this:
+
+```sh
+param([string]$resourceGroup)
+
+$adminCredential = Get-Credential -Message "Enter a username and password for the VM administrator."
+
+For ($i = 1; $i -le 3; $i++)
+{
+    $vmName = "ConferenceDemo" + $i
+    Write-Host "Creating VM: " $vmName
+    New-AzVm -ResourceGroupName $resourceGroup -Name $vmName -Credential $adminCredential -Image UbuntuLTS
+}
 ```
 
 ## Execute the script
