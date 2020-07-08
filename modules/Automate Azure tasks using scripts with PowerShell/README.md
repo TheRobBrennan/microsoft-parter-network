@@ -768,3 +768,32 @@ You should see three VMs, each with a unique name.
 You wrote a script that automated the creation of three VMs in the resource group indicated by a script parameter. The script is short and simple but automates a process that would take a long time to complete manually with the portal.
 
 # Summary
+
+In this module, we wrote a script to automate the creation of multiple VMs. Even though the script was relatively short, you can see the potential power when you combine loops, variables, and functions from PowerShell with cmdlets from Azure PowerShell.
+
+Azure PowerShell is a good automation choice for admins with PowerShell experience. The combination of clean syntax and a powerful scripting language also makes it worth considering even if you are new to PowerShell. This level of automation for time-consuming and error-prone tasks should help you reduce administrative time and increase quality.
+
+When you are running in your own subscription, you can use the following PowerShell cmdlet to delete the resource group (and all related resources).
+
+```sh
+Remove-AzResourceGroup -Name MyResourceGroupName
+```
+
+## Check your knowledge
+
+1. True or false: The Azure portal, the Azure CLI, and Azure PowerShell offer significantly different services, so it is unlikely that all three will support the operation you need.
+
+[] True
+[ x ] False
+
+2. Suppose you are building a video-editing application that will offer online storage for user-generated video content. You will store the videos in Azure Blobs, so you need to create an Azure storage account to contain the blobs. Once the storage account is in place, it is unlikely you would remove and recreate it because this would delete all the user videos. Which tool is likely to offer the quickest and easiest way to create the storage account?
+
+[ x ] Azure portal
+[] Azure CLI
+[] Azure PowerShell
+
+3. What needs to be installed on your machine to let you execute Azure PowerShell cmdlets locally?
+
+[] The Azure cloud shell
+[ x ] The base PowerShell product and the Az module
+[] The Azure CLI and Azure PowerShell
