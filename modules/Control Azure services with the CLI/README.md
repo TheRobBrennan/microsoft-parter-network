@@ -257,21 +257,38 @@ az group list --query "[?name == '$RESOURCE_GROUP']"
     "type": "Microsoft.Resources/resourceGroups"
   }
 ]
-
 ```
+
+The query is formatted using **JMESPath**, which is a standard query language for JSON requests. You can learn more about this powerful filter language at [http://jmespath.org/](http://jmespath.org/). We also cover queries in more depth in the **Manage VMs with the Azure CLI** module.
 
 ## Steps to create a service plan
 
-```sh
+When you run Web Apps using the Azure App Service, you pay for the Azure compute resources that are used by the app, and the resource costs depend on the App Service plan associated with your Web Apps. Service plans determine the region used for the app datacenter, number of VMs used, and pricing tier.
 
+Create an App Service plan to run your app. The following command specifies the free pricing tier, but you can run `az appservice plan create --help` to see the other pricing tiers.
+
+NOTE: The **name of the app and plan must be unique in all of Azure**. The variables that you created earlier will assign random values as suffixes to make sure they're unique. However, if you receive an error when you are creating any resources, you should run the commands listed earlier to reset all of the variables with new random values.
+
+If you receive an error about the resource group, run the commands listed earlier with a different resource group value.
+
+```sh
+az appservice plan create --name $AZURE_APP_PLAN --resource-group $RESOURCE_GROUP --location $AZURE_REGION --sku FREE
 ```
 
-```sh
+This command can take several minutes to complete.
 
+Verify that the service plan was created successfully by listing all your plans in a table.
+
+```sh
+az appservice plan list --output table
 ```
 
-```sh
+You'll see a response like the following example.
 
+```sh
+Kind    Location    MaximumNumberOfWorkers    Name                NumberOfSites    ResourceGroup                               Status
+------  ----------  ------------------------  ------------------  ---------------  ------------------------------------------  --------
+app     Central US  3                         popupappplan-54321  0                Learn-12345678-1234-1234-1234-123456789abc  Ready
 ```
 
 ## Steps to create a web app
