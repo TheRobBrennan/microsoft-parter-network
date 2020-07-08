@@ -348,3 +348,24 @@ Hello World!
 This exercise demonstrated a typical pattern for an interactive Azure CLI session. You first used a standard command to create a new resource group. You then used a set of commands to deploy a resource (in this example, a web app) into this resource group. This set of commands could easily be combined into a shell script, and executed every time you need to create the same resource.
 
 # Summary
+
+The Azure CLI is a good choice for anyone new to Azure command line and scripting. Its simple syntax and cross-platform compatibility help reduce the risk of errors when performing regular and repetitive tasks. In this module, you used the Azure CLI commands to create a resource group, and deploy a web app by using a small set of commands. These commands could be combined into a shell script as part of automation solution.
+
+## Check your knowledge
+
+1. What do you need to install on your machine to let you execute Azure CLI commands locally?
+
+[] The Azure cloud shell
+[] The Azure CLI and Azure PowerShell
+[ x ] Only the Azure CLI
+
+2. True or false: The Azure CLI can be installed on Linux, macOS, and Windows, and the CLI commands you use are the same in all platforms.
+
+[ x ] True
+[] False
+
+3. Which parameter can you add to most CLI commands to get concise, formatted output?
+
+[] list
+[ x ] table
+[] group
