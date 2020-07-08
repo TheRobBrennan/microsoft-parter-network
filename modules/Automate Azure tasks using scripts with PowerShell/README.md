@@ -749,12 +749,22 @@ For ($i = 1; $i -le 3; $i++)
 
 ## Execute the script
 
-```sh
+Close the editor through the "..." context menu.
 
+Execute the script.
+
+```sh
+.\ConferenceDailyReset.ps1 learn-dde4d5aa-1327-4dbd-86fb-fb4d02537708
 ```
 
-```sh
+The script will take several minutes to complete. When it is finished, verify that it ran successfully by looking at the resources you now have in your resource group:
 
+```sh
+Get-AzResource -ResourceType Microsoft.Compute/virtualMachines
 ```
+
+You should see three VMs, each with a unique name.
+
+You wrote a script that automated the creation of three VMs in the resource group indicated by a script parameter. The script is short and simple but automates a process that would take a long time to complete manually with the portal.
 
 # Summary
