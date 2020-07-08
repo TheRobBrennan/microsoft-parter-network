@@ -135,6 +135,36 @@ In the next section, you will go through the detailed installation steps for som
 
 # Exercise - Install Azure PowerShell
 
+In this unit, you will install PowerShell on your local machine.
+
+NOTE: This exercise guides you through installing the PowerShell tools locally. The remainder of the module will use the Azure Cloud Shell so you can leverage the free subscription support in Microsoft Learn. You can consider this exercise as an optional activity and just review the instructions if you prefer.
+
+## MacOS
+
+On macOS, the first step is to install **PowerShell Core**. This is done using the Homebrew package manager.
+
+IMPORTANT: If the brew command is unavailable, you may need to install the Homebrew package manager. For details see the [Homebrew website](https://brew.sh/).
+
+Install Homebrew-Cask to obtain more packages, including the PowerShell Core package:
+
+```sh
+brew tap homebrew/cask
+```
+
+Install PowerShell Core:
+
+```sh
+brew cask install powershell
+```
+
+Start PowerShell Core to verify that it installed successfully:
+
+```sh
+pwsh
+```
+
+You have setup your local machine(s) to support PowerShell. Next, we will talk about additional commands you can add including the Azure module.
+
 # Create an Azure Resource using scripts in Azure PowerShell
 
 # Exercise - Create an Azure Resource using scripts in Azure PowerShell
