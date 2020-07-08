@@ -409,6 +409,82 @@ PowerShell's interactive mode is appropriate for one-off tasks. In our example, 
 
 # Exercise - Create an Azure Resource using scripts in Azure PowerShell
 
+Recall our original scenario - creating VMs to test our CRM software. When a new build is available, we want to spin up a new VM so we can test the full install experience from a clean image. Then when we are finished, we want to delete the VM.
+
+Let's try the commands you would use to create a VM.
+
+## Create a Linux VM with Azure PowerShell
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Delete a VM
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Create and save scripts in Azure PowerShell
 
 # Exercise - Create and save scripts in Azure PowerShell
