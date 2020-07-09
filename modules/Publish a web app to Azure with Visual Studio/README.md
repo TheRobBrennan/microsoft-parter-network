@@ -92,6 +92,26 @@ In the **Create a new ASP.NET Core web application** dialog box, you'll see a se
 
 ## Build and test on your local machine
 
+Now, let's build and test your application on your local machine before deploying to Azure.
+
+Run the app
+
+Press `F5` to build the project and run in debug mode.
+
+Press `Ctrl+F5` to build the project and run without attaching the debugger.
+
+**Launching the app in non-debug mode allows you to make code changes, save the file, refresh the browser, and see the code changes. Many developers prefer to use non-debug mode to quickly launch the app and view changes.**
+
+Visual Studio starts the IIS Express web browser and loads the app.
+
+![https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/media/3-webapp-launch-windows.png](https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/media/3-webapp-launch-windows.png)
+
+When Visual Studio creates a web project, a random port is used for the web server. In the preceding image, the port number is 44381. When you run the app, you'll likely see a different port number.
+
+IMPORTANT: You might notice the section at the top of the web page that provides a place for your privacy and cookie use policy. Select Accept to consent to tracking. This app doesn't track personal information. The template-generated code includes assets to help meet General Data Protection Regulation (GDPR).
+
+You've now created a web application from the sample template and it's running locally. The next step is to deploy it to Azure
+
 # Explore the Azure App Service
 
 # Exercise - Publish an ASP.NET app from Visual Studio
