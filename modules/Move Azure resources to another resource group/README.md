@@ -414,6 +414,25 @@ You've identified the development resources that are in the production resource 
 
 ## Create a resource group for development resources
 
+First you create the development resource group where you'll move your resources.
+
+Sign in to the Azure portal.
+
+Select **Resource groups** > **Add**.
+
+Enter "devgroup" in the resource group field.
+
+Select **Next : Tags**.
+
+Enter the following values:
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-set-tags-on-rg.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-set-tags-on-rg.png)
+
+- **NAME** - `environment`
+- **VALUE** - `development`
+
+Select **Review + create** > **Create**.
+
 ## Move development resources to the new group
 
 # Summary
