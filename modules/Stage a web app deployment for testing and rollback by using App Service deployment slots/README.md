@@ -180,13 +180,29 @@ cd app-service-web-dotnet-get-started
 
 ## Configure a git remote to deploy the app to production
 
-```sh
+To use git to deploy the source code to the web app's production slot, set up your app's git URL as a remote repository. Follow these steps:
 
+In the Azure portal, on the web app's **Overview** page, next to **Git clone url**, select the **Copy** button. Note that the URL contains your deployment username.
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-copy-git-clone-url.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-copy-git-clone-url.png)
+
+In Cloud Shell, run the following command to configure the URL as a git remote named "production". Replace `git-clone-url` with the URL from the previous step.
+
+```sh
+git remote add production <git-clone-url>
 ```
 
-```sh
+To deploy the web app to the production slot, enter the following command. When you're prompted for the password, enter your deployment password you created previously.
 
+```sh
+git push production
 ```
+
+When the deployment finishes, in the Azure portal, go to the web app's Overview page and then select Browse. Azure displays the web app:
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-web-app-production-slot.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-web-app-production-slot.png)
+
+Close the browser tab that displays the web app.
 
 ## Create a new staging slot
 
