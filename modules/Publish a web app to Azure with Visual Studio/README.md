@@ -279,4 +279,28 @@ Creating and publishing a website are just the first steps in creating a good we
 
 # Exercise - Publish an update to your site
 
+Your Alpine Ski House web app is up and running, but now you need to show it to your boss. You're going to have to update the site and publish those updates to Azure.
+
+## Update your web app
+
+### Replace the boilerplate code
+
+In the **Pages** folder, open the **Privacy.cshtml** file.
+
+At the bottom of the code, locate `<p>Use this page to detail your site's privacy policy.</p>`.
+
+Replace this boilerplate text with `<p>Welcome to the Alpine Ski House!</p>`.
+
+Save the file.
+
+Open the **Index.cshtml** file.
+
+Replace the content within the `<p>` tags to say **Alpine Ski House is the premier ski hill in Northeast!**
+
+Save the file.
+
+### Publish your updates
+
+### View your changes
+
 # Summary
