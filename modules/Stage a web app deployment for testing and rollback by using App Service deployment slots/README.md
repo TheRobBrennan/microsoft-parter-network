@@ -110,6 +110,70 @@ The new slot is effectively a separate web app with a different host name. That'
 
 # Exercise - Create deployment slots
 
+A deployment slot is an instance of a web app in which you can test a new app version before you deploy it. By swapping slots, you can deploy a new version of an app without any downtime.
+
+Suppose you've chosen to use Azure App Service deployment slots to streamline the deployment of new versions of your social media web app. Now you want to set up the web app in Azure and configure the deployment slots.
+
+Here you'll set up a web app and add a new deployment slot to it for staging. You'll also deploy different versions of the web app to those slots.
+
+## Create a web app
+
+## Configure git deployment
+
+## Configure the git client and clone the web app source code
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Configure a git remote to deploy the app to production
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Create a new staging slot
+
+## Set up git deployment for the staging slot
+
+## Set up git to deploy the app to the staging slot
+
+```sh
+
+```
+
+## Modify the app source code and deploy the app to the staging slot
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Browse the staging slot
+
 # Deploy a web app by swapping deployment slots
 
 # Exercise - Deploy a web app by using deployment slots
