@@ -417,4 +417,46 @@ Use resource locks to protect those key pieces of Azure that could have a large 
 
 # Check your Knowledge
 
+## Knowledge check
+
+1. Tags can be applied to any type of resource on Azure
+
+[] True
+[ x ] False
+
+> Not all resources support tags, so you will want to confirm that your resource type supports them.
+
+2. Tags applied at a resource group level are propagated to resources within the resource group.
+
+[] True
+[x ] False
+
+> Tags are not inherited. Tags need to be applied to every supported resource that you want tagged.
+
+3. Which of the following features does not apply to resource groups?
+
+[] Resources can be in only one resource group.
+[] Resources can be moved from one resource group to another resource group.
+[ x ] Resource groups can be nested.
+[] Role-based access control can be applied to the resource group.
+
+4. Which of the following approaches might be a good usage of tags?
+
+[] Using tags to associate a cost center with resources for internal chargeback
+[] Using tags in conjunction with Azure Automation to schedule maintenance windows
+[] Using tags to store environment and department association
+[ x ] All of the above are good ways to use tags
+
+5. Which of the following approaches would be the most efficient way to ensure a naming convention was followed across your subscription?
+
+[] Send out an email with the details of your naming conventions and hope it is followed
+[ x ] Create a policy with your naming requirements and assign it to the scope of your subscription
+[] Give all other users except for yourself read-only access to the subscription. Have all requests to create resources sent to you so you can review the names being assigned to resources, and then create them.
+
+6. Which of the following items would be good use of a resource lock?
+
+[ x ] An ExpressRoute circuit with connectivity back to your on-premises network
+[] A non-production virtual machine used to test occasional application builds
+[] A storage account used to temporarily store images processed in a development environment
+
 # Summary
