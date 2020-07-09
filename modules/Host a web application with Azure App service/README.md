@@ -226,4 +226,10 @@ There are a few options that you can use to manually push your code to Azure:
 
 # Exercise - Deploy your code to App Service
 
+In this unit, you'll deploy your web application to App Service.
+
+## Deploy with az webapp up
+
+## Verify the deployment
+
 # Summary
