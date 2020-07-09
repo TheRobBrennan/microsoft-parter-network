@@ -142,24 +142,60 @@ In this unit, you will use developer tools to create the code for a starter web 
 
 ## Create a new web project
 
-```sh
+To create a starter Node.js web application, we'll use Node Package Manager (`npm`) along with some basic JavaScript code to run the actual web page processing.
 
+Run these commands in the Cloud Shell now to create a new `package.json` that will describe our Node.js application.
+
+```sh
+cd ~
+mkdir helloworld
+cd helloworld
+npm init -y
 ```
 
-```sh
+This will create a new `package.json` file in the current folder - you should see it in the current folder if you type `ls` in the terminal window. We will need a JavaScript file to run our website logic - since this is just a basic example, we will only need one file - `index.js`. Use the following command in the terminal to create the file:
 
+```sh
+touch index.js
 ```
 
-```sh
+Now we have to make a few edits to both of our files. Type the following command into the terminal to open an interactive editor.
 
+```sh
+code .
 ```
 
-```sh
+Select the `package.json` file and make the following edits to the scripts section to use Node.js to launch the web app. You can also remove the `main` entry.
 
+```json
+{
+  "name": "helloworld",
+  ...
+  "scripts": {
+    "start": "node index.js"
+  },
+  ...
+}
 ```
 
-```sh
+Save the file.
 
+Switch to the `index.js` file and add the following contents to it. This is a simple node program to always respond with "Hello World!" when any GET request is made to the server.
+
+```sh
+var http = require('http');
+
+var server = http.createServer(function(request, response) {
+
+    response.writeHead(200, { "Content-Type": "text/html" });
+    response.end("<html><body><h1>Hello World!</h1></body></html>");
+
+});
+
+var port = process.env.PORT || 1337;
+server.listen(port);
+
+console.log("Server running at http://localhost:%d", port);
 ```
 
 # Deploy code to App Service
