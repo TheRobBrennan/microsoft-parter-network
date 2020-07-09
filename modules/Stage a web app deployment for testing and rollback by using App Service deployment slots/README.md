@@ -281,6 +281,12 @@ git push staging
 
 ## Browse the staging slot
 
+Now you can view the new version of the web app by browsing to the staging deployment slot's URL.
+
+In the Azure portal, go to the **Overview** page for the staging slot. Near the top of the page, select the **Browse** button. The new version of the web app appears in a browser tab:
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-web-app-staging-slot.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-web-app-staging-slot.png)
+
 # Deploy a web app by swapping deployment slots
 
 # Exercise - Deploy a web app by using deployment slots
