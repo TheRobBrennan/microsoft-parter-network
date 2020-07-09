@@ -255,3 +255,33 @@ Let's browse to our application to see it live. The last line of text output fro
 Once it loads, you'll see the greeting message from your app — you've deployed successfully!
 
 # Summary
+
+You've successfully created and deployed a web application to Azure App Service.
+
+App Service simplifies managing and controlling your web app in comparison to traditional hosting options. App Service can help you reduce the time and effort spent running and managing your web app, and provide advanced cloud features such as auto scaling and Git integration.
+
+## Learn More
+
+Please see [https://docs.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/7-summary](https://docs.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/7-summary) for these additional resource links:
+
+- App Service on Azure Stack overview
+- Deploy to Azure App Service using Visual Studio Code
+- Configure deployment sources for App Services on Azure Stack
+- Set up staging environments in Azure App Service
+- Deployment FAQs for Web Apps in Azure
+
+## Check your knowledge
+
+1. True or false: Azure App service can automatically scale your web application to meet traffic demand?
+
+[x ] True
+[] False
+
+> Azure App service has built-in auto scale support and will increase or decrease the resources allocated to run your app as needed, depending on the demand.
+
+2. Which of the following is not a valid automated deployment source?
+
+[] GitHub
+[] Azure DevOps
+[ x ] SharePoint
+[] Dropbox
