@@ -149,16 +149,26 @@ TIP: If you have resources that are not location-sensitive, you can save a lot o
 
 ## Share and save your estimate
 
+We now have an estimate for our solution. We can save this estimate, so we can come back to it later and adjust it if necessary. We can also export it to Excel for further analysis or share the estimate via a URL.
+
+To export the estimate, select **Export** at the bottom of the estimate. Exporting will download your estimate in Excel (**.xlsx**) format and will include all the services you added to your estimate.
+
+We can either share the Excel spreadsheet, or we can click on the `Share` button in the calculator. Sharing will give you a URL that you can use to share this estimate. Anyone with this link will be able to access it, making it easy to share with your team.
+
+If you are logged in with your Azure account, you can save the estimate, so you can come back to it later. Go ahead and click the **Save** button. If you are signed in, you should see a notification that your estimate was saved. If you aren't signed in, you'll see a message to sign in to save your estimate. After you've saved the estimate, scroll back up to the top of the page and select the Saved Estimates tab. You will see your estimate there. You can then select it to pull it back up, or delete it if you no longer need it.
+
+We have arrived at a cost estimate for a set of Azure services without spending any money. We didn't create anything, and we have a fully sharable estimate that we can do further analysis or modifications on in the future. You can use this estimate not only to create estimates for systems where you know the specific services you plan to use but also to compare how different services might impact your overall costs. An example is Microsoft SQL Server on a VM instead of an Azure SQL Database.
+
 ## Check your knowledge
 
 1. Which tab of the Azure pricing calculator will you use to put together your estimate?
 
 [] Estimate
-[] Products
+[ x ] Products
 
 2. True or false: You can share your estimate through an Excel spreadsheet or through a URL.
 
-[] True
+[ x ] True
 [] False
 
 # Exercise - Predict and optimize with Cost Management and Azure Advisor
