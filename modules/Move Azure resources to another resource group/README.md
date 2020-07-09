@@ -137,6 +137,20 @@ Repeat these steps to assign the following tag to the remaining resources.
 
 ## Filter and identify your development resources
 
+Now you'll filter your resources and find your development tagged resources.
+
+At the top of the Azure portal, search on **tags**.
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-search-tags.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-search-tags.png)
+
+Select **Tags**.
+
+Select the _environment:development_ tag.
+
+All your tagged development resources are listed in one place.
+
+Keep your portal instance open to use later.
+
 # Assess resources that can move
 
 # Validate resources in Azure
