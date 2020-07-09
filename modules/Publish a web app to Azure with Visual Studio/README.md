@@ -173,6 +173,12 @@ You have an ASP.NET Core web application running locally. In this exercise, you'
 
 ## Publish your ASP.NET Core web app to Azure
 
+In Solution Explorer, right-click on the **AlpineSkiHouse** project and select **Publish**.
+
+In the dialog box that appears, choose **Azure** as your publish target, and then select the **Next** button to continue.
+
+Select **Azure App Service (Windows)**, and then select the Next button to continue.
+
 ### Configure your new Azure App Service
 
 # Explore your Visual Studio App Project
