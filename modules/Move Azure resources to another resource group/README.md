@@ -322,6 +322,92 @@ If your move validates as successful, you'll get a 204 status code. Otherwise, y
 
 # Identify steps to move resources between Azure resource groups
 
+In this unit, you'll learn what steps you might need to take and what tools you can use to move resources between resource groups.
+
+## Understand resource moves
+
+When you start a move operation, the resource group holding your resources and the new destination resource group are locked. You can't do write or delete operations on the resource groups until the move operation ends. Your resources aren't affected, but you can't add, delete, or update any resources in these resource groups.
+
+**Your moved resources don't change location.** For example, if you have a storage account in the East US region, and you move it to another resource group, it keeps its East US region location.
+
+## Move resources between subscriptions
+
+Depending on the resource type, you can move your resources between subscriptions, or between resource groups within the same subscription.
+
+For our scenario, we just need to move a pair of storage accounts to a different resource group within the same subscription. If, for billing reasons, we needed to move something like an Azure web app and all its dependent resources under a different subscription, that might include more steps. As mentioned in unit 2, you'd need to move all dependent resources into one resource group. Then, you can move those resources into a new resource group under a different subscription. The following diagram shows the steps you might need to take. This example includes a resource with one dependent resource in a separate resource group.
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/6-cross-subscription-move-scenario.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/6-cross-subscription-move-scenario.png)
+
+- Move the dependent resources into one resource group with the resource.
+- Move the resource and dependent resources together from the source subscription to the target subscription.
+- Optionally, redistribute the dependent resources to different resource groups within the target subscription.
+
+## How to move resources
+
+After you've identified the resources you want to move and verified they can be moved, you create a resource group and move the resources into that resource group.
+
+You can use the Azure portal, the Azure CLI, PowerShell, or Azure REST API to move your resources. In the next unit, you'll use the Azure portal to move storage accounts to a new resource group. So, in this unit, let's see what commands you'd use to move resources with Azure CLI or PowerShell.
+
+### Move resources by using the Azure CLI
+
+The following commands show you how to move a resource by using the Azure CLI.
+
+Create a resource group.
+
+```sh
+az group create --name <destination resource group name> --location <location name>
+```
+
+Get the resource.
+
+```sh
+yourResource=$(az resource show --resource-group <resource group name> --name <resource name> --resource-type <resource type> --query id --output tsv)
+```
+
+Move the resource to another resource group by using the resource ID.
+
+```sh
+az resource move --destination-group <destination resource group name> --ids $yourResource
+```
+
+Return all the resources in your resource group to verify your resource moved.
+
+```sh
+az group show --name <destination resource group name>
+```
+
+Update the resource IDs in any tools and scripts that reference your resources.
+
+### Move resources by using Azure PowerShell
+
+The following commands show you how to move a resource by using Azure PowerShell.
+
+Create a resource group.
+
+```sh
+New-AzResourceGroup -Name <destination resource group name> -Location <location name>
+```
+
+Get the resource.
+
+```sh
+$yourResource = Get-AzResource -ResourceGroupName <resource group name> -ResourceName <resource name>
+```
+
+Move the resource to another resource group by using the resource ID.
+
+```sh
+Move-AzResource -DestinationResourceGroupName <destination resource group name> -ResourceId $yourResource.ResourceId
+```
+
+Return all the resources in your resource group to verify your resource moved.
+
+```sh
+Get-AzResource -ResourceGroupName <destination resource group name> | ft
+```
+
+Update the resource IDs in any tools and scripts that reference your resources.
+
 # Exercise - Move and verify resources between Azure resource groups
 
 # Summary
