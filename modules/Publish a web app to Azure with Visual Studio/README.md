@@ -309,4 +309,8 @@ Select the **Publish** button to deploy the latest changes.
 
 ### View your changes
 
+Once you've published your changes, Visual Studio will open the site in your browser. You should now see your new messages on the home and privacy pages.
+
+Congratulations, you have successfully updated your web app from within Visual Studio 2019.
+
 # Summary
