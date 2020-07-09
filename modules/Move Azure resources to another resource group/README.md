@@ -109,6 +109,32 @@ You now have a production resource group with two additional storage accounts th
 
 ## Apply tags to your resources
 
+Now, use the Azure portal to apply tags to resources so you can identify and locate them later.
+
+In the Azure portal, on the **Home** page, select **Resource groups**.
+
+Select the **production-learn-rg** resource group.
+
+Select the check box next to the **Name** field for both storage accounts you created.
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-select-dev-resources.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-select-dev-resources.png)
+
+Select **Assign tags**.
+
+Enter the following values:
+
+- NAME - environment
+- VALUE - development
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-assign-tags.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/3-assign-tags.png)
+
+Select **Save**. Your resources have now been tagged with "development".
+
+Repeat these steps to assign the following tag to the remaining resources.
+
+- NAME - environment
+- VALUE - production
+
 ## Filter and identify your development resources
 
 # Assess resources that can move
