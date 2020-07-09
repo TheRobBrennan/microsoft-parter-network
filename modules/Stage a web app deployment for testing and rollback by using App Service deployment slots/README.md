@@ -407,6 +407,16 @@ Close the browser tab.
 
 ## Configure auto swap for the staging slot
 
+Suppose that now that you're using deployment slots, you want to enable continuous deployment. You'll do this by using the auto swap feature for your web app. In a system that uses auto swap, when you deploy new code to the staging slot, Azure automatically warms it up and deploys it to production by swapping the staging and production slots.
+
+To configure auto swap, follow these steps:
+
+- Go to the **Configuration** page of the staging slot's web app and navigate to the **General settings** tab.
+- Set **Auto swap enabled** to **On**.
+- In the **Auto swap deployment slot** list, select **production**, then select **Save**.
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-configure-auto-swap.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-configure-auto-swap.png)
+
 ## Deploy new code and auto swap it into production
 
 ```sh
