@@ -144,6 +144,15 @@ Select **Review and create**, then select **Create** on the resulting page. Wait
 
 ## Configure git deployment
 
+Use any of the usual deployment tools for your web app and its deployment slots. In this exercise, you'll use a local git repository for deployment. Set up the web app to use git by following these steps:
+
+- On the Azure portal menu or from the **Home** page, select **All resources** and then select the web app you created.
+- On the **Overview** page, under **Deployment**, select **Deployment Center**.
+- Select **Local Git** > **Continue**.
+- Select **App Service build service** > **Continue** > **Finish**.
+- On the resulting **Deployment Center** page, select **FTP/Credentials** at the top, and then select the **User Credentials** tab.
+- Enter a new username and password of your choice and select **Save Credentials**. Make a note of the username and password for later.
+
 ## Configure the git client and clone the web app source code
 
 ```sh
