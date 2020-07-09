@@ -419,21 +419,42 @@ To configure auto swap, follow these steps:
 
 ## Deploy new code and auto swap it into production
 
-```sh
+Now you'll modify the code to create version 3 of the web app. When you deploy it to the staging slot, you'll see auto swap in action. Follow these steps:
 
-```
-
-```sh
-
-```
+On the right side of the Cloud Shell window, restart the editor if it's not already running.
 
 ```sh
-
+cd ~/demoapp/app-service-web-dotnet-get-started/
+code .
 ```
+
+In the code editor, in the **File list** on the left, expand **aspnet-get-started** > **Views** > **Home**. Then select **Index.cshtml**.
+
+Locate the following code:
+
+```html
+<h1>Web App Version 2</h1>
+```
+
+Replace that code with this code:
+
+```html
+<h1>Web App Version 3</h1>
+```
+
+To save your changes, press CTRL+S.
+
+In Cloud Shell, enter the following commands. Enter your deployment password when you're prompted.
 
 ```sh
-
+git add .
+git commit -m "Third version of web app."
+git push staging
 ```
+
+Wait for the deployment to finish. Near the end of the text output, you'll see a message that indicates that the deployment has requested an auto swap to the production slot.
+
+In the Azure portal, navigate to the **Overview** page for the production slot's web app and select **Browse**. The third version of the web app appears on a new browser tab. If the old version is shown, you may need to wait briefly and then refresh the page - the swap operation is atomic and occurs instantly, but it takes App Service a few moments to prepare the swap operation before it's executed.
 
 ## Roll back the new version
 
