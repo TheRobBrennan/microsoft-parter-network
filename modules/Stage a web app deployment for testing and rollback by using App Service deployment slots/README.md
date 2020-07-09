@@ -245,20 +245,38 @@ git remote add staging <git-clone-url>
 
 ## Modify the app source code and deploy the app to the staging slot
 
-```sh
+Next, make a small change to the web app and then use git to deploy the new version to the staging slot:
 
+In Cloud Shell, enter the following command:
+
+```sh
+code .
 ```
 
-```sh
+In the list of **Files**, expand **aspnet-get-started** > **Views** > **Home**.
 
+Select **Index.cshtml**.
+
+Locate the following code:
+
+```html
+<h1>ASP.NET</h1>
 ```
 
-```sh
+Replace that code with this code:
 
+```html
+<h1>Web App Version 2</h1>
 ```
 
-```sh
+To save your changes, press CTRL+S.
 
+In the Cloud Shell, enter the following commands to commit the new version of the app to git and deploy it to the staging slot. Enter your deployment password when you're prompted.
+
+```sh
+git add .
+git commit -m "New version of web app."
+git push staging
 ```
 
 ## Browse the staging slot
