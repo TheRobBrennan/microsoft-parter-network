@@ -177,6 +177,35 @@ We learned how to estimate costs before you deploy services on Azure, but what i
 
 ## What is Azure Advisor?
 
+**Azure Advisor** is a free service built into Azure that **provides recommendations on high availability, security, performance, operational excellence, and cost**. Advisor analyzes your deployed services and looks for ways to improve your environment across each of these areas. We'll focus on the cost recommendations, but you'll want to take some time to review the other recommendations as well.
+
+Advisor makes cost recommendations in the following areas:
+
+- **Reduce costs by eliminating unprovisioned Azure ExpressRoute circuits.** This recommendation identifies ExpressRoute circuits that have been in the provider status of _Not Provisioned_ for more than one month. Advisor recommends deleting the circuit if you aren't planning to provision the circuit with your connectivity provider.
+- **Buy reserved instances to save money over pay-as-you-go.** Advisor will review your virtual machine usage over the last 30 days and determine if you could save money in the future by purchasing reserved instances. Advisor will show you the regions and sizes where you potentially have the most savings and will show you the estimated savings you might achieve from purchasing reserved instances.
+- **Right-size or shutdown underutilized virtual machines.** This analysis monitors your virtual machine usage for 14 days and then identifies underutilized virtual machines. Virtual machines whose average CPU utilization is 5 percent or less and network usage is 7 MB or less for four or more days are considered underutilized virtual machines. The average CPU utilization threshold is adjustable up to 20 percent. By identifying these virtual machines, you can decide to resize them to a smaller instance type, reducing your costs.
+
+Let's take a look at where you can find Azure Advisor in the portal.
+
+- Sign in to the Azure portal using your Microsoft account.
+- Expand the left-hand navigation from the top-left menu and click on **All Services**.
+- Click on the **Management + governance** category and find **Advisor**. You can also type `Advisor` in the services filter box to filter on just that name.
+- Click on Advisor, and you'll be taken to the Advisor recommendations dashboard where you can see all the recommendations for your subscription. You'll see a box for each category of recommendations.
+
+NOTE: You might not have any recommendations on cost in Advisor. Assessments may not have completed yet or Advisor may not have recommendations.
+
+![https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-recommendations.png](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-recommendations.png)
+
+Clicking on the **Cost** box will take you to detailed recommendations where you can see the recommendations that Advisor has.
+
+![https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-cost-recommendations.png](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-cost-recommendations.png)
+
+Clicking on any recommendation will take you to the details for that specific recommendation. Then you'll be able to take a specific action, such as resizing virtual machines to reduce spending.
+
+![https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-resize-vm.png](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-advisor-resize-vm.png)
+
+These recommendations are all places where you might be inefficiently spending money. They're a great place to start and continue to revisit when looking for places to reduce costs. In our example, there's an opportunity for us to save around \$700 per month if we take these recommendations. This savings adds up, so be sure to review these recommendations periodically across all areas.
+
 ## Azure Cost Management
 
 ## Check your knowledge
