@@ -458,4 +458,12 @@ In the Azure portal, navigate to the **Overview** page for the production slot's
 
 ## Roll back the new version
 
+Suppose that deploying version 3 of your app to production revealed an unexpected problem. To quickly resolve it, you can roll back to the previous version of the site by swapping the slots again.
+
+Go to the **Deployment slots** page of the production slot's web app.
+
+Swap the staging and production slots.
+
+When the swap finishes, on the **Overview** page, select the **Browse** button to view the app one last time. You'll see that version 2 has been redeployed to production.
+
 # Summary
