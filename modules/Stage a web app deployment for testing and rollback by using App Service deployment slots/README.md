@@ -374,6 +374,19 @@ Here you'll learn how to swap manually and automatically.
 
 ## Configure a slot setting
 
+Before you deploy version 2 of the web app, configure a slot setting. The settings you'll configure here won't affect your demo app. The purpose of this exercise is just to see how the configurations work when you swap slots.
+
+To configure slot settings:
+
+- From the **All resources** view in the Azure portal, navigate to the **Overview** page of the production slot of the web app.
+- Navigate to the **Configuration** page for the deployment slot.
+- Select **New application setting**. Add a new setting with the name **ENVIRONMENT_NAME** and a value of **production**. Check the deployment slot setting box to make this a slot setting.
+- Add another setting called **APP_VERSION**, and enter the value **1**. Don't make this a slot setting.
+- Near the top of the page, select the **Save** button.
+- Repeat the preceding steps on the **Staging** slot, but use the following values:
+  - ENVIRONMENT_NAME - staging - Deployment slot setting Yes
+  - APP_VERSION - 2 - Deployment slot setting No
+
 ## Swap the slots
 
 ## Configure auto swap for the staging slot
