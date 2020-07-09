@@ -94,6 +94,28 @@ NOTE: Billing zones aren't the same as an _Availability Zone_. In Azure, the ter
 
 # Exercise - Estimate costs with the Azure pricing calculator
 
+Imagine that you've been asked to build a system on Azure, and you've been asked for an estimate of what it might cost to run over the next 12 months. You already know that Azure pricing is fully transparent and that you're billed monthly for only the services that you use. How would you get that estimate without deploying and running those services or without manually pricing out each service from the Azure service pricing pages?
+
+## Introducing the Azure pricing calculator
+
+### Try out the Azure pricing calculator
+
+## Estimate a solution
+
+## Share and save your estimate
+
+## Check your knowledge
+
+1. Which tab of the Azure pricing calculator will you use to put together your estimate?
+
+[] Estimate
+[] Products
+
+2. True or false: You can share your estimate through an Excel spreadsheet or through a URL.
+
+[] True
+[] False
+
 # Exercise - Predict and optimize with Cost Management and Azure Advisor
 
 # Exercise - Estimate the Total Cost of Ownership with the Azure TCO calculator
