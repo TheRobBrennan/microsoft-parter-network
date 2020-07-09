@@ -459,3 +459,44 @@ Because database products like SQL Server and Oracle are licensed per CPU, custo
 [] False
 
 # Summary
+
+We've talked through the Azure pricing calculator and how you can use it to estimate your costs on Azure and compare pricing between different service offerings. We looked at savings options, how to export pricing estimates, and at tools that Azure has available to help you keep your cloud spend in check.
+
+- Azure Advisor provides recommendations in many areas, including cost.
+- Azure Cost Management gives you reporting and billing information, so you can gain insights into where you're spending your money.
+
+We then explored best practices to help you save money on both infrastructure and licensing.
+
+## Learn more
+
+To learn more about getting more insights into your Azure costs, visit the following articles:
+
+- Azure Architecture Center
+- Cost optimization pillar of the Azure Well-Architected Framework
+- Setting up spending limits in Azure
+- Azure budgets
+- Explore flexible purchasing options for Azure
+- Understand terms on your Microsoft Azure invoice
+- Bandwidth Pricing Details
+
+## Check your knowledge
+
+1. Which one of the following systems is used to determine Azure costs for each billing period?
+
+[] The Azure website
+[] Number of created virtual machines
+[] The Azure pricing calculator
+[ x ] Usage meters
+
+2. Which of the following factors affects costs?
+
+[] Global infrastructure
+[ x ] Location
+[] Availability zone
+
+3. Complete the following sentence. As an Azure customer, Azure Reservations offer discounted prices if you \***\*\_\*\***
+
+[ x ] Make upfront commitments on compute capacity
+[] Provision many resources
+[] Have a free account
+[] Set Spending Limits
