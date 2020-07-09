@@ -70,7 +70,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 1 - [Align requirements with cloud types and service models in Azure](https://docs.microsoft.com/en-us/learn/modules/align-requirements-in-azure/) (~35 mins)
   - [ x ] Module 2 - [Control Azure services with the CLI](https://docs.microsoft.com/en-us/learn/modules/control-azure-services-with-cli/) (~34 mins)
   - [ x ] Module 3 - [Automate Azure tasks using scripts with PowerShell](https://docs.microsoft.com/en-us/learn/modules/automate-azure-tasks-with-powershell/) (~1 hr 11 mins)
-  - [] Module 4 - [Predict costs and optimize spending for Azure](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/) (~1 hr 14 mins)
+  - [ x ] Module 4 - [Predict costs and optimize spending for Azure](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/) (~1 hr 14 mins)
   - [] Module 5 - [Control and organize Azure resources with Azure Resource Manager](https://docs.microsoft.com/en-us/learn/modules/control-and-organize-with-azure-resource-manager/) (~46 mins)
   - [] Module 6 - [Move Azure resources to another resource group](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/) (~42 mins)
 
