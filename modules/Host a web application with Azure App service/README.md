@@ -91,6 +91,10 @@ You can use any of the available Azure management tools to create an App Service
 
 # Exercise - Create a web app in the Azure portal
 
+In this unit, you will use the Azure portal to create a web app.
+
+## Create a web app
+
 # Exercise - Write code to implement a web application
 
 # Deploy code to App Service
