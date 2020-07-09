@@ -155,16 +155,27 @@ Use any of the usual deployment tools for your web app and its deployment slots.
 
 ## Configure the git client and clone the web app source code
 
-```sh
+Now you'll set up the git client in Cloud Shell and use it to clone a sample web app. Follow these steps:
 
+In the Azure portal, open the Cloud Shell. Enter the following commands to set up your git username and email address. These commands aren't associated with any account or sign-up, and you can use whatever values you like.
+
+```sh
+git config --global user.name "<your name>"
+git config --global user.email "<your email address>"
 ```
 
-```sh
+To create a folder for the source code, enter the following commands:
 
+```sh
+mkdir demoapp
+cd demoapp
 ```
 
-```sh
+To clone the source for the web app, enter the following commands:
 
+```sh
+git clone https://github.com/Azure-Samples/app-service-web-dotnet-get-started.git
+cd app-service-web-dotnet-get-started
 ```
 
 ## Configure a git remote to deploy the app to production
