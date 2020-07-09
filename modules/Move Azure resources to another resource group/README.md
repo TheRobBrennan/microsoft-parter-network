@@ -84,6 +84,29 @@ You need an Azure subscription to complete these exercises. If you don't have an
 
 ## Create resources
 
+Create a resource group to act as the production resource group.
+
+- Sign in to the Azure portal.
+- Select **Resource groups** > **Add**.
+- Enter **production-learn-rg** as the name for the resource group.
+- Select **Review + create** > **Create**.
+- Use the following quickstart template to create a virtual machine (VM) in your production resource group: [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/).
+- Select **Deploy to Azure** on the template page.
+- For **Resource group**, select **production-learn-rg**.
+- Enter a username, password, and **DNS Label Prefix**.
+- Select **Purchase**.
+
+Now you need to create some additional resources that you'll eventually move to a development resource group.
+
+- Select **Create a resource** on the left side of the Azure portal.
+- Search for **Storage account**, and select **Create**.
+- Select the resource group **production-learn-rg**.
+- Enter a unique storage account name that starts with the prefix **dev**.
+- Select **Review + create** > **Create**.
+- Create another storage account by repeating steps 1 to 5 again.
+
+You now have a production resource group with two additional storage accounts that you'll move to a development resource group.
+
 ## Apply tags to your resources
 
 ## Filter and identify your development resources
