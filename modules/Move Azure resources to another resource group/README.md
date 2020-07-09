@@ -410,4 +410,10 @@ Update the resource IDs in any tools and scripts that reference your resources.
 
 # Exercise - Move and verify resources between Azure resource groups
 
+You've identified the development resources that are in the production resource group and you've checked that they'll move successfully. Now, you want to move your development resources from the production resource group into the dedicated development resource group. You can use the Azure portal to do so.
+
+## Create a resource group for development resources
+
+## Move development resources to the new group
+
 # Summary
