@@ -44,4 +44,18 @@ Visual Studio Code supports Windows, Linux, and macOS. To install Visual Studio 
 
 # Exercise - Set up your development environment
 
+To use Visual Studio Code for Azure development, you'll need to install Visual Studio Code locally and one or more Azure extensions. In this exercise, we'll add the **Azure App Service** extension.
+
+## Install Visual Studio Code
+
+To install Visual Studio Code, download VS Code from [https://code.visualstudio.com/](https://code.visualstudio.com/) and follow the installation steps.
+
+## Install Azure App Service extension
+
+Search for the Azure App Service extension and install it.
+
+For more details on this extension, please see [https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azureappservice)
+
+Visual Studio Code will install the extension. You're now ready to connect to your Azure subscription and deploy a web, mobile, or API app to an Azure App Service.
+
 # Summary
