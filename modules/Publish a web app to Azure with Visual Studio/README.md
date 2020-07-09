@@ -66,6 +66,12 @@ To complete the exercises in this module, you'll need the ASP.NET and web develo
 
 # Exercise - Create a new ASP.NET Core app
 
+In this unit, you'll create, build, and run a new ASP.NET Core web application on your local machine. You'll need Visual Studio 2019 installed with the ASP.NET and web development and Azure development workloads installed.
+
+## Create an ASP.NET Core project
+
+## Build and test on your local machine
+
 # Explore the Azure App Service
 
 # Exercise - Publish an ASP.NET app from Visual Studio
