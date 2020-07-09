@@ -59,3 +59,5 @@ For more details on this extension, please see [https://marketplace.visualstudio
 Visual Studio Code will install the extension. You're now ready to connect to your Azure subscription and deploy a web, mobile, or API app to an Azure App Service.
 
 # Summary
+
+In this module, you prepared your development environment for creating apps in Azure. You installed the appropriate IDE for your operating system and development requirements, and you added Azure integration to streamline the publishing of content directly to Azure services.
