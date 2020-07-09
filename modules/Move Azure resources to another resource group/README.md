@@ -435,4 +435,36 @@ Select **Review + create** > **Create**.
 
 ## Move development resources to the new group
 
+Now that you've created a devgroup resource group, you can move your development resources into it.
+
+At the top of the Azure portal, search on **tags**.
+
+Select the **environment:development** tag.
+
+Select the storage account that you want to move.
+
+Select **Move** > **Move to another resource group**.
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-move-resource.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-move-resource.png)
+
+Under **Resource group**, select **devgroup**.
+
+Select the reminder for you to update the resource IDs in your tools and scripts.
+
+Select **OK**.
+
+The move might take a few minutes. Wait for the notification that your resource has been moved. The notification will appear in the top-right hand of the portal.
+
+Repeat this process again to move the other storage account.
+
+To confirm that your move operations have succeeded:
+
+On the Azure portal home page, select **Resource groups** > **devgroup**.
+
+You'll see that the development resources have been moved to the devgroup resource group.
+
+![https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-resources-moved.png](https://docs.microsoft.com/en-us/learn/modules/move-azure-resources-another-resource-group/media/7-exercise-resources-moved.png)
+
+In a real environment, you'd now update the resource IDs in any tools and scripts that reference your resources.
+
 # Summary
