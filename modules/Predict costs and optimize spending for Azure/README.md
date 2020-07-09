@@ -208,17 +208,23 @@ These recommendations are all places where you might be inefficiently spending m
 
 ## Azure Cost Management
 
+Azure Cost Management is another free, built-in Azure tool that can be used to gain greater insights into where your cloud money is going. You can see historical breakdowns of what services you are spending your money on and how it is tracking against budgets that you have set. You can set budgets, schedule reports, and analyze your cost areas.
+
+![https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-cost-management.png](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/3-cost-management.png)
+
+As you can see, Azure offers tools at no additional cost that you can use to track and predict your cloud spend and identify where your environment may be inefficient from a cost perspective. You'll want to make sure you make it a regular practice to review the reports and recommendations that these tools make available, so you can unlock savings across your cloud footprint.
+
 ## Check your knowledge
 
 1. Azure Advisor provides recommendations for \***\*\_\*\***.
 
 [] Costs only
-[] High availability, security, performance, operational excellence, and cost
+[ x ] High availability, security, performance, operational excellence, and cost
 [] High availability, performance, and cost
 
 2. Azure Cost Management allows you to \***\*\_\*\***.
 
-[] See historical breakdowns of what services you are spending your money on.
+[ x ] See historical breakdowns of what services you are spending your money on.
 [] See estimates of what your services might cost if you make a change.
 
 # Exercise - Estimate the Total Cost of Ownership with the Azure TCO calculator
