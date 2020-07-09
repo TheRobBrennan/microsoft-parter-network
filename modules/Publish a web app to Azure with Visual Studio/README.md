@@ -179,7 +179,34 @@ In the dialog box that appears, choose **Azure** as your publish target, and the
 
 Select **Azure App Service (Windows)**, and then select the Next button to continue.
 
+Near the bottom edge of the dialog, select the **Create a new Azure App Service** link to open the **App Service (Windows)** dialog.
+
 ### Configure your new Azure App Service
+
+If you're not already signed in, sign into Visual Studio with the account you're using with Microsoft Learn.
+
+Enter the required information about your App Service plan.
+
+- Name: the name of your application. The name determines the URL of the published application, which will be https://<AppName>.azurewebsites.net. It must be a unique value. You may have to try out some different names to find one that is unique.
+- Subscription: The Azure subscription you wish to deploy the app to. Choose **Concierge Subscription**, which we provide to you through the sandbox.
+- Resource Group: Select the existing learn-533fc26e-806d-428e-8593-44d20f20e330 resource group.
+- Hosting Plan: The hosting plan specifies the location, size, and features of the web server farm that hosts your app. For this exercise, create a new hosting plan.
+
+Click the New button next to the hosting plan. In the Configure Hosting Plan window that appears, change the **Size** to Shared and click OK.
+
+Click the **Create button** to create your App Service resource in Azure. This action will take several seconds to complete.
+
+After several seconds, the App Service (Windows) dialog window will disappear. Your new App Service displays in the list of App Service resources on the Publish dialog window. Press the Finish button to finish the creation of the publishing profile. The Publish dialog disappears.
+
+Your new publishing profile appears in the dropdown near the top of the property page. Click Publish to publish the web app to App Service.
+
+Congratulations! Your ASP.NET Core web application is now published and live. The final URL for your site is in the build output and also on the publishing page in Visual Studio.
+
+To test your website, go to the URL indicated.
+
+![https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/media/5-webpagelive.png](https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/media/5-webpagelive.png)
+
+You now have a live web app! Your Azure App Service plan has been created and the app is running and ready to accept updates.
 
 # Explore your Visual Studio App Project
 
