@@ -76,6 +76,18 @@ Carefully consider how you assign your tags so that they help your organization 
 
 # Exercise - Identify incorrectly assigned resources
 
+Your organization uses different resources for production and development environments. Some resources that were created for development work were put into the same resource group as production resources. You need to be able to identify which resources belong to a development resource group.
+
+In this unit, you'll create both development and production resources, and put them in a production resource group. You'll tag your resources appropriately. You'll then filter the resources to identify all your development resources from a single location.
+
+You need an Azure subscription to complete these exercises. If you don't have an Azure subscription, create a free account and add a subscription before you begin. If you are a student, you can take advantage of the Azure for students offer.
+
+## Create resources
+
+## Apply tags to your resources
+
+## Filter and identify your development resources
+
 # Assess resources that can move
 
 # Validate resources in Azure
