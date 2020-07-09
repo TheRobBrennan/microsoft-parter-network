@@ -250,4 +250,8 @@ az webapp up --name $APPNAME --resource-group $APPRG --plan $APPPLAN --sku $APPS
 
 ## Verify the deployment
 
+Let's browse to our application to see it live. The last line of text output from `az webapp up`, before the JSON output, has a link to your app. Click it to navigate there in a new browser tab. The page will take a moment to load, as App Service is initializing your app for the first time.
+
+Once it loads, you'll see the greeting message from your app — you've deployed successfully!
+
 # Summary
