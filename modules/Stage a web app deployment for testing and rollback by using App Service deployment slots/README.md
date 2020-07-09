@@ -206,6 +206,22 @@ Close the browser tab that displays the web app.
 
 ## Create a new staging slot
 
+For the new the web app, you created only one slot: the production slot. You deployed source code to this slot.
+
+Next you'll create a deployment slot where you can stage new versions of the web app:
+
+On the Azure portal menu or from the **Home** page, select **All resources** and then select the web app.
+
+Under **Deployment**, select **Deployment slots**.
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-access-deployment-slots.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/3-access-deployment-slots.png)
+
+On the **Deployment slots** page, select **Add slot**.
+
+In the **Name** box, enter **Staging** and then select **Add**.
+
+After the deployment slot is added, select **Close**.
+
 ## Set up git deployment for the staging slot
 
 ## Set up git to deploy the app to the staging slot
