@@ -366,4 +366,36 @@ This option is only available on slots other than the production slot.
 
 # Exercise - Deploy a web app by using deployment slots
 
+When you're ready to swap two slots, make sure you've applied the correct configuration to the swapped slots.
+
+Suppose you've finished testing version 2 of your social media web app. Now you want to deploy that version to production. You want to further streamline deployment by automatically swapping future versions of the app.
+
+Here you'll learn how to swap manually and automatically.
+
+## Configure a slot setting
+
+## Swap the slots
+
+## Configure auto swap for the staging slot
+
+## Deploy new code and auto swap it into production
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Roll back the new version
+
 # Summary
