@@ -123,6 +123,30 @@ After you've added the services, you'll want to price them. Scrolling down on th
 
 ## Estimate a solution
 
+From our original scenario, let's imagine that this system will run on two Azure VMs and will connect to an Azure SQL Database instance. We also want to have a layer 7 load balancer in place to ensure we have enhanced load-balancing capabilities. The following illustration shows an application gateway connected to two virtual machines that are connected to a single Azure SQL Database instance.
+
+![https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/2-estimate-costs-architecture.png](https://docs.microsoft.com/en-us/learn/modules/predict-costs-and-optimize-spending/media/2-estimate-costs-architecture.png)
+
+We can use the Azure pricing calculator to figure out what the solution will cost and export our estimate to share with the team. From the **Example Scenarios** tab, you can add all the resources involved with a common solution to the problem you are trying to solve to estimate all the potential costs. You can also add individual products from the **Products** tab to create an estimate for your custom solution.
+
+TIP: Make sure you have a clean calculator with nothing listed in the estimate. If you have anything present in your estimate, click the trash can icon on each item to reset the estimate.
+
+In the **Products** tab of the Azure pricing calculator, add the following services to the estimate by clicking on them:
+
+- **Virtual Machines** in the **Compute** category
+- **Azure SQL Database** in the **Databases** category
+- **Application Gateway** in the **Networking** category
+
+We can configure the details of each, on the **Saved Estimates** tab, to get a solid estimate of our costs. Use the **West US** region for all resources.
+
+- **Virtual Machines**. This project is an ASP.NET application, so we'll need to use a **Windows** operating system VM. This application doesn't require a massive amount of computing power, so select the **D2 v3** instance size. We'll need **two** virtual machines, and they will run all the time (730 hours/month). We're going to use **Standard SSD** storage for these VMs and will require just one disk per VM of size **E10**, for a total of **two** disks. Keep the storage transactions set to the default of 100.
+- **SQL Database**. For the database, we're going to provision a **Single Database** type using the **vCore** model. We want a **General Purpose, Gen 5** database with **8 vCores**. We'll need **32 GB** of storage.
+- **Application Gateway**. For Application Gateway, we're going to use the **Web Application Firewall** tier, so we have some protection for our environment. And we're going to go with just **2** instances and **Medium** size, as our load isn't going to be high. We expect to process **1 TB** of data per month. We don't expect to process any data in the North America, Europe (Zone 1).
+
+Looking through your estimate, you should see a summary cost for each service you've added and a full total for the entire estimate. You can try playing with some of the options - particularly the location you place these resources in - to see the estimate go up or down.
+
+TIP: If you have resources that are not location-sensitive, you can save a lot of money by locating them in less expensive regions. Checking the pricing calculator can help you determine the most cost-effective place to put these services.
+
 ## Share and save your estimate
 
 ## Check your knowledge
