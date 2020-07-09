@@ -118,6 +118,30 @@ Here you'll set up a web app and add a new deployment slot to it for staging. Yo
 
 ## Create a web app
 
+Start by creating a new web app resource in the Azure portal:
+
+Sign in to the Azure portal .
+
+On the Azure portal menu or from the **Home** page, select **Create a resource**.
+
+Select **Web** > **Web App**.
+
+Fill out the wizard using information like the following examples:
+
+- **Subscription** - Select the subscription you'd like to use to complete the exercise
+- **Resource Group** - Create a new resource group named **mslearn-slots**
+- **Name** - Enter a unique name
+- **Publish** - Code
+- **Runtime stack** - ASP.NET V4.7
+- **Operating System** - Windows
+- **Region** - Select a region near you
+- **Windows Plan** - Leave default
+- **Sku and size** - Leave default
+
+Navigate to the **Monitoring** tab at the top of the page and toggle **Enable Application Insights** to **No**.
+
+Select **Review and create**, then select **Create** on the resulting page. Wait while Azure creates the web app.
+
 ## Configure git deployment
 
 ## Configure the git client and clone the web app source code
