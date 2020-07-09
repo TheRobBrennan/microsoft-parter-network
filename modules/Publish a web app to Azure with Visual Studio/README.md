@@ -301,6 +301,12 @@ Save the file.
 
 ### Publish your updates
 
+In Solution Explorer, right-click the project.
+
+Select **Publish**. A new tab named **AlpineSkiHouse** should open.
+
+Select the **Publish** button to deploy the latest changes.
+
 ### View your changes
 
 # Summary
