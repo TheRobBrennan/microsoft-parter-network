@@ -173,6 +173,25 @@ We have arrived at a cost estimate for a set of Azure services without spending 
 
 # Exercise - Predict and optimize with Cost Management and Azure Advisor
 
+We learned how to estimate costs before you deploy services on Azure, but what if you already have resources deployed? How do you get visibility into the costs you're already accruing? If we had deployed our previous solution to Azure and now want to make sure that we've sized the virtual machines properly and predict how much our bill will be, how can we do this review? Let's look at a few tools on Azure that you can use to help you solve this problem.
+
+## What is Azure Advisor?
+
+## Azure Cost Management
+
+## Check your knowledge
+
+1. Azure Advisor provides recommendations for \***\*\_\*\***.
+
+[] Costs only
+[] High availability, security, performance, operational excellence, and cost
+[] High availability, performance, and cost
+
+2. Azure Cost Management allows you to \***\*\_\*\***.
+
+[] See historical breakdowns of what services you are spending your money on.
+[] See estimates of what your services might cost if you make a change.
+
 # Exercise - Estimate the Total Cost of Ownership with the Azure TCO calculator
 
 # Save on infrastructure costs
