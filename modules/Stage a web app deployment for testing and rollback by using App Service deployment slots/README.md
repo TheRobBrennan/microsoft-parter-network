@@ -224,6 +224,13 @@ After the deployment slot is added, select **Close**.
 
 ## Set up git deployment for the staging slot
 
+Set up the new slot to use git deployment, just like you did for the production slot. Follow these steps:
+
+- On the Azure portal menu or from the **Home** page, select **All resources**. In the list of all resources, you'll now see two web app entries: deployment slots are represented as separate apps in the portal. Select the entry representing the staging slot to go to its **Overview** page.
+- Under **Deployment**, select **Deployment Center**.
+- Select **Local Git** > **Continue**.
+- Select **App Service build service** > **Continue** > **Finish**.
+
 ## Set up git to deploy the app to the staging slot
 
 ```sh
