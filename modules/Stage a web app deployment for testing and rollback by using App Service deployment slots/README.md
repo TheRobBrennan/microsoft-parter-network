@@ -389,6 +389,22 @@ To configure slot settings:
 
 ## Swap the slots
 
+Now that you've tested version 2 of the web app in the staging slot, you can deploy it by swapping the slots. Follow these steps:
+
+To make sure you're configuring the production slot, select **All resources** and then select the production slot of the web app.
+
+Under **Deployment**, select **Deployment slots** > **Swap**.
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-swap-staging-slot.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-swap-staging-slot.png)
+
+Make sure you're about to swap the staging and production slots. Notice how the swap will affect settings. The value of the APP_VERSION setting will be exchanged between the slots, but the value of the ENVIRONMENT slot setting won't be swapped. Select **Swap**.
+
+![https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-simple-swap.png](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/media/5-simple-swap.png)
+
+When the swap is complete, go to the **Overview** page of the production slot's web app and select **Browse**. The web app appears on a new browser tab. Notice that version 2 of the web app is now in production.
+
+Close the browser tab.
+
 ## Configure auto swap for the staging slot
 
 ## Deploy new code and auto swap it into production
