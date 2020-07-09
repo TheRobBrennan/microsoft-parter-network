@@ -138,6 +138,30 @@ To preview your new web app's default content, select its **URL** at the top rig
 
 # Exercise - Write code to implement a web application
 
+In this unit, you will use developer tools to create the code for a starter web application.
+
+## Create a new web project
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
 # Deploy code to App Service
 
 # Exercise - Deploy your code to App Service
