@@ -169,6 +169,12 @@ A resource group is a logical container into which Azure resources like web apps
 
 # Exercise - Publish an ASP.NET app from Visual Studio
 
+You have an ASP.NET Core web application running locally. In this exercise, you'll publish your application to Azure App Service.
+
+## Publish your ASP.NET Core web app to Azure
+
+### Configure your new Azure App Service
+
 # Explore your Visual Studio App Project
 
 # Exercise - Publish an update to your site
