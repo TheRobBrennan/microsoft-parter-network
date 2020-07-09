@@ -98,7 +98,28 @@ Imagine that you've been asked to build a system on Azure, and you've been asked
 
 ## Introducing the Azure pricing calculator
 
+To make estimates easy for customers to create, Microsoft developed the Azure pricing calculator. The Azure pricing calculator is a free web-based tool that allows you to input Azure services and modify properties and options of the services. It outputs the costs per service and total cost for the full estimate.
+The options that you can configure in the pricing calculator vary between products, but basic configuration options include:
+
+- Region - Lists the regions from which you can provision a product. Southeast Asia, central Canada, the western United States, and northern Europe are among the possible regions available for some resources.
+- Tier - Sets the type of tier you wish to allocate to a selected resource, such as Free Tier, Basic Tier, etc.
+- Billing Options - Highlights the billing options available to different types of customers and subscriptions for a chosen product.
+- Support Options - Allows you to pick from included or paid support pricing options for a selected product.
+- Programs and Offers - Allows you to choose from available price offerings according to your customer or subscription type.
+- Azure Dev/Test Pricing - Lists the available development and test prices for a product. Dev/Test pricing applies only when you run resources within an Azure subscription that is based on a Dev/Test offer.
+
 ### Try out the Azure pricing calculator
+
+In another browser window or tab, open the [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/). On the pricing calculator page, you'll see several tabs:
+
+- **Products**. This tab is where you'll do most of your activity. This tab has all the Azure services listed and is where you'll add or remove services to put together your estimate.
+- **Example Scenarios** This tab has several examples of infrastructure involved in common cloud-based solutions. You can add all the components of the entire scenario to estimate the cost.
+- **Saved Estimates**. This tab has all of your previously saved estimates. We'll go through this process in a moment.
+- **FAQ**. Just as it says, this tab has answers to some frequently asked questions.
+
+Let's start with the **Products** tab. You'll see the full listing of service categories down the left-hand side. Clicking on any of the categories will display the services in that category. There's also a search box where you can search through all services for the service you're looking for. Clicking on the service will add it to your estimate. You can add just one service, or you can add as many as you need, including multiples of the same service. For example, you can add multiple virtual machines.
+
+After you've added the services, you'll want to price them. Scrolling down on the Pricing Calculator page will show you customizable details for that service that apply to pricing. For example, on virtual machines, you can select details such as the region, operating system, and instance size. These options all impact the pricing for the VM. You'll see a subtotal for the service. Further down the page, you'll see the full total for all services included in the estimate. Along with the total, you'll see buttons where you can export, save, and share the estimate.
 
 ## Estimate a solution
 
