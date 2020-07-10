@@ -153,6 +153,18 @@ In this unit, you'll create a new web app by using the Docker image stored in Az
 
 ## Enable Docker access to the Azure Container Registry (ACR)
 
+You'll use Docker to login to the registry and pull the web image that you want to deploy. Docker needs a username and password to perform this action. The ACR allows you to enable the registry name as the username and admin access key as the password to allow Docker to login to your container registry.
+
+Sign in to the Azure portal , navigate to all resources.
+
+Select the container registry you created earlier to navigate to the Overview page for the container registry.
+
+Under **Settings**, select **Access keys**.
+
+Set the **Admin user** option to **Enable**. This change saves automatically.
+
+You're now ready to create your web app.
+
 ## Create a web app
 
 ## Test the web app
