@@ -292,4 +292,12 @@ At the bottom of the page, note that there's a record of the webhook that just f
 
 ## Test the web app again
 
+Go back to your web app in the browser. If you closed the tab for it earlier, you can go to the Overview page of the app in the Azure portal and select **Browse**. There will be a cold-start delay while the web app loads the new image from Container Registry.
+
+Note that the contents of the page have changed to reflect the updates made to the container image.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-sample-web-app-node.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-sample-web-app-node.png)
+
+The web app has been updated and redeployed automatically based on the new image. The webhook service in your registry notified your web app that the container image had been modified, triggering an update.
+
 # Summary
