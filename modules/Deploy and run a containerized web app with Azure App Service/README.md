@@ -195,6 +195,16 @@ Select **Review and create**, and then click **Create**. Wait until the web app 
 
 ## Test the web app
 
+Use the **All resources** view in the Azure portal to go to the **Overview** page of the web app you just created.
+
+Select the **Browse** button to open the site in a new browser tab.
+
+After the cold-start delay while your app's Docker image loads and starts, you'll see a page like this:
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/5-sample-web-app-node.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/5-sample-web-app-node.png)
+
+App Service is now hosting the app from your Docker image.
+
 # Update the image and automatically redeploy the web app
 
 # Exercise - Modify the image and redeploy the web app
