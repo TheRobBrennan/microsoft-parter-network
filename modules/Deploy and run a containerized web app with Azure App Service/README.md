@@ -243,6 +243,16 @@ In this unit, you'll configure continuous deployment for the web app and create 
 
 ## Configure continuous deployment and create a webhook
 
+Return to the Azure portal and go to the **Container settings** page of your web app.
+
+Set **Continuous Deployment** to **On**, and then select **Save**. This setting configures a webhook that Container Registry uses to alert the web app that the Docker image has changed.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-continuous-deployment-annotated.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-continuous-deployment-annotated.png)
+
+If you went to the Webhooks page for your container registry, you'd see the newly configured webhook:
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-acr-webhook.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-acr-webhook.png)
+
 ## Update the web app and test the webhook
 
 ## Test the web app again
