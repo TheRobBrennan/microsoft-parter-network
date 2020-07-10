@@ -236,4 +236,24 @@ As with scale-out, you should monitor the performance of your system to ensure t
 
 # Exercise - Scale up a web app
 
+Scaling up provides more powerful resources for running a web app. It also increases the number of instances available for scaling out.
+
+In the hotel reservation system, you should scale out to handle the increasing number of visitors to the web app. Scaling up will enable you to scale out further. Scaling up will also likely be necessary to support the new functionality that will be added to the web app.
+
+In this exercise, you'll scale up the hotel reservation system web app that you deployed earlier. You'll run the same test client application that you used before, and monitor the performance of the web app.
+
+## Examine the current pricing tier for the web app
+
+## Run the test client app
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Scale up the web app and monitor the results
+
 # Summary
