@@ -270,4 +270,20 @@ Keep running the app. Wait for another five minutes. Then go to the chart that s
 
 ## Scale up the web app and monitor the results
 
+In the Azure portal, return to the page for the App Service plan.
+
+Under **Settings**, select **Scale up (App Service plan)**.
+
+Select the **P2V2** pricing tier and then select **Apply**. This pricing tier gives you 420 ACU (more than four times the power of the S1 pricing tier), and 7 GB of memory, running on a Dv2-Series VM. But this VM costs four times the cost of running the S1 pricing tier.
+
+Wait for another five minutes, and then view the performance chart on the dashboard in the Azure portal.
+
+At the time of the system scale-up, you might notice some additional HTTP server errors. These errors are caused by ongoing client requests that were aborted when the system switched hardware. After the scale-up, the CPU time jumps because more processors are available. You might not notice the same drop in response time that you saw when scaling out. This is because you're still using only a single instance, so requests aren't being load balanced as they were when you scaled out. But you now have the opportunity to scale out across more instances (20) than you had before.
+
+The chart in this image shows an example of the performance metrics for the web app. The point at which the system was scaled up is noted.
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/5-scale-up.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/5-scale-up.png)
+
+Return to the Cloud Shell that's running the client app. Select Enter to stop the app.
+
 # Summary
