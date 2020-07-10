@@ -287,3 +287,15 @@ The chart in this image shows an example of the performance metrics for the web 
 Return to the Cloud Shell that's running the client app. Select Enter to stop the app.
 
 # Summary
+
+In this module, you learned how to:
+
+- Scale a web app in and out manually.
+- Scale a web app up and down.
+
+These two features enable you to support a varying load in a web app while still remaining cost effective.
+
+## Learn more
+
+- [Azure App Service plan overview](https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans)
+- [Scale up an app in Azure](https://docs.microsoft.com/en-us/azure/app-service/web-sites-scale)
