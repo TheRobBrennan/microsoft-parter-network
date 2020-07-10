@@ -95,25 +95,42 @@ Select **Create** and wait for the web app to be created.
 
 ## Build and deploy the web app
 
-```sh
-
-```
+Open the Cloud Shell in the Azure portal. Run this command to download the source code for the hotel reservation system:
 
 ```sh
-
+git clone https://github.com/MicrosoftDocs/mslearn-hotel-reservation-system.git
 ```
+
+Go to the _mslearn-hotel-reservation-system/src_ folder:
 
 ```sh
-
+cd mslearn-hotel-reservation-system/src
 ```
+
+Build the apps for the hotel system. There are two apps: a web app that implements the web API for the system and a client app that you'll use to load test the web app.
 
 ```sh
-
+dotnet build
 ```
+
+Prepare the HotelReservationSystem web app for publishing:
 
 ```sh
-
+cd HotelReservationSystem
+dotnet publish -o website
 ```
+
+Go to the website folder, which contains the published files. Zip the files and deploy them to the web app that you created in the previous task. Replace `<your-webapp-name>` with the name of your web app.
+
+```sh
+cd website
+zip website.zip *
+az webapp deployment source config-zip --src website.zip --name <your-webapp-name> --resource-group mslearn-scale
+```
+
+Use your web browser to go to `http://<your-webapp-name>.azurewebsites.net/api/reservations/1`. You should see a JSON document that contains the details for reservation number 1:
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app.png)
 
 ## Monitor the performance of the web app before scaling out
 
