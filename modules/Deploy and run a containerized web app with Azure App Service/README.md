@@ -167,6 +167,32 @@ You're now ready to create your web app.
 
 ## Create a web app
 
+Select **Create a resource** > **Web** > **Web App**.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/5-search-web-app-annotated.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/5-search-web-app-annotated.png)
+
+Specify these settings for each of the properties:
+
+- Subscription - Select your default Azure subscription in which you are allowed to create and manage resources.
+- Resource Group - Reuse the existing resource group **learn-deploy-container-acr-rg**.
+- Name - Enter a unique name and make a note of it for later.
+- Publish - **Docker Container**
+- OS - **Linux**
+- App Service plan - Use the default.
+
+Click **Next: Docker >**.
+
+In the **Docker** tab, specify these settings for each of the properties:
+
+- Options - **Single Container**
+- Image Source - **Azure Container Registry**
+- Registry - Select your registry.
+- Image - `webimage`
+- Tag - `latest`
+- Startup Command - Leave this empty.
+
+Select **Review and create**, and then click **Create**. Wait until the web app has been deployed before you continue.
+
 ## Test the web app
 
 # Update the image and automatically redeploy the web app
