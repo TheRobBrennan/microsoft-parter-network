@@ -74,6 +74,22 @@ In this unit, you'll use the Azure portal to create a new registry in Azure Cont
 
 ## Create a registry in Azure Container Registry
 
+Sign in to the Azure portal with your Azure subscription.
+
+Choose **Create a resource**, select **Containers**, and then select **Container Registry**.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/3-search-container-registry-annotated.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/3-search-container-registry-annotated.png)
+
+Specify the values in the following table for each of the properties:
+
+- Registry name - Enter a unique name and make a note of it for later.
+- Subscription - Select your default Azure subscription in which you are allowed to create and manage resources.
+- Resource Group - Create a new resource group with the name **learn-deploy-container-acr-rg** so that it will be easier to clean up these resources when you're finished with the module. If you choose a different resource group name, remember it for the rest of the exercises in this module.
+- Location - Select a location that is close to you.
+- SKU - **Standard**
+
+Click **Create**. Wait until the container registry has been created before you continue.
+
 ## Build a Docker image and upload it to Azure Container Registry
 
 ## Examine the container registry
