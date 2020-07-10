@@ -255,6 +255,41 @@ If you went to the Webhooks page for your container registry, you'd see the newl
 
 ## Update the web app and test the webhook
 
+In the Azure Cloud Shell, go to the node/routes folder. This folder contains the source code that generates the pages that are displayed by the web app:
+
+```sh
+cd ~/mslearn-deploy-run-container-app-service/node/routes
+```
+
+Open `index.js` in the Cloud Shell editor:
+
+```sh
+code index.js
+```
+
+In the editor, modify the code to change the value of the title property passed to the view from `Express` to `Microsoft Learn`:
+
+```sh
+...
+res.render('index', { title: 'Microsoft Learn' });
+...
+```
+
+Make sure to save the file when you are finished.
+
+In the Cloud Shell window, run the next set of commands to rebuild the image for the web app and push it to Container Registry. Replace `<container_registry_name>` with the name of your registry. Don't forget the `.` at the end of the second command.
+
+```sh
+cd ~/mslearn-deploy-run-container-app-service/node
+az acr build --registry <container_registry_name> --image webimage .
+```
+
+Go to the **Webhooks** page of your container registry in the Azure portal and select the single webhook in the list.
+
+At the bottom of the page, note that there's a record of the webhook that just fired in response to the build and push you ran.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-acr-webhook-event.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/7-acr-webhook-event.png)
+
 ## Test the web app again
 
 # Summary
