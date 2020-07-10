@@ -145,6 +145,18 @@ After you've configured the web app, the Docker image is pulled and run as a "co
 
 # Exercise - Create and deploy a web app from a Docker image
 
+Azure App Service provides the hosting environment for an Azure-based web app. You can configure App Service to retrieve the image for the web app from a repository in Azure Container Registry.
+
+In the example scenario, the team has uploaded the image for the web app to Azure Container Registry and is now ready to deploy the web app.
+
+In this unit, you'll create a new web app by using the Docker image stored in Azure Container Registry. You'll use App Service with a predefined App Service plan to host the web app.
+
+## Enable Docker access to the Azure Container Registry (ACR)
+
+## Create a web app
+
+## Test the web app
+
 # Update the image and automatically redeploy the web app
 
 # Exercise - Modify the image and redeploy the web app
