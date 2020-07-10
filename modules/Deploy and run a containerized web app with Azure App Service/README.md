@@ -92,6 +92,26 @@ Click **Create**. Wait until the container registry has been created before you 
 
 ## Build a Docker image and upload it to Azure Container Registry
 
+In the Azure Cloud Shell in the portal, run the following command to download the source code for the sample web app. This web app is simple. It presents a single page that contains static text and a carousel control that rotates through a series of images.
+
+```sh
+git clone https://github.com/MicrosoftDocs/mslearn-deploy-run-container-app-service.git
+```
+
+Move to the source folder:
+
+```sh
+cd mslearn-deploy-run-container-app-service/node
+```
+
+Run the following command. This command sends the folder's contents to Azure Container Registry, which uses the instructions in the Docker file to build the image and store it. Replace `<container_registry_name>` with the name of the registry you created earlier. Take care not to leave out the `.` character at the end of the command.
+
+```sh
+az acr build --registry <container_registry_name> --image webimage .
+```
+
+The Docker file contains the step-by-step instructions for building a Docker image from the source code for the web app. Azure Container Registry runs these steps to build the image, and as each step completes a message is generated. The build process should finish after a couple of minutes without any errors or warnings.
+
 ## Examine the container registry
 
 # Deploy a web app by using an image from an Azure Container Registry repository
