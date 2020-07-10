@@ -134,25 +134,63 @@ Use your web browser to go to `http://<your-webapp-name>.azurewebsites.net/api/r
 
 ## Monitor the performance of the web app before scaling out
 
-```sh
-
-```
+Return to the Cloud Shell and go to the _~/mslearn-hotel-reservation-system/src/HotelReservationSystemTestClient_ folder:
 
 ```sh
-
+cd ~/mslearn-hotel-reservation-system/src/HotelReservationSystemTestClient
 ```
+
+Edit the App.config file in this folder by using the code editor:
 
 ```sh
-
+code App.config
 ```
+
+Uncomment the line that specifies the `ReservationsServiceURI` and replace the value with the URL of your web app. The file should look like this example:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <appSettings>
+        <add key="NumClients" value="100" />
+        <add key="ReservationsServiceURI" value="https://<your-webapp-name>.azurewebsites.net/"/>
+        <add key="ReservationsServiceCollection" value="api/reservations"/>
+    </appSettings>
+</configuration>
+```
+
+NOTE: The `NumClients` setting in this file specifies the number of clients that will simultaneously try to connect to the web app and perform work. The work consists of creating a reservation and then running a query to fetch the details of the reservation. All the data used is fake. It's not actually persisted anywhere. Leave this value set to `100`.
+
+Save the file and close the code editor.
+
+Rebuild the test client app with the new configuration:
 
 ```sh
-
+dotnet build
 ```
+
+Run the client app. You'll see a number of messages appear as the clients start running, make reservations, and run queries. Allow the system to run for a couple of minutes. The responses will be slow, and soon the client requests will start to fail with HTTP 408 (Timeout) errors.
 
 ```sh
-
+dotnet run
 ```
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-client.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-client.png)
+
+In the Azure portal, go to the pane for your web app (not the service plan). Under **Monitoring**, select **Metrics**.
+
+Add the following metrics to the chart, set the time range to **Last 30 minutes**, and then pin the chart to the current dashboard.
+
+- CPU Time. Select the Sum aggregation.
+- Http Server Errors. Select the Sum aggregation.
+- Http 4.xx. Select the Sum aggregation.
+- Average Response Time. Select the Avg aggregation.
+
+Allow the system to run for five minutes to stabilize, and then note the CPU Time, the number of HTTP 4.xx errors, and the average response time. You should see a significant number of HTTP 4xx errors (these are HTTP 408 Timeout errors), and that the average response time is several seconds. You might see the occasional HTTP server error, depending on how the web server is coping with the burden.
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app-chart-before-scaling-out.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app-chart-before-scaling-out.png)
+
+Leave the client app running while you perform the next task.
 
 ## Scale out the web app and verify the performance improvement
 
