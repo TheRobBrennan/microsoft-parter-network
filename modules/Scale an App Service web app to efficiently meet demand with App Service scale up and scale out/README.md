@@ -194,6 +194,24 @@ Leave the client app running while you perform the next task.
 
 ## Scale out the web app and verify the performance improvement
 
+In the Azure portal, in the pane for your web app, under **Settings**, select **Scale out (App Service Plan)**.
+
+On the **Configure** page, set the **Instance count** to **5**, and then select **Save**.
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-scale-out-to-5.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-scale-out-to-5.png)
+
+Switch to the Cloud Shell that's running the client app. You should see fewer requests failing with errors, though you'll still see some that time out.
+
+Run the app for another five minutes. Then go to the chart that shows the metrics for the app on the dashboard in the Azure portal. You should see that the CPU time has increased dramatically because there's now five times more CPU power available. The average response time should have dropped, and the number of HTTP 4xx errors should also have decreased. The following chart shows a typical set of results. The point at which scale out occurred is noted.
+
+![https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app-chart-after-scaling-out.png](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/media/3-web-app-chart-after-scaling-out.png)
+
+If you want to experiment some more, try increasing the instance count for the App Service plan to 10. Ten is the maximum number of instances supported by the S1 tier. You should notice a further increase in CPU time, and a corresponding drop in response time and HTTP 4xx errors.
+
+Return to the Cloud Shell that's running the client app. Select Enter to stop the app.
+
+In the Azure portal, set the instance count for the App Service plan back to 1.
+
 # Scale up a web app
 
 # Exercise - Scale up a web app
