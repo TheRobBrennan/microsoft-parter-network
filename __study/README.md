@@ -81,7 +81,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 2 - [Host a web application with Azure App service](https://docs.microsoft.com/en-us/learn/modules/host-a-web-app-with-azure-app-service/) (~58 mins)
   - [ x ] Module 3 - [Publish a web app to Azure with Visual Studio](https://docs.microsoft.com/en-us/learn/modules/publish-azure-web-app-with-visual-studio/) (~48 mins)
   - [ x ] Module 4 - [Stage a web app deployment for testing and rollback by using App Service deployment slots](https://docs.microsoft.com/en-us/learn/modules/stage-deploy-app-service-deployment-slots/) (~44 mins)
-  - [] Module 5 - [Scale an App Service web app to efficiently meet demand with App Service scale up and scale out](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/) (~46 mins)
+  - [ x ] Module 5 - [Scale an App Service web app to efficiently meet demand with App Service scale up and scale out](https://docs.microsoft.com/en-us/learn/modules/app-service-scale-up-scale-out/) (~46 mins)
   - [] Module 6 - [Deploy and run a containerized web app with Azure App Service](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/) (~46 mins)
 
 ## Friday, July 10th, 2020
