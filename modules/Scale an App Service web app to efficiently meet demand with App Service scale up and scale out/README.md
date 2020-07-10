@@ -254,13 +254,19 @@ Under **Settings**, select **Scale up (App Service plan)**. You should see detai
 
 ## Run the test client app
 
-```sh
-
-```
+In the Cloud Shell window on the right side of the screen, go to the _~/mslearn-hotel-reservation-system/src/HotelReservationSystemTestClient_ folder:
 
 ```sh
-
+cd ~/mslearn-hotel-reservation-system/src/HotelReservationSystemTestClient
 ```
+
+Run the client app. Allow the system to run for a couple minutes. As at the start of the previous exercise, the responses will be slow, and the client requests will soon start to fail with HTTP 408 (Timeout) errors.
+
+```sh
+dotnet run
+```
+
+Keep running the app. Wait for another five minutes. Then go to the chart that shows the metrics for the web app on the dashboard in the Azure portal. As in the previous exercise, you should see that the statistics indicate a relatively slow response time and many HTTP 4xx errors.
 
 ## Scale up the web app and monitor the results
 
