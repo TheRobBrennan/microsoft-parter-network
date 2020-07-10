@@ -76,6 +76,23 @@ The exercise also runs a client app that simulates a number of users issuing POS
 
 ## Create an App Service plan and web app
 
+Sign in to the Azure portal .
+
+On the Azure portal menu or from the **Home** page, select **Create a resource**.
+
+Select **Web** > **Web App**.
+
+On the **Web App** page, enter the values in the following table.
+
+- App name - <your-webapp-name> - `rbhotelsystem`
+- Subscription - Select the Azure subscription you'd like to use for this exercise
+- Resource Group - Create a new resource group called **mslearn-scale**
+- OS - Windows
+- Publish - Code
+- App Service plan/Location - Leave default
+
+Select **Create** and wait for the web app to be created.
+
 ## Build and deploy the web app
 
 ```sh
