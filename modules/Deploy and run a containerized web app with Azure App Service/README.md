@@ -114,6 +114,16 @@ The Docker file contains the step-by-step instructions for building a Docker ima
 
 ## Examine the container registry
 
+In the Azure portal , navigate to the Overview page for your container registry.
+
+Under **Services**, select **Repositories**. You'll see a repository named `webimage`.
+
+Select the `webimage` repository. It contains an image with the latest tag. This is the Docker image for the sample web app.
+
+![https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/3-azure-container-repositories.png](https://docs.microsoft.com/en-us/learn/modules/deploy-run-container-app-service/media/3-azure-container-repositories.png)
+
+The Docker image that contains your web app is now available in your registry for deployment to App Service.
+
 # Deploy a web app by using an image from an Azure Container Registry repository
 
 # Exercise - Create and deploy a web app from a Docker image
