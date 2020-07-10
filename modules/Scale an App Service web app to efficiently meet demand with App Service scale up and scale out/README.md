@@ -64,6 +64,64 @@ In both cases, you should continue to monitor the statistics for the web app. Al
 
 # Exercise - Scale a web app manually
 
+You should scale out a system when you expect an increase in traffic. You might also scale out in response to declining performance.
+
+Remember that, in the hotel reservation system example, you increase the number of instances of the web app when you anticipate extra traffic because of a special event, a special offer, or because of seasonal fluctuations. You scale the system back when the demand drops.
+
+In this exercise, you'll create an App Service plan and deploy a web app using this plan. You'll monitor the performance of the web app under load. You'll then scale out the app and verify that its performance has improved as a result.
+
+The exercise uses a sample web app that implements a web API. The web API exposes HTTP POST and GET operations that create and retrieve customer bookings for a hotel reservations web site. The bookings aren't actually saved, and the GET operation simply retrieves dummy data.
+
+The exercise also runs a client app that simulates a number of users issuing POST and GET operations simultaneously. This app provides the workload that's used to test the performance of the web app before and after scaling.
+
+## Create an App Service plan and web app
+
+## Build and deploy the web app
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Monitor the performance of the web app before scaling out
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+```sh
+
+```
+
+## Scale out the web app and verify the performance improvement
+
 # Scale up a web app
 
 # Exercise - Scale up a web app
