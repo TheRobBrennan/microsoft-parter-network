@@ -86,16 +86,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 ## Friday, July 10th, 2020
 
-- [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
-  - [] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
-  - [] Module 2 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
-  - [] Module 3 - [Perform exploratory data analysis with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-exploratory-data-analysis-with-azure-databricks/) (~45 mins)
-  - [] Module 4 - [Train, evaluate, and select machine-learning models with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-model-training-evaluation-and-selection-with-azure-databricks/) (~47 mins)
-  - [] Module 5 - [Perform text analytics with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-text-analytics-with-azure-databricks/) (~41 mins)
-
-## Saturday, July 11th, 2020 [WEEKEND]
-
-- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 5 hours 28 mins to complete
+- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 3 hours 46 mins to complete
   - [] Module 1 - [Security, responsibility, and trust in Azure](https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/) (~1 hr 16 mins)
   - [] Module 2 - [Top 5 security items to consider before pushing to production](https://docs.microsoft.com/en-us/learn/modules/top-5-security-items-to-consider/) (~45 mins)
   - [] Module 3 - [Configure security policies to manage data](https://docs.microsoft.com/en-us/learn/modules/configure-security-policies-to-manage-data/) (~39 mins)
@@ -106,9 +97,20 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
   - [ x ] Module 7 - [Secure your Azure SQL Database](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/) (~1 hr 07 mins)
     - This module will have already been completed as part of the [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) learning path
 
+## Saturday, July 11th, 2020 [WEEKEND]
+
+- Review sample AZ-204 exam(s)
+
+- OPTIONAL: [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
+  - [] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
+  - [] Module 2 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
+  - [] Module 3 - [Perform exploratory data analysis with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-exploratory-data-analysis-with-azure-databricks/) (~45 mins)
+  - [] Module 4 - [Train, evaluate, and select machine-learning models with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-model-training-evaluation-and-selection-with-azure-databricks/) (~47 mins)
+  - [] Module 5 - [Perform text analytics with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-text-analytics-with-azure-databricks/) (~41 mins)
+
 ## Sunday, July 12th, 2020 [WEEKEND]
 
-- [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
+- OPTIONAL: [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
 
   - [ x ] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
     - This module will have already been completed as part of the [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) learning path
@@ -124,7 +126,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 ## Monday, July 13th, 2020
 
-- [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
+- OPTIONAL: [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
   - [] Module 1 - [Create an Azure Cosmos DB database built to scale](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/) (~35 mins)
   - [] Module 2 - [Choose the appropriate API for Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/) (~38 mins)
   - [] Module 3 - [Insert and query data in your Azure Cosmos DB database](https://docs.microsoft.com/en-us/learn/modules/access-data-with-cosmos-db-and-sql-api/) (~58 mins)
