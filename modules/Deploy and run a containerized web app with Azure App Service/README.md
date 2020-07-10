@@ -239,4 +239,12 @@ az acr task create --registry <container_registry_name> --name buildwebapp --ima
 
 # Exercise - Modify the image and redeploy the web app
 
+In this unit, you'll configure continuous deployment for the web app and create a webhook that links to the registry that contains the Docker image. Then, you'll make a change to the source code for the web app and rebuild the image. You'll visit the website that hosts the sample web app again and verify that the newest version is running.
+
+## Configure continuous deployment and create a webhook
+
+## Update the web app and test the webhook
+
+## Test the web app again
+
 # Summary
