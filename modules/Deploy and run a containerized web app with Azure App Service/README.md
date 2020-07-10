@@ -66,6 +66,18 @@ Additional information about Azure Container Registry as well as a link to suppo
 
 # Exercise - Build and store an image by using Azure Container Registry
 
+Azure Container Registry provides storage for Docker images in the cloud.
+
+In the example scenario, the team needs to create a registry to store the images for their web apps.
+
+In this unit, you'll use the Azure portal to create a new registry in Azure Container Registry. You'll build a Docker image from the source code for a web app and upload it to a repository in your registry. Finally, you'll examine the contents of the registry and the repository.
+
+## Create a registry in Azure Container Registry
+
+## Build a Docker image and upload it to Azure Container Registry
+
+## Examine the container registry
+
 # Deploy a web app by using an image from an Azure Container Registry repository
 
 # Exercise - Create and deploy a web app from a Docker image
