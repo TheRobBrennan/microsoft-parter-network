@@ -301,3 +301,13 @@ Note that the contents of the page have changed to reflect the updates made to t
 The web app has been updated and redeployed automatically based on the new image. The webhook service in your registry notified your web app that the container image had been modified, triggering an update.
 
 # Summary
+
+You can use Azure Container Registry to hold Docker images, and you can construct web apps based on these images. By using a webhook, you can configure continuous deployment for a web app. This process monitors the image for the web app in Container Registry and causes the web app to be redeployed automatically if the image changes.
+
+## Learn more
+
+- [Container Registry](https://azure.microsoft.com/services/container-registry/)
+- [Use a custom Docker image for Web App for Containers](https://docs.microsoft.com/en-us/azure/app-service/containers/tutorial-custom-docker-image)
+- [Tutorial: Build and deploy container images in the cloud with Azure Container Registry Tasks](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-quick-task)
+- [Tutorial: Automate container image builds in the cloud when you commit source code](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tutorial-build-task)
+- [List of Azure CLI commands to manage private Azure Container Registries](https://docs.microsoft.com/en-us/cli/azure/acr?view=azure-cli-latest)
