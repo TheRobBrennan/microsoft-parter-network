@@ -87,7 +87,7 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 ## Friday, July 10th, 2020
 
 - Reassess and evaluate your approach
-  - After taking a few practice questions, I did NOT score as well as I had hoped. I tried a sampling of five (5) questions - with the recommended goal of achieving an 80% or higher score. The materials I have reviewed and hands on labs I have accomplished to date have provided a solid overview, but they were nowhere close to providing the specfici technical questions that are being asked on the test.
+  - After taking a few practice questions, I did NOT score as well as I had hoped. I tried a sampling of five (5) questions - with the recommended goal of achieving an 80% or higher score. The materials I have reviewed and hands-on labs I have accomplished to date have provided a solid overview. Still, they were nowhere close to providing the specific technical questions that are being asked on the test.
   - Used today to regroup a little and lick my wounds. It's time for a change...and I have a few ideas in mind that I want to chase down.
 
 ## Saturday, July 11th, 2020 [WEEKEND]
