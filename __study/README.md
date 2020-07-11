@@ -86,57 +86,35 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 ## Friday, July 10th, 2020
 
-- [Secure your cloud data](https://docs.microsoft.com/en-us/learn/paths/secure-your-cloud-data/) - Estimated 3 hours 46 mins to complete
-  - [] Module 1 - [Security, responsibility, and trust in Azure](https://docs.microsoft.com/en-us/learn/modules/intro-to-security-in-azure/) (~1 hr 16 mins)
-  - [] Module 2 - [Top 5 security items to consider before pushing to production](https://docs.microsoft.com/en-us/learn/modules/top-5-security-items-to-consider/) (~45 mins)
-  - [] Module 3 - [Configure security policies to manage data](https://docs.microsoft.com/en-us/learn/modules/configure-security-policies-to-manage-data/) (~39 mins)
-  - [ x ] Module 4 - [Secure your Azure Storage account](https://docs.microsoft.com/en-us/learn/modules/secure-azure-storage-account/) (~45 mins)
-    - This module will have already been completed as part of the [Store data in Azure](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/) learning path
-  - [] Module 5 - [Configure and manage secrets in Azure Key Vault](https://docs.microsoft.com/en-us/learn/modules/configure-and-manage-azure-key-vault/) (~29 mins)
-  - [] Module 6 - [Secure your Azure resources with role-based access control (RBAC)](https://docs.microsoft.com/en-us/learn/modules/secure-azure-resources-with-rbac/) (~37 mins)
-  - [ x ] Module 7 - [Secure your Azure SQL Database](https://docs.microsoft.com/en-us/learn/modules/secure-your-azure-sql-database/) (~1 hr 07 mins)
-    - This module will have already been completed as part of the [Work with relational data in Azure](https://docs.microsoft.com/en-us/learn/paths/work-with-relational-data-in-azure/) learning path
+- Reassess and evaluate your approach
+  - After taking a few practice questions, I did NOT score as well as I had hoped. I tried a sampling of five (5) questions - with the recommended goal of achieving an 80% or higher score. The materials I have reviewed and hands on labs I have accomplished to date have provided a solid overview, but they were nowhere close to providing the specfici technical questions that are being asked on the test.
+  - Used today to regroup a little and lick my wounds. It's time for a change...and I have a few ideas in mind that I want to chase down.
 
 ## Saturday, July 11th, 2020 [WEEKEND]
 
-- Review sample AZ-204 exam(s)
-
-- OPTIONAL: [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) - Estimated 4 hours 21 mins to complete
-  - [] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
-  - [] Module 2 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
-  - [] Module 3 - [Perform exploratory data analysis with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-exploratory-data-analysis-with-azure-databricks/) (~45 mins)
-  - [] Module 4 - [Train, evaluate, and select machine-learning models with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-model-training-evaluation-and-selection-with-azure-databricks/) (~47 mins)
-  - [] Module 5 - [Perform text analytics with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-text-analytics-with-azure-databricks/) (~41 mins)
+- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/) - Used coupon `WHIZSITE50` to get a flat 50% off sitewide savings - and a total bill of \$17.95 which included the online course and the four (4) practice exams 🤓
+  - Start the online course for AZ-204 - ~9+ hours of video
 
 ## Sunday, July 12th, 2020 [WEEKEND]
 
-- OPTIONAL: [Perform data engineering with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineering-with-databricks/) - Estimated 7 hours 49 mins to complete
-
-  - [ x ] Module 1 - [Introduction to Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-databricks/) (~37 mins)
-    - This module will have already been completed as part of the [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) learning path
-  - [] Module 2 - [Access SQL Data Warehouse instances with Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/understand-the-sql-dw-connector-with-azure-databricks/) (~1 hr 23 mins)
-  - [] Module 3 - [Data ingestion with Azure data factory](https://docs.microsoft.com/en-us/learn/modules/data-ingestion-with-azure-data-factory/) (~49 mins)
-  - [ x ] Module 4 - [Read and write data by using Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/read-and-write-data-using-azure-databricks/) (~45 mins)
-    - This module will have already been completed as part of the [Extract knowledge and insights from your data with Azure Databricks](https://docs.microsoft.com/en-us/learn/paths/data-science/) learning path
-  - [] Module 5 - [Perform basic data transformations in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-basic-data-transformation-in-azure-databricks/) (~46 mins)
-  - [] Module 6 - [Perform advanced data transformation in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/perform-advanced-data-transformation-in-azure-databricks/) (~1 hr)
-  - [] Module 7 - [Create data pipelines by using Databricks Delta](https://docs.microsoft.com/en-us/learn/modules/create-data-pipelines-using-databricks-delta/) (~43 mins)
-  - [] Module 8 - [Work with streaming data in Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/streaming-in-azure-databricks/) (~1 hr 04 mins)
-  - [] Module 9 - [Create data visualizations by using Azure Databricks and Power BI](https://docs.microsoft.com/en-us/learn/modules/create-data-visualizations-using-azure-databricks-and-power-bi/) (~42 mins)
+- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
+  - Wrap-up the online course for AZ-204 - ~9+ hours of video
+  - One (1) free test - Fifteen (15) question practice exam
+  - Practice tests
+    - Practice exam #1 -
 
 ## Monday, July 13th, 2020
 
-- OPTIONAL: [Work with NoSQL data in Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/) - Estimated 6 hours 03 mins to complete
-  - [] Module 1 - [Create an Azure Cosmos DB database built to scale](https://docs.microsoft.com/en-us/learn/modules/create-cosmos-db-for-scale/) (~35 mins)
-  - [] Module 2 - [Choose the appropriate API for Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/) (~38 mins)
-  - [] Module 3 - [Insert and query data in your Azure Cosmos DB database](https://docs.microsoft.com/en-us/learn/modules/access-data-with-cosmos-db-and-sql-api/) (~58 mins)
-  - [] Module 4 - [Store and access graph data in Azure Cosmos DB with the Graph API](https://docs.microsoft.com/en-us/learn/modules/store-access-data-cosmos-graph-api/) (~42 mins)
-  - [] Module 5 - [Store and Access NoSQL Data with Azure Cosmos DB and the Table API](https://docs.microsoft.com/en-us/learn/modules/store-access-data-cosmos-table-api/) (~29 mins)
-  - [] Module 6 - [Build a .NET Core app for Azure Cosmos DB in Visual Studio Code](https://docs.microsoft.com/en-us/learn/modules/build-cosmos-db-app-with-vscode/) (~54 mins)
-  - [] Module 7 - [Optimize the performance of Azure Cosmos DB by using partitioning and indexing strategies](https://docs.microsoft.com/en-us/learn/modules/monitor-and-scale-cosmos-db/) (~1 hr 16 mins)
-  - [] Module 8 - [Distribute your data globally with Azure Cosmos DB](https://docs.microsoft.com/en-us/learn/modules/distribute-data-globally-with-cosmos-db/) (~31 mins)
+- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
+  - Practice tests
+    - Practice exam #2 -
+    - Practice exam #3 -
 
 ## Tuesday, July 14th, 2020
+
+- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
+  - Practice tests
+    - Practice exam #4 -
 
 ## Wednesday, July 15th, 2020
 
