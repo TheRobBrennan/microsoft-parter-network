@@ -94,27 +94,27 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 - [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/) - Used coupon `WHIZSITE50` to get a flat 50% off sitewide savings - and a total bill of \$17.95 which included the online course and the four (4) practice exams 🤓
   - [Developing Solutions for Microsoft Azure (AZ-204)](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+    - [ x ] Watched sixty-nine (69) of the eighty-six (86) videos
 
 ## Sunday, July 12th, 2020 [WEEKEND]
 
 - [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
-  - Wrap-up - [Developing Solutions for Microsoft Azure (AZ-204)](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-  - One (1) [free test](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) - Fifteen (15) question practice exam
-  - Practice tests
-    - [Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
+  - [Developing Solutions for Microsoft Azure (AZ-204)](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+    - [ x ] Finish watching videos seventy (70) through eighty-six (86)
+      - Please see the `notes` folder for a PDF of useful tips and tidbits
 
 ## Monday, July 13th, 2020
 
 - [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
+  - [Fifteen (15) question practice exam](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
   - Practice tests
+  - Practice tests
+    - [Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
     - [Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
     - [Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
+    - [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
 
 ## Tuesday, July 14th, 2020
-
-- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
-  - Practice tests
-    - [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
 
 ## Wednesday, July 15th, 2020
 
