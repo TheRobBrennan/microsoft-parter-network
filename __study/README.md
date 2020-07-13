@@ -105,28 +105,44 @@ Based on the estimated time for review offered by Microsoft, let's see what I ha
 
 ## Monday, July 13th, 2020
 
-- [Whizlabs Microsoft Azure Exam AZ-204 Certification](https://www.whizlabs.com/microsoft-azure-certification-az-204/)
-  - [Fifteen (15) question practice exam](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
-  - Practice tests
-  - Practice tests
-    - [Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
-    - [Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
-    - [Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
-    - [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/) -
+[Fifteen (15) question practice exam](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/notes/2020.07.13%20result.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/notes/2020.07.13%20result.png)
+
+FAILED: 11 / 15 correct for a 73.33% score.
+
+Areas for me to revisit include:
+
+- CORRECT answer on using [az webapp log config](https://docs.microsoft.com/en-us/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config)
+- INCORRECT answer selecting `user_impersonation` instead of `User.Read` on [Acquire a token from Azure AD for authorizing requests from a client application](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-app)
+- INCORRECT answer selecting `oauth2AllowImplicitFlow` instead of `oauth2Permissions` in the [application manifest file](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest)
+- INCORRECT answer selecting `Azure App Service Environment` instead of `Integration Service Environment` for securing a Logic App to the corporate virtual network
+  - See [Announcing Azure Integration Service Environment for Logic Apps](https://azure.microsoft.com/en-us/blog/announcing-azure-integration-service-environment-for-logic-apps/)
+- INCORRECT answer selecting `Configure the web application to use the Premium App Service Plan` instead of `Configure the web application to use the Standard App Service Plan` when the app service plan is `D1` and on a `Shared Service Plan` - We simply need to upgrade to the `Standard App Service Plan`; no need to jump to Premium.
 
 ## Tuesday, July 14th, 2020
+
+RETAKE - ATTEMPT #2: [Fifteen (15) question practice exam](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
+[Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Wednesday, July 15th, 2020
 
 ## Thursday, July 16th, 2020
 
+[Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
 ## Friday, July 17th, 2020
+
+[Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Saturday, July 18th, 2020 [WEEKEND]
 
 ## Sunday, July 19th, 2020 [WEEKEND]
 
 ## Monday, July 20th, 2020
+
+[Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Tuesday, July 21st, 2020
 
