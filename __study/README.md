@@ -124,6 +124,10 @@ Areas for me to revisit include:
 
 RETAKE - ATTEMPT #2: [Fifteen (15) question practice exam](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/notes/2020.07.14%20result.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/notes/2020.07.14%20result.png)
+
+Haha oh man. Thought I'd retake the 15 question sampler - since it appeared as an option for this course...yeah. Turns out it's the same 15 questions. Hell of an ego boost, though - only took me ~2 mins and 18 seconds to fly through it and score a perfect 15/15 🤣
+
 [Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Wednesday, July 15th, 2020
