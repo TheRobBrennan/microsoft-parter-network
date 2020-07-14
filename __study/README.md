@@ -130,23 +130,60 @@ Haha oh man. Thought I'd retake the 15 question sampler - since it appeared as a
 
 [Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.14-result-exam-1.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.14-result-exam-1.png)
+
+FAILED: 39 / 55 correct for a 70.91% score.
+
+Areas for me to revisit include:
+
+- [Soft delete for Blob storage](https://docs.microsoft.com/en-us/azure/storage/blobs/soft-delete-overview) - REMEMBER: Snapshots can also be recovered when soft delete is enabled. They cannot be modified, of course.
+  > When soft delete is enabled for a storage account, blobs, blob versions (preview), and snapshots in that storage account may be recovered after they are deleted, within a retention period that you specify.
+  > If there is a possibility that your data may accidentally be modified or deleted by an application or another storage account user, Microsoft recommends turning on soft delete.
+- [How to write stored procedures, triggers, and user-defined functions in Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-write-stored-procedures-triggers-udfs) - REMEMBER: For this CosmosDB function, you first get the context, then get the response from the context variable. Process the response however you'd like, and then use response.setBody() as the last step.
+
+  ```js
+  var helloWorldStoredProc = {
+    id: "helloWorld",
+    serverScript: function () {
+      var context = getContext()
+      var response = context.getResponse()
+
+      response.setBody("Hello, World")
+    },
+  }
+  ```
+
+- [az webapp log config](https://docs.microsoft.com/en-us/cli/azure/webapp/log?view=azure-cli-latest&viewFallbackFrom=azure-cli-latest%23az-webapp-log-config) - `--docker-container-logging` was the argument I should have selected in a sample question.
+- [Acquire a token from Azure AD for authorizing requests from a client application](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-app) - Use `Delegated` access when your application needs to work with Azure storage and `user_impersonation` has been enabled
+- INCORRECT answer selecting `optionalClaims` instead of `groupMembershipClaims` in the [application manifest file](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest)
+- [Create a synthetic partition key](https://docs.microsoft.com/en-us/azure/cosmos-db/synthetic-partition-keys) - Key strategies include
+  - Concatenate multiple properties of an item
+  - Use a partition key with a random suffix
+  - Use a partition key with pre-calculated suffixes
+- [App Service pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/)
+- [Tutorial: Create and Manage Windows VMs with Azure PowerShell](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm)
+- Use Azure Logic Apps for tasks like automatically tiering data from a hot tier into a cool or archive tier
+- [Azure Event Hubs — A big data streaming platform and event ingestion service](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)
+- Use [Azure Database Migration Service](https://azure.microsoft.com/en-us/services/database-migration/) to migrate existing MongoDB to CosmosDB
+- Do not use wildcard domains when explicitly adding CORS origins via the `az` command line tool
+- Azure Service Bus _boolean filters_ are used for a subscription to receive **ALL** of the message or **NONE** of the messages
+
+[Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
 ## Wednesday, July 15th, 2020
 
 ## Thursday, July 16th, 2020
 
-[Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+[Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+[Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Friday, July 17th, 2020
-
-[Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Saturday, July 18th, 2020 [WEEKEND]
 
 ## Sunday, July 19th, 2020 [WEEKEND]
 
 ## Monday, July 20th, 2020
-
-[Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Tuesday, July 21st, 2020
 
