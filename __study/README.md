@@ -170,6 +170,50 @@ Areas for me to revisit include:
 
 [Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.14-result-exam-2.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.14-result-exam-2.png)
+
+FAILED: 40 / 55 correct for a 72.73% score.
+
+Areas for me to revisit include:
+
+- When developing for Azure Storage in C# for the Azure Cosmos DB - Table API, we are working with `CloudTable` types
+  - To retrieve a particular entity, use `TableOperation.Retrieve(partition_key, row_key)`
+- [Create an App Service app with deployment from GitHub using Azure CLI](https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-deploy-github)
+
+```sh
+#!/bin/bash
+
+# Replace the following URL with a public GitHub repo URL
+gitrepo=https://github.com/Azure-Samples/php-docs-hello-world
+webappname=mywebapp$RANDOM
+
+# Create a resource group.
+az group create --location westeurope --name myResourceGroup
+
+# Create an App Service plan in `FREE` tier.
+az appservice plan create --name $webappname --resource-group myResourceGroup --sku FREE
+
+# Create a web app.
+az webapp create --name $webappname --resource-group myResourceGroup --plan $webappname
+
+# Deploy code from a public GitHub repository.
+az webapp deployment source config --name $webappname --resource-group myResourceGroup \
+--repo-url $gitrepo --branch master --manual-integration
+
+# Copy the result of the following command into a browser to see the web app.
+echo http://$webappname.azurewebsites.net
+```
+
+- Powershell [New-AzApiManagement](https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/New-AzApiManagement?view=azps-4.3.0)
+- Use `Event Hubs Capture` when persisting data to Azure Storage from Azure Event Hubs
+  - Data is persisted using the binary `Apache Avro` format onto Azure Blob storage
+  - If you need to track two specific events (such as `sign-in` and `sign-out`) create two separate Azure Event Grid topics
+- Azure Key Vault
+  - `az keyvault create` - Create a Key Vault
+  - `az kevault secret set` - Define a secret
+- Use a `SqlFilter` for Azure Service Bus topics such as `Subscription - Global Orders` (e.g. anything not `USA`)
+- [Using external services from the Azure API Management service](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request)
+
 ## Wednesday, July 15th, 2020
 
 ## Thursday, July 16th, 2020
