@@ -309,13 +309,13 @@ echo http://$webappname.azurewebsites.net
 - Use a `SqlFilter` for Azure Service Bus topics such as `Subscription - Global Orders` (e.g. anything not `USA`)
 - [Using external services from the Azure API Management service](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request)
 
-## Tuesday, July 21st, 2020
-
 [Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
-## Wednesday, July 22nd, 2020
+## Tuesday, July 21st, 2020
 
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
+## Wednesday, July 22nd, 2020
 
 ## Thursday, July 23rd, 2020
 
