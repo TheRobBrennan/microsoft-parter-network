@@ -218,9 +218,6 @@ echo http://$webappname.azurewebsites.net
 
 ## Thursday, July 16th, 2020
 
-[Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-[Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-
 ## Friday, July 17th, 2020
 
 ## Saturday, July 18th, 2020 [WEEKEND]
@@ -229,9 +226,96 @@ echo http://$webappname.azurewebsites.net
 
 ## Monday, July 20th, 2020
 
+Areas for me to revisit include:
+
+- CORRECT answer on using [az webapp log config](https://docs.microsoft.com/en-us/cli/azure/webapp/log?view=azure-cli-latest#az-webapp-log-config)
+- INCORRECT answer selecting `user_impersonation` instead of `User.Read` on [Acquire a token from Azure AD for authorizing requests from a client application](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-app)
+- INCORRECT answer selecting `oauth2AllowImplicitFlow` instead of `oauth2Permissions` in the [application manifest file](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest)
+- INCORRECT answer selecting `Azure App Service Environment` instead of `Integration Service Environment` for securing a Logic App to the corporate virtual network
+  - See [Announcing Azure Integration Service Environment for Logic Apps](https://azure.microsoft.com/en-us/blog/announcing-azure-integration-service-environment-for-logic-apps/)
+- INCORRECT answer selecting `Configure the web application to use the Premium App Service Plan` instead of `Configure the web application to use the Standard App Service Plan` when the app service plan is `D1` and on a `Shared Service Plan` - We simply need to upgrade to the `Standard App Service Plan`; no need to jump to Premium.
+
+Areas for me to revisit include:
+
+- [Soft delete for Blob storage](https://docs.microsoft.com/en-us/azure/storage/blobs/soft-delete-overview) - REMEMBER: Snapshots can also be recovered when soft delete is enabled. They cannot be modified, of course.
+  > When soft delete is enabled for a storage account, blobs, blob versions (preview), and snapshots in that storage account may be recovered after they are deleted, within a retention period that you specify.
+  > If there is a possibility that your data may accidentally be modified or deleted by an application or another storage account user, Microsoft recommends turning on soft delete.
+- [How to write stored procedures, triggers, and user-defined functions in Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-write-stored-procedures-triggers-udfs) - REMEMBER: For this CosmosDB function, you first get the context, then get the response from the context variable. Process the response however you'd like, and then use response.setBody() as the last step.
+
+  ```js
+  var helloWorldStoredProc = {
+    id: "helloWorld",
+    serverScript: function () {
+      var context = getContext()
+      var response = context.getResponse()
+
+      response.setBody("Hello, World")
+    },
+  }
+  ```
+
+- [az webapp log config](https://docs.microsoft.com/en-us/cli/azure/webapp/log?view=azure-cli-latest&viewFallbackFrom=azure-cli-latest%23az-webapp-log-config) - `--docker-container-logging` was the argument I should have selected in a sample question.
+- [Acquire a token from Azure AD for authorizing requests from a client application](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth-aad-app) - Use `Delegated` access when your application needs to work with Azure storage and `user_impersonation` has been enabled
+- INCORRECT answer selecting `optionalClaims` instead of `groupMembershipClaims` in the [application manifest file](https://docs.microsoft.com/en-us/azure/active-directory/develop/reference-app-manifest)
+- [Create a synthetic partition key](https://docs.microsoft.com/en-us/azure/cosmos-db/synthetic-partition-keys) - Key strategies include
+  - Concatenate multiple properties of an item
+  - Use a partition key with a random suffix
+  - Use a partition key with pre-calculated suffixes
+- [App Service pricing](https://azure.microsoft.com/en-us/pricing/details/app-service/windows/)
+- [Tutorial: Create and Manage Windows VMs with Azure PowerShell](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/tutorial-manage-vm)
+- Use Azure Logic Apps for tasks like automatically tiering data from a hot tier into a cool or archive tier
+- [Azure Event Hubs — A big data streaming platform and event ingestion service](https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about)
+- Use [Azure Database Migration Service](https://azure.microsoft.com/en-us/services/database-migration/) to migrate existing MongoDB to CosmosDB
+- Do not use wildcard domains when explicitly adding CORS origins via the `az` command line tool
+- Azure Service Bus _boolean filters_ are used for a subscription to receive **ALL** of the message or **NONE** of the messages
+
+Areas for me to revisit include:
+
+- When developing for Azure Storage in C# for the Azure Cosmos DB - Table API, we are working with `CloudTable` types
+  - To retrieve a particular entity, use `TableOperation.Retrieve(partition_key, row_key)`
+- [Create an App Service app with deployment from GitHub using Azure CLI](https://docs.microsoft.com/en-us/azure/app-service/scripts/cli-deploy-github)
+
+```sh
+#!/bin/bash
+
+# Replace the following URL with a public GitHub repo URL
+gitrepo=https://github.com/Azure-Samples/php-docs-hello-world
+webappname=mywebapp$RANDOM
+
+# Create a resource group.
+az group create --location westeurope --name myResourceGroup
+
+# Create an App Service plan in `FREE` tier.
+az appservice plan create --name $webappname --resource-group myResourceGroup --sku FREE
+
+# Create a web app.
+az webapp create --name $webappname --resource-group myResourceGroup --plan $webappname
+
+# Deploy code from a public GitHub repository.
+az webapp deployment source config --name $webappname --resource-group myResourceGroup \
+--repo-url $gitrepo --branch master --manual-integration
+
+# Copy the result of the following command into a browser to see the web app.
+echo http://$webappname.azurewebsites.net
+```
+
+- Powershell [New-AzApiManagement](https://docs.microsoft.com/en-us/powershell/module/az.apimanagement/New-AzApiManagement?view=azps-4.3.0)
+- Use `Event Hubs Capture` when persisting data to Azure Storage from Azure Event Hubs
+  - Data is persisted using the binary `Apache Avro` format onto Azure Blob storage
+  - If you need to track two specific events (such as `sign-in` and `sign-out`) create two separate Azure Event Grid topics
+- Azure Key Vault
+  - `az keyvault create` - Create a Key Vault
+  - `az kevault secret set` - Define a secret
+- Use a `SqlFilter` for Azure Service Bus topics such as `Subscription - Global Orders` (e.g. anything not `USA`)
+- [Using external services from the Azure API Management service](https://docs.microsoft.com/en-us/azure/api-management/api-management-sample-send-request)
+
 ## Tuesday, July 21st, 2020
 
+[Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
 ## Wednesday, July 22nd, 2020
+
+[Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Thursday, July 23rd, 2020
 
