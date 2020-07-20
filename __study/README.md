@@ -311,6 +311,10 @@ echo http://$webappname.azurewebsites.net
 
 [Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.20-result-exam-3.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.20-result-exam-3.png)
+
+FAILED: 36 / 55 correct for a 65.45% score.
+
 ## Tuesday, July 21st, 2020
 
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
