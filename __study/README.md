@@ -340,8 +340,8 @@ FAILED: 36 / 55 correct for a 65.45% score.
 ## Thursday, July 23rd, 2020
 
 [OPTIONAL RETAKE: Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-[OPTIONAL RETAKE: Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-[OPTIONAL RETAKE: Practice exam #1](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+[OPTIONAL RETAKE: Practice exam #2](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+[OPTIONAL RETAKE: Practice exam #3](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
