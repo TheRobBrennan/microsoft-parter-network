@@ -337,7 +337,9 @@ FAILED: 36 / 55 correct for a 65.45% score.
 
 - Previous scores
   - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
-  - Attempt #2 -
+  - Attempt #2 - PASSED: 49 / 55 correct for a 89.09% score.
+
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.21-retake-exam-3.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.21-retake-exam-3.png)
 
 ## Wednesday, July 22nd, 2020
 
