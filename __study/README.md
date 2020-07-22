@@ -345,7 +345,11 @@ Given that I consistently failed the first three practice exams out of the gate 
 
 - [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
   - [ X ] 1. [Developing Azure Compute Solutions](https://www.linkedin.com/learning/developing-azure-compute-solutions?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~57 min)
-  - [ ] 2.  [Building a Web Application on Microsoft Azure](https://www.linkedin.com/learning/building-a-web-application-on-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~2 hr 10 min)
+  - [ X ] 2. [Building a Web Application on Microsoft Azure](https://www.linkedin.com/learning/building-a-web-application-on-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~2 hr 10 min)
+
+## Wednesday, July 22nd, 2020
+
+- [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
   - [ ] 3.  [Azure for Developers: Implementing VMs and Batch Jobs](https://www.linkedin.com/learning/azure-for-developers-implementing-vms-and-batch-jobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 09 min)
   - [ ] 4.  [Azure for Developers: Cosmos DB](https://www.linkedin.com/learning/azure-for-developers-cosmos-db?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~39 mins)
   - [ ] 5.  [Learning Azure Storage for Developers](https://www.linkedin.com/learning/learning-azure-storage-for-developers?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 07 min)
@@ -354,8 +358,6 @@ Given that I consistently failed the first three practice exams out of the gate 
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
   - [ ] 9.  [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
   - [ ] 10. [Azure Event Grid](https://www.linkedin.com/learning/azure-event-grid?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~38 min)
-
-## Wednesday, July 22nd, 2020
 
 ## Thursday, July 23rd, 2020
 
