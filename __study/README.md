@@ -341,8 +341,23 @@ FAILED: 36 / 55 correct for a 65.45% score.
 
 ![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.21-retake-exam-3.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.21-retake-exam-3.png)
 
+Given that I consistently failed the first three practice exams out of the gate in the Whizlabs course, I want to take a moment and review material in a different format **BEFORE TAKING THE FINAL PRACTICE EXAM**
+
+- [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
+  - Developing Azure Compute Solutions (~57 min)
+  - Building a Web Application on Microsoft Azure (~2 hr 10 min)
+  - Azure for Developers: Implementing VMs and Batch Jobs (~1 hr 09 min)
+  - Azure for Developers: Cosmos DB (~39 mins)
+  - Learning Azure Storage for Developers (~1 hr 07 min)
+  - Azure Storage for Developers: Blobs (~2 hr 09 min)
+  - Azure for Developers: Security Best Practices (~1 hr 12 min)
+  - Scaling Applications with Microsoft Azure (~1 hr 30 min)
+  - Azure for Developers: API Management (~1 hr 13 min)
+  - Azure Event Grid (~38 min)
+
 ## Wednesday, July 22nd, 2020
 
+**DO NOT TAKE UNTIL YOU HAVE REVIEWED MORE RESOURCES**
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
 ## Thursday, July 23rd, 2020
