@@ -357,10 +357,10 @@ Given that I consistently failed the first three practice exams out of the gate 
 
 ## Wednesday, July 22nd, 2020
 
+## Thursday, July 23rd, 2020
+
 **DO NOT TAKE UNTIL YOU HAVE REVIEWED MORE RESOURCES**
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
-
-## Thursday, July 23rd, 2020
 
 ## Friday, July 24th, 2020 [VACATION]
 
