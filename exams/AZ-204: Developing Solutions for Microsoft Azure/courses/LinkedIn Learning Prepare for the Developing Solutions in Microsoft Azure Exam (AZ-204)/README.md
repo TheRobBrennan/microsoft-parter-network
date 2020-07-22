@@ -16,6 +16,8 @@
 
 ## Developing Azure Compute Solutions (~57 min)
 
+A common naming convention for resource groups in Azure is to follow a path similar to _service-environment-rg_ - such as `my-app-dev-rg`
+
 ## Building a Web Application on Microsoft Azure (~2 hr 10 min)
 
 ## Azure for Developers: Implementing VMs and Batch Jobs (~1 hr 09 min)
