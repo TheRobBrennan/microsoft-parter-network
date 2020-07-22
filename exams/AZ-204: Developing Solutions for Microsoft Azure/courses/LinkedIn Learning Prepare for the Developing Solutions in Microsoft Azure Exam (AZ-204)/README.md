@@ -1,6 +1,6 @@
-[Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204) seems to be promising. There are roughly ~12 hr 50 min worth of videos to watch. As an added bonus, completing this learning path will result in achieving a completion certificate - a small consolation for the time spent pursuing this competency.
+# Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)
 
-# Overview
+[Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204) seems to be promising. There are roughly ~12 hr 50 min worth of videos to watch. As an added bonus, completing this learning path will result in achieving a completion certificate - a small consolation for the time spent pursuing this competency.
 
 - [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
   - Developing Azure Compute Solutions (~57 min)
@@ -13,8 +13,6 @@
   - Scaling Applications with Microsoft Azure (~1 hr 30 min)
   - Azure for Developers: API Management (~1 hr 13 min)
   - Azure Event Grid (~38 min)
-
-# Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)
 
 ## Developing Azure Compute Solutions (~57 min)
 
