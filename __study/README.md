@@ -375,6 +375,20 @@ Given that I consistently failed the first three practice exams out of the gate 
           ![./screenshots/03.png](./screenshots/03.png)
 
   - [ ] 7.  [Azure for Developers: Security Best Practices](https://www.linkedin.com/learning/azure-for-developers-security-best-practices?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 12 min)
+
+    - 1. Control Access to Azure
+
+    ![./screenshots/04.png](./screenshots/04.png)
+    ![./screenshots/05.png](./screenshots/05.png)
+    ![./screenshots/06.png](./screenshots/06.png)
+    ![./screenshots/07.png](./screenshots/07.png)
+    ![./screenshots/08.png](./screenshots/08.png)
+    ![./screenshots/09.png](./screenshots/09.png)
+    ![./screenshots/10.png](./screenshots/10.png)
+    ![./screenshots/11.png](./screenshots/11.png)
+    ![./screenshots/12.png](./screenshots/12.png)
+    ![./screenshots/13.png](./screenshots/13.png)
+
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
   - [ ] 9.  [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
   - [ ] 10. [Azure Event Grid](https://www.linkedin.com/learning/azure-event-grid?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~38 min)
