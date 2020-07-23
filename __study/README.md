@@ -372,7 +372,7 @@ Given that I consistently failed the first three practice exams out of the gate 
         - Create a CDN
           ![./screenshots/02.png](./screenshots/02.png)
 
-        ![./screenshots/03.png](./screenshots/03.png)
+          ![./screenshots/03.png](./screenshots/03.png)
 
   - [ ] 7.  [Azure for Developers: Security Best Practices](https://www.linkedin.com/learning/azure-for-developers-security-best-practices?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 12 min)
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
