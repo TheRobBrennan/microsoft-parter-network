@@ -408,8 +408,9 @@ Given that I consistently failed the first three practice exams out of the gate 
   - [ X ] 9. [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
   - [ X ] 10. [Azure Event Grid](https://www.linkedin.com/learning/azure-event-grid?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~38 min)
 
-**DO NOT TAKE UNTIL YOU HAVE REVIEWED MORE RESOURCES**
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
+
+Areas for me to revisit include:
 
 ## Friday, July 24th, 2020 [VACATION]
 
