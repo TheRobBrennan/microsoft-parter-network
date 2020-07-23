@@ -350,10 +350,30 @@ Given that I consistently failed the first three practice exams out of the gate 
 ## Wednesday, July 22nd, 2020
 
 - [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
+
   - [ X ] 3. [Azure for Developers: Implementing VMs and Batch Jobs](https://www.linkedin.com/learning/azure-for-developers-implementing-vms-and-batch-jobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 09 min)
   - [ X ] 4. [Azure for Developers: Cosmos DB](https://www.linkedin.com/learning/azure-for-developers-cosmos-db?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~39 mins)
   - [ X ] 5. [Learning Azure Storage for Developers](https://www.linkedin.com/learning/learning-azure-storage-for-developers?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 07 min)
-  - [ ] 6.  [Azure Storage for Developers: Blobs](https://www.linkedin.com/learning/azure-storage-for-developers-blobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~2 hr 09 min)
+  - [ X ] 6. [Azure Storage for Developers: Blobs](https://www.linkedin.com/learning/azure-storage-for-developers-blobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~2 hr 09 min)
+
+    - The following sections of this course were watched at 2x as they repeated the same content in module 5
+      - 1. Overview
+      - 2. Security
+    - I recommend watching the following technical deep dives at 1.25x or 1x
+
+      - 3. Blobs
+           ![./screenshots/00.png](./screenshots/00.png)
+
+           - EXAMPLE: Requesting a lease to modify a block blob
+             ![./screenshots/01.png](./screenshots/01.png)
+
+      - 4. Performance
+
+        - Create a CDN
+          ![./screenshots/02.png](./screenshots/02.png)
+
+          ![./screenshots/03.png](./screenshots/03.png)
+
   - [ ] 7.  [Azure for Developers: Security Best Practices](https://www.linkedin.com/learning/azure-for-developers-security-best-practices?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 12 min)
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
   - [ ] 9.  [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
