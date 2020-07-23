@@ -404,7 +404,7 @@ Given that I consistently failed the first three practice exams out of the gate 
 
 - [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
 
-  - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
+  - [ X ] 8. [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
   - [ ] 9.  [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
   - [ ] 10. [Azure Event Grid](https://www.linkedin.com/learning/azure-event-grid?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~38 min)
 
