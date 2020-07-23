@@ -395,6 +395,10 @@ Given that I consistently failed the first three practice exams out of the gate 
          ![./screenshots/16.png](./screenshots/16.png)
 
     - 3. Control Azure App Access to Your Data
+         ![./screenshots/17.png](./screenshots/17.png)
+         ![./screenshots/18.png](./screenshots/18.png)
+         ![./screenshots/19.png](./screenshots/19.png)
+         ![./screenshots/20.png](./screenshots/20.png)
 
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
   - [ ] 9.  [Azure for Developers: API Management](https://www.linkedin.com/learning/azure-for-developers-api-management?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 13 min)
