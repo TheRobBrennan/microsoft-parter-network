@@ -350,7 +350,7 @@ Given that I consistently failed the first three practice exams out of the gate 
 ## Wednesday, July 22nd, 2020
 
 - [Prepare for the Developing Solutions in Microsoft Azure Exam (AZ-204)](https://www.linkedin.com/learning/paths/prepare-for-the-developing-solutions-in-microsoft-azure-exam-az-204)
-  - [ ] 3.  [Azure for Developers: Implementing VMs and Batch Jobs](https://www.linkedin.com/learning/azure-for-developers-implementing-vms-and-batch-jobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 09 min)
+  - [ X ] 3. [Azure for Developers: Implementing VMs and Batch Jobs](https://www.linkedin.com/learning/azure-for-developers-implementing-vms-and-batch-jobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 09 min)
   - [ ] 4.  [Azure for Developers: Cosmos DB](https://www.linkedin.com/learning/azure-for-developers-cosmos-db?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~39 mins)
   - [ ] 5.  [Learning Azure Storage for Developers](https://www.linkedin.com/learning/learning-azure-storage-for-developers?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 07 min)
   - [ ] 6.  [Azure Storage for Developers: Blobs](https://www.linkedin.com/learning/azure-storage-for-developers-blobs?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~2 hr 09 min)
