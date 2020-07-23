@@ -410,7 +410,9 @@ Given that I consistently failed the first three practice exams out of the gate 
 
 [Practice exam #4](https://www.whizlabs.com/learn/course/microsoft-azure-az-204/)
 
-Areas for me to revisit include:
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.23-result-exam-4.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/courses/Whizlabs%20Microsoft%20Azure%20Exam%20AZ-204%20Certification/practice-exams/2020.07.23-result-exam-4.png)
+
+FAILED: 36 / 55 correct for a 65.45% score.
 
 ## Friday, July 24th, 2020 [VACATION]
 
