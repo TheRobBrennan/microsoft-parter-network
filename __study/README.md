@@ -414,6 +414,12 @@ Given that I consistently failed the first three practice exams out of the gate 
 
 FAILED: 36 / 55 correct for a 65.45% score.
 
+**So...What next?**
+
+- Pass4Test AZ-204 V12.55 (250 questions)
+- Pass4Test AZ-204 V12.75 (145 questions)
+- [Udemy AZ-204: Developing Solutions for Microsoft Azure Test](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/)
+
 ## Friday, July 24th, 2020 [VACATION]
 
 ## Saturday, July 25th, 2020 [WEEKEND]
