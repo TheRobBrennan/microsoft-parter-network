@@ -388,8 +388,12 @@ Given that I consistently failed the first three practice exams out of the gate 
     ![./screenshots/11.png](./screenshots/11.png)
     ![./screenshots/12.png](./screenshots/12.png)
     ![./screenshots/13.png](./screenshots/13.png)
+    ![./screenshots/14.png](./screenshots/14.png)
 
     - 2. Control User Access to Your Azure Apps
+         ![./screenshots/15.png](./screenshots/15.png)
+         ![./screenshots/16.png](./screenshots/16.png)
+
     - 3. Control Azure App Access to Your Data
 
   - [ ] 8.  [Scaling Applications with Microsoft Azure](https://www.linkedin.com/learning/scaling-applications-with-microsoft-azure?pathUrn=urn%3Ali%3AlyndaLearningPath%3A5e7bd475498ee0b17c5be0a4) (~1 hr 30 min)
