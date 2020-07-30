@@ -434,22 +434,10 @@ FAILED: 36 / 55 correct for a 65.45% score.
 
 ## Thursday, July 30th, 2020
 
-OK. You're in the homestretch. Focus your energy on preparing for the exam tomorrow. You got this.
+Now that you've had some time to think about it, what's your plan?
 
 - Whizlabs
   - [ ] Review Whizlab practice exams 1-4 notes
-  - [ ] RETAKE: Whizlabs practice exam 1
-    - [ ] REVIEW: Practice exam 1 notes
-    - Previous scores
-      - Attempt #1 - FAILED: 39 / 55 correct for a 70.91% score.
-      - Attempt #2 - PASSED: 54 / 55 correct for a 98.18% score.
-      - Attempt #3 -
-  - [ ] RETAKE: Whizlabs practice exam 2
-    - [ ] REVIEW: Practice exam 2 notes
-    - Previous scores
-      - Attempt #1 - FAILED: 40 / 55 correct for a 72.73% score.
-      - Attempt #2 - PASSED: 53 / 55 correct for a 96.36% score.
-      - Attempt #3 -
   - [ ] RETAKE: Whizlabs practice exam 3
     - Previous scores
       - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
@@ -462,10 +450,20 @@ OK. You're in the homestretch. Focus your energy on preparing for the exam tomor
       - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
       - Attempt #2 -
 
-**PREPARE FOR AN EXAM SIMULATION TONIGHT**
+### Simulate the exam
 
-- [ ] Final review and prep before taking the simulated exam
+- [ ] Review notes and prep before taking the simulated exam
 - [ ] SIMULATION: Take the MeasureUp Practice Test at [https://pts.measureup.com/web/index.php#dashboard.php](https://pts.measureup.com/web/index.php#dashboard.php)
+
+#### How did you do?
+
+If you passed, treat yourself by trusting in your knowledge.
+If you failed, breathe. It's ok. Perhaps retaking the first two Whizlab exams or reviewing the Udemy practice tests may help you?
+
+- [Udemy AZ-204:Developing Solutions for Microsoft Azure Test](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/)
+  - Practice test 1 (55 questions)
+  - Practice test 2 (55 questions)
+  - Practice test 3 (55 questions)
 
 ## Friday, July 31st, 2020
 
