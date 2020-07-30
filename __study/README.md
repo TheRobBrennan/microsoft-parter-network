@@ -436,19 +436,12 @@ FAILED: 36 / 55 correct for a 65.45% score.
 
 Now that you've had some time to think about it, what's your plan?
 
+Given that I'm reviewing these notes comfortably and at a relaxed pace on my iPad Pro, retaking the exams would just be reviewing the same questions I'm re-reading and looking over in detail.
+
+It will be sufficient for me to review these notes and then prepare for simulating the exam.
+
 - Whizlabs
   - [ ] Review Whizlab practice exams 1-4 notes
-  - [ ] RETAKE: Whizlabs practice exam 3
-    - Previous scores
-      - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
-      - Attempt #2 - PASSED: 49 / 55 correct for a 89.09% score.
-      - Attempt #3 -
-    - [ ] REVIEW: Practice exam 3 notes
-  - [ ] RETAKE: Whizlabs practice exam 4
-    - [ ] REVIEW: Practice exam 4 notes
-    - Previous scores
-      - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
-      - Attempt #2 -
 
 ### Simulate the exam
 
