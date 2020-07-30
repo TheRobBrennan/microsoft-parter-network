@@ -434,4 +434,40 @@ FAILED: 36 / 55 correct for a 65.45% score.
 
 ## Thursday, July 30th, 2020
 
-## Friday, July 31st, 2020 [VACATION]
+OK. You're in the homestretch. Focus your energy on preparing for the exam tomorrow. You got this.
+
+- Whizlabs
+  - [ ] Review Whizlab practice exams 1-4 notes
+  - [ ] RETAKE: Whizlabs practice exam 1
+    - [ ] REVIEW: Practice exam 1 notes
+    - Previous scores
+      - Attempt #1 - FAILED: 39 / 55 correct for a 70.91% score.
+      - Attempt #2 - PASSED: 54 / 55 correct for a 98.18% score.
+      - Attempt #3 -
+  - [ ] RETAKE: Whizlabs practice exam 2
+    - [ ] REVIEW: Practice exam 2 notes
+    - Previous scores
+      - Attempt #1 - FAILED: 40 / 55 correct for a 72.73% score.
+      - Attempt #2 - PASSED: 53 / 55 correct for a 96.36% score.
+      - Attempt #3 -
+  - [ ] RETAKE: Whizlabs practice exam 3
+    - Previous scores
+      - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
+      - Attempt #2 - PASSED: 49 / 55 correct for a 89.09% score.
+      - Attempt #3 -
+    - [ ] REVIEW: Practice exam 3 notes
+  - [ ] RETAKE: Whizlabs practice exam 4
+    - [ ] REVIEW: Practice exam 4 notes
+    - Previous scores
+      - Attempt #1 - FAILED: 36 / 55 correct for a 65.45% score.
+      - Attempt #2 -
+
+**PREPARE FOR AN EXAM SIMULATION TONIGHT**
+
+- [ ] Final review and prep before taking the simulated exam
+- [ ] SIMULATION: Take the MeasureUp Practice Test at [https://pts.measureup.com/web/index.php#dashboard.php](https://pts.measureup.com/web/index.php#dashboard.php)
+
+## Friday, July 31st, 2020
+
+1:00pm Head to GenUI and prepare environment for exam.
+2:30pm AZ-204 EXAM
