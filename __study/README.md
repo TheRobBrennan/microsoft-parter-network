@@ -441,11 +441,11 @@ Given that I'm reviewing these notes comfortably and at a relaxed pace on my iPa
 It will be sufficient for me to review these notes and then prepare for simulating the exam.
 
 - Whizlabs
-  - [ ] Review Whizlab practice exams 1-4 notes
+  - [ X ] Review Whizlab practice exams 1-4 notes
 
 ### Simulate the exam
 
-- [ ] Review notes and prep before taking the simulated exam
+- [ X ] Review notes and prep before taking the simulated exam
 - [ ] SIMULATION: Take the MeasureUp Practice Test at [https://pts.measureup.com/web/index.php#dashboard.php](https://pts.measureup.com/web/index.php#dashboard.php)
 
 #### How did you do?
