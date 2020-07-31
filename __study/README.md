@@ -467,9 +467,11 @@ Alright. It's 11:31pm, and clearly there is work to be done.
   - Practice Test 3 (55 questions)
 
 - MeasureUp AZ-204 Practice Test at [https://marketplace.measureup.com/](https://marketplace.measureup.com/)
+  - Practice Test #1 -
   - Practice Test #2 -
+  - Practice Certification Exam #2 -
   - Previous scores
-    - Practice Test #1 - FAILED: 17 / 47 correct for a 36.17% score.
+    - Practice Certification Exam #1 - FAILED: 17 / 47 correct for a 36.17% score.
 
 ### CERTIFICATION ATTEMPT #1
 
