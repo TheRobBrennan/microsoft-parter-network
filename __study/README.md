@@ -463,8 +463,8 @@ Alright. It's 11:31pm, and clearly there is work to be done.
 - [Udemy AZ-204:Developing Solutions for Microsoft Azure Test](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/)
 
   - [Practice Test 1](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/learn/quiz/4849796#overview) (55 questions)
-  - Practice Test 2 (55 questions)
-  - Practice Test 3 (55 questions)
+    - PASSED: 53/55 correct for a 96.36% score.
+      - This exam was the exact same practice test as the first Whizlabs practice exam 😔
 
 - MeasureUp AZ-204 Practice Test at [https://marketplace.measureup.com/](https://marketplace.measureup.com/)
   - Practice Test #1 -
