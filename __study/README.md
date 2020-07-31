@@ -467,11 +467,15 @@ Alright. It's 11:31pm, and clearly there is work to be done.
       - This exam was the exact same practice test as the first Whizlabs practice exam 😔
 
 - MeasureUp AZ-204 Practice Test at [https://marketplace.measureup.com/](https://marketplace.measureup.com/)
-  - Practice Test #1 -
+  - Practice Certification Exam #1 - FAILED: 17 / 47 correct for a 36.17% score
+  - Practice Test #1 - FAILED: 24 / 47 correct for a 51.06% score
   - Practice Test #2 -
-  - Practice Certification Exam #2 -
-  - Previous scores
-    - Practice Certification Exam #1 - FAILED: 17 / 47 correct for a 36.17% score.
+
+#### Practice Test #1
+
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/practice-exams/measureup/2020.07.31%20practice%20test%201%20-%20score.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/practice-exams/measureup/2020.07.31%20practice%20test%201%20-%20score.png)
+
+I have time for one more practice exam. Let's do it.
 
 ### CERTIFICATION ATTEMPT #1
 
