@@ -446,19 +446,32 @@ It will be sufficient for me to review these notes and then prepare for simulati
 ### Simulate the exam
 
 - [ X ] Review notes and prep before taking the simulated exam
-- [ ] SIMULATION: Take the MeasureUp Practice Test at [https://pts.measureup.com/web/index.php#dashboard.php](https://pts.measureup.com/web/index.php#dashboard.php)
+- [ X ] SIMULATION: Take the MeasureUp Practice Test at [https://marketplace.measureup.com/](https://marketplace.measureup.com/)
 
 #### How did you do?
 
-If you passed, treat yourself by trusting in your knowledge.
-If you failed, breathe. It's ok. Perhaps retaking the first two Whizlab exams or reviewing the Udemy practice tests may help you?
+![../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/practice-exams/measureup/2020.07.30%20exam%201%20-%20score.png](../exams/AZ-204:%20Developing%20Solutions%20for%20Microsoft%20Azure/practice-exams/measureup/2020.07.30%20exam%201%20-%20score.png)
 
-- [Udemy AZ-204:Developing Solutions for Microsoft Azure Test](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/)
-  - Practice test 1 (55 questions)
-  - Practice test 2 (55 questions)
-  - Practice test 3 (55 questions)
+Practice Test #1 - FAILED: 17 / 47 correct for a 36.17% score.
+
+Alright. It's 11:31pm, and clearly there is work to be done.
 
 ## Friday, July 31st, 2020
+
+### Practice exams
+
+- [Udemy AZ-204:Developing Solutions for Microsoft Azure Test](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/)
+
+  - [Practice Test 1](https://www.udemy.com/course/az-204developing-solutions-for-microsoft-azure-test/learn/quiz/4849796#overview) (55 questions)
+  - Practice Test 2 (55 questions)
+  - Practice Test 3 (55 questions)
+
+- MeasureUp AZ-204 Practice Test at [https://marketplace.measureup.com/](https://marketplace.measureup.com/)
+  - Practice Test #2 -
+  - Previous scores
+    - Practice Test #1 - FAILED: 17 / 47 correct for a 36.17% score.
+
+### CERTIFICATION ATTEMPT #1
 
 1:00pm Head to GenUI and prepare environment for exam.
 2:30pm AZ-204 EXAM
